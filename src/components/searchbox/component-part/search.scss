@@ -1,0 +1,41 @@
+.search-box {
+  width: 320px;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+
+  &__wrap {
+    padding: 40px 30px 30px 30px;
+  }
+  &__title {
+    width: 80%;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  //кнопку потом вынести отдельно
+  &__button {
+    text-decoration: none;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    border-radius: 22px;
+    border: 0px;
+  }
+  .button__text {
+    margin: 0;
+    color: white;
+  }
+}
+
+//guests-box
+.guests-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &__text {
+    margin: 0;
+  }
+}

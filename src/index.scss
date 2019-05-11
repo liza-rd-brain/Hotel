@@ -1,0 +1,26 @@
+@font-face {
+  font-family: MyriadPro-Regular;
+  src: url(./fons/MyriadPro-Regular.svg) format("svg"),
+    url(./fons/MyriadPro-Regular.ttf) format("ttf"),
+    url(./fons/MyriadPro-Regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title {
+  display: block;
+  color: rgb(197, 15, 15);
+  padding: 50px;
+  font-family: "MyriadPro-Regular", "Arial", sans-serif;
+  font-size: 50px;
+}
+
+body {
+  padding: 150px 140px;
+}
+
+
+
+/* * {
+  outline: 1px solid gold;
+} */
