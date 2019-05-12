@@ -9,14 +9,12 @@ const PATHS = {
   build: path.join(__dirname, "docs")
 };
 
-
 const common = merge([
   {
-    entry: PATHS.source + "/index.js",
-    /* entry: {
+    entry: { 
       index: PATHS.source + "/index.js",
-      searchbox: PATHS.source + "/components/searchbox/searchbox.js"
-    }, */
+      cards: PATHS.source + "/pages/cards/cards.js"
+    },
     output: {
       path: PATHS.build,
       filename: "[name]/[name].js"
@@ -26,10 +24,10 @@ const common = merge([
         filename: "index.html",
         template: PATHS.source + "/index.pug"
       }),
-      /* new HtmlWebpackPlugin({
-        filename: "searchbox/index.html",
-        template: PATHS.source + "/components/searchbox/searchbox.pug"
-      }), */
+      new HtmlWebpackPlugin({
+        filename: "cards/index.html",
+        template: PATHS.source + "/pages/cards/cards.pug"
+      }),
       new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
@@ -85,7 +83,7 @@ const production = merge([
         }
       ]
     },
-    plugins: [new MiniCssExtractPlugin({ filename: "./[name].css" })]
+    plugins: [new MiniCssExtractPlugin({ filename: "[name]/[name].css" })]
   }
 ]);
 
