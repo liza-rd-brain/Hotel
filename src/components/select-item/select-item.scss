@@ -1,0 +1,36 @@
+@import "../../variables";
+@import "../../mixin";
+
+.select-item {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  &_guest {
+    width: 100%;
+  }
+
+  &__title {
+    @include text($font, 12px, 700, $dark);
+    text-transform: uppercase;
+    margin: 0 0 5.44px 0;
+    letter-spacing: 0.5px;
+  }
+  &__select {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    @include text($font, 14px, 400, $dark-75);
+    letter-spacing: 0.6px;
+  }
+}
+
+.select {
+  &_date {
+    padding: 11.56px  8.44px 15px;
+    text-transform: uppercase;
+  }
+
+  &_guest{
+    padding: 12.56px 13.44px 15px;
+  }
+}

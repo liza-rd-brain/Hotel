@@ -91,7 +91,7 @@ const development = merge([
   {
     devServer: {
       stats: "errors-only",
-      port: 9100
+      port: 9200
     },
     module: {
       rules: [

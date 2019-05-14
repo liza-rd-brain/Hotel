@@ -1,0 +1,5 @@
+mixin select-item(title, type, container,text)
+    div(class=`select-item select-item_${type} ${container}__select-item_${type}`)
+        h3(class="select-item__title") #{title}
+        select(class=`select-item__select select_${type}` )
+            option(class="select-item__option") #{text}

@@ -1,11 +1,38 @@
-@font-face {
+/* @font-face {
   font-family: MyriadPro-Regular;
   src: url(./fons/MyriadPro-Regular.svg) format("svg"),
     url(./fons/MyriadPro-Regular.ttf) format("ttf"),
     url(./fons/MyriadPro-Regular.woff) format("woff");
   font-weight: normal;
   font-style: normal;
+} */
+@font-face {
+  font-family: "Montserrat", "Arial", sans-serif;
+  src: url(./fons/Montserrat-Regular.svg) format("svg"),
+    url(./fons/Montserrat-Regular.ttf) format("ttf"),
+    url(./fons/Montserrat-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "Montserrat", "Arial", sans-serif;
+  src: url(./fons/Montserrat-Bold.svg) format("svg"),
+    url(./fons//Montserrat-Bold.ttf) format("ttf"),
+    url(./fons/Montserrat-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quicksand", "Arial", sans-serif;
+  src: url(./fons/Quicksand-Bold.svg) format("svg"),
+    url(./fons/Quicksand-Bold.ttf) format("ttf"),
+    url(./fons/Quicksand-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 .title {
   display: block;
@@ -15,12 +42,10 @@
   font-size: 50px;
 }
 
-body {
+/* body {
   padding: 150px 140px;
 }
-
-
-
+ */
 /* * {
   outline: 1px solid gold;
 } */

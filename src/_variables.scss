@@ -1,0 +1,20 @@
+/* @function color-shade($color, $n) {
+  @return rgba($color, $n);
+} */
+
+$dark: #1f2041;
+$dark-75: rgba($dark, 0.75);
+$dark-50: rgba($dark, 0.5);
+$dark-25: rgba($dark, 0.25);
+$dark-5: rgba($dark, 0.05);
+
+$purple: #bc9cff;
+$blue:#8ba4f9;
+$green: #6fcf97;
+$gray:#E5E5E5;
+$white:#fff;
+
+$font:"Montserrat", "Arial", sans-serif;
+$font-bold:"Quicksand", "Arial", sans-serif;
+
+

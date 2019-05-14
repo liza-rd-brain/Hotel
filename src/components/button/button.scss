@@ -1,0 +1,26 @@
+@import "../../variables";
+@import "../../mixin";
+
+//кнопку потом вынести отдельно
+.button {
+  text-decoration: none;
+  border-radius: 22px;
+  border: 0px;
+  padding: 14px 0 15px 0;
+
+  &_big {
+    width: 100%;
+  }
+
+  &_full {
+    background: linear-gradient(180deg, $purple 0%, $blue 100%);
+  }
+  &__text {
+    @include text($font, 12px, 700, $white);
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    line-height: 15px;
+    letter-spacing: 0.7px;
+  }
+}

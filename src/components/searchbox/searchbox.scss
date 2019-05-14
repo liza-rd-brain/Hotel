@@ -1,32 +1,38 @@
-.search-box {
+@import "../../variables";
+@import "../../mixin";
+
+.searchbox {
   width: 320px;
   display: flex;
+  background-color: $white;
   /* flex-direction: column; */
   flex-wrap: wrap;
+  //вынести в переменную
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 
   &__wrap {
     padding: 40px 30px 30px 30px;
   }
   &__title {
     width: 80%;
-    margin: 0;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
+    @include text($font, 24px, 700, $dark);
+    line-height: 30px;
+    letter-spacing: 1.1px;
   }
   &__form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  //кнопку потом вынести отдельно
-  &__button {
-    text-decoration: none;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    border-radius: 22px;
-    border: 0px;
-  }
-  .button__text {
-    margin: 0;
-    color: white;
+
+  &__select-item {
+    &_date {
+      margin-bottom: 20px;
+    }
+    &_guest {
+      margin-bottom: 30.44px;   
+    }
   }
 }
 
