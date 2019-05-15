@@ -1,0 +1,16 @@
+@import "../../variables";
+@import "../../mixin";
+
+.uikit-wrap {
+  width: 1440px;
+  background-color:$white;
+  &_gray {
+    background-color: $gray;
+  }
+  &__logo-icon {
+    //при абсолютном позиционированнии логотипа, проще будет задать паддинг внутренним контейнерам
+    //не будет влиять на паддинг
+    position: absolute;
+    margin: 20px 0 0 20px;
+  }
+}

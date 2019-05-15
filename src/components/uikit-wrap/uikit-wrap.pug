@@ -1,0 +1,10 @@
+include ../logo-icon/logo-icon.pug
+
+mixin uikit-wrap(option)
+  -
+    var uikitWrapClassName="uikit-wrap"
+    uikitWrapClassName+=option.isGray? "uikit-wrap_gray":""
+  div(class=uikitWrapClassName)
+     +logo-icon({ isGray:false})(class="uikit-wrap__logo-icon")
+      
+        

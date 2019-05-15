@@ -1,0 +1,31 @@
+
+include ../../../components/logo-icon/logo-icon.pug
+
+-
+    const CT_COLORS = [
+        {COLOR:"dark",NAME:"Dark Shade 100%" ,TEXT:"#1F2041"},
+        {COLOR:"dark-75",NAME:"Dark Shade 75%",TEXT:"#1F2041"},
+        {COLOR:"dark-50",NAME:"Dark Shade 50%",TEXT:"#1F2041"},
+        {COLOR:"dark-25",NAME:"Dark Shade 25%",TEXT:"#1F2041"},
+        {COLOR:"dark-5",NAME:"Dark Shade 5%",TEXT:"#1F2041"},
+        {COLOR:"purple",NAME:"Purple",TEXT:"#BC9CFF"},
+        {COLOR:"green",NAME:"Green",TEXT:"#6FCF97"}
+    ]
+    
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        title
+            colorsType 
+    body
+       
+        div(class="colorstype")
+            +logo-icon({isGray:false})(class="colorstype__logo-icon")
+            div(class="colorstype__column")
+                - for (var i = 0; i < CT_COLORS.length; i++)
+                    div(class="colorstype__item")
+                        div(class=`colorstype__color colorstype__color_${CT_COLORS[i].COLOR}`)
+                        span(class="colorstype__name") #{CT_COLORS[i].NAME}
+                        span(class="colorstype__text") #{CT_COLORS[i].TEXT}  

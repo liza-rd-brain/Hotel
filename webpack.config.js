@@ -13,7 +13,8 @@ const common = merge([
   {
     entry: { 
       index: PATHS.source + "/index.js",
-      cards: PATHS.source + "/pages/cards/cards.js"
+      cards: PATHS.source + "/pages/UIkit/cards/cards.js",
+      colorsType: PATHS.source + "/pages/UIkit/colorsType/colorsType.js"
     },
     output: {
       path: PATHS.build,
@@ -26,7 +27,11 @@ const common = merge([
       }),
       new HtmlWebpackPlugin({
         filename: "cards/index.html",
-        template: PATHS.source + "/pages/cards/cards.pug"
+        template: PATHS.source + "/pages/UIkit/cards/cards.pug"
+      }),
+      new HtmlWebpackPlugin({
+        filename: "colorsType/index.html",
+        template: PATHS.source + "/pages/UIkit/colorsType/colorsType.pug"
       }),
       new webpack.ProvidePlugin({
         $: "jquery",

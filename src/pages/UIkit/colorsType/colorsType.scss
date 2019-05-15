@@ -1,0 +1,50 @@
+@import "../../../variables";
+@import "../../../mixin";
+
+.colorstype {
+  width: 1440px;
+  background-color: $white;
+  position: relative;
+
+  &_gray {
+    background-color: $gray;
+  }
+  &__logo-icon {
+    //при абсолютном позиционированнии логотипа, проще будет задать паддинг внутренним контейнерам
+    //не будет влиять на паддинг
+    position: absolute;
+    margin: 20px 0 0 20px;
+  }
+  &__column {
+    width: 269.26px;
+    padding: 145px 191px 145px 150px;
+  }
+
+  &__color {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    margin-bottom: 20px;  
+    &_dark {
+      background-color: $dark;
+    }
+    &_dark-75 {
+      background-color: $dark-75;
+    }
+    &_dark-50 {
+      background-color: $dark-50;
+    }
+    &_dark-25 {
+      background-color: $dark-25;
+    }
+    &_dark-5 {
+      background-color: $dark-5;
+    }
+    &_purple {
+      background-color: $purple;
+    }
+    &_green {
+      background-color: $green;
+    }
+  }
+}

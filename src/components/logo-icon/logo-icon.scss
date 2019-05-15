@@ -1,0 +1,27 @@
+@import "../../variables";
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+}
+
+#left-path {
+  fill: $dark-25;
+  &_colored {
+    fill: url(#left-gradient);
+  }
+}
+
+#right-path {
+  fill: $dark-25;
+  &_colored {
+    fill: url(#right-gradient);
+  }
+}
+
+#circle-path {
+    fill: $dark-25;
+    &_colored {
+      fill: url(#circle-gradient);
+    }
+  }
