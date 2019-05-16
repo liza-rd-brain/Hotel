@@ -1,0 +1,19 @@
+include ../../../components/textField/textField.pug
+include ../../../components/logo-icon/logo-icon.pug
+
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        title 
+            cards
+    body
+        .container
+            +logo-icon({isColored:false})
+            div(class=`formElements formElements__wrap`)
+                +textField("text","Email","no")
+
+            
+
+           

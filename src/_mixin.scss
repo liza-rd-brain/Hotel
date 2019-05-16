@@ -4,3 +4,9 @@
   font-weight: $weight;
   color: $color;
 }
+
+
+@mixin body-text {
+  @include text($font-eng,14px,400,$dark-75);
+  line-height: 24px;
+}

@@ -13,8 +13,9 @@ const common = merge([
   {
     entry: { 
       index: PATHS.source + "/index.js",
-      cards: PATHS.source + "/pages/UIkit/cards/cards.js",
-      colorsType: PATHS.source + "/pages/UIkit/colorsType/colorsType.js"
+      cards: PATHS.source + "/pages/uikit/cards/cards.js",
+      colorsType: PATHS.source + "/pages/uikit/colorsType/colorsType.js",
+      formElements: PATHS.source + "/pages/uikit/formElements/formElements.js"
     },
     output: {
       path: PATHS.build,
@@ -27,11 +28,15 @@ const common = merge([
       }),
       new HtmlWebpackPlugin({
         filename: "cards/index.html",
-        template: PATHS.source + "/pages/UIkit/cards/cards.pug"
+        template: PATHS.source + "/pages/uikit/cards/cards.pug"
       }),
       new HtmlWebpackPlugin({
         filename: "colorsType/index.html",
-        template: PATHS.source + "/pages/UIkit/colorsType/colorsType.pug"
+        template: PATHS.source + "/pages/uikit/colorsType/colorsType.pug"
+      }),
+      new HtmlWebpackPlugin({
+        filename: "formElements/index.html",
+        template: PATHS.source + "/pages/uikit/formElements/formElements.pug"
       }),
       new webpack.ProvidePlugin({
         $: "jquery",

@@ -1,15 +1,14 @@
 @import "../../../variables";
 @import "../../../mixin";
 
-* {
+/* * {
   outline: 1px solid gold;
-}
+} */
 
 .colorstype {
   width: 1440px;
-/*   background-color: rgb(154, 128, 179); */
-  /* background-color: $white; */
-  position: relative;
+  background-color: $white;
+/*   position: relative; */
   display: flex;
   justify-content: space-between;
 
@@ -25,12 +24,6 @@
   &_gray {
     background-color: $gray;
   }
-  &__logo-icon {
-    //при абсолютном позиционированнии логотипа, проще будет задать паддинг внутренним контейнерам
-    //не будет влиять на паддинг
-    position: absolute;
-    margin: 30px 0 0 30px;
-  }
 }
 .colors {
   display: flex;
@@ -41,7 +34,6 @@
     width: 70px;
     height: 70px;
     border-radius: 6px;
-    /*  margin-bottom: 20px; */
 
     //перебор цветов лучше сделать в js
     &_dark {
@@ -91,7 +83,6 @@
     width: 100%;
     display: flex;
     margin-bottom: 50px;
-    /*    justify-content: space-between; */
     &_h1 {
       font-size: 24px;
     }
@@ -144,7 +135,6 @@
       @include text($font, inherit, 800, $dark);
       text-transform: uppercase;
       line-height: 15px;
-    /*   margin-bottom: 45px; */
     }
     &_body {
       @include text($font, inherit, 400, $dark-75);

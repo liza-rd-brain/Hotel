@@ -1,0 +1,49 @@
+@import "../../variables";
+@import "../../mixin";
+
+.textField {
+  width: 320px;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 13px 0 13px 15px;
+  &:hover {
+    border: 1px solid $dark-50;
+    &::placeholder {
+      color: $dark-75;
+    }
+  }
+  &:focus {
+    border: 1px solid $dark-50;
+    outline: none;
+    &::placeholder {
+      color: $dark-75;
+    }
+  }
+  &::placeholder {
+    display: block;
+    @include body-text();
+    color: $dark-25;
+  }
+
+  &__no{
+    &:hover {
+      border: 1px solid $dark-25;
+      &::placeholder {
+        color: $dark-25;
+      }
+    }
+    &:focus {
+      border: 1px solid $dark-25;
+      outline: none;
+      &::placeholder {
+        color: $dark-25;
+      }
+    }
+    &::placeholder {
+      display: block;
+      @include body-text();
+      color: $dark-25;
+    }
+  }
+}
