@@ -7,7 +7,7 @@
   font-style: normal;
 } */
 @font-face {
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: Montserrat;
   src: url(./fons/Montserrat-Regular.svg) format("svg"),
     url(./fons/Montserrat-Regular.ttf) format("ttf"),
     url(./fons/Montserrat-Regular.woff) format("woff");
@@ -16,16 +16,26 @@
 }
 
 @font-face {
-  font-family: "Montserrat", "Arial", sans-serif;
+  font-family: Montserrat;
   src: url(./fons/Montserrat-Bold.svg) format("svg"),
-    url(./fons//Montserrat-Bold.ttf) format("ttf"),
+    url(./fons/Montserrat-Bold.ttf) format("ttf"),
     url(./fons/Montserrat-Bold.woff) format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
+
 @font-face {
-  font-family: "Quicksand", "Arial", sans-serif;
+  font-family: Quicksand;
+  src: url(./fons/Quicksand-Regular.svg) format("svg"),
+    url(./fons/Quicksand-Regular.ttf) format("ttf"),
+    url(./fons/Quicksand-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Quicksand;
   src: url(./fons/Quicksand-Bold.svg) format("svg"),
     url(./fons/Quicksand-Bold.ttf) format("ttf"),
     url(./fons/Quicksand-Bold.woff) format("woff");

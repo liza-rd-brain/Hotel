@@ -1,10 +1,26 @@
 @import "../../../variables";
 @import "../../../mixin";
 
+* {
+  outline: 1px solid gold;
+}
+
 .colorstype {
   width: 1440px;
-  background-color: $white;
+/*   background-color: rgb(154, 128, 179); */
+  /* background-color: $white; */
   position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  &__wrap_left {
+    width: 269.26px;
+    padding: 145px 0 125px 150px;
+  }
+  &__wrap_right {
+    width: 403px;
+    padding: 145px 191px 125px 0;
+  }
 
   &_gray {
     background-color: $gray;
@@ -13,18 +29,21 @@
     //при абсолютном позиционированнии логотипа, проще будет задать паддинг внутренним контейнерам
     //не будет влиять на паддинг
     position: absolute;
-    margin: 20px 0 0 20px;
+    margin: 30px 0 0 30px;
   }
-  &__column {
-    width: 269.26px;
-    padding: 145px 191px 145px 150px;
-  }
+}
+.colors {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 
-  &__color {
+  &__block {
     width: 70px;
     height: 70px;
     border-radius: 6px;
-    margin-bottom: 20px;  
+    /*  margin-bottom: 20px; */
+
+    //перебор цветов лучше сделать в js
     &_dark {
       background-color: $dark;
     }
@@ -45,6 +64,92 @@
     }
     &_green {
       background-color: $green;
+    }
+  }
+  &__text {
+    width: 159px;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 29px;
+  }
+
+  &__name {
+    width: 100%;
+    @include text($font-eng, 19px, 700, $dark);
+    align-self: flex-end;
+  }
+  &__desc {
+    width: 100%;
+    @include text($font-eng, 19px, 400, $dark);
+  }
+}
+
+.type {
+  display: flex;
+  justify-content: space-between;
+  &__text {
+    width: 100%;
+    display: flex;
+    margin-bottom: 50px;
+    /*    justify-content: space-between; */
+    &_h1 {
+      font-size: 24px;
+    }
+    &_h2 {
+      font-size: 19px;
+    }
+    &_h3 {
+      font-size: 12px;
+    }
+    &_body {
+      font-size: 14px;
+      align-self: flex-start;
+    }
+  }
+
+  &__name {
+    width: 37px;
+    align-self: flex-start;
+    text-align: right;
+    @include text($font, inherit, 400, $dark-25);
+    text-transform: uppercase;
+    margin-right: 30px;
+    &_h1 {
+      line-height: 29px;
+    }
+    &_h2 {
+      line-height: 23px;
+    }
+    &_h3 {
+      line-height: 15px;
+    }
+    &_body {
+      text-transform: capitalize;
+      line-height: 24px;
+    }
+  }
+
+  &__desc {
+    &_h1 {
+      @include text($font-eng, inherit, 800, $dark);
+      width: 85%;
+      line-height: 30px;
+    }
+    &_h2 {
+      @include text($font-eng, inherit, 800, $dark);
+      width: 80%;
+      line-height: 24px;
+    }
+    &_h3 {
+      @include text($font, inherit, 800, $dark);
+      text-transform: uppercase;
+      line-height: 15px;
+    /*   margin-bottom: 45px; */
+    }
+    &_body {
+      @include text($font, inherit, 400, $dark-75);
+      width: 75%;
+      line-height: 24px;
     }
   }
 }

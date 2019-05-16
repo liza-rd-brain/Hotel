@@ -11,6 +11,13 @@ include ../../../components/logo-icon/logo-icon.pug
         {COLOR:"purple",NAME:"Purple",TEXT:"#BC9CFF"},
         {COLOR:"green",NAME:"Green",TEXT:"#6FCF97"}
     ]
+
+    const CT_TYPE = [
+        {NAME:"h1" ,TEXT:"This one is the sub-section or widget title"},
+        {NAME:"h2" ,TEXT:"Next one is the item title inside widgets"},
+        {NAME:"h3" ,TEXT:"This is a label or CTA text"},
+        {NAME:"body" ,TEXT:"This is the body text which is used for most of the design, like paragraphs, lists, etc."}  
+    ]
     
 doctype html
 html
@@ -20,12 +27,19 @@ html
         title
             colorsType 
     body
-       
         div(class="colorstype")
             +logo-icon({isGray:false})(class="colorstype__logo-icon")
-            div(class="colorstype__column")
+            div(class="colorstype__wrap_left")
                 - for (var i = 0; i < CT_COLORS.length; i++)
-                    div(class="colorstype__item")
-                        div(class=`colorstype__color colorstype__color_${CT_COLORS[i].COLOR}`)
-                        span(class="colorstype__name") #{CT_COLORS[i].NAME}
-                        span(class="colorstype__text") #{CT_COLORS[i].TEXT}  
+                    div(class="colors")
+                        div(class=`colors__block colors__block_${CT_COLORS[i].COLOR}`)
+                        text(class="colors__text")
+                            span(class="colors__name") #{CT_COLORS[i].NAME}
+                            span(class="colors__desc") #{CT_COLORS[i].TEXT}  
+            div(class="colorstype__wrap_right")
+                 - for (var i = 0; i < CT_TYPE.length; i++)
+                    div(class=`type__text type__text_${CT_TYPE[i].NAME}`)
+                            span(class=`type__name type__name_${CT_TYPE[i].NAME}`) #{CT_TYPE[i].NAME}
+                            span(class=`type__desc type__desc_${CT_TYPE[i].NAME}`) #{CT_TYPE[i].TEXT}
+
+                                
