@@ -1,17 +1,26 @@
 @import "../../../variables";
+@import "../../../mixin";
 
 .formElements {
   width: 1440px;
   display: flex;
+/*   pointer-events: none; */
+ 
   &__wrap {
     padding: 140px 150px 150px 150px;
   }
+}
 
-  &__item {
-    width: 320px;
-    display: flex;
-    background-color: $white;
-    flex-wrap: wrap;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  }
+/* .textField{
+  @include block-hoverFocus(); 
+} */
+
+.transparent-wrap {
+  width: 1440px;
+  height: 1853px;
+  /*  background:red; */
+  background: rgba(0, 0, 0, 0);
+  z-index: 1;
+  position: absolute;
+  pointer-events: auto;
 }

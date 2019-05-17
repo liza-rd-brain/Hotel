@@ -1,6 +1,5 @@
 include ../../../components/textField/textField.pug
 include ../../../components/logo-icon/logo-icon.pug
-
 doctype html
 html
     head
@@ -11,9 +10,7 @@ html
     body
         .container
             +logo-icon({isColored:false})
+            div(class="transparent-wrap")   
             div(class=`formElements formElements__wrap`)
-                +textField("text","Email","no")
-
-            
-
-           
+                 +textField("text","Email","hover")
+                 +textField("text","Email")

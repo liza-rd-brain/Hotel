@@ -1,17 +1,19 @@
 import "./textField.scss";
-
-const elemHover = document.querySelector(".hover");
-/* 
-document.onmouseover = function(event) {
-  const elemHover = document.querySelector(".hover");
-  elemHover.style.border = "1px solid $dark-25";
-
-};
-console.log(elemHover.placeholder); */
-/* table.onmouseout = function(event) {
-    var target = event.target;
-    target.style.background = '';
-    text.value += "mouseout " + target.tagName + "\n";
-    text.scrollTop = text.scrollHeight;
-  }; */
-/* elem.style. */
+/* let documentElem = document.querySelector("*");
+documentElem.autofocus = false;
+let elem = document.querySelector(".textField");
+elem.autofocus = true;
+elem.readOnly = true;
+elem.onmouseout = false;
+ */
+//код рабочий!
+/* elem.onblur = function() {
+  if (true) { // введено не число
+    // показать ошибку
+    this.classList.add("error");
+    //... и вернуть фокус обратно
+    elem.focus();
+    elem.autofocus = true;
+  } 
+}; */
+/* console.log(elem); */

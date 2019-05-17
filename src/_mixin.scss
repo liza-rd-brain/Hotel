@@ -5,8 +5,15 @@
   color: $color;
 }
 
-
 @mixin body-text {
-  @include text($font-eng,14px,400,$dark-75);
+  @include text($font-eng, 14px, 400, $dark-75);
   line-height: 24px;
+}
+
+@mixin block-hoverFocus {
+  border: 1px solid $dark-50 /* !important */;
+  outline: none;
+  &::placeholder {
+    color: $dark-75 /* !important */;
+  }
 }

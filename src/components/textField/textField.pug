@@ -1,2 +1,6 @@
 mixin textField(type,placeholder,effect)
-    input(class=`textField textField__${effect} ` type=`${type}` placeholder=`${placeholder}` )
+   -
+     var textFieldClassName = "textField"
+     textFieldClassName+= effect ?` textField_${effect}` : ""
+   input(class=textFieldClassName type=`${type}` placeholder=`${placeholder}`)
+
