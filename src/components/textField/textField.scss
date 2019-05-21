@@ -2,11 +2,20 @@
 @import "../../mixin";
 
 .textField {
-  width: 320px;
   border: 1px solid $dark-25;
   box-sizing: border-box;
   border-radius: 4px;
   padding: 13px 0 13px 15px;
+  &_big {
+    width: 320px;
+  }
+  &_medium {
+    width: 266px;
+  }
+  &_small {
+    width: 150px;
+  }
+
   &::placeholder {
     display: block;
     @include body-text();
@@ -15,13 +24,11 @@
 
   &:hover {
     @include block-hoverFocus();
-
   }
   &:focus {
     @include block-hoverFocus();
-  
   }
-  &_hover{
+  &_hover {
     @include block-hoverFocus();
   }
 }

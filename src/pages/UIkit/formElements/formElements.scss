@@ -4,10 +4,34 @@
 .formElements {
   width: 1440px;
   display: flex;
-/*   pointer-events: none; */
- 
+  /*   pointer-events: none; */
+
   &__wrap {
-    padding: 140px 150px 150px 150px;
+    padding: 140px 141px 132px 141px;
+  }
+  &__column {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    width: 320px;
+    /* justify-content: space-between; */
+  }
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__text {
+    @include h3-text();
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+
+    &_desc {
+      margin-left: auto;
+      @include text($font, 12px, 400, $dark-50);
+      line-height: 15px;
+    }
   }
 }
 
@@ -16,8 +40,8 @@
 } */
 
 .transparent-wrap {
-  width: 1440px;
-  height: 1853px;
+  /*   width: 1440px;
+  height: 1853px; */
   /*  background:red; */
   background: rgba(0, 0, 0, 0);
   z-index: 1;

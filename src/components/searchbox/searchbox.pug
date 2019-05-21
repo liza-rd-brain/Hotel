@@ -4,9 +4,9 @@ include ../button/button.pug
 div(class="searchbox searchbox__wrap")
     h1(class="searchbox__title") Найдём номера под ваши пожелания
     form(class="searchbox__form")
-        +select-item("Прибытие","date","searchbox","ДД.MM.ГГГГ")
-        +select-item("Выезд","date","searchbox","ДД.MM.ГГГГ")
-        +select-item("Гости","guest","searchbox", "Сколько гостей")
+        +select-item("Прибытие","date","ДД.MM.ГГГГ","searchbox")
+        +select-item("Выезд","date","ДД.MM.ГГГГ","searchbox")
+        +select-item("Гости","guest", "Сколько гостей","searchbox")
         +button("подобрать номер","big","full")
       
         

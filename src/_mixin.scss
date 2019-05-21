@@ -5,11 +5,29 @@
   color: $color;
 }
 
-@mixin body-text {
-  @include text($font-eng, 14px, 400, $dark-75);
+//может line-height тоже включить в миксин?!
+
+@mixin h2-text {
+  @include text($font-eng, 24px, 700, $dark);
+  line-height: 30px;
+}
+
+@mixin h2-text {
+  @include text($font-eng, 19px, 700, $dark);
   line-height: 24px;
 }
 
+@mixin h3-text {
+  @include text($font, 12px, 700, $dark);
+  line-height: 15px;
+}
+
+@mixin body-text {
+  @include text($font, 14px, 400, $dark-75);
+  line-height: 24px;
+}
+
+//не помню для чего вынесла!!!
 @mixin block-hoverFocus {
   border: 1px solid $dark-50 /* !important */;
   outline: none;
