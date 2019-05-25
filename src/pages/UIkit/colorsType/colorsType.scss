@@ -5,20 +5,24 @@
   outline: 1px solid gold;
 } */
 
+html {
+  font-size: 12px;
+}
+
 .colorstype {
-  width: 1440px;
+  width: 120rem;
   background-color: $white;
-/*   position: relative; */
+  /*   position: relative; */
   display: flex;
   justify-content: space-between;
 
   &__wrap_left {
-    width: 269.26px;
-    padding: 145px 0 125px 150px;
+    width: 18.7%;
+    padding: 10.07% 0 8.68% 10.42%;
   }
   &__wrap_right {
-    width: 403px;
-    padding: 145px 191px 125px 0;
+    width: 27.99%;
+    padding: 10.07% 13.26% 8.68% 0;
   }
 
   &_gray {
@@ -28,12 +32,13 @@
 .colors {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 1.67rem;
 
   &__block {
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
+    width: 5.83rem;
+    height: 5.83rem;
+    border-radius: 0.5rem;
+    margin-right: 3.33rem;
 
     //перебор цветов лучше сделать в js
     &_dark {
@@ -59,20 +64,21 @@
     }
   }
   &__text {
-    width: 159px;
+    //не получается выровнять колонки без этой ширины. почему?!
+    width: 13.25rem;
     display: flex;
     flex-wrap: wrap;
-    line-height: 29px;
+    line-height: 2.42rem;
   }
 
   &__name {
     width: 100%;
-    @include text($font-eng, 19px, 700, $dark);
+    @include text($font-eng, 1.58rem, 700, $dark);
     align-self: flex-end;
   }
   &__desc {
     width: 100%;
-    @include text($font-eng, 19px, 400, $dark);
+    @include text($font-eng,  1.58rem, 400, $dark);
   }
 }
 
@@ -82,64 +88,60 @@
   &__text {
     width: 100%;
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 4.17rem;
     &_h1 {
-      font-size: 24px;
+      font-size:2rem;
     }
     &_h2 {
       font-size: 19px;
     }
     &_h3 {
-      font-size: 12px;
+      font-size: 1rem;
     }
     &_body {
-      font-size: 14px;
+      font-size: 1.17rem;
       align-self: flex-start;
     }
   }
 
   &__name {
-    width: 37px;
+    width: 3.08rem;
     align-self: flex-start;
     text-align: right;
     @include text($font, inherit, 400, $dark-25);
     text-transform: uppercase;
-    margin-right: 30px;
+    margin-right: 2.5rem;
     &_h1 {
-      line-height: 29px;
+      line-height: 2.42rem;
     }
     &_h2 {
-      line-height: 23px;
+      line-height: 1.92rem;
     }
     &_h3 {
-      line-height: 15px;
+      line-height: 1.25rem;
     }
     &_body {
       text-transform: capitalize;
-      line-height: 24px;
+      line-height: 2rem;
     }
   }
 
   &__desc {
     &_h1 {
-      @include text($font-eng, inherit, 800, $dark);
+      @include h1-text();
       width: 85%;
-      line-height: 30px;
     }
     &_h2 {
-      @include text($font-eng, inherit, 800, $dark);
+      @include h2-text();
       width: 80%;
-      line-height: 24px;
     }
     &_h3 {
-      @include text($font, inherit, 800, $dark);
+      @include h3-text;
       text-transform: uppercase;
-      line-height: 15px;
     }
     &_body {
-      @include text($font, inherit, 400, $dark-75);
+      @include body-text();
       width: 75%;
-      line-height: 24px;
     }
   }
 }

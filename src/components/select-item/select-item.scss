@@ -45,6 +45,7 @@
       top: 13px;
       right: 15px;
       pointer-events: none;
+      color: $dark-50;
     }
   }
 
@@ -77,7 +78,7 @@
     padding-left: 15px;
     cursor: pointer;
 
-    /* width: 130%; */
+    width: 100%;
     background: transparent;
     background-image: none;
     -webkit-appearance: none;

@@ -7,7 +7,7 @@
 
 //может line-height тоже включить в миксин?!
 
-@mixin h2-text {
+@mixin h1-text {
   @include text($font-eng, 24px, 700, $dark);
   line-height: 30px;
 }
