@@ -6,6 +6,8 @@
   box-sizing: border-box;
   border-radius: 4px;
   padding: 13px 0 13px 15px;
+  @include body-text();
+  line-height: 18px;
   &_big {
     width: 320px;
   }
@@ -17,8 +19,6 @@
   }
 
   &::placeholder {
-    display: block;
-    @include body-text();
     color: $dark-25;
   }
 
@@ -26,9 +26,6 @@
     @include block-hoverFocus();
   }
   &:focus {
-    @include block-hoverFocus();
-  }
-  &_hover {
     @include block-hoverFocus();
   }
 }

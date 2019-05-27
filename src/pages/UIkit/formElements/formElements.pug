@@ -17,22 +17,16 @@ html
                     div(class="formElements__item")
                         // образец комментария
                         h3(class="formElements__text") Text Field
-                        span(class="formElements__text formElements__text_desc") Default
                         +textField("big","text","Email")
-                    div(class="formElements__item")
-                        h3(class="formElements__text") Text Field
-                        span(class="formElements__text formElements__text_desc") Hover / Focus
-                        +textField("big","text","This is pretty awesome","hover")
+
                     div(class="formElements__item")
                         h3(class="formElements__text") Dropdown
-                        span(class="formElements__text formElements__text_desc") Default
                         +select-item("","big","Сколько гостей","guest")
+
                     div(class="formElements__item")
-                        //на самом деле тут будет select-item_masked
-                        //с поведением выпадания календаря -?!
+                        // на самом деле тут будет select-item_masked
+                        // с поведением выпадания календаря -?!
                         h3(class="formElements__text") masked text field
-                        span(class="formElements__text formElements__text_desc") Default
-                    div(class="formElements__item")
                         +textField("big","text","ДД.ММ.ГГГГ")
                          // h3(class="formElements__text") Dropdown
                     div(class="formElements__item")

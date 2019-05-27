@@ -1,6 +1,10 @@
 @import "../../variables";
 @import "../../mixin";
 
+#drop {
+  fill: $dark-25;
+}
+
 .select-item {
   display: flex;
   flex-direction: column;
@@ -11,13 +15,25 @@
     vertical-align: middle;
     padding: 0;
     overflow: hidden;
-    &::after {
-      content: url(./img/select-item.png);
 
+    &::after {
+      content: "";
+      border: 4px solid $dark-25;
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 16px;
+      right: 18px;
       pointer-events: none;
+      transform: rotate(45deg);
+    }
+    &::before {
+      content: "";
+      border: 4px solid white;
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      pointer-events: none;
+      transform: rotate(45deg);
+      z-index: 2;
     }
   }
 
@@ -58,6 +74,13 @@
 
     @include text($font, 14px, 400, $dark-75);
     letter-spacing: 0.6px;
+
+    &:hover {
+      outline: none;
+    }
+    &:focus {
+      outline: none;
+    }
 
     &_date {
       text-transform: uppercase;

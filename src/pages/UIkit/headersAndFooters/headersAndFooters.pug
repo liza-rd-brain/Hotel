@@ -1,0 +1,16 @@
+
+include ../../../components/logo-icon/logo-icon.pug
+include ../../../components/header/header.pug
+
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        title
+            headersAndFooters
+    body
+        div(class="headersAndFooters")  
+            +logo-icon({isColored:false})
+            +header()
+            

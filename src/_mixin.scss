@@ -27,11 +27,11 @@
   line-height: 24px;
 }
 
-//не помню для чего вынесла!!!
+//миксин для выделения элементов формы
 @mixin block-hoverFocus {
-  border: 1px solid $dark-50 /* !important */;
+  border: 1px solid $dark-50;
   outline: none;
   &::placeholder {
-    color: $dark-75 /* !important */;
+    color: $dark-75;
   }
 }
