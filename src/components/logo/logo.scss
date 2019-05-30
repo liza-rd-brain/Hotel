@@ -1,0 +1,16 @@
+@import "../../variables";
+
+.logo {
+  &-link {
+  
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    &__logo-icon{
+      margin-right: 12.5px;
+    }
+  }
+  &-title {
+    fill:$dark;
+  }
+}

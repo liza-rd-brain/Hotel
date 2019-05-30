@@ -1,6 +1,10 @@
 @import "../../variables";
 @import "../../mixin";
 
-.header{
-background-color:$white;
+.header {
+  width: 100%;
+  background-color: $white;
+  padding: 15px  140px;
+  display: flex;
+  justify-content: space-between;
 }

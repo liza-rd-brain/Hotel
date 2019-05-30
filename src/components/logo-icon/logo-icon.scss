@@ -1,4 +1,4 @@
-@import "../../variables";
+ @import "../../variables";
 
 .logo-icon {
   width: 48px;
@@ -9,10 +9,9 @@
   //при абсолютном позиционированнии логотипа, проще будет задать паддинг внутренним контейнерам
   //или же задать параметр позиционирования!
   position: absolute;
-  margin: 30px 0 0 30px;
+ /*  margin: 30px 0 0 30px; */
   &_colored {
     position: unset;
-    margin: 0;
   }
 }
 
