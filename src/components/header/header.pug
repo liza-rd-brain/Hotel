@@ -1,7 +1,21 @@
 include ../logo/logo.pug
-include ../menu/menu.pug
+include ../nav/nav.pug
+include ../button/button
 
-mixin header()
+mixin header(option)
+    -
+        var headerClassName = ""
+        var menuClassName = "menu"
+        //menuClassName += options.isLogged ? " menu_logged" : ""
+        //var logged=options.isLogged
+  
     .header
         +logo()
-        +menu({isLogged:false})
+        div(class = menuClassName)
+            +nav()
+            if !option.isLogged
+              +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 
+              +button({isColored:true,size:"small",title:"click me",})  
+              
+            else
+              p hello NickName

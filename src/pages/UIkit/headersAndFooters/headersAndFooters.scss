@@ -3,6 +3,7 @@
   background-color: #f4f4f6;
   width: 1440px;
   display: flex;
+  flex-wrap: wrap;
   /*   pointer-events: none; */
 
   &__wrap {

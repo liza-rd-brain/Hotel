@@ -9,9 +9,8 @@ html
         meta(name='viewport', content="initial-scale=1.0, width=device-width")
         title
             headersAndFooters
-    body
-        div(class="headersAndFooters")  
+    body 
             +logo-icon({isColored:false})
             div(class="headersAndFooters headersAndFooters__wrap")
-                +header()
-            
+                +header({isLogged:true})        
+                +header({isLogged:false}) 

@@ -1,3 +1,12 @@
-mixin button(title,size,fill)
-    button(class=`button button_${size} button_${fill}`)
-        h3(class="button__text") #{title}
+mixin button(options)
+    -
+        var buttonClassName = "button"
+        buttonClassName += options.isColored ? " button_colored": ""
+        buttonClassName += options.isBordered ? " button_bordered": ""
+        buttonClassName += options.isTextButton ? " button_type-text": ""
+        buttonClassName += options.isArrowButton ? " button_type-arrow": ""
+        var buttonTextClassName = "button__text"
+        buttonTextClassName +=options.isTextColored? " button__text_colored": ""
+    button(class=`${buttonClassName} button_size-${options.size}`)
+        h3(class=`${buttonTextClassName}`) #{options.title}
+        

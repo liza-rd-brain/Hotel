@@ -1,2 +1,3 @@
 import "./header.scss";
-import "../menu/menu";
+import "../nav/nav";
+import "../button/button";

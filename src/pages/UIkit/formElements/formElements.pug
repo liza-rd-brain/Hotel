@@ -1,6 +1,8 @@
 include ../../../components/textField/textField.pug
 include ../../../components/logo-icon/logo-icon.pug
 include ../../../components/select-item/select-item.pug
+include ../../../components/button/button.pug
+
 doctype html
 html
     head
@@ -18,11 +20,9 @@ html
                         // образец комментария
                         h3(class="formElements__text") Text Field
                         +textField("big","text","Email")
-
                     div(class="formElements__item")
                         h3(class="formElements__text") Dropdown
                         +select-item("","big","Сколько гостей","guest")
-
                     div(class="formElements__item")
                         // на самом деле тут будет select-item_masked
                         // с поведением выпадания календаря -?!
@@ -39,3 +39,9 @@ html
                     div(class="formElements__item")
                         h3(class="formElements__text") subscription text field
                         +textField("medium","text","Email")
+                    div(class="formElements__item")
+                        +button({isColored:true,size:"small",title:"click me",})  
+                        +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 
+                        +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
+                        +button({isColored:true,size:"big",title:"перейти к отплате",isArrowButton:true})    
+
