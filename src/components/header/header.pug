@@ -14,7 +14,8 @@ mixin header(option)
         div(class = menuClassName)
             +nav()
             if !option.isLogged
-              +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 
+              +button({isBordered:true,size:"small",title:"click me",isTextColored:true})
+              
               +button({isColored:true,size:"small",title:"click me",})  
               
             else

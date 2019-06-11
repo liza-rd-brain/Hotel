@@ -4,7 +4,7 @@ import "normalize.css";
 import "../../../components/textField/textField.scss";
 import "../../../components/select-item/select-item.scss"
 import "../../../components/logo-icon/logo-icon.scss"
-import "../../../components/button/button.scss"
+/* import "../../../components/button/button.scss" */
 
 
 /* 

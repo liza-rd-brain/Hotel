@@ -9,6 +9,7 @@ $purple-50: rgba($purple, 0.5);
 $blue-50: rgba($blue, 0.5);
 $gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
 $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
+$height-default: 44px;
 
 //можно вынести переменные размеров
 
@@ -16,12 +17,13 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
 .button {
   text-decoration: none;
   border-radius: 22px;
-  padding: 14px 0 15px 0;
+  padding: 0px;
+  /* padding: 14px 0 15px 0; */
   outline: none;
   border: 2px;
   cursor: pointer;
   background-color: $white;
-
+  height: $height-default;
   &_size {
     &-small {
       width: 99px;
@@ -38,14 +40,40 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
       background: $gradient-50;
     }
   }
-
   &_bordered {
+    background: $gradient;
+    &:hover {
+      background: $gradient-50;
+    }
+    /* box-sizing: border-box;
+    border-color: transparent;
+
+    margin: 8px;
+    width: 99px;
+    height: 40px;
+    border-width: 2px;
+    border-style: solid;
+
+    background-origin: content-box, border-box;
+    background-clip: content-box, border-box;
+    background-size: cover, cover; 
+    background-repeat: round, round;
+
+    border-radius: 22px;
+    background-image: linear-gradient($white),
+    linear-gradient(to bottom,$purple, $blue); */
+  }
+
+  /* &_bordered {
+    $width-bordered:95px;
+    $height-bordered:40px;
     border: 0px;
+    padding: 0px;
     position: relative;
     background: white;
     width: 95px;
     height: 40px;
-    padding: 0px;
+    
     &::after {
       content: "";
       position: absolute;
@@ -53,8 +81,8 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
       display: block;
       background: $gradient;
       border-radius: 26px;
-      width: 99px;
-      height: 44px;
+      width: $width-bordered+4px;
+      height:$height-bordered+4px;
       top: -2px;
       left: -2px;
     }
@@ -64,7 +92,7 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
       }
     }
   }
-
+ */
   &_type {
     &-text {
       :hover {
@@ -88,15 +116,14 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
         top: 12px; */
         content: "";
         /* border: 4px solid rgba(31, 32, 65, 0.25); */
-       /*  background-image: url("./images/arrow.png"); */
-       background-image: url('./images/arrow.svg');
+        /*  background-image: url("./images/arrow.png"); */
+        background-image: url("./images/arrow.svg");
         position: absolute;
         top: 16px;
         right: 18px;
         width: 24px;
         height: 24px;
         pointer-events: none;
-       
       }
     }
   }
@@ -107,9 +134,15 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
     color: white;
     text-transform: uppercase;
     line-height: 15px;
+    background-color: inherit;
+    margin: 2px;
+    /*    height:($height-default)-4px; */
+    border-radius: 28px;
+    padding: 12px 0 13px 0;
     /*   letter-spacing: 0.7px; */
     &_colored {
       color: $purple;
+      background-color: white;
     }
   }
 }
