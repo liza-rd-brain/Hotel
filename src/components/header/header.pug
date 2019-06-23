@@ -12,11 +12,9 @@ mixin header(option)
     .header
         +logo()
         div(class = menuClassName)
-            +nav()
+            +nav({isDefault:true})
             if !option.isLogged
-              +button({isBordered:true,size:"small",title:"click me",isTextColored:true})
-              
-              +button({isColored:true,size:"small",title:"click me",})  
-              
+              +button({isBordered:true,title:"login",isTextColored:true,isHeaderButton:true})
+              +button({isColored:true,title:"register",isHeaderButton:true})  
             else
               p hello NickName

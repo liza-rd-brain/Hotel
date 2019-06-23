@@ -9,7 +9,9 @@ $purple-50: rgba($purple, 0.5);
 $blue-50: rgba($blue, 0.5);
 $gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
 $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
-$height-default: 44px;
+$height-medium: 44px;
+$height-small: ($height-medium - 10px);
+
 
 //можно вынести переменные размеров
 
@@ -23,10 +25,17 @@ $height-default: 44px;
   border: 2px;
   cursor: pointer;
   background-color: $white;
-  height: $height-default;
+  height: $height-medium;
   &_size {
+    
+    &-xSmall {
+      width: 87px;
+    }
     &-small {
       width: 99px;
+    }
+    &-medium {
+      width: 196px;
     }
     &-big {
       width: 320px;
@@ -99,6 +108,9 @@ $height-default: 44px;
         color: $dark-50;
       }
     }
+    &-header {
+      height: $height-small;
+    }
     &-arrow {
       width: 320px;
       position: relative;
@@ -136,13 +148,16 @@ $height-default: 44px;
     line-height: 15px;
     background-color: inherit;
     margin: 2px;
-    /*    height:($height-default)-4px; */
+    /*    height:($height-medium)-4px; */
     border-radius: 28px;
     padding: 12px 0 13px 0;
     /*   letter-spacing: 0.7px; */
     &_colored {
       color: $purple;
       background-color: white;
+    }
+    &_header {
+      padding: 7px 18px 7px 18px;
     }
   }
 }

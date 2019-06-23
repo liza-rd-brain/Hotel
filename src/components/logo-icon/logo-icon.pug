@@ -3,6 +3,9 @@ mixin logo-icon(options)
   -
     var logoClassName = "logo-icon"
     logoClassName += options.isColored ? " logo-icon_colored" : ""
+    //здесь добавляю отступ, но класс задается в родительском компоненте
+    logoClassName += options.hasMargin ? " logo-link__logo-icon" : ""
+
     var pathClassName 
     pathClassName= options.isColored ? "_colored" : ""
   svg(class = logoClassName

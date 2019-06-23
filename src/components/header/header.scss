@@ -4,16 +4,19 @@
 .header {
   width: 100%;
   background-color: $white;
-  padding: 15px  140px;
+  padding: 15px 140px;
   display: flex;
   justify-content: space-between;
   //пока для примера потом убрать
   margin-bottom: 40px;
 }
 
-.menu{
+.menu {
   display: flex;
   align-items: center;
+
+  & > button,
+  nav {
+    margin-right: 20px;
+  }
 }
-
-
