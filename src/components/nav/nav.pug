@@ -1,9 +1,9 @@
 -
   const NAV_ITEM = [
-  {ITEM_NAME:"home"},
+  {ITEM_NAME:"home111111111111111"},
   {ITEM_NAME:"about us"},
   {ITEM_NAME:"services",ITEM_EXPANDED:true},
-  {ITEM_NAME:"careers"},
+  {ITEM_NAME:"careers1111111111111"},
   {ITEM_NAME:"news"},
   {ITEM_NAME:"documentation"}] 
 
@@ -18,10 +18,10 @@ mixin nav(options)
     - for (var i = 0; i < NAV_ITEM.length; i++)
       if !NAV_ITEM[i].ITEM_EXPANDED
         div(class=navItemClassName)
-          a(class="nav__link") #{NAV_ITEM[i].ITEM_NAME}
+          a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}`) #{NAV_ITEM[i].ITEM_NAME}
       else 
         div(class=navItemClassName + " nav__item_expanded")
-          a(class="nav__link") #{NAV_ITEM[i].ITEM_NAME}
+          a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}`) #{NAV_ITEM[i].ITEM_NAME}
           div(class="nav__expanded")
           
 

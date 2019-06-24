@@ -6,8 +6,7 @@ mixin header(option)
     -
         var headerClassName = ""
         var menuClassName = "menu"
-        //menuClassName += options.isLogged ? " menu_logged" : ""
-        //var logged=options.isLogged
+        const USER_NAME="cosmin negotia"
   
     .header
         +logo()
@@ -17,4 +16,4 @@ mixin header(option)
               +button({isBordered:true,title:"login",isTextColored:true,isHeaderButton:true})
               +button({isColored:true,title:"register",isHeaderButton:true})  
             else
-              p hello NickName
+              p(class="user-name") #{USER_NAME}
