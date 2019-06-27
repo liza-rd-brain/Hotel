@@ -2,6 +2,7 @@
 include ../../../components/logo-icon/logo-icon.pug
 include ../../../components/header/header.pug
 include ../../../components/button/button.pug
+include ../../../components/footer/footer.pug
 
 doctype html
 html
@@ -15,6 +16,4 @@ html
             div(class="headersAndFooters headersAndFooters__wrap")
                 +header({isLogged:false}) 
                 +header({isLogged:true})        
-                +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 
-                div(class="space")
-                +button({isColored:true,size:"small",title:"click me",})  
+                +footer()

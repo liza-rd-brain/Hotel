@@ -1,0 +1,49 @@
+@import "../../variables";
+@import "../../mixin";
+
+.footer {
+  width: 100%;
+  &__item {
+    width: 100%;
+    background-color: $white;
+    padding: 100px 140px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+}
+
+.widget {
+ & a, span {
+   margin-bottom: 20px;
+ }
+
+  &__logo,&__subscribe {
+    width: 260px;
+  }
+
+  &__desc {
+    margin: 0;
+  }
+  &__title{
+    @include h3-text();
+    text-transform: uppercase;
+  }
+  &__text {
+    @include body-text();
+    &::first-letter{
+      text-transform: uppercase;
+    }
+  }
+  &__wrap{
+    display: flex;
+   justify-content: space-between;
+  }
+  &__group{
+    display: flex;
+    flex-direction:column;
+  }
+  &__link{
+    text-decoration: none;
+  }
+}

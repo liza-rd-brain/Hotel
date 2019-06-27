@@ -1,14 +1,9 @@
-*{
-  outline:1px solid gold;
-}
+
 .headersAndFooters {
-  /*  padding: 150px 0 130px 0; */
   background-color: #f4f4f6;
   width: 1440px;
   display: flex;
   flex-wrap: wrap;
-  /*   pointer-events: none; */
-
   &__wrap {
     padding: 150px 0 130px 0;
   }

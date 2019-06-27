@@ -1,0 +1,37 @@
+include ../logo/logo.pug
+
+-
+    const WIDGET_DESC ={text:"Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."}
+    const WIDGET_ITEM = [{TITLE:"navigation",
+                         LINKS:[{NAME:"about us",HREF:"#"},
+                                {NAME:"news",HREF:"#"},
+                                {NAME:"support",HREF:"#"},
+                                {NAME:"products",HREF:"#"}]},
+                          {TITLE:"about us",
+                           LINKS:[{NAME:"who we are",HREF:"#"},
+                                {NAME:"our team",HREF:"#"},
+                                {NAME:"careers",HREF:"#"},
+                                {NAME:"investors",HREF:"#"}]},
+                          {TITLE:"support",
+                           LINKS:[ {NAME:"documentation",HREF:"#"},
+                                    {NAME:"community",HREF:"#"},
+                                    {NAME:"get in touch",HREF:"#"}]}]
+    const WIDGET_SUBSCRIBE={TITLE:"Subscribe to our newsletter",
+                            TEXT:"Receive our latest news and promotions in your inbox!",
+                            PLACEHOLDER:"Your email address"}                              
+
+mixin footer(option)
+    footer(class="footer")
+        section(class="footer__item footer__widget")
+            div(class="widget__logo widget")
+                +logo()
+                p(class="widget__desc widget__text") #{WIDGET_DESC.text}
+            div(class="widget__wrap")
+                - for (var i = 0; i < WIDGET_ITEM.length; i++)
+                    div(class="widget__group widget")
+                        span(class="widget__title") #{WIDGET_ITEM[i].TITLE}
+                        for item in WIDGET_ITEM[i].LINKS
+                            a(class="widget__link widget__text" href=`${item.HREF}`) #{item.NAME}
+            div(class="widget__subscribe widget")
+                span(class="widget__title") #{WIDGET_SUBSCRIBE.TITLE}
+                p(class="widget__desc widget__text") #{WIDGET_SUBSCRIBE.TEXT}                
