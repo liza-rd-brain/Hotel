@@ -9,22 +9,22 @@
 
 @mixin h1-text {
   @include text($font-eng, 24px, 700, $dark);
-  line-height: 30px;
+  /* line-height: 30px; */
 }
 
 @mixin h2-text {
   @include text($font-eng, 19px, 700, $dark);
-  line-height: 24px;
+  /* line-height: 24px; */
 }
 
 @mixin h3-text {
   @include text($font, 12px, 700, $dark);
-  line-height: 15px;
+  /* line-height: 15px; */
 }
 
 @mixin body-text {
   @include text($font, 14px, 400, $dark-75);
-  line-height: 24px;
+  /* line-height: 24px; */
 }
 
 //миксин для выделения элементов формы
