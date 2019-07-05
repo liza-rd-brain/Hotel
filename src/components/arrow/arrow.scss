@@ -1,0 +1,19 @@
+@import "../../variables";
+
+.arrow-icon {
+  fill: $white;
+  position: absolute;
+  top: 6px;
+  right: 2px;
+  padding: 7px;
+ /*  cursor: pointer; */
+  
+
+  &_colored {
+    fill: url(#paint0_linear);
+   
+  }
+  &_noShaded {
+    filter: none;
+  }
+}

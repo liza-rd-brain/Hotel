@@ -10,6 +10,11 @@ mixin button(options)
         var buttonTextClassName = "button__text"
         buttonTextClassName +=options.isTextColored? " button__text_colored": ""
         buttonTextClassName +=!options.size? " button__text_header": ""
-    button(class=`${buttonClassName}`)
-        h3(class=buttonTextClassName) #{options.title}
+    if !options.isArrowButton 
+        button(class=`${buttonClassName}`)
+            h3(class=buttonTextClassName) #{options.title}
+    else  
+        button(class=`${buttonClassName}`)
+            h3(class=buttonTextClassName) #{options.title} 
+            +arrow({isShaded:true})
         

@@ -1,5 +1,6 @@
 include ../logo/logo.pug
-
+include ../textField/textField.pug
+include ../arrow/arrow.pug
 -
     const WIDGET_DESC  ={text:"Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."}
     const WIDGET_ITEM = {TYPE:"standart",
@@ -58,4 +59,5 @@ mixin footer(option)
                             a(class="widget__link widget__text widget__text_link" href=`${item.HREF}`) #{item.NAME}
             div(class="widget__subscribe widget")
                 span(class="widget__title") #{WIDGET_SUBSCRIBE.TITLE}
-                p(class="widget__desc widget__text") #{WIDGET_SUBSCRIBE.TEXT}                
+                p(class="widget__desc widget__text") #{WIDGET_SUBSCRIBE.TEXT} 
+                +textField("medium","text","Email","arrow")             

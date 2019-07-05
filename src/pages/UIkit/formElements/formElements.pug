@@ -2,6 +2,7 @@ include ../../../components/textField/textField.pug
 include ../../../components/logo-icon/logo-icon.pug
 include ../../../components/select-item/select-item.pug
 include ../../../components/button/button.pug
+include ../../../components/arrow/arrow.pug
 
 doctype html
 html
@@ -38,10 +39,14 @@ html
                         +select-item("filter date dropdown","medium","19 авг - 23 авг","date")
                     div(class="formElements__item")
                         h3(class="formElements__text") subscription text field
-                        +textField("medium","text","Email")
+                        +textField("medium","text","Email","arrow")
                     div(class="formElements__item")
                         +button({isColored:true,size:"small",title:"click me",})  
                         +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 
                         +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
                         +button({isColored:true,size:"big",title:"перейти к отплате",isArrowButton:true})    
-
+                    div(class="test")    
+                        +arrow({isColored:true, isShaded:true})
+                        +arrow({isShaded:true})
+                        +arrow({})
+                        +arrow({isColored:true})

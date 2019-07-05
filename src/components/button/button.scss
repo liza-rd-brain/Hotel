@@ -66,12 +66,23 @@ $height-small: ($height-medium - 10px);
     &-arrow {
       width: 320px;
       position: relative;
-      &:after {
+      &::after {
         content: "";
-        background-image: url("./images/arrow.svg");
+        background: url("./images/arrow_forward.svg") no-repeat;
+        /*   background-image: url("./images/arrow.png"); */
         position: absolute;
         top: 16px;
         right: 18px;
+        &_big {
+          width: 320px;
+        }
+        &_medium {
+          width: 266px;
+        }
+        &_small {
+          width: 150px;
+        }
+
         width: 24px;
         height: 24px;
         pointer-events: none;
@@ -89,6 +100,7 @@ $height-small: ($height-medium - 10px);
     margin: 2px;
     border-radius: 28px;
     padding: 12px 0 13px 0;
+    letter-spacing: -0.3px;
     &_colored {
       color: $purple;
       background-color: white;

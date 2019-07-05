@@ -5,19 +5,41 @@
   border: 1px solid $dark-25;
   box-sizing: border-box;
   border-radius: 4px;
-  padding: 13px 0 13px 15px;
+  padding: 12px 0 12px 15px;
   @include body-text();
   line-height: 18px;
-  &_big {
-    width: 320px;
-  }
-  &_medium {
-    width: 266px;
-  }
-  &_small {
-    width: 150px;
+
+  &__wrap{
+    max-width: 266px;
+    width: 100%;
+    display: flex;
+   /*  position: relative; */
   }
 
+  &_size{
+    &-big {
+      width: 320px;
+    }
+    &-medium {
+      max-width: 266px;
+      width: 100%;
+    }
+    &-small {
+      width: 150px;
+    }
+  
+  }
+
+  &_type-arrow{
+    
+  }
+  &__link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
   &::placeholder {
     color: $dark-25;
   }
