@@ -4,6 +4,8 @@ mixin select-item(title, item_size, text, select_type, container)
     div(class=`select-item select-item_${item_size} ${container}__select-item_${type}`)
         h3(class="select-item__title")(сlass!=attributes.class) #{title}
         div(class="select-item__wrap")
-            select(class=`select-item__select select__${select_type}`)
-                option(class="select-item__option") #{text}
-                option(class="select-item__option") #{text}
+            div(class=`select-item__select select__${select_type}`) #{title}
+                span(class="select-item__text") #{text}
+            div(class="select-item__options") default
+
+        

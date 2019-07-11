@@ -27,7 +27,10 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "easydropdown": "^4.1.1",
+    "item-quantity-dropdown": "^2.0.2",
     "jquery": "^3.4.1",
+    "jquery-nice-select": "^1.1.0",
     "normalize.css": "^8.0.1"
   }
 }

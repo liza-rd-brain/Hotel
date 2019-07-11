@@ -4,6 +4,7 @@ const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 
+
 const PATHS = {
   source: path.join(__dirname, "src"),
   build: path.join(__dirname, "docs")
