@@ -1,15 +1,53 @@
 @import "../../variables";
 @import "../../mixin";
+/* не забыть добавить box-shadow */
 
 .footer {
   width: 100%;
+  margin-bottom: 40px;
+  background-color: $white;
   &__item {
     width: 100%;
-    background-color: $white;
-    padding: 100px 140px 104px 140px;
+    padding-left: 140px;
+    padding-right: 140px;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    &_creative {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__widget {
+    padding-top: 100px;
+    padding-bottom: 99px;
+  }
+  &__copyright {
+    padding-top: 23px;
+    padding-bottom: 20px;
+    border-top: 1px solid $dark-5;
+    /*  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); */
+  }
+  &__text {
+    @include body-text();
+    line-height: 24px;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    &_link {
+      line-height: 19px;
+    }
+  }
+  &__social {
+    display: flex;
+    & > :last-child {
+      margin: 0;
+    }
+  }
+  &_creative {
+    padding: 100px 440px 110px 440px;
+    /* padding-top: 100px;
+    padding-bottom: 110px; */
   }
 }
 
@@ -20,7 +58,7 @@
 
   & a,
   span,
-  &__text {
+  &__desc {
     margin-bottom: 20px;
   }
 
@@ -33,29 +71,17 @@
   &__logo {
     margin-right: 40px;
   }
-  /* &__subscribe {
-    margin-left: 40px;
-  } */
-
-  /* &__desc {
-    margin: 0;
-  } */
+  &__desc {
+    margin-top: 0;
+  }
   &__title {
     @include h3-text();
     margin-top: 4px;
     text-transform: uppercase;
     display: block;
+    letter-spacing: -0.3px;
   }
-  &__text {
-    @include body-text();
-    line-height: 24px;
-    &::first-letter {
-      text-transform: uppercase;
-    }
-    &_link {
-      line-height: 19px;
-    }
-  }
+
   &__wrap {
     display: flex;
     /* justify-content: space-between; */
@@ -67,11 +93,9 @@
     display: flex;
     flex-direction: column;
     width: 200px;
-  /*   width: 168px;
+    /*   width: 168px;
     margin-right:7%; */
-    &_type-default {
-    
-    }
+
     &_type-standart {
       &:nth-child(1) {
         flex-grow: 1;
@@ -89,5 +113,31 @@
   }
 }
 
+.social {
+  &__link {
+    cursor: pointer;
+    margin-right: 20px;
+    display: inline-block;
+  }
+  &__icon {
+    fill: url(#paint0_linear);
+    &:hover {
+      filter: brightness(120%);
+    }
+  }
+}
 
-/*widget__group_${WIDGET_ITEM.TYPE}*/
+.creative {
+  & > .logo-link,
+  .footer__social,
+  .footer__text {
+    margin: 0 auto;
+    text-align: center;
+  }
+  & > :nth-child(1) {
+    margin-bottom: 20px;
+  }
+  & > :nth-child(2) {
+    margin-bottom: 25px;
+  }
+}
