@@ -1,6 +1,7 @@
 @import "../../variables";
 @import "../../mixin";
 
+
 .nav {
   @include body-text();
   display: flex;

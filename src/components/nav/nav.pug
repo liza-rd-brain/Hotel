@@ -1,3 +1,4 @@
+
 -
   const NAV_ITEM = [
   {ITEM_NAME:"home",ITEM_HREF:"#"},
@@ -6,13 +7,11 @@
   {ITEM_NAME:"careers",ITEM_HREF:"#"},
   {ITEM_NAME:"news",ITEM_HREF:"#"},
   {ITEM_NAME:"documentation",ITEM_HREF:"#"}] 
-
   
-
-mixin nav(options) 
+mixin nav(options)
   -
-    var navItemClassName="nav__item"
-    navItemClassName+=options.isDefault ? " nav__item_default":""
+      var navItemClassName="nav__item"
+      navItemClassName+=options.isDefault ? " nav__item_default":""
 
   nav(class="nav")
     - for (var i = 0; i < NAV_ITEM.length; i++)
@@ -22,6 +21,4 @@ mixin nav(options)
       else 
         div(class=navItemClassName + " nav__item_expanded")
           a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}` href=`${NAV_ITEM[i].ITEM_HREF}`) #{NAV_ITEM[i].ITEM_NAME}
-          div(class="nav__expanded")
-          
-
+          div(class="nav__expanded")  

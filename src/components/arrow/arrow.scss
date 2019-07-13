@@ -6,12 +6,10 @@
   top: 6px;
   right: 2px;
   padding: 7px;
- /*  cursor: pointer; */
-  
-
+  box-sizing: content-box;
+  /*  cursor: pointer; */
   &_colored {
     fill: url(#paint0_linear);
-   
   }
   &_noShaded {
     filter: none;

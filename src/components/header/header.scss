@@ -8,8 +8,7 @@
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  //пока для примера потом убрать
-  margin-bottom: 40px;
+  box-shadow: 0px 10px 20px $dark-5;
 }
 
 .menu {

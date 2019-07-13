@@ -7,5 +7,19 @@ mixin select-item(title, item_size, text, select_type, container)
             div(class=`select-item__select select__${select_type}`) #{title}
                 span(class="select-item__text") #{text}
             div(class="select-item__options") default
-
-        
+            //пример для обычной выпадашки
+    select(name="foo" id="my-select")
+        option(value="") Select
+        option(value="1") Option 1
+        option(value="2") Option 2
+        option(value="3") Option 3
+        //пример для сложной выпадашки
+    div(class="iqdropdown")
+        p(class="iqdropdown-selection")
+        div(class="iqdropdown-menu")
+            div(class="iqdropdown-menu-option" data-id="item1")
+                p(class="iqdropdown-item") Item 1
+            div(class="iqdropdown-menu-option" data-id="item2")
+                p(class="iqdropdown-item") Item 2
+            div(class="iqdropdown-menu-option" data-id="item3")
+                p(class="iqdropdown-item") Item 3

@@ -1,4 +1,3 @@
-
 .headersAndFooters {
   background-color: #f4f4f6;
   width: 1440px;
@@ -6,5 +5,11 @@
   flex-wrap: wrap;
   &__wrap {
     padding: 150px 0 130px 0;
+  }
+  & > header,footer {
+    margin-bottom: 40px;
+  }
+  & > :last-child {
+    margin-bottom: 0px;
   }
 }

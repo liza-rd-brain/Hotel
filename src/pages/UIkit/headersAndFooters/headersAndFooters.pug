@@ -4,6 +4,13 @@ include ../../../components/header/header.pug
 include ../../../components/button/button.pug
 include ../../../components/footer/footer.pug
 
+-
+    const nav = [{ITEM_NAME:"O нас",ITEM_HREF:"#"},
+                {ITEM_NAME:"Услуги",ITEM_HREF:"#",ITEM_EXPANDED:true},
+                {ITEM_NAME:"Вакансии",ITEM_HREF:"#"},
+                {ITEM_NAME:"Новости",ITEM_HREF:"#"},
+                {ITEM_NAME:"Соглашения",ITEM_HREF:"#",ITEM_EXPANDED:true}]
+
 doctype html
 html
     head

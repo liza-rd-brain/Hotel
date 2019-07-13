@@ -1,4 +1,7 @@
 import "./select-item.scss";
+import easydropdown from 'easydropdown';
+import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.js';
+import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
 
 $(".select-item__wrap").click(function(event) {
   var select = $(event.target).children(".select-item__select");
@@ -10,8 +13,18 @@ $(".select-item__wrap").click(function(event) {
   options.toggleClass("select-item__options_visible");
 });
 
-/* $(".select-item__wrap").on('click', function() {
+
+
+$(".select-item__wrap").on('click', function() {
   alert($(this).attr('class'));
-}); */
+});
 console.log("test");
 console.log($);
+
+easydropdown.all()
+const edd = easydropdown('#my-select');
+
+
+$(document).ready(() => {
+  $('.iqdropdown').iqDropdown({ });
+});
