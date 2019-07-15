@@ -2,7 +2,7 @@ include ../logo/logo.pug
 include ../nav/nav.pug
 include ../button/button
 
-mixin header(options)
+mixin header({isLogged=true,text_login})
     -
         var headerClassName = ""
         var menuClassName = "menu"
@@ -13,8 +13,8 @@ mixin header(options)
         +logo()
         div(class = menuClassName)
             +nav({isDefault:true})
-            if !options.isLogged
-              +button({isBordered:true,title:"login",isTextColored:true,isHeaderButton:true})
+            if !isLogged
+              +button({isBordered:true,title:text_login ||"login",isTextColored:true,isHeaderButton:true})
               +button({isColored:true,title:"register",isHeaderButton:true})  
             else
               p(class="user-name") #{USER_NAME}         

@@ -7,6 +7,7 @@ mixin button(options)
         buttonClassName += options.isArrowButton ? " button_type-arrow": ""
         buttonClassName += options.isHeaderButton ? " button_type-header": ""
         buttonClassName += options.size ? ` button_size-${options.size}`: ""
+        
         var buttonTextClassName = "button__text"
         buttonTextClassName +=options.isTextColored? " button__text_colored": ""
         buttonTextClassName +=!options.size? " button__text_header": ""
