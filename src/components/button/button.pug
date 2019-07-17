@@ -1,21 +1,39 @@
-mixin button(options)
+mixin button({isColored,isBordered,isTextButton,isArrowButton,isHeaderButton,size,isTextColored,title})
+
     -
-        var buttonClassName = "button"
-        buttonClassName += options.isColored ? " button_colored": ""
-        buttonClassName += options.isBordered ? " button_bordered": ""
-        buttonClassName += options.isTextButton ? " button_type-text": ""
-        buttonClassName += options.isArrowButton ? " button_type-arrow": ""
-        buttonClassName += options.isHeaderButton ? " button_type-header": ""
-        buttonClassName += options.size ? ` button_size-${options.size}`: ""
+        const buttonClassName = [
+            "button",
+            isColored ? "button_colored" : null,
+            isBordered ? "button_bordered": null,
+            isTextButton ? "button_type-text": null,
+            isArrowButton ? "button_type-arrow": null,
+            isHeaderButton ? "button_type-header": null,
+            size ? `button_size-${size}`: null,
+        ].filter(className => className !== null).join(" ");
+
+        const buttonTextClassName =[
+            "button__text",
+            isTextColored ? "button__text_colored": null,
+            !size ? "button__text_header":null,
+        ].filter(className => className !== null).join(" ");
+
         
-        var buttonTextClassName = "button__text"
-        buttonTextClassName +=options.isTextColored? " button__text_colored": ""
-        buttonTextClassName +=!options.size? " button__text_header": ""
-    if !options.isArrowButton 
+        //var buttonClassName = "button"
+        //buttonClassName += isColored ? " button_colored": ""
+        //buttonClassName += isBordered ? " button_bordered": ""
+        //buttonClassName += isTextButton ? " button_type-text": ""
+        //buttonClassName += isArrowButton ? " button_type-arrow": ""
+        //buttonClassName += isHeaderButton ? " button_type-header": ""
+        //buttonClassName += size ? ` button_size-${size}`: ""
+        //var buttonTextClassName = "button__text"
+        //buttonTextClassName +=isTextColored? " button__text_colored": ""
+        //buttonTextClassName +=!size? " button__text_header": ""
+
+    if !isArrowButton 
         button(class=`${buttonClassName}`)
-            h3(class=buttonTextClassName) #{options.title}
+            h3(class=buttonTextClassName) #{title}
     else  
         button(class=`${buttonClassName}`)
-            h3(class=buttonTextClassName) #{options.title} 
+            h3(class=buttonTextClassName) #{title} 
             +arrow({isShaded:true})
         

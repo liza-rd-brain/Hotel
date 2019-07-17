@@ -21,7 +21,7 @@ $(".select-item__wrap").on('click', function() {
 console.log("test");
 console.log($);
 
-easydropdown.all()
+/* easydropdown.all() */
 const edd = easydropdown('#my-select');
 
 

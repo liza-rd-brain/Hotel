@@ -68,7 +68,7 @@ $height-small: ($height-medium - 10px);
       position: relative;
       &::after {
         content: "";
-        background: url("./images/arrow_forward.svg") no-repeat;
+     /*    background: url("./images/arrow_forward.svg") no-repeat; */
         /*   background-image: url("./images/arrow.png"); */
         position: absolute;
         top: 16px;

@@ -1,10 +1,10 @@
 
 mixin arrow(options)
   -
-    var arrowClassName = "arrow-icon"
+    const arrowClassName = "arrow-icon"
     arrowClassName += options.isColored ? " arrow-icon_colored" : ""
    // здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
-    var gClassName 
+    const gClassName 
     gClassName= options.isShaded ? "" : "arrow-icon_noShaded"
   svg(width="26" height="26" class=arrowClassName viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg")
     g(class=gClassName filter="url(#filter0_d)")
