@@ -1,0 +1,67 @@
+include ../../../components/header/header.pug
+include ../../../components/footer/footer.pug
+
+-
+     //- const first_header_props = {isLogged:false,text_login:"войти"}
+     const WIDGET_DESC_default = {text:"Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"}
+     const WIDGET_ITEM_default = {TYPE:"standart",
+                                   ITEMS:[{TITLE:"навигация",
+                                   LINKS:[{NAME:"о нас",HREF:"#"},
+                                        {NAME:"новости",HREF:"#"},
+                                        {NAME:"служба поддержки",HREF:"#"},
+                                        {NAME:"услуги",HREF:"#"}]},
+                                   {TITLE:"о нас",
+                                   LINKS:[{NAME:"о сервисе",HREF:"#"},
+                                        {NAME:"наша команда",HREF:"#"},
+                                        {NAME:"вакансии",HREF:"#"},
+                                        {NAME:"инвесторы",HREF:"#"}]},
+                                   {TITLE:"служба поддержки",
+                                   LINKS:[ {NAME:"соглашения",HREF:"#"},
+                                             {NAME:"сообщества",HREF:"#"},
+                                             {NAME:"связь с нами",HREF:"#"}]}]}
+     const WIDGET_SUBSCRIBE_default={TITLE:"Подписка",
+                              TEXT:"Получайте специальные предложения и новости сервиса",
+                              PLACEHOLDER:"Your email address"} 
+
+     //- const button_text={text_login:"войти",text_register:"зарегистрироваться"}
+
+     const nav=[{name:"о нас",href:"#"},{name:"услуги",href:"#",expanded:true} ] 
+     const text_login="войти"
+     const text_register ="зарегистрироваться"
+     //- const nav=[{name:"о нас",href:"#"},
+     //-           {name:"услуги",href:"#",expanded:true},
+     //-           {name:"вакансии",href:"#"},
+     //-           {name:"новости",href:"#"},
+     //-           {name:"соглашения",href:"#",expanded:true}] 
+
+     const header_unLogged = {isLogged:false,text_login,text_register,nav}
+      //- const header_unLogged = {isLogged:false,text_register:"зарегистрироваться"}
+     
+
+
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        title
+            headersAndFooters
+    body 
+    .landing-wrap
+          +header(header_unLogged)
+          //- пока для примерного представления
+          div(class="image" height="830" width="1440") 
+          
+
+    
+
+
+//- doctype html
+//- html
+//-     head
+//-         meta(charset = 'utf-8')
+//-         meta(name='viewport', content="initial-scale=1.0, width=device-width")
+//-         title 
+//-             landing
+//-     body
+//-         .landing test

@@ -1,24 +1,38 @@
 
 -
-  const NAV_ITEM = [
-  {ITEM_NAME:"home",ITEM_HREF:"#"},
-  {ITEM_NAME:"about us",ITEM_HREF:"#"},
-  {ITEM_NAME:"services",ITEM_EXPANDED:true,ITEM_HREF:"#"},
-  {ITEM_NAME:"careers",ITEM_HREF:"#"},
-  {ITEM_NAME:"news",ITEM_HREF:"#"},
-  {ITEM_NAME:"documentation",ITEM_HREF:"#"}] 
+    const NAV_ITEM = [{ITEM_NAME:"home",ITEM_HREF:"#"},
+                    {ITEM_NAME:"about us",ITEM_HREF:"#"},
+                    {ITEM_NAME:"services",ITEM_EXPANDED:true,ITEM_HREF:"#"},
+                    {ITEM_NAME:"careers",ITEM_HREF:"#"},
+                    {ITEM_NAME:"news",ITEM_HREF:"#"},
+                    {ITEM_NAME:"documentation",ITEM_HREF:"#"}] 
   
-mixin nav(options)
-  -
-      var navItemClassName="nav__item"
-      navItemClassName+=options.isDefault ? " nav__item_default":""
+    //- mixin nav(options)
+mixin nav([nav0,nav1,nav2,nav3,nav4,nav5])
 
-  nav(class="nav")
-    - for (var i = 0; i < NAV_ITEM.length; i++)
-      if !NAV_ITEM[i].ITEM_EXPANDED
-        div(class=navItemClassName)
-          a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}` href=`${NAV_ITEM[i].ITEM_HREF}`) #{NAV_ITEM[i].ITEM_NAME}
-      else 
-        div(class=navItemClassName + " nav__item_expanded")
-          a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}` href=`${NAV_ITEM[i].ITEM_HREF}`) #{NAV_ITEM[i].ITEM_NAME}
-          div(class="nav__expanded")  
+    -
+        //- let [nav0,nav1,nav2,nav3,nav4,nav5] = nav
+        //- let i = 0
+        //- var navItemClassName="nav__item"
+        //- navItemClassName+=options.isDefault ? " nav__item_default":""
+
+    nav(class="nav")
+        //- div(class=navItemClassName)
+        //-      a(class="nav__link" title=`${`nav${i}`.name}` || `${NAV_ITEM[i].ITEM_NAME}` href=`${`nav${i}`.href} || ${NAV_ITEM[i].ITEM_HREF}`) #{`nav${i}`.name || NAV_ITEM[i].ITEM_NAME }
+        - for (var i = 0; i < NAV_ITEM.length; i++)
+            if !(`nav${i}`.expanded) || !NAV_ITEM[i].ITEM_EXPANDED
+                div(class=navItemClassName)
+                a(class="nav__link" title=`nav${i}`.name || `${NAV_ITEM[i].ITEM_NAME}` href=`${`nav${i}`.href} || ${NAV_ITEM[i].ITEM_HREF}`) #{`nav${i}`.name}||#{NAV_ITEM[i].ITEM_NAME}
+            else 
+                div(class=navItemClassName + " nav__item_expanded")
+                a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}` href=`${NAV_ITEM[i].ITEM_HREF}`) #{NAV_ITEM[i].ITEM_NAME}
+                div(class="nav__expanded") 
+
+        //- - for (var i = 0; i < NAV_ITEM.length; i++)
+        //- if !NAV_ITEM[i].ITEM_EXPANDED
+        //-     div(class=navItemClassName)
+        //-     a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}` href=`${NAV_ITEM[i].ITEM_HREF}`) #{NAV_ITEM[i].ITEM_NAME}
+        //- else 
+        //-     div(class=navItemClassName + " nav__item_expanded")
+        //-     a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}` href=`${NAV_ITEM[i].ITEM_HREF}`) #{NAV_ITEM[i].ITEM_NAME}
+        //-     div(class="nav__expanded")  

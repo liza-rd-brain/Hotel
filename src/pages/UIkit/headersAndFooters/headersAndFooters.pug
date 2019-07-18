@@ -10,7 +10,8 @@ include ../../../components/footer/footer.pug
                 {ITEM_NAME:"Вакансии",ITEM_HREF:"#"},
                 {ITEM_NAME:"Новости",ITEM_HREF:"#"},
                 {ITEM_NAME:"Соглашения",ITEM_HREF:"#",ITEM_EXPANDED:true}]
-    const first_header_props = {isLogged:false,text_login:"войти"}
+    const header_default_unLogged = {isLogged:false}
+    const header_default_logged = {isLogged:true}
 
 doctype html
 html
@@ -22,7 +23,7 @@ html
     body 
             +logo-icon({isColored:false})
             div(class="headersAndFooters headersAndFooters__wrap")
-                +header(first_header_props) 
-                +header({isLogged:true})        
+                +header(header_default_unLogged) 
+                +header(header_default_logged)        
                 +footer({isCreative:false})
                 +footer({isCreative:true})

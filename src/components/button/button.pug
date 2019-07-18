@@ -17,23 +17,13 @@ mixin button({isColored,isBordered,isTextButton,isArrowButton,isHeaderButton,siz
             !size ? "button__text_header":null,
         ].filter(className => className !== null).join(" ");
 
-        
-        //var buttonClassName = "button"
-        //buttonClassName += isColored ? " button_colored": ""
-        //buttonClassName += isBordered ? " button_bordered": ""
-        //buttonClassName += isTextButton ? " button_type-text": ""
-        //buttonClassName += isArrowButton ? " button_type-arrow": ""
-        //buttonClassName += isHeaderButton ? " button_type-header": ""
-        //buttonClassName += size ? ` button_size-${size}`: ""
-        //var buttonTextClassName = "button__text"
-        //buttonTextClassName +=isTextColored? " button__text_colored": ""
-        //buttonTextClassName +=!size? " button__text_header": ""
+        //- const button_login_title="login"
+        //- const button_register_title="register"
 
     if !isArrowButton 
         button(class=`${buttonClassName}`)
-            h3(class=buttonTextClassName) #{title}
+            h3(class=buttonTextClassName) #{title }
     else  
         button(class=`${buttonClassName}`)
             h3(class=buttonTextClassName) #{title} 
-            +arrow({isShaded:true})
-        
+            +arrow({isShaded:true})    

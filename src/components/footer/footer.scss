@@ -1,6 +1,5 @@
 @import "../../variables";
 @import "../../mixin";
-/* не забыть добавить box-shadow */
 
 .footer {
   width: 100%;
@@ -27,7 +26,6 @@
     padding-top: 23px;
     padding-bottom: 20px;
     border-top: 1px solid $dark-5;
-    /*  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); */
   }
   &__text {
     @include body-text();
@@ -47,8 +45,6 @@
   }
   &_creative {
     padding: 100px 440px 110px 440px;
-    /* padding-top: 100px;
-    padding-bottom: 110px; */
   }
 }
 
@@ -85,17 +81,12 @@
 
   &__wrap {
     display: flex;
-    /* justify-content: space-between; */
-    /* min-width: 44%; */
-    /* margin-left: -50px; */
     width: 100%;
   }
   &__group {
     display: flex;
     flex-direction: column;
     width: 200px;
-    /*   width: 168px;
-    margin-right:7%; */
 
     &_type-standart {
       &:nth-child(1) {

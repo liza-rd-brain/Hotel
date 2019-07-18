@@ -3,7 +3,8 @@ include ../textField/textField.pug
 include ../arrow/arrow.pug
 include ../social/social.pug
 -
-    const WIDGET_DESC  ={text:"Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."}
+    //- дефолтные аргументы
+    const WIDGET_DESC ={text:"Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."}
     const WIDGET_ITEM = {TYPE:"standart",
                         ITEMS:[{TITLE:"navigation",
                          LINKS:[{NAME:"about us",HREF:"#"},
@@ -27,34 +28,8 @@ include ../social/social.pug
     const WIDGET_COPYRIGHT={TEXT1:"Copyright ",
                             TEXT2:" 2018 Toxin UI Kit. All rights reserved."} 
 
-    
-
-                     
-                            
-    const WIDGET_DESC_default={text:"Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"}
-    const WIDGET_ITEM_default = {TYPE:"standart",
-                         ITEMS:[{TITLE:"навигация",
-                         LINKS:[{NAME:"о нас",HREF:"#"},
-                                {NAME:"новости",HREF:"#"},
-                                {NAME:"служба поддержки",HREF:"#"},
-                                {NAME:"услуги",HREF:"#"}]},
-                          {TITLE:"о нас",
-                           LINKS:[{NAME:"о сервисе",HREF:"#"},
-                                {NAME:"наша команда",HREF:"#"},
-                                {NAME:"вакансии",HREF:"#"},
-                                {NAME:"инвесторы",HREF:"#"}]},
-                          {TITLE:"служба поддержки",
-                           LINKS:[ {NAME:"соглашения",HREF:"#"},
-                                    {NAME:"сообщества",HREF:"#"},
-                                    {NAME:"связь с нами",HREF:"#"}]}]}
-
-    const WIDGET_SUBSCRIBE_default={TITLE:"Подписка",
-                            TEXT:"Получайте специальные предложения и новости сервиса",
-                            PLACEHOLDER:"Your email address"}  
-    
-                                
-mixin footer(option)
-    if !option.isCreative
+mixin footer({isCreative,})
+    if !isCreative
         footer(class="footer")
             section(class="footer__item footer__widget")
                 div(class="widget__logo widget")
