@@ -1,4 +1,3 @@
-
 -
     const NAV_ITEM = [{name:"home",href:"#"},
                       {name:"about us",href:"#"},
@@ -7,11 +6,11 @@
                       {name:"news",href:"#"},
                       {name:"documentation",href:"#"}] 
 
-mixin nav(params)
+mixin nav(options)
     -
-        const currArray = params || NAV_ITEM
+        const currArray = options || NAV_ITEM
         var navItemClassName="nav__item"
-        //- navItemClassName+=options.isDefault ? " nav__item_default":""
+        //- navItemClassName+=options.isDefault ? " nav__item_default":"
 
     nav(class="nav")
         - for (let i = 0; i < currArray.length; i++)
@@ -21,12 +20,4 @@ mixin nav(params)
             else 
                 div(class=navItemClassName + " nav__item_expanded")
                 a(class="nav__link" title=`${currArray[i].name}` href=`${currArray[i].href}`) #{currArray[i].name}
-                div(class="nav__expanded")
-        //- - for (var i = 0; i < NAV_ITEM.length; i++)
-        //- if !NAV_ITEM[i].ITEM_EXPANDED
-        //-     div(class=navItemClassName)
-        //-     a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}` href=`${NAV_ITEM[i].ITEM_HREF}`) #{NAV_ITEM[i].ITEM_NAME}
-        //- else 
-        //-     div(class=navItemClassName + " nav__item_expanded")
-        //-     a(class="nav__link" title=`${NAV_ITEM[i].ITEM_NAME}` href=`${NAV_ITEM[i].ITEM_HREF}`) #{NAV_ITEM[i].ITEM_NAME}
-        //-     div(class="nav__expanded")  
+                div(class="nav__expanded")    

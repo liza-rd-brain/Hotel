@@ -5,13 +5,11 @@ include ../../../components/button/button.pug
 include ../../../components/footer/footer.pug
 
 -
-    const nav = [{ITEM_NAME:"O нас",ITEM_HREF:"#"},
-                {ITEM_NAME:"Услуги",ITEM_HREF:"#",ITEM_EXPANDED:true},
-                {ITEM_NAME:"Вакансии",ITEM_HREF:"#"},
-                {ITEM_NAME:"Новости",ITEM_HREF:"#"},
-                {ITEM_NAME:"Соглашения",ITEM_HREF:"#",ITEM_EXPANDED:true}]
-    const header_default_unLogged = {isLogged:false}
-    const header_default_logged = {isLogged:true}
+    const header_unLogged = {isLogged:false}
+    const header_logged = {isLogged:true}
+    const footer_regular = {isCreative:false}
+    const footer_creative = {isCreative:true}
+
 
 doctype html
 html
@@ -23,7 +21,7 @@ html
     body 
             +logo-icon({isColored:false})
             div(class="headersAndFooters headersAndFooters__wrap")
-                +header(header_default_unLogged) 
-                +header(header_default_logged)        
-                +footer({isCreative:false})
-                +footer({isCreative:true})
+                +header(header_unLogged) 
+                +header(header_logged)        
+                +footer(footer_regular)
+                +footer(footer_creative)

@@ -2,40 +2,38 @@ include ../../../components/header/header.pug
 include ../../../components/footer/footer.pug
 
 -
-     //- const first_header_props = {isLogged:false,text_login:"войти"}
-     const WIDGET_DESC_default = {text:"Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"}
-     const WIDGET_ITEM_default = {TYPE:"standart",
-                                   ITEMS:[{TITLE:"навигация",
-                                   LINKS:[{NAME:"о нас",HREF:"#"},
-                                        {NAME:"новости",HREF:"#"},
-                                        {NAME:"служба поддержки",HREF:"#"},
-                                        {NAME:"услуги",HREF:"#"}]},
-                                   {TITLE:"о нас",
-                                   LINKS:[{NAME:"о сервисе",HREF:"#"},
-                                        {NAME:"наша команда",HREF:"#"},
-                                        {NAME:"вакансии",HREF:"#"},
-                                        {NAME:"инвесторы",HREF:"#"}]},
-                                   {TITLE:"служба поддержки",
-                                   LINKS:[ {NAME:"соглашения",HREF:"#"},
-                                             {NAME:"сообщества",HREF:"#"},
-                                             {NAME:"связь с нами",HREF:"#"}]}]}
-     const WIDGET_SUBSCRIBE_default={TITLE:"Подписка",
-                              TEXT:"Получайте специальные предложения и новости сервиса",
-                              PLACEHOLDER:"Your email address"} 
-
-     //- const button_text={text_login:"войти",text_register:"зарегистрироваться"}
-
-     //- const nav=[{name:"о нас",href:"#"},{name:"услуги",href:"#",expanded:true} ] 
-     const text_login="войти"
-     const text_register ="зарегистрироваться"
+     const header_text_login="войти"
+     const header_text_register ="зарегистрироваться"
      const nav=[{name:"о нас",href:"#"},
                {name:"услуги",href:"#",expanded:true},
                {name:"вакансии",href:"#"},
                {name:"новости",href:"#"},
                {name:"соглашения",href:"#",expanded:true}] 
+     const header_unLogged = {isLogged:false,header_text_login,header_text_register,nav}
+     const widget_desc = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+     const widget_item = [{title:"навигация",
+                                   links:[{name:"о нас",href:"#"},
+                                        {name:"новости",href:"#"},
+                                        {name:"служба поддержки",href:"#"},
+                                        {name:"услуги",href:"#"}]},
+                                   {title:"о нас",
+                                   links:[{name:"о сервисе",href:"#"},
+                                        {name:"наша команда",href:"#"},
+                                        {name:"вакансии",href:"#"},
+                                        {name:"инвесторы",href:"#"}]},
+                                   {title:"служба поддержки",
+                                   links:[ {name:"соглашения",href:"#"},
+                                             {name:"сообщества",href:"#"},
+                                             {name:"связь с нами",href:"#"}]}]                              
+     const subscribe={title:"Подписка",
+                              text:"Получайте специальные предложения и новости сервиса",
+                              placeholder:"Email"} 
 
-     const header_unLogged = {isLogged:false,text_login,text_register,nav}
-      //- const header_unLogged = {isLogged:false,text_register:"зарегистрироваться"}
+     const copyright={text_copy:"Copyright ",
+                         text:" 2018 Toxin отель. Все права зачищены."} 
+                              
+
+    
      
 
 
@@ -50,18 +48,5 @@ html
     .landing-wrap
           +header(header_unLogged)
           //- пока для примерного представления
-          div(class="image" height="830" width="1440") 
-          
-
-    
-
-
-//- doctype html
-//- html
-//-     head
-//-         meta(charset = 'utf-8')
-//-         meta(name='viewport', content="initial-scale=1.0, width=device-width")
-//-         title 
-//-             landing
-//-     body
-//-         .landing test
+          div(class="image" height="830" width="1440")
+          +footer({widget_desc,widget_item,subscribe,copyright}) 

@@ -2,20 +2,21 @@ include ../logo/logo.pug
 include ../nav/nav.pug
 include ../button/button
 
-//- mixin header({isLogged,text_register},{text_login})
+
 mixin header({isLogged,text_login,text_register,nav})
     -
         var headerClassName = ""
         var menuClassName = "menu"
         const USER_NAME="cosmin negotia"
-        const button_login_default=""
+        const button_login={isBordered:true,title:text_login ||"login",isTextColored:true,isHeaderButton:true}
+        const button_register={isColored:true,title:text_register||"register",isHeaderButton:true}
         
     header(class="header")
         +logo()
         div(class = menuClassName)
             +nav(nav)
             if !isLogged
-              +button({isBordered:true,title:text_login ||"login",isTextColored:true,isHeaderButton:true})
-              +button({isColored:true,title:text_register||"register",isHeaderButton:true})  
+                +button(button_login)
+                +button(button_register)  
             else
-              p(class="user-name") #{USER_NAME}         
+                p(class="user-name") #{USER_NAME}         

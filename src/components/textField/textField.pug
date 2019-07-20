@@ -1,12 +1,13 @@
-mixin textField(textField_size,input_type,placeholder,effect)
-  -
-    var textFieldClassName = `textField  textField_size-${textField_size}`  
-    textFieldClassName+= effect ? " textField_type-arrow": ""  
+mixin textField({size,input_type,effect},placeholder)
+    -
+        //- let {size,input_type,effect} = text_field
+        let textFieldClassName = `textField  textField_size-${size}`  
+        textFieldClassName+= effect ? " textField_type-arrow": ""  
 
-  div(class="textField__wrap")
-    if !effect
-      input(class=textFieldClassName type=`${input_type}` placeholder=`${placeholder}`)
-    else  
-      input(class=textFieldClassName type=`${input_type}` placeholder=`${placeholder}`)
-      a(class="textField__link" href="#")
-        +arrow({isColored:true})
+    div(class="textField__wrap")
+        if !effect
+            input(class=textFieldClassName type=`${input_type}` placeholder=`${placeholder}`)
+        else  
+            input(class=textFieldClassName type=`${input_type}` placeholder=`${placeholder}`)
+            a(class="textField__link" href="#")
+                +arrow({isColored:true})

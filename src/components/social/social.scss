@@ -1,4 +1,11 @@
 .social {
+  /*   margin: 0 auto; */
+  & > :last-child {
+    margin-right: 0;
+  }
+  &_creative {
+    margin: 0 auto;
+  }
   &__link {
     cursor: pointer;
     margin-right: 20px;

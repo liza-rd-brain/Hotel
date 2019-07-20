@@ -4,53 +4,63 @@ include ../arrow/arrow.pug
 include ../social/social.pug
 -
     //- дефолтные аргументы
-    const WIDGET_DESC ={text:"Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."}
-    const WIDGET_ITEM = {TYPE:"standart",
-                        ITEMS:[{TITLE:"navigation",
-                         LINKS:[{NAME:"about us",HREF:"#"},
-                                {NAME:"news",HREF:"#"},
-                                {NAME:"support",HREF:"#"},
-                                {NAME:"products",HREF:"#"}]},
-                          {TITLE:"about us",
-                           LINKS:[{NAME:"who we are",HREF:"#"},
-                                {NAME:"our team",HREF:"#"},
-                                {NAME:"careers",HREF:"#"},
-                                {NAME:"investors",HREF:"#"}]},
-                          {TITLE:"support",
-                           LINKS:[ {NAME:"documentation",HREF:"#"},
-                                    {NAME:"community",HREF:"#"},
-                                    {NAME:"get in touch",HREF:"#"}]}]}
+    const WI_DESC ="Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
+    const WI_ITEM = [{title:"navigation",
+                         links:[{name:"about us",href:"#"},
+                                {name:"news",href:"#"},
+                                {name:"support",href:"#"},
+                                {name:"products",href:"#"}]},
+                          {title:"about us",
+                           links:[{name:"who we are",href:"#"},
+                                {name:"our team",href:"#"},
+                                {name:"careers",href:"#"},
+                                {name:"investors",href:"#"}]},
+                          {title:"support",
+                           links:[ {name:"documentation",href:"#"},
+                                    {name:"community",href:"#"},
+                                    {name:"get in touch",href:"#"}]}]
 
-    const WIDGET_SUBSCRIBE={TITLE:"Subscribe to our newsletter",
-                            TEXT:"Receive our latest news and promotions in your inbox!",
-                            PLACEHOLDER:"Your email address"}  
+    const WI_SUBSCRIBE={title:"Subscribe to our newsletter",
+                        text:"Receive our latest news and promotions in your inbox!",
+                        placeholder:"Your email address"}  
     
-    const WIDGET_COPYRIGHT={TEXT1:"Copyright ",
-                            TEXT2:" 2018 Toxin UI Kit. All rights reserved."} 
+    const WI_COPYRIGHT={text_copy:"Copyright ",
+                        text:" 2018 Toxin UI Kit. All rights reserved."} 
 
-mixin footer({isCreative,})
+    const text_field={size:"medium",input_type:"text",effect:"arrow"}      
+                      
+
+
+
+mixin footer({isCreative,widget_desc,widget_item,subscribe=WI_SUBSCRIBE,copyright})
+    -
+        const currWidgetItem = widget_item || WI_ITEM
+        const currPlaceholder = subscribe.placeholder
+        const currCopyright = copyright || WI_COPYRIGHT
+        
+
     if !isCreative
         footer(class="footer")
             section(class="footer__item footer__widget")
                 div(class="widget__logo widget")
                     +logo()
-                    p(class="widget__desc footer__text") #{WIDGET_DESC.text}
+                    p(class="widget__desc footer__text") #{widget_desc||WI_DESC}
                 div(class="widget__wrap")
-                    - for (var i = 0; i < WIDGET_ITEM.ITEMS.length; i++)
+                    - for (var i = 0; i <currWidgetItem.length; i++)
                         div(class=` widget__group widget`)
-                            span(class="widget__title") #{WIDGET_ITEM.ITEMS[i].TITLE}
-                            for item in WIDGET_ITEM.ITEMS[i].LINKS
-                                a(class="widget__link footer__text footer__text_link" href=`${item.HREF}`) #{item.NAME}
+                            span(class="widget__title") #{currWidgetItem[i].title}
+                            for item incurrWidgetItem[i].links
+                                a(class="widget__link footer__text footer__text_link" href=`${item.href}`) #{item.name}
                 div(class="widget__subscribe widget")
-                    span(class="widget__title") #{WIDGET_SUBSCRIBE.TITLE}
-                    p(class="widget__desc footer__text") #{WIDGET_SUBSCRIBE.TEXT} 
-                    +textField("medium","text","Email","arrow")      
+                    span(class="widget__title") #{ subscribe.title || WI_SUBSCRIBE.title}
+                    p(class="widget__desc footer__text") #{subscribe.text || WI_SUBSCRIBE.text} 
+                    +textField(text_field,currPlaceholder)      
             section(class="footer__item footer__copyright copyright") 
-                span(class="footer__text footer__text_copyright") #{WIDGET_COPYRIGHT.TEXT1}&#169;#{WIDGET_COPYRIGHT.TEXT2}           
+                span(class="footer__text footer__text_copyright") #{currCopyright.text_copy}&#169;#{currCopyright.text}           
                 +social()
     else
         footer(class="footer footer_creative")  
             section(class="footer__item_creative creative")
                 +logo()
-                p(class="footer__text") #{WIDGET_DESC.text}
-                +social()   
+                p(class="footer__text") #{WI_DESC}
+                +social({class:"social_creative"})   
