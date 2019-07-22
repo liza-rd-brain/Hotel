@@ -15,6 +15,7 @@ html {
   /*   position: relative; */
   display: flex;
   justify-content: space-between;
+  box-sizing: initial;
 
   &__wrap_left {
     width: 18.7%;
@@ -33,12 +34,14 @@ html {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.67rem;
+ 
 
   &__block {
     width: 5.83rem;
     height: 5.83rem;
     border-radius: 0.5rem;
     margin-right: 3.33rem;
+    
 
     //перебор цветов лучше сделать в js
     &_dark {

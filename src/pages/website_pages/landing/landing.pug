@@ -11,7 +11,7 @@ include ../../../components/footer/footer.pug
                {name:"соглашения",href:"#",expanded:true}] 
      const header_unLogged = {isLogged:false,header_text_login,header_text_register,nav}
      const widget_desc = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
-     const widget_item = [{title:"навигация",
+     const widget_items = [{title:"навигация",
                                    links:[{name:"о нас",href:"#"},
                                         {name:"новости",href:"#"},
                                         {name:"служба поддержки",href:"#"},
@@ -49,4 +49,4 @@ html
           +header(header_unLogged)
           //- пока для примерного представления
           div(class="image" height="830" width="1440")
-          +footer({widget_desc,widget_item,subscribe,copyright}) 
+          +footer({widget_desc,widget_items,subscribe,copyright}) 

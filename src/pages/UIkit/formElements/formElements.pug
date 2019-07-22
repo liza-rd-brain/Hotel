@@ -4,6 +4,10 @@ include ../../../components/select-item/select-item.pug
 include ../../../components/button/button.pug
 include ../../../components/arrow/arrow.pug
 
+-
+    const textField_big = {size:"big",input_type:"text"}
+    const textField_medium_arrow = {size:"medium",input_type:"text",effect:"arrow"}
+
 doctype html
 html
     head
@@ -17,17 +21,18 @@ html
             div(class="formElements formElements__wrap")
                 div(class="formElements__column ")
                     div(class="formElements__item")
-                        // образец комментария
                         h3(class="formElements__text") Text Field
-                        +textField("big","text","Email")
+                        +textField(textField_big,"Email")
+
                     div(class="formElements__item")
                         h3(class="formElements__text") Dropdown
                         +select-item("","big","Сколько гостей","guest")
+                        
                     div(class="formElements__item")
                         // на самом деле тут будет select-item_masked
                         // с поведением выпадания календаря -?!
                         h3(class="formElements__text") masked text field
-                        +textField("big","text","ДД.ММ.ГГГГ")
+                        +textField(textField_big,"ДД.ММ.ГГГГ")
                          // h3(class="formElements__text") Dropdown
                     div(class="formElements__item")
                          +select-item("date Dropdown","small","ДД.MM.ГГГГ","date")
@@ -38,7 +43,7 @@ html
                         +select-item("filter date dropdown","medium","19 авг - 23 авг","date")
                     div(class="formElements__item")
                         h3(class="formElements__text") subscription text field
-                        +textField("medium","text","Email","arrow")
+                        +textField(textField_medium_arrow,"Email")
                     div(class="formElements__item")
                         +button({isColored:true,size:"small",title:"click me",})  
                         +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 

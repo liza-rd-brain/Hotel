@@ -1,25 +1,33 @@
+include ../select-menu/select-menu
+
 //h3 по умолчанию будет включен в select-item, если вдруг заголовок не нужен, передаем пустой ""
 mixin select-item(title, item_size, text, select_type, container)
     //здесь выбор доп класса с контейнером сделать как в логотипе,если есть
+    div(class="iqdropdown" id= "iqdropdown__select")
+        p(class="iqdropdown-selection" id= "iqdropdown__text") сколько гостей
+        +select-menu()
+
+
     div(class=`select-item select-item_${item_size} ${container}__select-item_${type}`)
-        h3(class="select-item__title")(сlass!=attributes.class) #{title}
         div(class="select-item__wrap")
             div(class=`select-item__select select__${select_type}`) #{title}
                 span(class="select-item__text") #{text}
             div(class="select-item__options") default
+            
             //пример для обычной выпадашки
-    select(name="foo" id="my-select")
-        option(value="") Select
-        option(value="1") Option 1
-        option(value="2") Option 2
-        option(value="3") Option 3
+    //- select(name="f" id="my-select")
+    //-     option(value="") Select
+    //-     option(value="1") Option 1
+    //-     option(value="2") Option 2
+    //-     option(value="3") Option 3
+
         //пример для сложной выпадашки
-    div(class="iqdropdown")
-        p(class="iqdropdown-selection")
-        div(class="iqdropdown-menu")
-            div(class="iqdropdown-menu-option" data-id="item1")
-                p(class="iqdropdown-item") Item 1
-            div(class="iqdropdown-menu-option" data-id="item2")
-                p(class="iqdropdown-item") Item 2
-            div(class="iqdropdown-menu-option" data-id="item3")
-                p(class="iqdropdown-item") Item 3
+        //- div(class="iqdropdown")
+        //-     p(class="iqdropdown-selection")
+        //- div(class="iqdropdown-menu")
+        //-     div(class="iqdropdown-menu-option" data-id="item1")
+        //-         p(class="iqdropdown-item") Item 1
+        //-     div(class="iqdropdown-menu-option" data-id="item2")
+        //-         p(class="iqdropdown-item") Item 2
+        //-     div(class="iqdropdown-menu-option" data-id="item3")
+        //-         p(class="iqdropdown-item") Item 3

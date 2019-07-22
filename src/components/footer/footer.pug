@@ -5,7 +5,7 @@ include ../social/social.pug
 -
     //- дефолтные аргументы
     const WI_DESC ="Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
-    const WI_ITEM = [{title:"navigation",
+    const WI_ITEMS = [{title:"navigation",
                          links:[{name:"about us",href:"#"},
                                 {name:"news",href:"#"},
                                 {name:"support",href:"#"},
@@ -34,7 +34,7 @@ include ../social/social.pug
 
 mixin footer({isCreative,widget_desc,widget_item,subscribe=WI_SUBSCRIBE,copyright})
     -
-        const currWidgetItem = widget_item || WI_ITEM
+        const currWidgetItem = widget_item || WI_ITEMS
         const currPlaceholder = subscribe.placeholder
         const currCopyright = copyright || WI_COPYRIGHT
         
