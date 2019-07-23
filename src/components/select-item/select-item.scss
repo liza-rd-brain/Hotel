@@ -3,12 +3,21 @@
 
 //не дает стилизовать через классы
 
-#iqdropdown {
-  &__select {
+.iqdropdown {
+  &.iqdropdown__select {
     border: 1px solid $dark-25;
     height: 44px;
   }
+  &.menu-open.iqdropdown__select {
+    border: 1px solid $dark-50;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+}
 
+.iqdropdown .iqdropdown-selection.iqdropdown {
   &__text {
     display: block;
     @include text($font, 14px, 400, $dark-75);
@@ -37,31 +46,16 @@
       z-index: 2;
     }
   }
-  /*   &__arrow{
-    content: "";
-    border: 4px solid white;
-    position: absolute;
-    top: 14px;
-    right: 18px;
-    pointer-events: none;
-    transform: rotate(45deg);
-    z-index: 2;
-  } */
 }
-.menu-open #iqdropdown {
-  &__select {
-    /*   border: $dark-50; */
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-  }
 
+.menu-open .iqdropdown-selection.iqdropdown {
   &__text::after {
     border: 4px solid $dark-75;
     transform: rotate(135deg);
   }
 }
+
+
 
 #drop {
   fill: $dark-25;
