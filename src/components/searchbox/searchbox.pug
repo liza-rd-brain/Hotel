@@ -1,12 +1,12 @@
-include ../select-item/select-item.pug
+include ../select-guest/select-guest.pug
 include ../button/button.pug
 
 div(class="searchbox searchbox__wrap")
     h1(class="searchbox__title") Найдём номера под ваши пожелания
     form(class="searchbox__form")
-        +select-item("Прибытие","date","ДД.MM.ГГГГ","searchbox")
-        +select-item("Выезд","date","ДД.MM.ГГГГ","searchbox")
-        +select-item("Гости","guest", "Сколько гостей","searchbox")
+        //- +select-item("Прибытие","date","ДД.MM.ГГГГ","searchbox")
+        //- +select-item("Выезд","date","ДД.MM.ГГГГ","searchbox")
+        +select-guest("Гости","guest", "Сколько гостей","searchbox")
         +button({isColored:true,title:"Подобрать номер",size:"big"})
       
         

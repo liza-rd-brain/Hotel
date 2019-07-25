@@ -9,7 +9,13 @@ import "./select-menu.scss";
  
   
   /* var textPluralDef = (items>1 && items<5)?"гостя":"гостей" */
+
+  $(`button-increment`).click(() => {
+    debugger;
+    console.log("test");
+  });
   
+    
   $(`button-increment`).on('click', function(){
     debugger;
     console.log("test");

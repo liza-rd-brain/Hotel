@@ -1,0 +1,9 @@
+include ../select-menu/select-menu
+
+//h3 по умолчанию будет включен в select-item, если вдруг заголовок не нужен, передаем пустой ""
+mixin select-guest({size,type})
+    //здесь выбор доп класса с контейнером сделать как в логотипе,если есть
+    div(class="iqdropdown iqdropdown__select")
+        p(class="iqdropdown-selection iqdropdown__text")
+        //может select-menu тоже проще вытащить в этот компонент?!
+        +select-menu()

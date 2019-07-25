@@ -30,6 +30,7 @@
     "easydropdown": "^4.1.1",
     "item-quantity-dropdown": "^2.0.2",
     "jquery": "^3.4.1",
+    "jquery-datetimepicker": "^2.5.21",
     "jquery-nice-select": "^1.1.0",
     "lodash": "^4.17.14",
     "normalize.css": "^8.0.1"

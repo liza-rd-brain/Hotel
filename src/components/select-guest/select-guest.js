@@ -1,6 +1,6 @@
 import "item-quantity-dropdown/lib/item-quantity-dropdown.min.js";
 import "item-quantity-dropdown/lib/item-quantity-dropdown.min.css";
-import "./select-item.scss";
+import "./select-guest.scss";
 import "../select-menu/select-menu";
 // import easydropdown from 'easydropdown';
 
