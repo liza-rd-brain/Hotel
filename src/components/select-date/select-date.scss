@@ -1,2 +1,29 @@
 @import "../../variables";
 @import "../../mixin";
+
+//временная мера для стилизации
+.xdsoft_datetimepicker.my_datetimepicker {
+  display: block;
+  position: absolute;
+  left: 311.984px;
+  top: 435px;
+
+  & .xdsoft_calendar th {
+    background: $white;
+    border: none;
+  }
+  & .xdsoft_date {
+    background: $white;
+    border: none;
+  }
+}
+
+//убрали выпадашки у месяца/года
+.xdsoft_datetimepicker .my_datetimepicker.xdsoft_label i {
+  display: none;
+}
+
+//убрали правую стрелку
+.xdsoft_datetimepicker.my_datetimepicker .xdsoft_next{
+    background-image: none;
+}

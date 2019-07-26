@@ -1,6 +1,10 @@
+include ../arrow/arrow
 
 mixin select-date({size,type})
-    div(class="test")
     input(id="datetimepicker" type="text") 
+    div(class="test")
+        +arrow({isColored:true})
+    div(class="test_2")
+        
         
         
