@@ -45,14 +45,8 @@ const GUEST = {
 
 $().ready(() => {
   $(".iqdropdown").iqDropdown(GUEST);
-  /*   $(".iqdropdown").iqDropdown({}); */
-  //дефолтный текст
+ 
   $(".iqdropdown-selection").text("Сколько гостей");
-
-  /* $(`.button-decrement.button-increment`);
-   */
-
-  /*  selectionText("item"); */
 });
 
 $(`button-increment`).click(() => {

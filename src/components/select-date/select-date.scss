@@ -1,12 +1,22 @@
 @import "../../variables";
 @import "../../mixin";
 
-//временная мера для стилизации
+// !!!! Не получается убрать при ховере оранжевый квадратик
+
 .xdsoft_datetimepicker.my_datetimepicker {
+  //временная мера для стилизации
   display: block;
+
   position: absolute;
   left: 311.984px;
   top: 435px;
+
+  box-shadow: 0px 10px 20px $dark-5;
+  border-radius: 4px;
+
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   & .xdsoft_calendar th {
     background: $white;
@@ -18,12 +28,92 @@
   }
 }
 
-//убрали выпадашки у месяца/года
-.xdsoft_datetimepicker .my_datetimepicker.xdsoft_label i {
-  display: none;
+.xdsoft_monthpicker.my_datetimepicker {
+  display: flex;
+  justify-content: space-between;
+
+  & .xdsoft_label {
+    width: unset;
+    margin: 0 -60px;
+    @include h2-text();
+    line-height: 24px;
+    color: $dark;
+  }
 }
 
-//убрали правую стрелку
-.xdsoft_datetimepicker.my_datetimepicker .xdsoft_next{
-    background-image: none;
+.xdsoft_datetimepicker {
+  //убрали выпадашки у месяца/года
+  & .my_datetimepicker.xdsoft_label {
+    align-self: center;
+    &:hover > span {
+      text-decoration: none;
+    }
+    & i {
+      display: none;
+    }
+  }
+
+  & .my_datetimepicker {
+    & .arrow {
+      background-image: url("../arrow/img/arrow.png");
+      background-position: 0 /* 10px */;
+    }
+    & .xdsoft_prev {
+      transform: rotate(180deg);
+    }
+    & .xdsoft_calendar th {
+      height: 40px;
+      @include h3-text();
+      color: $purple;
+    }
+  }
+
+  & .xdsoft_datepicker.active {
+    width: 278px;
+    margin-left: 0;
+  }
+
+  .xdsoft_calendar {
+    & table {
+      margin-top: 25px;
+    }
+    td.xdsoft_current.xdsoft_date {
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 22px;
+      box-shadow: none;
+    }
+    & .xdsoft_current {
+      color: $white;
+      font-weight: 800;
+      background: linear-gradient(180deg, $green 0%, $blue-light 100%);
+      box-shadow: none;
+      border-radius: 22px;
+      &.xdsoft_date.xdsoft_today {
+        box-shadow: none;
+      }
+    }
+
+    & td.xdsoft_date {
+      height: 40px;
+      width: 39px;
+
+      @include h3-text();
+      font-weight: 400;
+      color: $dark-50;
+      & > div {
+        text-align: center;
+        padding-right: 0px;
+      }
+      &.xdsoft_today {
+        color: $white;
+        font-weight: 800;
+        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+        border-radius: 22px;
+      }
+    }
+  }
+}
+
+body > .xdsoft_calendar.my_datetimepicker .xdsoft_date td:hover {
+  background: inherit !important;
 }
