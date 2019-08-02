@@ -2,6 +2,7 @@ include ../../../components/textField/textField.pug
 include ../../../components/logo-icon/logo-icon.pug
 include ../../../components/select-guest/select-guest.pug
 include ../../../components/select-date/select-date.pug
+include ../../../components/select-period/select-period.pug
 include ../../../components/button/button.pug
 include ../../../components/arrow/arrow.pug
 
@@ -40,6 +41,11 @@ html
                     div(class="formElements__item")
                         h3(class="formElements__text") date Dropdown
                         +select-date(selectDate)
+
+                    div(class="formElements__item")
+                        h3(class="formElements__text") period Dropdown
+                        +select-period()
+                            
                         
                     //- div(class="formElements__item")
                     //-     +select-item("filter date dropdown","medium","19 авг - 23 авг","date")

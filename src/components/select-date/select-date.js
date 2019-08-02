@@ -13,20 +13,21 @@ jQuery("#date_timepicker_start").datetimepicker({
   todayButton: false,
   scrollMonth: false,
   closeOnWithoutClick: false,
-  closeOnDateSelect: 0
+  closeOnDateSelect: 0,
+  range: 'period'
 });
 
-jQuery("#date_timepicker_end").datetimepicker();
-jQuery.datetimepicker.setLocale("ru");
-jQuery("#date_timepicker_end").datetimepicker({
-  timepicker: false,
-  format: "d.m.Y",
-  dayOfWeekStart: 1,
-  todayButton: false,
-  scrollMonth: false,
-  closeOnWithoutClick: false,
-  closeOnDateSelect: 0
-});
+// jQuery("#date_timepicker_end").datetimepicker();
+// jQuery.datetimepicker.setLocale("ru");
+// jQuery("#date_timepicker_end").datetimepicker({
+//   timepicker: false,
+//   format: "d.m.Y",
+//   dayOfWeekStart: 1,
+//   todayButton: false,
+//   scrollMonth: false,
+//   closeOnWithoutClick: false,
+//   closeOnDateSelect: 0
+// });
 // $(".xdsoft_datetimepicker").addClass("my_datetimepicker");
 // $(".xdsoft_label").addClass("my_datetimepicker");
 
@@ -34,10 +35,10 @@ jQuery("#date_timepicker_end").datetimepicker({
 $('[class^="xdsoft"]').addClass("my_datetimepicker");
 
 
-$("#input").datetimepicker();
-$("button.somebutton").on("click", function() {
-  $("#input").datetimepicker("show");
-});
+// $("#input").datetimepicker();
+// $("button.somebutton").on("click", function() {
+//   $("#input").datetimepicker("show");
+// });
 
 //убрали кнопку сегодня
 $(".xdsoft_today_button").remove();
@@ -51,36 +52,14 @@ $(".xdsoft_scroller_box").remove();
 $(".xdsoft_datetimepicker .xdsoft_next").addClass("arrow");
 $(".xdsoft_datetimepicker .xdsoft_prev").addClass("arrow");
 
+// $("#date_timepicker_end").remove
+//при клике по инпуту появляется тот жк самы календарь
+$("#date_timepicker_end").on("click", function() {
+  $("#date_timepicker_start").datetimepicker("show");
+});
 // попытка вставить вместо картинки svg
 // $(".xdsoft_next").append(
 //   '<svg class="arrow-icon arrow-icon_colored" width="26" height="26" fill: url(#paint0_linear)/>'
 // );
 
-// пока не разобралась/не работает
-/* const compiledFunction = pug.compileFile(Arrow);
-console.log(compiledFunction()); */
-
-/* jQuery(function() {
-  jQuery("#date_timepicker_start").datetimepicker({
-    format: "Y/m/d",
-    onShow: function(ct) {
-      this.setOptions({
-        maxDate: jQuery("#date_timepicker_end").val()
-          ? jQuery("#date_timepicker_end").val()
-          : false
-      });
-    },
-    timepicker: false
-  });
-  jQuery("#date_timepicker_end").datetimepicker({
-    format: "Y/m/d",
-    onShow: function(ct) {
-      this.setOptions({
-        minDate: jQuery("#date_timepicker_start").val()
-          ? jQuery("#date_timepicker_start").val()
-          : false
-      });
-    },
-    timepicker: false
-  });
-}); */
+// input id="date_timepicker_end" у него удалить дочерний календарь и передать вместо него от start

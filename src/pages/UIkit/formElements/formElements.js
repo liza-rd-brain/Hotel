@@ -7,3 +7,4 @@ import "../../../components/arrow/arrow.scss"
 /* import "../../../components/button/button.scss" */
 import "../../../components/select-guest/select-guest"
 import "../../../components/select-date/select-date"
+import "../../../components/select-period/select-period"
