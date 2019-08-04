@@ -14,46 +14,43 @@ $(".datepicker").addClass("my_datepicker");
 
 $(".dropdown-wrap").datepicker(params);
 
-// $(".datepicker--cell").on("click", function() {
-//   //   let dataFrom = $(".-range-from-").attr("data-date");
-//   //   console.log(dataFrom);
+// ___________попытка на JS____________________________
+// 1. Календарь должен открываться  по клику стартовой или финишной даты
+//2. В зависимости от того, какое поле в фокусе - выбираем начальную или конечную дату
+// 3.Промежуточная подсветка только в одну сторону и только если стоим на другой ячейке
 
-//   $(".datepicker--cell .datepicker--cell-day .-range-from- .-selected-").css(
-//     "background",
-//     "red"
-//   );
-// });
-// при выборе даты в любом случае идт клик по любой ячейке!!!
+//дописать  функционал - посмотреть  в фокусе start или end dropdown
 
-// $(".datepicker--cell").on("click", function() {
-//   //теперь должны вытащить данные для вставки в ячейку!!
+let startDate = document.querySelector(".date-dropdown_start");
+let endDate = document.querySelector(".date-dropdown_end");
+startDate.addEventListener("click", showCalendar);
+endDate.addEventListener("click", showCalendar);
+let currentData;
 
-//   //   let data = $(this).attr("data-date");
-//   //   let month = $(this).attr("data-month");
-//   //   let dataFrom = $(".-range-from-").attr("data-date");
-//   //   console.log(dataFrom);
-//   console.log($(this).attr("data-date"));
-//   //   console.log(month);
-// });
-//__________________попытка на JS____________________________
+let table = document.querySelector(".datepicker-inline");
+
+function showCalendar(event) {
+  //текущий элемент - поле выбора даты
+  currentData = event.target;
+  console.log(currentData);
+  table.classList.add("datepicker-inline_active");
+}
+
+table.addEventListener("click", getTargetDay);
 
 function getTargetDay() {
-  //   let targetDay = document.querySelector(".-range-from-");
-  let firstDay = document.querySelector(".-range-from-");
-  let fisrtStrAtr =
-    `${getData(firstDay, "data-date")}.` +
-    `${getData(firstDay, "data-month")}.` +
-    `${getData(firstDay, "data-year")}`;
+  //смоттрим, currentData страровая или финишная дата
 
-  let lastDay = document.querySelector(".-range-to-")
-    ? document.querySelector(".-range-to-")
-    : false;
+  let currentDay =
+    currentData === startDate
+      ? document.querySelector(".-range-from-")
+      : document.querySelector(".-range-to-");
+  console.log(currentDay);
 
-  let lastStrAtr =
-    lastDay &&
-    `${getData(lastDay, "data-date")}.` +
-      `${getData(lastDay, "data-month")}.` +
-      `${getData(lastDay, "data-year")}`;
+  let dateStr =
+    `${getData(currentDay, "data-date")}.` +
+    `${getData(currentDay, "data-month")}.` +
+    `${getData(currentDay, "data-year")}`;
 
   function getData(day, data) {
     if (day && data) {
@@ -69,16 +66,6 @@ function getTargetDay() {
     }
   }
 
-  let startDate = document.querySelector(".date-dropdown_start");
-  startDate.value = fisrtStrAtr;
-  console.log(fisrtStrAtr);
-
-  if (lastStrAtr) {
-    let endDate = document.querySelector(".date-dropdown_end");
-    endDate.value = lastStrAtr;
-    console.log(lastStrAtr);
-  }
+  currentData.value = dateStr;
+  // console.log(fisrtStrAtr);
 }
-
-let table = document.querySelector(".datepicker-inline");
-table.addEventListener("click", getTargetDay);

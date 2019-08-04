@@ -8,3 +8,6 @@ import "../../../components/arrow/arrow.scss"
 import "../../../components/select-guest/select-guest"
 import "../../../components/select-date/select-date"
 import "../../../components/select-period/select-period"
+import "../../../components/test-component/test-component"
+
+
