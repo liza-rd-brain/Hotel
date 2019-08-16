@@ -11,6 +11,7 @@ $gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
 $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
 $height-medium: 44px;
 $height-small: ($height-medium - 10px);
+$height-text: 15px;
 
 //можно вынести переменные размеров
 
@@ -56,6 +57,11 @@ $height-small: ($height-medium - 10px);
 
   &_type {
     &-text {
+      height: $height-text;
+      //убираем пока только здась из-за комплексности белой кнопки с обводкой
+      & > h3 {
+        padding: 0;
+      }
       :hover {
         color: $dark-50;
       }
@@ -68,7 +74,7 @@ $height-small: ($height-medium - 10px);
       position: relative;
       &::after {
         content: "";
-     /*    background: url("./images/arrow_forward.svg") no-repeat; */
+        /*    background: url("./images/arrow_forward.svg") no-repeat; */
         /*   background-image: url("./images/arrow.png"); */
         position: absolute;
         top: 16px;

@@ -2,8 +2,8 @@ include ../button/button
 
 -
   
-    const button_clear={size:"small",title:text_clear ||"очистить",isTextButton:true,isTextColored:true}
-    const button_apply={size:"small",title:text_apply ||"применить",isTextButton:true,isTextColored:true}
+    const button_clear={title:text_clear ||"очистить",isTextButton:true,isTextColored:true}
+    const button_apply={title:text_apply ||"применить",isTextButton:true,isTextColored:true}
 
 mixin select-menu()
     div(class="iqdropdown-menu" id="iqdropdown-menu__select")
@@ -14,5 +14,6 @@ mixin select-menu()
         div(class="iqdropdown-menu-option" data-id="item3")
             p(class="iqdropdown-item") младенцы
             //кнопки обернуть и спозиционировать
-        +button(button_clear)       
-        +button(button_apply)  
+        div(class="iqdropdown-menu-wrap")
+            +button(button_clear)       
+            +button(button_apply)  

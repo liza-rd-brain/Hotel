@@ -1,9 +1,26 @@
-include ../select-menu/select-menu
+//- include ../select-menu/select-menu
+include ../button/button
+
+-
+  
+    const button_clear={title:text_clear ||"очистить",isTextButton:true,isTextColored:true,className:"button_clear"}
+    const button_apply={title:text_apply ||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
 
 //h3 по умолчанию будет включен в select-item, если вдруг заголовок не нужен, передаем пустой ""
 mixin select-guest({size,type})
     //здесь выбор доп класса с контейнером сделать как в логотипе,если есть
     div(class="iqdropdown iqdropdown__select")
         p(class="iqdropdown-selection iqdropdown__text")
-        //может select-menu тоже проще вытащить в этот компонент?!
-        +select-menu()
+        div(class="iqdropdown-menu" id="iqdropdown-menu__select")
+            div(class="iqdropdown-menu-option" data-id="item1" data-defaultcount="0" data-mincount="1")
+                p(class="iqdropdown-item") взрослые
+            div(class="iqdropdown-menu-option" data-id="item2")
+                p(class="iqdropdown-item") дети 
+            div(class="iqdropdown-menu-option" data-id="item3")
+                p(class="iqdropdown-item") младенцы
+                //кнопки обернуть и спозиционировать
+            div(class="iqdropdown-menu-wrap")
+                +button(button_clear)       
+                +button(button_apply)  
+      
+        //- +select-menu()

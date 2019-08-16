@@ -1,4 +1,4 @@
-mixin button({isColored,isBordered,isTextButton,isArrowButton,isHeaderButton,size,isTextColored,title})
+mixin button({isColored,isBordered,isTextButton,isArrowButton,isHeaderButton,size,isTextColored,title,className})
 
     -
         const buttonClassName = [
@@ -9,6 +9,7 @@ mixin button({isColored,isBordered,isTextButton,isArrowButton,isHeaderButton,siz
             isArrowButton ? "button_type-arrow": null,
             isHeaderButton ? "button_type-header": null,
             size ? `button_size-${size}`: null,
+            className ? `${className}`: null,
         ].filter(className => className !== null).join(" ");
 
         const buttonTextClassName =[
