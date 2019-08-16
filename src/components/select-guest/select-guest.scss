@@ -216,6 +216,24 @@
   justify-content: space-between;
   padding: 20px 7px 11px 15px;
 }
+.button_clear {
+  opacity: 0;
+  & > h3 {
+    cursor: default;
+  }
+  &:hover {
+    color: $white;
+  }
+  &.button_show {
+    opacity: 1;
+    & > h3 {
+      cursor: pointer;
+    }
+  }
+}
+.button_accept {
+  justify-self: end;
+}
 .iqdropdown.my_iqdropdown .iqdropdown-menu-option {
   display: flex;
   height: 37px;
@@ -275,10 +293,6 @@
       }
     }
   }
-}
-
-.btn_visible {
-  /*   opacity: 0.38; */
 }
 
 //стили из easyDropDown

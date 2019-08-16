@@ -59,6 +59,7 @@ let checkText = () => {
   btnInc.on("click", function() {
     changeText();
     checkButtons();
+    showButtonClear();
   });
 
   btnDec.on("click", function() {
@@ -67,6 +68,18 @@ let checkText = () => {
   });
 };
 
+let showButtonClear = () => {
+  if (
+    $(document)
+      .find("p.iqdropdown__text")
+      .text() != "Сколько гостей"
+  ) {
+    $(".button_clear").addClass("button_show");
+    console.log("очистить");
+  } else {
+    $(".button_clear").removeClass("button_show");
+  }
+};
 let changeText = () => {
   //функция будет вызываться при нажатии на кнопки плюс или минус
   //проверяем первый символ, если он больше 4 - меняем "гостя" на "гостей" и обратно
@@ -99,15 +112,6 @@ let checkButtons = () => {
       );
     }
   }
-
-  //   for (let i = 0; i < counter.length; i++) {
-  //     console.log(counter[i]);
-  // /*      if (counter[i].text().slice(0) > 0) {
-  //       btnDec[i].addClass("btn_visible");
-  //       console.log(btnDec[i]);
-  //     } */
-  //     break;
-  //   }
 };
 
 //работающий функционал кнопки очистить!!!!
@@ -121,6 +125,7 @@ $(".button_clear").on("click", () => {
   $(".iqdropdown-selection").text("Сколько гостей");
   checkText();
   checkButtons();
+  showButtonClear();
 });
 
 $(".button_accept").on("click", () => {
