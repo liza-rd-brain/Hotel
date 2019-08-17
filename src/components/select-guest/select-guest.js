@@ -44,11 +44,23 @@ const GUEST = {
   beforeIncrement: () => true
 };
 
-$().ready(() => {
+let createDropdown = () => {
   $(".iqdropdown").iqDropdown(GUEST);
-  $(".iqdropdown-selection").text("Сколько гостей");
+  $("p.iqdropdown__text").text("Сколько гостей");
   checkText();
   checkButtons();
+  showButtonClear();
+
+  $('[class^="iqdropdown"]').addClass("my_iqdropdown");
+  $(".my_iqdropdown")
+    .find($(".counter"))
+    .addClass("my_iqdropdown");
+};
+
+$().ready(() => {
+  createDropdown();
+  acceptButton();
+  /*  debugger; */
 });
 
 let checkText = () => {
@@ -97,7 +109,7 @@ let changeText = () => {
 let checkButtons = () => {
   for (let i = 1; i < 4; i++) {
     let counter = $(`div[data-id='item${i}']  .counter`).text();
-    console.log(counter);
+    /*   console.log(counter); */
     $(`div[data-id='item${i}'] .button-increment`).addClass("btn_visible");
 
     if (counter > 0 && counter < 9) {
@@ -119,22 +131,25 @@ $(".button_clear").on("click", () => {
   $(".iqdropdown")
     .find(".iqdropdown-item-controls")
     .addClass("my_iqdropdown")
-    .remove();
-  $(".iqdropdown").iqDropdown(GUEST);
-
-  $(".iqdropdown-selection").text("Сколько гостей");
-  checkText();
-  checkButtons();
-  showButtonClear();
+    .empty();
+  createDropdown();
 });
 
-$(".button_accept").on("click", () => {
-  $(".iqdropdown__select .my_iqdropdown").addClass("menu-open");
+let acceptButton = () => {
+  $(".button_accept").on("click", () => {
+    $("iqdropdown iqdropdown__select my_iqdropdown").removeClass("menu-open");
+    console.log("добавлен");
+  });
+};
+
+/* $("p.iqdropdown-selection").on("click", () => {
+  $("p.iqdropdown-selection .my_iqdropdown").toggleClass("menu-open");
   console.log("добавлен");
-});
+}); */
+
+/* $(".iqdropdown__select .my_iqdropdown").on("click", () => {
+  $(".iqdropdown__select .my_iqdropdown").toggleClass("menu-open");
+  console.log("добавлен");
+}); */
 
 //всем элементам select-menu дала доп класс  "my_iqdropdown"
-$('[class^="iqdropdown"]').addClass("my_iqdropdown");
-$(".my_iqdropdown")
-  .find($(".counter"))
-  .addClass("my_iqdropdown");
