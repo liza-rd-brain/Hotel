@@ -32,7 +32,7 @@ const GUEST = {
   textPlural: "гостя",
   controls: {
     position: "right",
-    displayCls: "iqdropdown-content",
+    displayCls: 0,
     controlsCls: "iqdropdown-item-controls",
     counterCls: "counter"
   },
@@ -59,7 +59,7 @@ let createDropdown = () => {
 
 $().ready(() => {
   createDropdown();
-  acceptButton();
+
   /*  debugger; */
 });
 
@@ -128,28 +128,16 @@ let checkButtons = () => {
 
 //работающий функционал кнопки очистить!!!!
 $(".button_clear").on("click", () => {
-  $(".iqdropdown")
-    .find(".iqdropdown-item-controls")
-    .addClass("my_iqdropdown")
-    .empty();
-  createDropdown();
+  for (let i = 0; i < 2; i++) {
+    $(".iqdropdown")
+      .find(".iqdropdown-item-controls")
+      .addClass("my_iqdropdown")
+      .remove();
+    createDropdown();
+
+    $(".iqdropdown")
+      .find(".iqdropdown-item-controls .my_iqdropdown .iqdropdown-content")
+      .remove();
+    console.log("сlear");
+  }
 });
-
-let acceptButton = () => {
-  $(".button_accept").on("click", () => {
-    $("iqdropdown iqdropdown__select my_iqdropdown").removeClass("menu-open");
-    console.log("добавлен");
-  });
-};
-
-/* $("p.iqdropdown-selection").on("click", () => {
-  $("p.iqdropdown-selection .my_iqdropdown").toggleClass("menu-open");
-  console.log("добавлен");
-}); */
-
-/* $(".iqdropdown__select .my_iqdropdown").on("click", () => {
-  $(".iqdropdown__select .my_iqdropdown").toggleClass("menu-open");
-  console.log("добавлен");
-}); */
-
-//всем элементам select-menu дала доп класс  "my_iqdropdown"

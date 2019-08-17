@@ -189,7 +189,7 @@
 //стили меню_______________
 
 #iqdropdown-menu__select {
-  /* display: block; */
+  /*   display: block; */
   background-color: white;
   position: absolute;
   border-bottom: 1px solid rgba(31, 32, 65, 0.5);
@@ -295,6 +295,12 @@
   }
 }
 
+.extra-open {
+  display: block;
+}
+.extra-close {
+  display: none;
+}
 //стили из easyDropDown
 
 // .edd-root,
