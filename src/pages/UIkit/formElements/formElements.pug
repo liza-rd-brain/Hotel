@@ -6,6 +6,7 @@ include ../../../components/select-period/select-period.pug
 include ../../../components/button/button.pug
 include ../../../components/arrow/arrow.pug
 include ../../../components/test-component/test-component.pug
+include ../../../components/range-slider/range-slider.pug
 
 -
     const textField_big = {size:"big",input_type:"text"}
@@ -59,6 +60,5 @@ html
                         +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 
                         +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
                         +button({isColored:true,size:"big",title:"перейти к отплате",isArrowButton:true})    
-                    div(class="test")    
-                        //- +test-component()
-                        
+                    div(class="formElements__item item__wrap")   
+                        +range-slider()

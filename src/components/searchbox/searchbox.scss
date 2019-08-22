@@ -2,7 +2,7 @@
 @import "../../mixin";
 
 .searchbox {
-  width: 320px;
+  width: 380px;
   display: flex;
   background-color: $white;
   /* flex-direction: column; */
@@ -14,7 +14,7 @@
     padding: 40px 30px 30px 30px;
   }
   &__title {
-    width: 80%;
+  /*   width: 80%; */
     margin: 0 0 20px 0;
     @include text($font, 24px, 700, $dark);
     line-height: 30px;

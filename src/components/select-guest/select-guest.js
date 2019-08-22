@@ -1,6 +1,6 @@
 import "item-quantity-dropdown/lib/item-quantity-dropdown.min.js";
 import "item-quantity-dropdown/lib/item-quantity-dropdown.min.css";
-import "./select-guest.scss";
+/* import "./select-guest.scss"; */
 // import "../select-menu/select-menu";
 // import easydropdown from 'easydropdown';
 
@@ -87,7 +87,6 @@ let showButtonClear = () => {
       .text() != "Сколько гостей"
   ) {
     $(".button_clear").addClass("button_show");
-    console.log("очистить");
   } else {
     $(".button_clear").removeClass("button_show");
   }
@@ -109,7 +108,6 @@ let changeText = () => {
 let checkButtons = () => {
   for (let i = 1; i < 4; i++) {
     let counter = $(`div[data-id='item${i}']  .counter`).text();
-    /*   console.log(counter); */
     $(`div[data-id='item${i}'] .button-increment`).addClass("btn_visible");
 
     if (counter > 0 && counter < 9) {
@@ -138,6 +136,5 @@ $(".button_clear").on("click", () => {
     $(".iqdropdown")
       .find(".iqdropdown-item-controls .my_iqdropdown .iqdropdown-content")
       .remove();
-    console.log("сlear");
   }
 });

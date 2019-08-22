@@ -35,8 +35,13 @@
   }
 }
 
-.test{
+.test {
   min-height: 50px;
   background-color: gold;
   position: relative;
+}
+
+//c целью убрать флексбокс
+.item__wrap {
+  display: block;
 }

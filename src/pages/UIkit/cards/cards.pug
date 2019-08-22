@@ -1,3 +1,7 @@
+include ../../../components/searchbox/searchbox.pug
+include ../../../components/logo-icon/logo-icon.pug
+-
+    const text="text"
 
 doctype html
 html
@@ -7,5 +11,8 @@ html
         title 
             cards
     body
+        +logo-icon({isColored:false})
         .cards__wrap
-            include ../../../components/searchbox/searchbox.pug
+           +searchbox({})
+       
+           

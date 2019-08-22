@@ -32,9 +32,9 @@ include ../social/social.pug
 
 
 
-mixin footer({isCreative,widget_desc,widget_item,subscribe=WI_SUBSCRIBE,copyright})
+mixin footer({isCreative,widget_desc,widget_items,subscribe=WI_SUBSCRIBE,copyright})
     -
-        const currWidgetItem = widget_item || WI_ITEMS
+        const currWidgetItem = widget_items || WI_ITEMS
         const currPlaceholder = subscribe.placeholder
         const currCopyright = copyright || WI_COPYRIGHT
         
@@ -49,7 +49,7 @@ mixin footer({isCreative,widget_desc,widget_item,subscribe=WI_SUBSCRIBE,copyrigh
                     - for (var i = 0; i <currWidgetItem.length; i++)
                         div(class=` widget__group widget`)
                             span(class="widget__title") #{currWidgetItem[i].title}
-                            for item incurrWidgetItem[i].links
+                            for item in currWidgetItem[i].links
                                 a(class="widget__link footer__text footer__text_link" href=`${item.href}`) #{item.name}
                 div(class="widget__subscribe widget")
                     span(class="widget__title") #{ subscribe.title || WI_SUBSCRIBE.title}

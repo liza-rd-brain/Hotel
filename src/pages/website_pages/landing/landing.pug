@@ -1,6 +1,6 @@
 include ../../../components/header/header.pug
 include ../../../components/footer/footer.pug
-
+     //константы можно вынести в общий файл, футер и хедер дублируются!
 -
      const header_text_login="войти"
      const header_text_register ="зарегистрироваться"
@@ -43,7 +43,7 @@ html
         meta(charset = 'utf-8')
         meta(name='viewport', content="initial-scale=1.0, width=device-width")
         title
-            headersAndFooters
+            landing
     body 
     .landing-wrap
           +header(header_unLogged)

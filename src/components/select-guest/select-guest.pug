@@ -1,4 +1,4 @@
-//- include ../select-menu/select-menu
+slider-amount//- include ../select-menu/select-menu
 include ../button/button
 
 -
@@ -7,7 +7,7 @@ include ../button/button
     const button_apply={title:text_apply ||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
 
 //h3 по умолчанию будет включен в select-item, если вдруг заголовок не нужен, передаем пустой ""
-mixin select-guest({size,type})
+mixin select-guest()
     //здесь выбор доп класса с контейнером сделать как в логотипе,если есть
     div(class="iqdropdown iqdropdown__select")
         p(class="iqdropdown-selection iqdropdown__text")
