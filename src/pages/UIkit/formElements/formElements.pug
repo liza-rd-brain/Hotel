@@ -7,6 +7,7 @@ include ../../../components/button/button.pug
 include ../../../components/arrow/arrow.pug
 include ../../../components/test-component/test-component.pug
 include ../../../components/range-slider/range-slider.pug
+include ../../../components/checkbox/checkbox.pug
 
 -
     const textField_big = {size:"big",input_type:"text"}
@@ -62,4 +63,5 @@ html
                         +button({isColored:true,size:"big",title:"перейти к отплате",isArrowButton:true})    
                     div(class="formElements__item item__wrap")   
                         +range-slider({})  
-                                  
+                    div(class="formElements__item item__wrap")
+                        +checkbox()

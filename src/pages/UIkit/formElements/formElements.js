@@ -10,4 +10,5 @@ import "../../../components/select-date/select-date";
 import "../../../components/select-period/select-period";
 import "../../../components/test-component/test-component";
 import "../../../components/range-slider/range-slider";
-import "../../../components/range-slider/range-slider.scss";
+/* import "../../../components/range-slider/range-slider.scss"; */
+import "../../../components/checkbox/checkbox";

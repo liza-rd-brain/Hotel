@@ -11,7 +11,6 @@
   }
   &__column {
     /* display: flex; */
-    /* flex-direction: column; */
     /* flex-wrap: wrap; */
     width: 320px;
     /* justify-content: space-between; */
@@ -38,10 +37,14 @@
 .test {
   min-height: 50px;
   background-color: gold;
-  position: relative;
+  position: relative
+    /* flex-direction: column; */;
 }
 
 //c целью убрать флексбокс
 .item__wrap {
   display: block;
 }
+
+
+

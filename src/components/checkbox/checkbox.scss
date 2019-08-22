@@ -1,0 +1,105 @@
+@import "../../variables";
+@import "../../mixin";
+.checkbox-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ui-checkboxradio-label.ui-corner-all.ui-button.ui-widget {
+  background-color: unset;
+  display: flex;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+    background-color: unset;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+  }
+  /*   display: inline-block; */
+}
+
+.ui-checkboxradio-icon.ui-corner-all.ui-icon.ui-icon-background.ui-icon-blank {
+  background-image: none;
+}
+
+.ui-button.ui-state-active {
+  color: $dark;
+  &:hover,
+  &:focus {
+    color: $dark;
+  }
+}
+.ui-button {
+  padding: 0 0 13px 0;
+}
+.ui-checkboxradio-label .ui-icon-background {
+  box-shadow: none;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  &.ui-state-checked {
+    border: 1px solid $purple;
+  }
+
+  /*   &.ui-widget {
+    padding: 0;
+  } */
+}
+
+/* .ui-corner-all
+  .ui-icon
+  .ui-icon-background
+  .ui-icon-blank */
+
+.ui-checkboxradio-icon:before {
+  display: none;
+
+  content: "";
+  /*  border-left: 2px solid #000;
+  border-bottom: 2px solid #000; */
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  width: 8px;
+  height: 6px;
+  transform: rotate(-45deg);
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
+.ui-checkboxradio-icon:after {
+  display: block;
+  content: "";
+  /*  background: red; */
+  background: $white;
+  /*  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); */
+  width: 8px;
+  height: 6px;
+  transform: rotate(-45deg);
+  position: relative;
+  left: 5px;
+  top: -4px;
+}
+
+.ui-corner-all.ui-icon.ui-icon-background.ui-icon-check.ui-state-checked {
+  background-image: none;
+  &.ui-checkboxradio-icon:before {
+    display: block;
+  }
+}
+
+.ui-checkboxradio-icon-space {
+  padding-left: 10px;
+}
+
+.checkbox-text {
+  margin: -1px 0 0 0;
+  @include body-text();
+  line-height: 18px;
+}
