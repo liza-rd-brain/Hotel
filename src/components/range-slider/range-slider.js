@@ -2,7 +2,7 @@ import "../jquery-ui/jquery-ui.min.css";
 import "../jquery-ui/jquery-ui";
 import "./range-slider.scss";
 $(function() {
-  $("#slider-range").slider({
+  $(".slider-range").slider({
     range: true,
     min: 0,
     max: 15000,
@@ -20,13 +20,13 @@ $(function() {
     }
   });
   $("#amount").val(
-    $("#slider-range")
+    $(".slider-range")
       .slider("values", 0)
       .toString()
       .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ") +
       "\u20bd" +
       " - " +
-      $("#slider-range")
+      $(".slider-range")
         .slider("values", 1)
         .toString()
         .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ") +

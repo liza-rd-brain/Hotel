@@ -1,10 +1,10 @@
 @import "../../variables";
 @import "../../mixin";
 
-#slider-range {
-    width: 266px;
-  }
-  
+.slider-range {
+  width: 266px;
+}
+
 .slider {
   &-text {
     max-width: 266px;
@@ -17,6 +17,7 @@
     color: #f31f;
     font-weight: bold;
     text-align: right;
+    width: 50%;
     @include text($font, 12px, 400, $dark-50);
     line-height: 15px;
     &:focus {
@@ -30,7 +31,6 @@
     line-height: 15px;
   }
 }
-
 
 .ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content {
   border: 1px solid $dark-25;
