@@ -45,6 +45,7 @@
   border-radius: 4px;
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
   &.ui-state-checked {
     border: 1px solid $purple;
   }
@@ -86,6 +87,7 @@
 }
 
 .checkbox-text {
+  width: 100%;
   margin: -1px 0 0 0;
   @include body-text();
   line-height: 18px;
@@ -93,4 +95,29 @@
   &::first-letter {
     text-transform: capitalize;
   }
+}
+
+.checkbox-caption {
+  display: block;
+  width: 100%;
+  margin: -1px 0 0 0;
+  @include body-text();
+  color: $dark-50;
+  line-height: 18px;
+  text-align: left;
+  &_bold {
+    font-weight: 700;
+    color: $dark-75;
+  }
+  line-break: loose;
+}
+
+.checkbox-desc {
+  display: block;
+  width: 85%;
+  margin: -1px 0 0 0;
+  @include text($font, 12px, 400, $dark-50);
+  line-height: 14px;
+  text-align: left;
+  margin-top:2px;
 }

@@ -15,7 +15,12 @@ include ../../../components/checkbox/checkbox.pug
     const selectGuest={size:"big",type:"guest"}
     const selectDate={size:"small",type:"date"}
     //перенесу в страничку с выбором номера
-    const additionalAmenities={text:["завтрак","письменный стол","стул для кормления","кроватка","телевизор","шампунь","телевизор","шампунь"],key:"amenities"}
+    const additionalAmenities={items:[{caption:"завтрак"},{caption:"письменный стол"}],
+                                key:"amenities"}
+    const availability={items:[{caption:"Широкий коридор",desc:"Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см."},
+                                {caption:"Помощник для инвалидов",desc:"На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера."}],
+                                key:"availability",
+                                isRich:true}
     
 
 doctype html
@@ -70,3 +75,5 @@ html
                         +checkbox(additionalAmenities)
                     div(class="formElements__item item__wrap")
                         +checkbox({})
+                    div(class="formElements__item item__wrap")
+                        +checkbox(availability)
