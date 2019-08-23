@@ -1,15 +1,13 @@
-mixin checkbox()
+
+
+mixin checkbox({text, key})
+    -
+        const CB_ITEMS ={ text:["Можно курить", "Можно с питомцами","Можно пригласить гостей (до 10 человек)"],key:"checkbox"}
+        text = text|| CB_ITEMS.text
+        key = key|| CB_ITEMS.key
     .checkbox-wrap
-        //будем принимать массив строк для чекбоксов и перебирать в цикле фор
-        label(for="checkbox-1") 
-            p(class="checkbox-text") Можно курить
-        input(type="checkbox" class="checkbox" name="checkbox-1" id="checkbox-1")
-        label(for="checkbox-2") 
-            p(class="checkbox-text") Можно с питомцами
-        input(type="checkbox" class="checkbox" name="checkbox-2" id="checkbox-2")  
-        label(for="checkbox-3") 
-            p(class="checkbox-text") Можно с питомцами
-        input(type="checkbox" class="checkbox" name="checkbox-2" id="checkbox-3")  
-        label(for="checkbox-4") 
-            p(class="checkbox-text") Можно с питомцами
-        input(type="checkbox" class="checkbox" name="checkbox-2" id="checkbox-4")    
+        - for (let i=0;i<text.length;i++)
+            //будем принимать массив строк для чекбоксов и перебирать в цикле фор
+            label(for=`${key}-${i}`) 
+                p(class="checkbox-text") #{text[i]}
+            input(type="checkbox" class="checkbox" name=`checkbox-${i}` id=`${key}-${i}`) 

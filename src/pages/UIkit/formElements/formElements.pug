@@ -14,6 +14,9 @@ include ../../../components/checkbox/checkbox.pug
     const textField_medium_arrow = {size:"medium",input_type:"text",effect:"arrow"}
     const selectGuest={size:"big",type:"guest"}
     const selectDate={size:"small",type:"date"}
+    //перенесу в страничку с выбором номера
+    const additionalAmenities={text:["завтрак","письменный стол","стул для кормления","кроватка","телевизор","шампунь","телевизор","шампунь"],key:"amenities"}
+    
 
 doctype html
 html
@@ -64,4 +67,6 @@ html
                     div(class="formElements__item item__wrap")   
                         +range-slider({})  
                     div(class="formElements__item item__wrap")
-                        +checkbox()
+                        +checkbox(additionalAmenities)
+                    div(class="formElements__item item__wrap")
+                        +checkbox({})

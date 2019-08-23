@@ -48,24 +48,12 @@
   &.ui-state-checked {
     border: 1px solid $purple;
   }
-
-  /*   &.ui-widget {
-    padding: 0;
-  } */
 }
-
-/* .ui-corner-all
-  .ui-icon
-  .ui-icon-background
-  .ui-icon-blank */
 
 .ui-checkboxradio-icon:before {
   display: none;
-
   content: "";
-  /*  border-left: 2px solid #000;
-  border-bottom: 2px solid #000; */
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  background: linear-gradient(180deg, $purple 0%, $blue 100%);
   width: 8px;
   height: 6px;
   transform: rotate(-45deg);
@@ -76,9 +64,8 @@
 .ui-checkboxradio-icon:after {
   display: block;
   content: "";
-  /*  background: red; */
   background: $white;
-  /*  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); */
+
   width: 8px;
   height: 6px;
   transform: rotate(-45deg);
@@ -102,4 +89,8 @@
   margin: -1px 0 0 0;
   @include body-text();
   line-height: 18px;
+  text-align: left;
+  &::first-letter {
+    text-transform: capitalize;
+  }
 }
