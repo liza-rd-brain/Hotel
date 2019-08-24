@@ -53,8 +53,8 @@
   width: 100%;
   margin: -1px 0 0 0;
   @include body-text();
-  color: $dark-50;
   line-height: 24px;
+  color: $dark-50;
   text-align: left;
   &::first-letter {
     text-transform: capitalize;

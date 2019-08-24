@@ -13,3 +13,5 @@ import "../../../components/range-slider/range-slider";
 /* import "../../../components/range-slider/range-slider.scss"; */
 import "../../../components/checkbox/checkbox";
 import "../../../components/radio-button/radio-button";
+import "../../../components/toggle/toggle";
+/* import "../../../components/toggle/toggle.scss"; */
