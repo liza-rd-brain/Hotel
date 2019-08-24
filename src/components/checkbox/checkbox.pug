@@ -1,4 +1,5 @@
 //-- пересмотриеть деструктуризацию параметров
+//--добавить состояние checked
 mixin checkbox({items, key,isRich})
     -
         const CB_ITEMS ={ items:[{caption:"Можно курить"}, {caption:"Можно с питомцами"},{caption:"Можно пригласить гостей (до&nbsp;10&nbsp;человек)"}],key:"checkbox"}
@@ -9,11 +10,10 @@ mixin checkbox({items, key,isRich})
         
         
     .checkbox-wrap
-        - for (let i=0;i<items.length;i++) 
+        - for (let i=0;i<items.length;i++)  
             //будем принимать массив строк для чекбоксов и перебирать в цикле фор
             label(for=`${key}-${i}`)
                 p(class="checkbox-text")
-                    span(class=captionClassName)!{items[i].caption}
+                    span(class=captionClassName) !{items[i].caption}
                     span(class="checkbox-desc") !{items[i].desc} 
-            input(type="checkbox" class="checkbox" name=`checkbox-${i}` id=`${key}-${i}`) 
-    
+            input(type="checkbox" class="checkbox" name=`checkbox-${i}` id=`${key}-${i}`)  

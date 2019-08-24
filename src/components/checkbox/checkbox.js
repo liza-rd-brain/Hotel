@@ -6,3 +6,9 @@ import "./checkbox.scss";
 $(function() {
   $(".checkbox").checkboxradio({});
 });
+
+$().ready(() => {
+  $(document)
+    .find('[class|="ui-checkboxradio"]')
+    .addClass("my_checkbox");
+});

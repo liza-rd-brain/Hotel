@@ -12,3 +12,4 @@ import "../../../components/test-component/test-component";
 import "../../../components/range-slider/range-slider";
 /* import "../../../components/range-slider/range-slider.scss"; */
 import "../../../components/checkbox/checkbox";
+import "../../../components/radio-button/radio-button";

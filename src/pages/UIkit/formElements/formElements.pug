@@ -8,6 +8,7 @@ include ../../../components/arrow/arrow.pug
 include ../../../components/test-component/test-component.pug
 include ../../../components/range-slider/range-slider.pug
 include ../../../components/checkbox/checkbox.pug
+include ../../../components/radio-button/radio-button.pug
 
 -
     const textField_big = {size:"big",input_type:"text"}
@@ -77,3 +78,5 @@ html
                         +checkbox({})
                     div(class="formElements__item item__wrap")
                         +checkbox(availability)
+                    div(class="formElements__item item__wrap")
+                        +radio-button()    

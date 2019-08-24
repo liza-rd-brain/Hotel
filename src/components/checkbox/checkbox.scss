@@ -6,7 +6,7 @@
   align-items: flex-start;
 }
 
-.ui-checkboxradio-label.ui-corner-all.ui-button.ui-widget {
+.ui-checkboxradio-label.ui-corner-all.ui-button.ui-widget.my_checkbox {
   background-color: unset;
   display: flex;
   border: none;
@@ -21,24 +21,23 @@
     border: none;
     box-shadow: none;
   }
-  /*   display: inline-block; */
 }
 
-.ui-checkboxradio-icon.ui-corner-all.ui-icon.ui-icon-background.ui-icon-blank {
+.ui-checkboxradio-icon.ui-corner-all.ui-icon.ui-icon-background.ui-icon-blank.my_checkbox {
   background-image: none;
 }
 
-.ui-button.ui-state-active {
+.ui-button.ui-state-active.my_checkbox {
   color: $dark;
   &:hover,
   &:focus {
     color: $dark;
   }
 }
-.ui-button {
+.ui-button.my_checkbox {
   padding: 0 0 13px 0;
 }
-.ui-checkboxradio-label .ui-icon-background {
+.ui-checkboxradio-label.my_checkbox .ui-icon-background {
   box-shadow: none;
   border: 1px solid $dark-25;
   box-sizing: border-box;
@@ -50,8 +49,7 @@
     border: 1px solid $purple;
   }
 }
-
-.ui-checkboxradio-icon:before {
+.ui-checkboxradio-icon.ui-corner-all.ui-icon.ui-icon-background.my_checkbox:before {
   display: none;
   content: "";
   background: linear-gradient(180deg, $purple 0%, $blue 100%);
@@ -62,7 +60,7 @@
   left: 5px;
   top: 5px;
 }
-.ui-checkboxradio-icon:after {
+.ui-checkboxradio-icon.ui-corner-all.ui-icon.ui-icon-background.my_checkbox:after {
   display: block;
   content: "";
   background: $white;
@@ -75,14 +73,14 @@
   top: -4px;
 }
 
-.ui-corner-all.ui-icon.ui-icon-background.ui-icon-check.ui-state-checked {
+.ui-corner-all.ui-icon.ui-icon-background.ui-icon-check.ui-state-checked.my_checkbox {
   background-image: none;
   &.ui-checkboxradio-icon:before {
     display: block;
   }
 }
 
-.ui-checkboxradio-icon-space {
+.ui-checkboxradio-icon-space.my_checkbox {
   padding-left: 10px;
 }
 
@@ -119,5 +117,5 @@
   @include text($font, 12px, 400, $dark-50);
   line-height: 14px;
   text-align: left;
-  margin-top:2px;
+  margin-top: 2px;
 }
