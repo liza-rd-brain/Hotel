@@ -8,7 +8,8 @@ $(function() {
 });
 
 $().ready(() => {
-  $(document)
+  $(".checkbox-label")
+    .addClass("my_checkbox")
     .find('[class|="ui-checkboxradio"]')
     .addClass("my_checkbox");
 });

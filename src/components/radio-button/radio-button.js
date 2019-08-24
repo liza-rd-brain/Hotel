@@ -4,7 +4,12 @@ import "../jquery-ui/jquery-ui.theme.min.css";
 import "./radio-button.scss";
 
 $(function() {
-  $(".radio").checkboxradio({
-    
-  });
+  $(".radio").checkboxradio({});
+});
+
+$().ready(() => {
+  $(".radio-label").addClass("my_radio")
+    .find('[class|="ui-checkboxradio"]')
+    .addClass("my_radio");
+
 });

@@ -38,12 +38,12 @@
   padding: 0 0 13px 0;
 }
 .ui-checkboxradio-label.my_checkbox .ui-icon-background {
+  width: 20px;
+  height: 20px;
   box-shadow: none;
   border: 1px solid $dark-25;
   box-sizing: border-box;
   border-radius: 4px;
-  width: 20px;
-  height: 20px;
   flex-shrink: 0;
   &.ui-state-checked {
     border: 1px solid $purple;
@@ -107,7 +107,6 @@
     font-weight: 700;
     color: $dark-75;
   }
-  line-break: loose;
 }
 
 .checkbox-desc {

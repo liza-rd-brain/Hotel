@@ -1,2 +1,65 @@
 @import "../../variables";
 @import "../../mixin";
+
+.ui-checkboxradio-label.ui-corner-all.ui-button.ui-widget.my_radio {
+  padding: 0 16px 0 0;
+  background-color: unset;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+    background-color: unset;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.ui-checkboxradio-icon.ui-corner-all.ui-icon.ui-icon-background.ui-icon-blank.my_radio {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.ui-checkboxradio-radio-label.my_radio.ui-checkboxradio-checked.ui-state-active
+  .ui-checkboxradio-icon.ui-corner-all.ui-icon.ui-icon-background.ui-icon-blank.my_radio {
+  border: 1px solid $purple;
+  &::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: linear-gradient(180deg, $purple 0%, $blue 100%);
+    border-radius: 10px;
+    top: 3px;
+    left: 3px;
+  }
+}
+
+.ui-checkboxradio-icon-space.my_radio {
+  padding-left: 7px;
+}
+
+.my_radio.ui-checkboxradio-checked.ui-state-active .radio-text {
+  color: $dark-75;
+}
+.radio-text {
+  width: 100%;
+  margin: -1px 0 0 0;
+  @include body-text();
+  color: $dark-50;
+  line-height: 24px;
+  text-align: left;
+  &::first-letter {
+    text-transform: capitalize;
+  }
+  /*  &:focus {
+    color: $dark-75;
+  } */
+}

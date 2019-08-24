@@ -12,7 +12,7 @@ mixin checkbox({items, key,isRich})
     .checkbox-wrap
         - for (let i=0;i<items.length;i++)  
             //будем принимать массив строк для чекбоксов и перебирать в цикле фор
-            label(for=`${key}-${i}`)
+            label(for=`${key}-${i}` class="checkbox-label")
                 p(class="checkbox-text")
                     span(class=captionClassName) !{items[i].caption}
                     span(class="checkbox-desc") !{items[i].desc} 
