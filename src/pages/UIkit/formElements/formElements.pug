@@ -1,6 +1,8 @@
 include ../../../components/textField/textField.pug
 include ../../../components/logo-icon/logo-icon.pug
-include ../../../components/select-guest/select-guest.pug
+
+include ../../../components/select-items/select-items.pug
+
 include ../../../components/select-date/select-date.pug
 include ../../../components/select-period/select-period.pug
 include ../../../components/button/button.pug
@@ -14,7 +16,16 @@ include ../../../components/toggle/toggle.pug
 -
     const textField_big = {size:"big",input_type:"text"}
     const textField_medium_arrow = {size:"medium",input_type:"text",effect:"arrow"}
-    const selectGuest={size:"big",type:"guest"}
+    const selectGuest={id:"guest", 
+                        size:"big",
+                        type:"guest",
+                        items:[{text:"взрослые",mincount:"1"},{text:"дети"},{text:"малыши"}],
+                        title:""}
+    const roomAmenities={id:"amenities",
+                        size:"medium",
+                        type:"amenities",
+                        items:[{text:"спальни"},{text:"кровати"},{text:"ванные комнаты"}],
+                        title:""}
     const selectDate={size:"small",type:"date"}
     //перенесу в страничку с выбором номера
     const additionalAmenities={items:[{caption:"завтрак"},{caption:"письменный стол"}],
@@ -23,8 +34,8 @@ include ../../../components/toggle/toggle.pug
                                 {caption:"Помощник для инвалидов",desc:"На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера."}],
                                 key:"availability",
                                 isRich:true}
+                                
     
-
 doctype html
 html
     head
@@ -42,9 +53,13 @@ html
                         +textField(textField_big,"Email")
 
                     div(class="formElements__item")
-                        h3(class="formElements__text") Dropdown
-                        +select-guest(selectGuest)
-                        
+                        h3(class="formElements__text") Select Guest
+                        +select-items(selectGuest)
+
+                    div(class="formElements__item")
+                        h3(class="formElements__text") Select Amenities
+                        +select-items(roomAmenities)    
+                   
                     div(class="formElements__item")
                         // на самом деле тут будет select-item_masked
                         // с поведением выпадания календаря -?!

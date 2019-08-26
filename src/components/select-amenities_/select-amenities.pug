@@ -1,0 +1,21 @@
+//- include ../select-menu/select-menu
+//- include ../button/button
+//-     //- три типа выпадашек:гости, кровати, чекбокс лист
+//- -
+  
+
+//- //h3 по умолчанию будет включен в select-item, если вдруг заголовок не нужен, передаем пустой ""
+//- mixin select-items( {size,type,items})
+//-     //здесь выбор доп класса с контейнером сделать как в логотипе,если есть
+//-     div(class="iqdropdown iqdropdown__select")
+//-         p(class="iqdropdown-selection iqdropdown__text")
+//-         div(class="iqdropdown-menu" id="iqdropdown-menu__select")
+//-             - for (let i=0;i<items.length;i++)
+//-                 div(class="iqdropdown-menu-option" data-id=`item${i}` data-mincount=`${items[i].mincount}`||0)
+//-                     p(class="iqdropdown-item") #{items[i].text}
+//-                     //кнопки обернуть и спозиционировать
+//-             div(class="iqdropdown-menu-wrap")
+//-                 +button(button_clear)       
+//-                 +button(button_apply)  
+      
+        //- +select-menu()

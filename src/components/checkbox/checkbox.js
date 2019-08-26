@@ -1,6 +1,8 @@
-import "../jquery-ui/jquery-ui";
-import "../jquery-ui/jquery-ui.css";
-import "../jquery-ui/jquery-ui.theme.min.css";
+import "../../libraries/jquery-ui/jquery-ui";
+import "../../libraries/jquery-ui/jquery-ui.css";
+import "../../libraries/jquery-ui/jquery-ui.theme.min.css";
+
+/* import "../jquery-ui/jquery-ui.theme.min.css"; */
 import "./checkbox.scss";
 
 $(function() {

@@ -1,11 +1,13 @@
-include ../select-guest/select-guest.pug
+include ../select-items/select-items.pug
 include ../button/button.pug
 
+//- -
+//-     const selectGuest={size:"big",type:"guest",items:[{text:"взрослые",mincount:"1"},{text:"дети"},{text:"малыши"}],title:""}
 mixin searchbox()
     div(class="searchbox searchbox__wrap")
         h1(class="searchbox__title") Найдём номера под ваши пожелания
         form(class="searchbox__form")
-            +select-guest(selectGuest)
-            +button({isColored:true,title:"Подобрать номер",size:"big"})
+            //- +select-items({})
+            //- +button({isColored:true,title:"Подобрать номер",size:"big"})
       
         

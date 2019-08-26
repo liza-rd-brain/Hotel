@@ -1,6 +1,6 @@
 import "item-quantity-dropdown/lib/item-quantity-dropdown.min.js";
 import "item-quantity-dropdown/lib/item-quantity-dropdown.min.css";
-import "./select-guest.scss";
+import "./select-items.scss";
 // import "../select-menu/select-menu";
 // import easydropdown from 'easydropdown';
 
@@ -23,16 +23,15 @@ import "./select-guest.scss";
 // easydropdown.all()
 // const edd = easydropdown('#my-select');
 
-//максимум - 10 гостей
-
+// максимум - 10 гостей
 const GUEST = {
   maxItems: 10,
-  minItems: 1,
+  /*  minItems: 1, */
   selectionText: "гость",
   textPlural: "гостя",
   controls: {
     position: "right",
-    displayCls: 0,
+    displayCls: "iqdropdown-content",
     controlsCls: "iqdropdown-item-controls",
     counterCls: "counter"
   },
@@ -44,29 +43,80 @@ const GUEST = {
   beforeIncrement: () => true
 };
 
+const AMENTIES = {
+  maxItems: 10,
+  minItems: 1,
+  selectionText: "item",
+  textPlural: "items",
+  controls: {
+    position: "right",
+    displayCls: 0,
+    controlsCls: "iqdropdown-item-controls",
+    counterCls: "counter"
+  },
+  items: {},
+  onChange: (id, count, totalItems) => {},
+  beforeDecrement: () => true,
+  beforeIncrement: () => true
+};
+
+let defaultText = "0 items";
+let guestText = "Сколько гостей";
+let amenitiesText = "Удобства номера";
+
 let createDropdown = () => {
-  $(".iqdropdown").iqDropdown(GUEST);
-  $("p.iqdropdown__text").text("Сколько гостей");
+  $("#guest").iqDropdown(GUEST);
+  $("#guest p.iqdropdown__text").text(guestText);
   checkText();
   checkButtons();
   showButtonClear();
+   $('[class^="iqdropdown"]').addClass("my_iqdropdown");
+ /*  $(".my_iqdropdown")
+    .find($(".counter"))
+    .addClass("my_iqdropdown"); */
+  
+ /*  $("#guest")
+    .find('[class^="iqdropdown"]')
+    .addClass("guest_iqdropdown"); */
+  $(".guest_iqdropdown")
+    .find($(".counter"))
+    .addClass("guest_iqdropdown");
 
+  $("#amenities").iqDropdown(AMENTIES);
+  $("#guest p.iqdropdown__text").text(amenitiesText);
+  /*  checkText();
+  checkButtons();
+  showButtonClear(); */
+  /*  $('[class^="iqdropdown"]').addClass("my_iqdropdown");
+  $(".my_iqdropdown")
+    .find($(".counter"))
+    .addClass("my_iqdropdown"); */
+$('[class^="iqdropdown"]').addClass("amenities_iqdropdown");
+  $(".amenities_iqdropdown")
+    .find($(".counter"))
+    .addClass("amenities_iqdropdown");
+};
+
+/* let createDropdown = () => {
+  $("#amenities").iqDropdown();
+  $("p.iqdropdown__text").text(amenitiesText);
+  checkText();
+  checkButtons();
+   showButtonClear();
   $('[class^="iqdropdown"]').addClass("my_iqdropdown");
   $(".my_iqdropdown")
     .find($(".counter"))
     .addClass("my_iqdropdown");
-};
+}; */
 
 $().ready(() => {
   createDropdown();
-
-  /*  debugger; */
 });
 
 let checkText = () => {
-  //можно ли вынести как константы?!
-  let btnInc = $(document).find(".button-increment");
-  let btnDec = $(document).find(".button-decrement");
+  let btnInc = $("#guest").find(".button-increment");
+  let btnDec = $("#guest").find(".button-decrement");
+  console.log(btnInc);
 
   btnInc.on("click", function() {
     changeText();
@@ -81,32 +131,42 @@ let checkText = () => {
 };
 
 let showButtonClear = () => {
+  //здесь лучше изменить на количество в counter
   if (
-    $(document)
+    $("#guest")
       .find("p.iqdropdown__text")
-      .text() != "Сколько гостей"
+      .text() != guestText
   ) {
+    /*     console.log(defaultText); */
+    /*  console.log(
+      $(".iqdropdown")
+        .find("p.iqdropdown__text")
+        .text()
+    ); */
     $(".button_clear").addClass("button_show");
   } else {
     $(".button_clear").removeClass("button_show");
   }
 };
+
+//только для гостей
 let changeText = () => {
   //функция будет вызываться при нажатии на кнопки плюс или минус
   //проверяем первый символ, если он больше 4 - меняем "гостя" на "гостей" и обратно
 
-  let $text = $(document)
+  let $text = $("#guest")
     .find("p.iqdropdown__text")
     .text();
   if ($text.slice(0, 2) > 4) {
-    $(document)
+    $("#guest")
       .find("p.iqdropdown__text")
       .text(`${$text.slice(0, 2)} гостей`);
   }
 };
 
+//похоже тоже нужно будет прописать для каждого отдельного класса
 let checkButtons = () => {
-  for (let i = 1; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     let counter = $(`div[data-id='item${i}']  .counter`).text();
     $(`div[data-id='item${i}'] .button-increment`).addClass("btn_visible");
 
@@ -127,13 +187,13 @@ let checkButtons = () => {
 //работающий функционал кнопки очистить!!!!
 $(".button_clear").on("click", () => {
   for (let i = 0; i < 2; i++) {
-    $(".iqdropdown")
+    $("#guest")
       .find(".iqdropdown-item-controls")
       .addClass("my_iqdropdown")
       .remove();
     createDropdown();
 
-    $(".iqdropdown")
+    $("#guest")
       .find(".iqdropdown-item-controls .my_iqdropdown .iqdropdown-content")
       .remove();
   }

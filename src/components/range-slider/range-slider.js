@@ -1,5 +1,5 @@
-import "../jquery-ui/jquery-ui.min.css";
-import "../jquery-ui/jquery-ui";
+import "../../libraries/jquery-ui/jquery-ui.min.css";
+import "../../libraries/jquery-ui/jquery-ui";
 import "./range-slider.scss";
 $(function() {
   $(".slider-range").slider({

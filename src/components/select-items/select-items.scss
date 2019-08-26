@@ -68,9 +68,6 @@
     position: relative;
     vertical-align: middle;
     padding: 0;
-    /*  overflow: hidden; */
-    /*  border: 1px solid $dark-25;
-    border-radius: 4px; */
     cursor: pointer;
 
     &::after {
@@ -205,7 +202,7 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
-.iqdropdown-item.my_iqdropdown {
+.iqdropdown-item.guest_iqdropdown {
   @include h3-text();
   line-height: 15px;
   text-transform: uppercase;
@@ -234,7 +231,7 @@
 .button_accept {
   justify-self: end;
 }
-.iqdropdown.my_iqdropdown .iqdropdown-menu-option {
+.iqdropdown.guest_iqdropdown .iqdropdown-menu-option {
   display: flex;
   height: 37px;
   justify-content: space-between;

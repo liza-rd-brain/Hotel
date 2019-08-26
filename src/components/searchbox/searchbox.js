@@ -1,3 +1,3 @@
 /* import "./searchbox.scss"; */
-import "../select-guest/select-guest";
+import "../select-items/select-items/";
 import "../button/button.scss";
