@@ -11,10 +11,10 @@ mixin select-items({id,size,type,items,title})
 
     //здесь выбор доп класса с контейнером сделать как в логотипе,если есть
     div(class="iqdropdown iqdropdown__select" id=`${id}`)
-        p(class="iqdropdown-selection iqdropdown__text")
+        p(class=`iqdropdown-selection iqdropdown__text ${id}-title`) #{title}
         div(class="iqdropdown-menu" id="iqdropdown-menu__select")
             - for (let i=0;i<items.length;i++)
-                div(class="iqdropdown-menu-option" data-id=`item${i}`)
+                div(class="iqdropdown-menu-option" data-id=`${id+i}`)
                     p(class="iqdropdown-item") #{items[i].text}
             div(class="iqdropdown-menu-wrap")
                 +button(btn_clear)       

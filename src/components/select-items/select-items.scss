@@ -59,7 +59,7 @@
   fill: $dark-25;
 }
 
-.select-item {
+/* .select-item {
   display: flex;
   flex-direction: column;
 
@@ -123,7 +123,6 @@
     box-sizing: border-box;
     border-radius: 4px;
     padding-left: 15px;
-    /*   cursor: pointer; */
 
     width: 100%;
     background: transparent;
@@ -131,15 +130,12 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
-    // Mozilla Hack
     text-indent: 0.01px;
     text-overflow: "";
     pointer-events: none;
     &_open {
       border: 1px solid $dark-50;
       border-radius: none;
-      /* border-bottom: 1px solid transparent; */
       border-bottom-left-radius: 0px;
       border-bottom-right-radius: 0px;
       border-top-left-radius: 4px;
@@ -178,7 +174,7 @@
       box-sizing: border-box;
     }
   }
-}
+} */
 
 .iqdropdown {
   border: 1px solid $dark-25;
@@ -202,7 +198,7 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
-.iqdropdown-item.guest_iqdropdown {
+.iqdropdown-item.my_iqdropdown {
   @include h3-text();
   line-height: 15px;
   text-transform: uppercase;
@@ -215,23 +211,19 @@
 }
 .button_clear {
   opacity: 0;
-  & > h3 {
-    cursor: default;
-  }
+  pointer-events: none;
   &:hover {
     color: $white;
   }
   &.button_show {
     opacity: 1;
-    & > h3 {
-      cursor: pointer;
-    }
+    pointer-events: all;
   }
 }
 .button_accept {
   justify-self: end;
 }
-.iqdropdown.guest_iqdropdown .iqdropdown-menu-option {
+.iqdropdown.my_iqdropdown .iqdropdown-menu-option {
   display: flex;
   height: 37px;
   justify-content: space-between;
@@ -253,6 +245,7 @@
     & > .button-decrement.btn_visible,
     & > .button-increment.btn_visible {
       opacity: 1;
+      pointer-events: fill;
     }
 
     & > .button-decrement,
@@ -264,6 +257,7 @@
       width: 30px;
       height: 30px;
       padding: 0;
+      pointer-events: none;
 
       &:hover {
         background-color: inherit;
@@ -271,6 +265,7 @@
       & > .icon-decrement {
         min-width: 6px;
         width: 6px;
+        pointer-events: none;
       }
 
       & > .icon-decrement::after {
@@ -280,6 +275,7 @@
         height: 1px;
         width: 6px;
         /*  min-width: 6px; */
+        pointer-events: none;
       }
       & > .icon-decrement::before {
         background-color: $dark-25;

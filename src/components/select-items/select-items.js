@@ -4,25 +4,6 @@ import "./select-items.scss";
 // import "../select-menu/select-menu";
 // import easydropdown from 'easydropdown';
 
-// $(".select-item__wrap").click(function(event) {
-//   var select = $(event.target).children(".select-item__select");
-//   select.toggleClass("select-item__select_open");
-//   /*  $(event.target).toggleClass("select-item__wrap_open"); */
-//   /* $(event.target).children(".select-item__options").addClass("select-item__options_visible"); */
-
-//   var options = $(event.target).children(".select-item__options");
-//   options.toggleClass("select-item__options_visible");
-// });
-
-// $(".select-item__wrap").on("click", function() {
-//   alert($(this).attr("class"));
-// });
-// console.log("test");
-// console.log($);
-
-// easydropdown.all()
-// const edd = easydropdown('#my-select');
-
 // максимум - 10 гостей
 const GUEST = {
   maxItems: 10,
@@ -61,102 +42,179 @@ const AMENTIES = {
 };
 
 let defaultText = "0 items";
-let guestText = "Сколько гостей";
-let amenitiesText = "Удобства номера";
 
-let createDropdown = () => {
-  $("#guest").iqDropdown(GUEST);
-  $("#guest p.iqdropdown__text").text(guestText);
-  checkText();
-  checkButtons();
-  showButtonClear();
-   $('[class^="iqdropdown"]').addClass("my_iqdropdown");
- /*  $(".my_iqdropdown")
-    .find($(".counter"))
-    .addClass("my_iqdropdown"); */
-  
- /*  $("#guest")
-    .find('[class^="iqdropdown"]')
-    .addClass("guest_iqdropdown"); */
-  $(".guest_iqdropdown")
-    .find($(".counter"))
-    .addClass("guest_iqdropdown");
+let guestID = "guest";
+let amenitiesID = "amenities";
 
-  $("#amenities").iqDropdown(AMENTIES);
-  $("#guest p.iqdropdown__text").text(amenitiesText);
-  /*  checkText();
-  checkButtons();
-  showButtonClear(); */
-  /*  $('[class^="iqdropdown"]').addClass("my_iqdropdown");
-  $(".my_iqdropdown")
-    .find($(".counter"))
-    .addClass("my_iqdropdown"); */
-$('[class^="iqdropdown"]').addClass("amenities_iqdropdown");
-  $(".amenities_iqdropdown")
-    .find($(".counter"))
-    .addClass("amenities_iqdropdown");
-};
+let guestText = $("#guest .iqdropdown__text").text();
+let amenitiesText = $("#amenities .iqdropdown__text").text();
 
-/* let createDropdown = () => {
-  $("#amenities").iqDropdown();
-  $("p.iqdropdown__text").text(amenitiesText);
-  checkText();
-  checkButtons();
-   showButtonClear();
-  $('[class^="iqdropdown"]').addClass("my_iqdropdown");
-  $(".my_iqdropdown")
-    .find($(".counter"))
-    .addClass("my_iqdropdown");
-}; */
+//отдельные счетчики для гостей и удобств
+let guestCounter = [
+  { id: "guest0", amount: 0 },
+  { id: "guest1", amount: 0 },
+  { id: "guest2", amount: 0 }
+];
+let amenitiesCounter = [
+  { id: "amenities0", amount: 0 },
+  { id: "amenities1", amount: 0 },
+  { id: "amenities2", amount: 0 }
+];
 
 $().ready(() => {
-  createDropdown();
+  createDropdowns(guestID, GUEST, guestText);
+  createDropdowns(amenitiesID, AMENTIES, amenitiesText);
 });
 
-let checkText = () => {
-  let btnInc = $("#guest").find(".button-increment");
-  let btnDec = $("#guest").find(".button-decrement");
-  console.log(btnInc);
+let createDropdowns = (id, config, title) => {
+  $(`#${id}`).iqDropdown(config);
+  $(`#${id} p.iqdropdown__text`).text(title);
+  /*  checkText(id, title); */
+  checkButtons(id);
+  $(`#${id}`).addClass(`my_iqdropdown ${id}_iqdropdown`);
+  $(` [class^="iqdropdown"]`).addClass(`my_iqdropdown`);
 
-  btnInc.on("click", function() {
-    changeText();
-    checkButtons();
-    showButtonClear();
-  });
+  /*   let counter = $(`div[data-id='${id + i}']  .counter`).text(); */
+  //добавляем элементам инкр/декр дата-атрибут
+  for (let i = 0; i < 3; i++) {
+    let itemCounter = $(`div[data-id='${id + i}']`);
+    itemCounter.find(".counter").attr("data-id", `${id + i}`);
+    itemCounter.find(".iqdropdown-item").attr("data-id", `${id + i}`);
+    itemCounter.find("button").attr("data-id", `${id + i}`);
 
-  btnDec.on("click", function() {
-    changeText();
-    checkButtons();
-  });
+    itemCounter.find("button").on("click", function(e) {
+      changeCounter(id, title, e);
+    });
+
+    /*  itemCounter.find("button-decrement").on("click", function(e) {
+      changeCounter(id, title, e, );
+    }); */
+
+    itemCounter.find("button").on("click", function(e) {
+      checkButtons(id);
+      showButtonClear(id, title);
+      changeText(id, title, e);
+    });
+  }
+
+  $(`.${id}_iqdropdown`)
+    .find($(".button_clear"))
+    .attr("data", `${id}`)
+    .on("click", { id, config, title }, clearSelect);
 };
 
-let showButtonClear = () => {
-  //здесь лучше изменить на количество в counter
-  if (
-    $("#guest")
-      .find("p.iqdropdown__text")
-      .text() != guestText
-  ) {
-    /*     console.log(defaultText); */
-    /*  console.log(
-      $(".iqdropdown")
-        .find("p.iqdropdown__text")
-        .text()
-    ); */
-    $(".button_clear").addClass("button_show");
+let changeCounter = (id, title, e) => {
+  console.log(id);
+  let elem = e.target.getAttribute("data-id");
+  let elemClass = e.target.getAttribute("class");
+  console.log(elemClass);
+  let currentArrayCount = id === "guest" ? guestCounter : amenitiesCounter;
+  let currElem = currentArrayCount.find(item => item.id == elem);
+  if (elemClass.includes("button-increment")) {
+    currElem.amount++;
   } else {
-    $(".button_clear").removeClass("button_show");
+    currElem.amount--;
+  }
+  console.log(currentArrayCount);
+};
+
+let showButtonClear = id => {
+  //если хоть один счетчик ненулевой
+  if (
+    $(`#${id}`)
+      .find(".counter")
+      .text() != 0
+  ) {
+    $(`[data=${id}]`).addClass("button_show");
+  } else {
+    $(`[data=${id}]`).removeClass("button_show");
   }
 };
 
-//только для гостей
-let changeText = () => {
-  //функция будет вызываться при нажатии на кнопки плюс или минус
-  //проверяем первый символ, если он больше 4 - меняем "гостя" на "гостей" и обратно
+let changeText = (id, title, e) => {
+  switch (id) {
+    case "guest":
+      changeTextGuest(id, title, e);
+      break;
+    case "amenities":
+      changeTextAmenities(id, title, e);
+      break;
+  }
 
-  let $text = $("#guest")
+  /*  let $text = $("#guest")
     .find("p.iqdropdown__text")
     .text();
+  if ($text.slice(0, 2) > 4) {
+    $("#guest")
+      .find("p.iqdropdown__text")
+      .text(`${$text.slice(0, 2)} гостей`);
+  } */
+};
+//функция будет вызываться при нажатии на кнопки плюс или минус
+//проверяем первый символ, если он больше 4 - меняем "гостя" на "гостей" и обратно
+
+/*  1) Проверяем гость или удобства
+  2) ДЛя гостя делим строки на гость и младенец
+  3) ДЛя удобств на удобства и многоточие */
+
+let changeTextGuest = (id, title, e) => {
+  //изменим кнопку для младенцев
+  /*   $(`[data-id="guest2"]`)
+    .removeClass("counter")
+    .addClass("counter_baby"); */
+  /*   let babyButtonDec = $(`button-increment [data-id="guest2"]`);
+  babyButtonInc.deleteClass("button-increment");
+  babyButtonDec.deleteClass("button-decrement"); */
+  let currTitle = $(`#${id}`)
+    .find("p.iqdropdown__text")
+    .text();
+  /*   console.log(currTitle); */
+  /* 
+  console.log(e.target.getAttribute("data-id")); */
+  /*   let currElem = currentArrayCount.find(item => item.id == elem); */
+
+  let currAmountGuests =
+    guestCounter.find(item => item.id == "guest0").amount +
+    guestCounter.find(item => item.id == "guest1").amount;
+
+  let currAmountBabyes = guestCounter.find(item => item.id == "guest2").amount;
+  let currBabyesString =
+    currAmountBabyes > 0 ? `, дети: ${currAmountBabyes}` : " ";
+  console.log(`гости: ${currAmountGuests},${currBabyesString}`);
+
+  const finishText = ``;
+
+  $(`#${id}`)
+    .find("p.iqdropdown__text")
+    .text(`гости: ${currAmountGuests}${currBabyesString}`);
+
+  let currText = guestCounter;
+  let currElem = e.target.getAttribute("data-id");
+
+  switch (currElem) {
+    case "guest0":
+      currText = $(`#${id}`)
+        .find("p.iqdropdown__text")
+        .text();
+      /*  console.log(currText); */
+      break;
+    case "guest1":
+      currText = $(`#${id}`)
+        .find("p.iqdropdown__text")
+        .text();
+      /*    console.log(currText); */
+      break;
+    default:
+      currText = "младенцы";
+    /*  console.log(currText); */
+  }
+
+  const guestTitle = ``;
+
+  let $text = $(`#${id}`)
+    .find("p.iqdropdown__text")
+    .text();
+
   if ($text.slice(0, 2) > 4) {
     $("#guest")
       .find("p.iqdropdown__text")
@@ -164,37 +222,90 @@ let changeText = () => {
   }
 };
 
-//похоже тоже нужно будет прописать для каждого отдельного класса
-let checkButtons = () => {
+let changeTextAmenities = (id, title, e) => {
+  /*  console.log("удобства"); */
+};
+
+let checkButtons = id => {
   for (let i = 0; i < 4; i++) {
-    let counter = $(`div[data-id='item${i}']  .counter`).text();
-    $(`div[data-id='item${i}'] .button-increment`).addClass("btn_visible");
+    let counter = $(`div[data-id='${id + i}']  .counter`).text();
+    $(`div[data-id='${id + i}'] .button-increment`).addClass("btn_visible");
 
     if (counter > 0 && counter < 9) {
-      $(`div[data-id='item${i}']  .button-decrement`).addClass("btn_visible");
+      $(`div[data-id='${id + i}']  .button-decrement`).addClass("btn_visible");
     } else if (counter > 9) {
-      $(`div[data-id='item${i}']  .button-increment`).removeClass(
+      $(`div[data-id='${id + i}']  .button-increment`).removeClass(
         "btn_visible"
       );
     } else if (counter < 1) {
-      $(`div[data-id='item${i}']  .button-decrement`).removeClass(
+      $(`div[data-id='${id + i}']  .button-decrement`).removeClass(
         "btn_visible"
       );
     }
   }
 };
 
-//работающий функционал кнопки очистить!!!!
-$(".button_clear").on("click", () => {
+let clearSelect = e => {
+  let id = e.data.id;
+  let config = e.data.config;
+  let title = e.data.title;
+
   for (let i = 0; i < 2; i++) {
-    $("#guest")
+    $(`#${id}`)
       .find(".iqdropdown-item-controls")
       .addClass("my_iqdropdown")
       .remove();
-    createDropdown();
+    createDropdowns(id, config, title);
 
-    $("#guest")
+    $(`#${id}`)
       .find(".iqdropdown-item-controls .my_iqdropdown .iqdropdown-content")
       .remove();
   }
-});
+  guestCounter = [
+    { id: "guest0", amount: 0 },
+    { id: "guest1", amount: 0 },
+    { id: "guest2", amount: 0 }
+  ];
+  amenitiesCounter = [
+    { id: "amenities0", amount: 0 },
+    { id: "amenities1", amount: 0 },
+    { id: "amenities2", amount: 0 }
+  ];
+};
+
+//по факту не нужен метод
+/* let checkText = (id, title) => {
+  let btnInc = $(`#${id}`).find(".button-increment");
+  let btnDec = $(`#${id}`).find(".button-decrement");
+
+  btnInc.on("click", function() {
+    checkButtons(id);
+    showButtonClear(id, title);
+    changeText(id, title);
+  });
+
+  btnDec.on("click", function() {
+    changeText(id, title);
+    showButtonClear(id, title);
+    checkButtons(id);
+  });
+}; */
+
+// $(".select-item__wrap").click(function(event) {
+//   var select = $(event.target).children(".select-item__select");
+//   select.toggleClass("select-item__select_open");
+//   /*  $(event.target).toggleClass("select-item__wrap_open"); */
+//   /* $(event.target).children(".select-item__options").addClass("select-item__options_visible"); */
+
+//   var options = $(event.target).children(".select-item__options");
+//   options.toggleClass("select-item__options_visible");
+// });
+
+// $(".select-item__wrap").on("click", function() {
+//   alert($(this).attr("class"));
+// });
+// console.log("test");
+// console.log($);
+
+// easydropdown.all()
+// const edd = easydropdown('#my-select');
