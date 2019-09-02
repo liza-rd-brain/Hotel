@@ -41,8 +41,6 @@ const AMENTIES = {
   beforeIncrement: () => true
 };
 
-let defaultText = "0 items";
-
 let guestID = "guest";
 let amenitiesID = "amenities";
 
@@ -55,6 +53,7 @@ let guestCounter = [
   { id: "guest1", amount: 0 },
   { id: "guest2", amount: 0 }
 ];
+
 let amenitiesCounter = [
   { id: "amenities0", amount: 0 },
   { id: "amenities1", amount: 0 },
@@ -74,7 +73,6 @@ let createDropdowns = (id, config, title) => {
   $(`#${id}`).addClass(`my_iqdropdown ${id}_iqdropdown`);
   $(` [class^="iqdropdown"]`).addClass(`my_iqdropdown`);
 
-  /*   let counter = $(`div[data-id='${id + i}']  .counter`).text(); */
   //добавляем элементам инкр/декр дата-атрибут
   for (let i = 0; i < 3; i++) {
     let itemCounter = $(`div[data-id='${id + i}']`);
@@ -108,6 +106,7 @@ let changeCounter = (id, title, e) => {
   let elem = e.target.getAttribute("data-id");
   let elemClass = e.target.getAttribute("class");
   console.log(elemClass);
+
   let currentArrayCount = id === "guest" ? guestCounter : amenitiesCounter;
   let currElem = currentArrayCount.find(item => item.id == elem);
   if (elemClass.includes("button-increment")) {
@@ -179,14 +178,15 @@ let changeTextGuest = (id, title, e) => {
 
   let currAmountBabyes = guestCounter.find(item => item.id == "guest2").amount;
   let currBabyesString =
-    currAmountBabyes > 0 ? `, дети: ${currAmountBabyes}` : " ";
+    currAmountBabyes > 0 ? `, ${currAmountBabyes} младенец` : " ";
   console.log(`гости: ${currAmountGuests},${currBabyesString}`);
 
   const finishText = ``;
 
+  //параметризировать слово гость и младенец
   $(`#${id}`)
     .find("p.iqdropdown__text")
-    .text(`гости: ${currAmountGuests}${currBabyesString}`);
+    .text(`${currAmountGuests} гостя ${currBabyesString}`);
 
   let currText = guestCounter;
   let currElem = e.target.getAttribute("data-id");
@@ -261,35 +261,17 @@ let clearSelect = e => {
       .find(".iqdropdown-item-controls .my_iqdropdown .iqdropdown-content")
       .remove();
   }
-  guestCounter = [
-    { id: "guest0", amount: 0 },
-    { id: "guest1", amount: 0 },
-    { id: "guest2", amount: 0 }
-  ];
-  amenitiesCounter = [
-    { id: "amenities0", amount: 0 },
-    { id: "amenities1", amount: 0 },
-    { id: "amenities2", amount: 0 }
-  ];
+
+  //занулить элементы искуственно?!
+  guestCounter.map(item => {
+    item.amount = 0;
+  });
+  amenitiesCounter.map(item => {
+    item.amount = 0;
+  });
+
+  showButtonClear(id);
 };
-
-//по факту не нужен метод
-/* let checkText = (id, title) => {
-  let btnInc = $(`#${id}`).find(".button-increment");
-  let btnDec = $(`#${id}`).find(".button-decrement");
-
-  btnInc.on("click", function() {
-    checkButtons(id);
-    showButtonClear(id, title);
-    changeText(id, title);
-  });
-
-  btnDec.on("click", function() {
-    changeText(id, title);
-    showButtonClear(id, title);
-    checkButtons(id);
-  });
-}; */
 
 // $(".select-item__wrap").click(function(event) {
 //   var select = $(event.target).children(".select-item__select");
