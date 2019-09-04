@@ -131,7 +131,6 @@ const showButtonClear = id => {
 };
 
 const changeText = id => {
-  debugger;
   switch (id) {
     case "guest":
       changeTitleGuest(id);
@@ -195,7 +194,7 @@ const changeTitleAmenities = id => {
       : " ";
   const needEllipsis =
     currAmountBedrooms && currAmountBeds && currAmountBath > 0 ? "..." : " ";
-  debugger;
+
   const finalText =
     currAmountBedrooms && currAmountBeds
       ? `${currBedroomsString} ${needСomma} ${currBedsString} ${needEllipsis} `

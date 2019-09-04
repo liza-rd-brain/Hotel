@@ -3,19 +3,18 @@ include ../button/button
     const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
     const btn_apply = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
 
-//h3 по умолчанию будет включен в select-item, если вдруг заголовок не нужен, передаем пустой ""
-mixin select-items({id,size,type,items,title})
+mixin select-items({id,size,items,title,hasControlButtons})
     -
         const defaultItems=[{text:"Item"},{text:"Item"},{text:"Item"}]
         const currentItems=items||defaultItems
 
-    //здесь выбор доп класса с контейнером сделать как в логотипе,если есть
-    div(class="iqdropdown iqdropdown__select" id=`${id}`)
+    div(class=`iqdropdown iqdropdown__select iqdropdown_${size}` id=`${id}`)
         p(class=`iqdropdown-selection iqdropdown__text ${id}-title`) #{title}
         div(class="iqdropdown-menu" id="iqdropdown-menu__select")
             - for (let i=0;i<items.length;i++)
                 div(class="iqdropdown-menu-option" data-id=`${id+i}`)
                     p(class="iqdropdown-item") #{items[i].text}
-            div(class="iqdropdown-menu-wrap")
-                +button(btn_clear)       
-                +button(btn_apply)
+            if hasControlButtons       
+                div(class="iqdropdown-menu-wrap")
+                    +button(btn_clear)       
+                    +button(btn_apply)

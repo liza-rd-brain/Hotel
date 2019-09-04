@@ -18,15 +18,14 @@ include ../../../components/toggle/toggle.pug
     const textField_medium_arrow = {size:"medium",input_type:"text",effect:"arrow"}
     const selectGuest={id:"guest", 
                         size:"big",
-                        type:"guest",
                         items:[{text:"взрослые",mincount:"1"},{text:"дети"},{text:"младенцы"}],
-                        title:"Сколько гостей"}
+                        title:"Сколько гостей",hasControlButtons:true}
 
     const roomAmenities={id:"amenities",
                         size:"medium",
-                        type:"amenities",
                         items:[{text:"спальни"},{text:"кровати"},{text:"ванные комнаты"}],
                         title:"Выберите удобства"}
+                        
     const selectDate={size:"small",type:"date"}
     //перенесу в страничку с выбором номера
     const additionalAmenities={items:[{caption:"завтрак"},{caption:"письменный стол"}],
