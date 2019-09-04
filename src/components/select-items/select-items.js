@@ -41,20 +41,22 @@ const AMENTIES = {
   beforeIncrement: () => true
 };
 
-let guestID = "guest";
-let amenitiesID = "amenities";
+const guestID = "guest";
+const amenitiesID = "amenities";
 
-let guestText = $("#guest .iqdropdown__text").text();
-let amenitiesText = $("#amenities .iqdropdown__text").text();
+const guestText = $("#guest .iqdropdown__text").text();
+const amenitiesText = $("#amenities .iqdropdown__text").text();
 
+const defaultGuestText = guestText;
+const defaultAmenitiesText = amenitiesText;
 //отдельные счетчики для гостей и удобств
-let guestCounter = [
+const guestCounter = [
   { id: "guest0", amount: 0 },
   { id: "guest1", amount: 0 },
   { id: "guest2", amount: 0 }
 ];
 
-let amenitiesCounter = [
+const amenitiesCounter = [
   { id: "amenities0", amount: 0 },
   { id: "amenities1", amount: 0 },
   { id: "amenities2", amount: 0 }
@@ -65,7 +67,26 @@ $().ready(() => {
   createDropdowns(amenitiesID, AMENTIES, amenitiesText);
 });
 
-let createDropdowns = (id, config, title) => {
+const addCountersAttr = (id, title) => {
+  for (let i = 0; i < 3; i++) {
+    let itemCounter = $(`div[data-id='${id + i}']`);
+    itemCounter.find(".counter").attr("data-id", `${id + i}`);
+    itemCounter.find(".iqdropdown-item").attr("data-id", `${id + i}`);
+    itemCounter.find("button").attr("data-id", `${id + i}`);
+    addCountersHandlers(id, title, itemCounter);
+  }
+};
+
+const addCountersHandlers = (id, title, itemCounter) => {
+  itemCounter.find("button").on("click", function(e) {
+    changeCounter(id, e);
+    checkButtons(id);
+    showButtonClear(id, title);
+    changeText(id, title, e);
+  });
+};
+
+const createDropdowns = (id, config, title) => {
   $(`#${id}`).iqDropdown(config);
   $(`#${id} p.iqdropdown__text`).text(title);
   /*  checkText(id, title); */
@@ -73,39 +94,20 @@ let createDropdowns = (id, config, title) => {
   $(`#${id}`).addClass(`my_iqdropdown ${id}_iqdropdown`);
   $(` [class^="iqdropdown"]`).addClass(`my_iqdropdown`);
 
-  //добавляем элементам инкр/декр дата-атрибут
-  for (let i = 0; i < 3; i++) {
-    let itemCounter = $(`div[data-id='${id + i}']`);
-    itemCounter.find(".counter").attr("data-id", `${id + i}`);
-    itemCounter.find(".iqdropdown-item").attr("data-id", `${id + i}`);
-    itemCounter.find("button").attr("data-id", `${id + i}`);
+  addCountersAttr(id, title);
+  addClearButtonHandlers(id, config, title);
+};
 
-    itemCounter.find("button").on("click", function(e) {
-      changeCounter(id, title, e);
-    });
-
-    /*  itemCounter.find("button-decrement").on("click", function(e) {
-      changeCounter(id, title, e, );
-    }); */
-
-    itemCounter.find("button").on("click", function(e) {
-      checkButtons(id);
-      showButtonClear(id, title);
-      changeText(id, title, e);
-    });
-  }
-
+const addClearButtonHandlers = (id, config, title) => {
   $(`.${id}_iqdropdown`)
     .find($(".button_clear"))
     .attr("data", `${id}`)
     .on("click", { id, config, title }, clearSelect);
 };
 
-let changeCounter = (id, title, e) => {
-  console.log(id);
+const changeCounter = (id, e) => {
   let elem = e.target.getAttribute("data-id");
   let elemClass = e.target.getAttribute("class");
-  console.log(elemClass);
 
   let currentArrayCount = id === "guest" ? guestCounter : amenitiesCounter;
   let currElem = currentArrayCount.find(item => item.id == elem);
@@ -114,11 +116,9 @@ let changeCounter = (id, title, e) => {
   } else {
     currElem.amount--;
   }
-  console.log(currentArrayCount);
 };
 
-let showButtonClear = id => {
-  //если хоть один счетчик ненулевой
+const showButtonClear = id => {
   if (
     $(`#${id}`)
       .find(".counter")
@@ -130,103 +130,157 @@ let showButtonClear = id => {
   }
 };
 
-let changeText = (id, title, e) => {
+const changeText = id => {
+  debugger;
   switch (id) {
     case "guest":
-      changeTextGuest(id, title, e);
+      changeTitleGuest(id);
       break;
     case "amenities":
-      changeTextAmenities(id, title, e);
+      changeTitleAmenities(id);
       break;
   }
-
-  /*  let $text = $("#guest")
-    .find("p.iqdropdown__text")
-    .text();
-  if ($text.slice(0, 2) > 4) {
-    $("#guest")
-      .find("p.iqdropdown__text")
-      .text(`${$text.slice(0, 2)} гостей`);
-  } */
 };
-//функция будет вызываться при нажатии на кнопки плюс или минус
-//проверяем первый символ, если он больше 4 - меняем "гостя" на "гостей" и обратно
 
-/*  1) Проверяем гость или удобства
-  2) ДЛя гостя делим строки на гость и младенец
-  3) ДЛя удобств на удобства и многоточие */
-
-let changeTextGuest = (id, title, e) => {
-  //изменим кнопку для младенцев
-  /*   $(`[data-id="guest2"]`)
-    .removeClass("counter")
-    .addClass("counter_baby"); */
-  /*   let babyButtonDec = $(`button-increment [data-id="guest2"]`);
-  babyButtonInc.deleteClass("button-increment");
-  babyButtonDec.deleteClass("button-decrement"); */
-  let currTitle = $(`#${id}`)
-    .find("p.iqdropdown__text")
-    .text();
-  /*   console.log(currTitle); */
-  /* 
-  console.log(e.target.getAttribute("data-id")); */
-  /*   let currElem = currentArrayCount.find(item => item.id == elem); */
-
-  let currAmountGuests =
+const changeTitleGuest = id => {
+  const currAmountGuests =
     guestCounter.find(item => item.id == "guest0").amount +
     guestCounter.find(item => item.id == "guest1").amount;
 
-  let currAmountBabyes = guestCounter.find(item => item.id == "guest2").amount;
-  let currBabyesString =
-    currAmountBabyes > 0 ? `, ${currAmountBabyes} младенец` : " ";
-  console.log(`гости: ${currAmountGuests},${currBabyesString}`);
+  const currAmountBabyes = guestCounter.find(item => item.id == "guest2")
+    .amount;
+  const guestText = changeTextItem("guest", currAmountGuests);
+  const babyText = changeTextItem("baby", currAmountBabyes);
 
-  const finishText = ``;
+  const currGuestString =
+    currAmountGuests > 0 ? ` ${currAmountGuests} ${guestText}` : " ";
+  const currBabyesString =
+    currAmountBabyes > 0 ? ` ${currAmountBabyes} ${babyText}` : " ";
+  const needСomma = currAmountGuests && currAmountBabyes ? "," : " ";
 
-  //параметризировать слово гость и младенец
+  const finalText =
+    currAmountGuests || currAmountBabyes
+      ? `${currGuestString} ${needСomma} ${currBabyesString}`
+      : defaultGuestText;
+
   $(`#${id}`)
     .find("p.iqdropdown__text")
-    .text(`${currAmountGuests} гостя ${currBabyesString}`);
+    .text(finalText);
+};
 
-  let currText = guestCounter;
-  let currElem = e.target.getAttribute("data-id");
+const changeTitleAmenities = id => {
+  const currAmountBedrooms = amenitiesCounter.find(
+    item => item.id == "amenities0"
+  ).amount;
+  const currAmountBeds = amenitiesCounter.find(item => item.id == "amenities1")
+    .amount;
+  const currAmountBath = amenitiesCounter.find(item => item.id == "amenities2")
+    .amount;
 
-  switch (currElem) {
-    case "guest0":
-      currText = $(`#${id}`)
-        .find("p.iqdropdown__text")
-        .text();
-      /*  console.log(currText); */
-      break;
-    case "guest1":
-      currText = $(`#${id}`)
-        .find("p.iqdropdown__text")
-        .text();
-      /*    console.log(currText); */
-      break;
-    default:
-      currText = "младенцы";
-    /*  console.log(currText); */
-  }
+  const bedroomsText = changeTextItem("bedrooms", currAmountBedrooms);
+  const bedsText = changeTextItem("beds", currAmountBeds);
+  const bathText = changeTextItem("bath", currAmountBath);
 
-  const guestTitle = ``;
+  const currBedroomsString =
+    currAmountBedrooms > 0 ? ` ${currAmountBedrooms} ${bedroomsText}` : " ";
+  const currBedsString =
+    currAmountBeds > 0 ? ` ${currAmountBeds} ${bedsText}` : " ";
+  const currBathString =
+    currAmountBath > 0 ? ` ${currAmountBath} ${bathText}` : " ";
+  const needСomma =
+    (currAmountBedrooms && currAmountBeds) ||
+    (currAmountBedrooms && currAmountBath) ||
+    (currAmountBeds && currAmountBath)
+      ? ","
+      : " ";
+  const needEllipsis =
+    currAmountBedrooms && currAmountBeds && currAmountBath > 0 ? "..." : " ";
+  debugger;
+  const finalText =
+    currAmountBedrooms && currAmountBeds
+      ? `${currBedroomsString} ${needСomma} ${currBedsString} ${needEllipsis} `
+      : currAmountBedrooms && currAmountBath
+      ? `${currBedroomsString} ${needСomma} ${currBathString}  `
+      : currAmountBeds && currAmountBath
+      ? `${currBedsString} ${needСomma} ${currBathString}  `
+      : currAmountBedrooms
+      ? `${currBedroomsString} `
+      : currAmountBeds
+      ? `${currBedsString} `
+      : currAmountBath
+      ? `${currBathString}  `
+      : defaultAmenitiesText;
 
-  let $text = $(`#${id}`)
+  $(`#${id}`)
     .find("p.iqdropdown__text")
-    .text();
+    .text(finalText);
+};
 
-  if ($text.slice(0, 2) > 4) {
-    $("#guest")
-      .find("p.iqdropdown__text")
-      .text(`${$text.slice(0, 2)} гостей`);
+const changeTextItem = (name, amount) => {
+  if (amount === 1) {
+    switch (name) {
+      case "guest":
+        return "гость";
+        break;
+      case "baby":
+        return "младенец";
+        break;
+      case "bedrooms":
+        return "спальня";
+        break;
+      case "beds":
+        return "кровать";
+        break;
+      case "bath":
+        return "ванная комната";
+        break;
+      default:
+        return "item";
+    }
+  } else if (amount > 1 && amount < 5) {
+    switch (name) {
+      case "guest":
+        return "гостя";
+        break;
+      case "baby":
+        return "младенца";
+        break;
+      case "bedrooms":
+        return "спальни";
+        break;
+      case "beds":
+        return "кровати";
+        break;
+      case "bath":
+        return "ванные комнаты";
+        break;
+      default:
+        return "item";
+    }
+  } else {
+    switch (name) {
+      case "guest":
+        return "гостей";
+        break;
+      case "baby":
+        return "младенцев";
+        break;
+      case "bedrooms":
+        return "спальнен";
+        break;
+      case "beds":
+        return "кроватей";
+        break;
+      case "bath":
+        return "ванных комнат";
+        break;
+      default:
+        return "item";
+    }
   }
 };
 
-let changeTextAmenities = (id, title, e) => {
-  /*  console.log("удобства"); */
-};
-
-let checkButtons = id => {
+const checkButtons = id => {
   for (let i = 0; i < 4; i++) {
     let counter = $(`div[data-id='${id + i}']  .counter`).text();
     $(`div[data-id='${id + i}'] .button-increment`).addClass("btn_visible");
@@ -245,7 +299,7 @@ let checkButtons = id => {
   }
 };
 
-let clearSelect = e => {
+const clearSelect = e => {
   let id = e.data.id;
   let config = e.data.config;
   let title = e.data.title;
