@@ -48,6 +48,7 @@ const amenitiesText = $("#amenities .iqdropdown__text").text();
 
 const defaultGuestText = guestText;
 const defaultAmenitiesText = amenitiesText;
+
 //отдельные счетчики для гостей и удобств
 const guestCounter = [
   { id: "guest0", amount: 0 },

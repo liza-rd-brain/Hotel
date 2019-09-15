@@ -19,28 +19,39 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
   align-items: center;
   height: 18px;
 
-  &_wrap {
+  &__wrap {
     text-decoration: none;
     padding: 0px;
     cursor: pointer;
     outline: none;
     border-radius: 10px;
     border: 1px;
-    background-color: $white;
+    /* background-color: $white; */
     height: 20px;
     background: $dark-25;
     width: 40px;
     padding: 1px;
     color: $dark-25;
   }
-  &_amount {
+  &__amount {
     @include text($font, 10px, 400, inherit);
     line-height: 12px;
     pointer-events: none;
   }
-  &_img {
-    fill: $dark-25;
+  &__img {
+    height: 100%;
+    background-size:100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size:cover;
+ 
+    width:10px;
+    height:10px;
     pointer-events: none;
+    background-image: url(../like-button/images/like-button_transparent.svg);
+    
+    background-size: 10px 10px;
+    // background-image: url("./images/favorite_border.jpg");
   }
 }
 
@@ -50,45 +61,13 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
   opacity: 0;
   margin: 10px 0 0 20px;
   &:checked {
-    & ~ .like-button_wrap {
+    & ~ .like-button__wrap {
       color: $purple;
       background: $gradient;
     }
-    & ~ .like-button_wrap .like-button_img {
-      fill: $purple;
+    & ~ .like-button__wrap .like-button__img {
+     /*  background-image: url("./images/favorite.jpg"); */
     }
   }
 }
 
-/* #post_1 > div > span */
-
-/* .like-button_wrap {
-  position: relative;
-  padding: 0 0 0 51px;
-  cursor: pointer;
-  @include body-text();
-  line-height: 24px;
-}
-.like-button_wrap:before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 0px;
-  width: 40px;
-  height: 20px;
-  border: 1px solid $dark-25;
-  box-sizing: border-box;
-  border-radius: 10px;
-  transition: 0.1s;
-}
-.like-button_wrap:after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  top: 7px;
-  left: 4px;
-  background: $dark-25;
-  border-radius: 10px;
-  transition: 0.1s;
-} */
