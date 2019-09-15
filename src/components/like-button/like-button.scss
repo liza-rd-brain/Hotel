@@ -48,7 +48,7 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
     width:10px;
     height:10px;
     pointer-events: none;
-    background-image: url(../like-button/images/like-button_transparent.svg);
+    background-image: url(./images/like-button_transparent.svg);
     
     background-size: 10px 10px;
     // background-image: url("./images/favorite_border.jpg");
@@ -66,7 +66,7 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
       background: $gradient;
     }
     & ~ .like-button__wrap .like-button__img {
-     /*  background-image: url("./images/favorite.jpg"); */
+      background-image:  url(./images/like-button_colored.svg);
     }
   }
 }

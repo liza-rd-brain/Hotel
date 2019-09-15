@@ -74,7 +74,7 @@ const common = merge([
           }
         },
         {
-          test: /\.(woff|svg|ttf)$/,
+          test: /\.(woff|ttf)$/,
           loader: "file-loader",
           options: {
             name: "fonts/[name].[ext]"
