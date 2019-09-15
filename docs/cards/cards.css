@@ -1,0 +1,147 @@
+/* @function color-shade($color, $n) {
+  @return rgba($color, $n);
+} */
+.cards__wrap {
+  padding: 140px 150px 150px 150px;
+  width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #e5e5e5; }
+
+.cards__item {
+  width: 320px;
+  display: flex;
+  background-color: #fff;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2); }
+
+/* * {
+  outline: 1px solid gold;
+} */
+
+/* @function color-shade($color, $n) {
+  @return rgba($color, $n);
+} */
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  /*  margin: 30px 0 0 30px; */ }
+  .logo-icon_colored {
+    width: 40px;
+    height: 40px;
+    position: unset; }
+
+#left-path {
+  fill: rgba(31, 32, 65, 0.25); }
+  #left-path_colored {
+    fill: url(#left-gradient); }
+
+#right-path {
+  fill: rgba(31, 32, 65, 0.25); }
+  #right-path_colored {
+    fill: url(#right-gradient); }
+
+#circle-path {
+  fill: rgba(31, 32, 65, 0.25); }
+  #circle-path_colored {
+    fill: url(#circle-gradient); }
+
+/* @font-face {
+  font-family: MyriadPro-Regular;
+  src: url(./fons/MyriadPro-Regular.svg) format("svg"),
+    url(./fons/MyriadPro-Regular.ttf) format("ttf"),
+    url(./fons/MyriadPro-Regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: Montserrat;
+  src: url(images/Montserrat-Regular.svg) format("svg"), url(fonts/Montserrat-Regular.ttf) format("ttf"), url(fonts/Montserrat-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: Montserrat;
+  src: url(images/Montserrat-Bold.svg) format("svg"), url(fonts/Montserrat-Bold.ttf) format("ttf"), url(fonts/Montserrat-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: Quicksand;
+  src: url(images/Quicksand-Regular.svg) format("svg"), url(fonts/Quicksand-Regular.ttf) format("ttf"), url(fonts/Quicksand-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: Quicksand;
+  src: url(images/Quicksand-Bold.svg) format("svg"), url(fonts/Quicksand-Bold.ttf) format("ttf"), url(fonts/Quicksand-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal; }
+
+.title {
+  display: block;
+  color: #c50f0f;
+  padding: 50px;
+  font-family: "MyriadPro-Regular", "Arial", sans-serif;
+  font-size: 50px; }
+
+/* body {
+  padding: 150px 140px;
+}
+ */
+/* * {
+  outline: 1px solid gold;
+} */
+
+/* @function color-shade($color, $n) {
+  @return rgba($color, $n);
+} */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: 106px; }
+  .logo-link__logo-icon {
+    margin-right: 12.5px; }
+
+.logo-title {
+  fill: #1f2041; }
+
+/* @function color-shade($color, $n) {
+  @return rgba($color, $n);
+} */
+.searchbox {
+  width: 380px;
+  display: flex;
+  background-color: #fff;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2); }
+  .searchbox__wrap {
+    padding: 40px 30px 30px 30px; }
+  .searchbox__title {
+    /*   width: 80%; */
+    margin: 0 0 20px 0;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2041;
+    line-height: 30px;
+    letter-spacing: 1.1px; }
+  .searchbox__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .searchbox__select-item_date {
+    margin-bottom: 20px; }
+  .searchbox__select-item_guest {
+    margin-bottom: 30.44px; }
+
+.guests-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  .guests-box__text {
+    margin: 0; }
+

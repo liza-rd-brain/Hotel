@@ -1,0 +1,13 @@
+include ../select-items/select-items
+include ../checkbox/checkbox.pug
+
+mixin dropdown-item({select,items})
+    +select-items(select)
+    div(class="iqdropdown-menu-option" data-id=`${id+i}`)
+        +checkbox(items)
+        //- .test-wrap   
+        //-     +checkbox(items)
+    
+            //- if type="checkboxList"
+            //-     +checkbox(items)
+            //- else          

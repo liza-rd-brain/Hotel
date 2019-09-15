@@ -1,12 +1,34 @@
 @import "../../variables";
 @import "../../mixin";
 
-// !!!! Не получается убрать при ховере оранжевый квадратик
+/* .date-wrap {
+  position: relative;
+} */
+.all-wrap {
+  &_open {
+  }
+  /*   display: none;
+  position: absolute; */
+}
 
+.buttons-wrap {
+  display: none;
+  position: absolute;
+  left: 141px;
+  top: 828px;
+}
+
+.date_timepicker_start:focus .buttons-wrap {
+  display: block;
+}
+
+// !!!! Не получается убрать при ховере оранжевый квадратик
+.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_.my_datetimepicker {
+}
 .xdsoft_datetimepicker.my_datetimepicker {
   //временная мера для стилизации
   // display: block;
-  position: absolute;
+  position: relative;
   left: 311.984px;
   top: 435px;
 

@@ -12,28 +12,56 @@ include ../../../components/range-slider/range-slider.pug
 include ../../../components/checkbox/checkbox.pug
 include ../../../components/radio-button/radio-button.pug
 include ../../../components/toggle/toggle.pug
+//- include ../../../components/dropdown/dropdown.pug
+include ../../../components/dropdown-item/dropdown-item.pug
+include ../../../components/dropdown-list/dropdown-list.pug
+include ../../../components/like-button/like-button.pug
 
 -
     const textField_big = {size:"big",input_type:"text"}
     const textField_medium_arrow = {size:"medium",input_type:"text",effect:"arrow"}
+
+    const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
+    const btn_apply = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
+
     const selectGuest={id:"guest", 
                         size:"big",
                         items:[{text:"взрослые",mincount:"1"},{text:"дети"},{text:"младенцы"}],
-                        title:"Сколько гостей",hasControlButtons:true}
+                        title:"Сколько гостей",hasControlButtons:true,btn_clear:btn_clear,btn_apply:btn_apply,hasMenu:true}
 
     const roomAmenities={id:"amenities",
                         size:"medium",
                         items:[{text:"спальни"},{text:"кровати"},{text:"ванные комнаты"}],
-                        title:"Выберите удобства"}
+                        title:"Выберите удобства",hasMenu:true}
                         
     const selectDate={size:"small",type:"date"}
     //перенесу в страничку с выбором номера
-    const additionalAmenities={items:[{caption:"завтрак"},{caption:"письменный стол"}],
+    const addAmenities={items:[{caption:"завтрак"},{caption:"письменный стол"}],
                                 key:"amenities"}
+
     const availability={items:[{caption:"Широкий коридор",desc:"Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см."},
                                 {caption:"Помощник для инвалидов",desc:"На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера."}],
                                 key:"availability",
                                 isRich:true}
+
+    const addAmenitiesList={items:[{caption:"завтрак"},{caption:"письменный стол"}],
+                               key:"amenitiesList"}
+
+    const selectAddAmenities={id:"additional", 
+                        size:"medium",
+                        items:false,
+                        title:"Дополнительные удобства",hasControlButtons:false,hasMenu:false}
+
+    const addAmenitiesTotal={select:selectAddAmenities,items:addAmenitiesList}                    
+
+
+
+
+
+                               
+                               
+    
+
                                 
     
 doctype html
@@ -66,9 +94,11 @@ html
                         h3(class="formElements__text") masked text field
                         +textField(textField_big,"ДД.ММ.ГГГГ")
                          // h3(class="formElements__text") Dropdown
+
                     div(class="formElements__item")
-                        h3(class="formElements__text") date Dropdown
-                        +select-date(selectDate)
+                        div(class="date-wrap")
+                            h3(class="formElements__text") date Dropdown
+                            +select-date(selectDate)
 
                     div(class="formElements__item")
                         h3(class="formElements__text") period Dropdown
@@ -88,8 +118,8 @@ html
                         +button({isColored:true,size:"big",title:"перейти к отплате",isArrowButton:true})    
                     div(class="formElements__item item__wrap")   
                         +range-slider({})  
-                    div(class="formElements__item item__wrap")
-                        +checkbox(additionalAmenities)
+                        //- div(class="formElements__item item__wrap")
+                        //-     +checkbox(addAmenities)
                     div(class="formElements__item item__wrap")
                         +checkbox({})
                     div(class="formElements__item item__wrap")
@@ -97,4 +127,12 @@ html
                     div(class="formElements__item item__wrap")
                         +radio-button()    
                     div(class="formElements__item item__wrap")
-                        +toggle()       
+                        +toggle()  
+                    div(class="formElements__item item__wrap")
+                        +like-button("post_1","12") 
+                        //- div(class="formElements__item item__wrap")
+                        //-     +dropdown(addAmenitiesList)   
+                        //- div(class="formElements__item item__wrap")
+                        //-     +dropdown-item(addAmenitiesTotal)  
+                    div(class="formElements__item item__wrap")
+                        +dropdown-list()

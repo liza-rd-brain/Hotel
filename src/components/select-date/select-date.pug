@@ -1,5 +1,13 @@
 include ../arrow/arrow
+include ../button/button
+-
+    //- вынести в общие константы
+    const btn_clear_calender = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
+    const btn_apply_calender = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
 
 mixin select-date({size,type})
     input(id="date_timepicker_start" type="text" )
-    input(id="date_timepicker_end" type="text" )      
+    input(id="date_timepicker_end" type="text" )  
+    div(class="buttons-wrap")
+        +button(btn_clear)       
+        +button(btn_apply)

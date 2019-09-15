@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title> 
+      <FormElements></FormElements>
+    </title>
+  <link href="../index/index.css" rel="stylesheet"><link href="../landing/landing.css" rel="stylesheet"><link href="../cards/cards.css" rel="stylesheet"><link href="../colorsType/colorsType.css" rel="stylesheet"><link href="../formElements/formElements.css" rel="stylesheet"><link href="../headersAndFooters/headersAndFooters.css" rel="stylesheet"></head>
+  <body>
+    <div class="container">
+      <svg class="logo-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="left-path" d="M23.9989 32.4712C23.2224 32.4712 22.5871 31.8359 22.5871 31.0594C22.5871 25.6241 18.14 21.177 12.7047 21.177C11.9283 21.177 11.293 20.5418 11.293 19.7653C11.293 18.9888 11.9283 18.3535 12.7047 18.3535C19.7283 18.3535 25.4106 24.0359 25.4106 31.0594C25.4106 31.8359 24.7753 32.4712 23.9989 32.4712Z"></path>
+        <path id="right-path" d="M36.7068 19.7653C36.7068 20.5418 36.0715 21.177 35.295 21.177C31.9421 21.177 28.9421 22.8712 27.1774 25.4476C26.7892 24.4594 26.3303 23.5418 25.7656 22.6947C28.095 20.0123 31.5186 18.3535 35.295 18.3535C36.0715 18.3535 36.7068 18.9888 36.7068 19.7653Z"></path>
+        <path id="circle-path" d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z"></path>
+        <defs>
+          <linearGradient id="left-gradient" x1="15.294" y1="15.2942" x2="15.294" y2="27.0589" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#BC9CFF"></stop>
+            <stop offset="1" stop-color="#8BA4F9"></stop>
+          </linearGradient>
+          <linearGradient id="right-gradient" x1="26.0293" y1="15.2942" x2="26.0293" y2="21.206" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6FCF97"></stop>
+            <stop offset="1" stop-color="#66D2EA"></stop>
+          </linearGradient>
+          <linearGradient id="circle-gradient" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#BC9CFF"></stop>
+            <stop offset="1" stop-color="#8BA4F9">    </stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="formElements formElements__wrap">
+        <div class="formElements__column ">
+          <div class="formElements__item">
+            <h3 class="formElements__text">Text Field</h3>
+            <div class="textField__wrap">
+              <input class="textField  textField_size-big" type="text" placeholder="Email">
+            </div>
+          </div>
+          <div class="formElements__item">
+            <h3 class="formElements__text">Select Guest</h3>
+            <div class="iqdropdown iqdropdown__select iqdropdown_big" id="guest">
+              <p class="iqdropdown-selection iqdropdown__text guest-title">Сколько гостей</p>
+              <div class="iqdropdown-menu" id="iqdropdown-menu__select">
+                <div class="iqdropdown-menu-option" data-id="guest0">
+                  <p class="iqdropdown-item">взрослые</p>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="guest1">
+                  <p class="iqdropdown-item">дети</p>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="guest2">
+                  <p class="iqdropdown-item">младенцы</p>
+                </div>
+                <div class="iqdropdown-menu-wrap">
+                  <button class="button button_type-text button_clear">
+                    <h3 class="button__text button__text_colored button__text_header">очистить</h3>
+                  </button>
+                  <button class="button button_type-text button_accept">
+                    <h3 class="button__text button__text_colored button__text_header">применить</h3>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="formElements__item">
+            <h3 class="formElements__text">Select Amenities</h3>
+            <div class="iqdropdown iqdropdown__select iqdropdown_medium" id="amenities">
+              <p class="iqdropdown-selection iqdropdown__text amenities-title">Выберите удобства</p>
+              <div class="iqdropdown-menu" id="iqdropdown-menu__select">
+                <div class="iqdropdown-menu-option" data-id="amenities0">
+                  <p class="iqdropdown-item">спальни</p>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="amenities1">
+                  <p class="iqdropdown-item">кровати</p>
+                </div>
+                <div class="iqdropdown-menu-option" data-id="amenities2">
+                  <p class="iqdropdown-item">ванные комнаты</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="formElements__item">
+            <!-- на самом деле тут будет select-item_masked-->
+            <!-- с поведением выпадания календаря -?!-->
+            <h3 class="formElements__text">masked text field</h3>
+            <div class="textField__wrap">
+              <input class="textField  textField_size-big" type="text" placeholder="ДД.ММ.ГГГГ">
+            </div>
+          </div>
+          <div class="formElements__item">
+            <div class="date-wrap">
+              <h3 class="formElements__text">date Dropdown</h3>
+              <input id="date_timepicker_start" type="text">
+              <input id="date_timepicker_end" type="text">
+              <div class="buttons-wrap">
+                <button class="button button_type-text button_clear">
+                  <h3 class="button__text button__text_colored button__text_header">очистить</h3>
+                </button>
+                <button class="button button_type-text button_accept">
+                  <h3 class="button__text button__text_colored button__text_header">применить</h3>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="formElements__item">
+            <h3 class="formElements__text">period Dropdown</h3>
+            <input class="datepicker-here" type="text" data-range="true" data-multiple-dates-separator="  ">
+            <div class="dropdown-wrap" data-range="true">
+              <p class="dropdown-text">Start dropdown</p>
+              <input class="date-dropdown date-dropdown_start" type="text">
+              <p class="dropdown-text">End dropdown</p>
+              <input class="date-dropdown date-dropdown_end" type="text">
+            </div>
+          </div>
+          <div class="formElements__item">
+            <h3 class="formElements__text">subscription text field</h3>
+            <div class="textField__wrap">
+              <input class="textField  textField_size-medium textField_type-arrow" type="text" placeholder="Email"><a class="textField__link" href="#">
+                <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+                var gClassName 
+                gClassName= isShaded ? "" : "arrow-icon_noShaded"
+                -->
+                <svg class="arrow-icon arrow-icon_colored" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_d)"></g>
+                  <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                  <defs></defs>
+                  <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#BC9CFF"></stop>
+                    <stop offset="1" stop-color="#8BA4F9"></stop>
+                  </linearGradient>
+                  <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                    <feOffset dy="4"></feOffset>
+                    <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                  </filter>
+                </svg></a>
+            </div>
+          </div>
+          <div class="formElements__item">
+            <button class="button button_colored button_size-small">
+              <h3 class="button__text">click me</h3>
+            </button>
+            <button class="button button_bordered button_size-small">
+              <h3 class="button__text button__text_colored">click me</h3>
+            </button>
+            <button class="button button_type-text button_size-small">
+              <h3 class="button__text button__text_colored">click me</h3>
+            </button>
+            <button class="button button_colored button_type-arrow button_size-big">
+              <h3 class="button__text">перейти к отплате </h3>
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+            </button>
+          </div>
+          <div class="formElements__item item__wrap">  
+            <p class="slider-text">
+              <label class="slider-caption" for="amount">Range Slider</label>
+              <input class="slider-amount" type="text" id="amount" readonly>
+            </p>
+            <div class="slider-range"></div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="checkbox-wrap">
+              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+              <label class="checkbox-label" for="amenities-0">
+                <p class="checkbox-text"><span class="checkbox-caption">завтрак</span><span class="checkbox-desc"> </span></p>
+              </label>
+              <input class="checkbox" type="checkbox" name="checkbox-0" id="amenities-0">
+              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+              <label class="checkbox-label" for="amenities-1">
+                <p class="checkbox-text"><span class="checkbox-caption">письменный стол</span><span class="checkbox-desc"> </span></p>
+              </label>
+              <input class="checkbox" type="checkbox" name="checkbox-1" id="amenities-1">
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="checkbox-wrap">
+              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+              <label class="checkbox-label" for="checkbox-0">
+                <p class="checkbox-text"><span class="checkbox-caption">Можно курить</span><span class="checkbox-desc"> </span></p>
+              </label>
+              <input class="checkbox" type="checkbox" name="checkbox-0" id="checkbox-0">
+              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+              <label class="checkbox-label" for="checkbox-1">
+                <p class="checkbox-text"><span class="checkbox-caption">Можно с питомцами</span><span class="checkbox-desc"> </span></p>
+              </label>
+              <input class="checkbox" type="checkbox" name="checkbox-1" id="checkbox-1">
+              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+              <label class="checkbox-label" for="checkbox-2">
+                <p class="checkbox-text"><span class="checkbox-caption">Можно пригласить гостей (до&nbsp;10&nbsp;человек)</span><span class="checkbox-desc"> </span></p>
+              </label>
+              <input class="checkbox" type="checkbox" name="checkbox-2" id="checkbox-2">
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="checkbox-wrap">
+              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+              <label class="checkbox-label" for="availability-0">
+                <p class="checkbox-text"><span class="checkbox-caption_bold">Широкий коридор</span><span class="checkbox-desc">Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см. </span></p>
+              </label>
+              <input class="checkbox" type="checkbox" name="checkbox-0" id="availability-0">
+              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+              <label class="checkbox-label" for="availability-1">
+                <p class="checkbox-text"><span class="checkbox-caption_bold">Помощник для инвалидов</span><span class="checkbox-desc">На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера. </span></p>
+              </label>
+              <input class="checkbox" type="checkbox" name="checkbox-1" id="availability-1">
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <label class="radio-label" for="radio-1"><span class="radio-text">Mужчина</span></label>
+            <input class="radio" type="radio" name="radio-1" id="radio-1">
+            <label class="radio-label" for="radio-2"> <span class="radio-text">Женщина</span></label>
+            <input class="radio" type="radio" name="radio-1" id="radio-2">
+          </div>
+          <div class="formElements__item item__wrap">
+            <label class="toggle-label" for="toggle">
+              <input class="toggle" type="checkbox" name="toggle" id="toggle">
+              <div class="toggle-text">Получать спецпредложения</div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript" src="../index/index.js"></script><script type="text/javascript" src="../landing/landing.js"></script><script type="text/javascript" src="../cards/cards.js"></script><script type="text/javascript" src="../colorsType/colorsType.js"></script><script type="text/javascript" src="../formElements/formElements.js"></script><script type="text/javascript" src="../headersAndFooters/headersAndFooters.js"></script></body>
+</html>

@@ -1,9 +1,9 @@
 include ../button/button
--
-    const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
-    const btn_apply = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
+//- -
+//-     const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
+//-     const btn_apply = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
 
-mixin select-items({id,size,items,title,hasControlButtons})
+mixin select-items({id,size,items,title,hasControlButtons,btn_clear,btn_apply,hasMenu})
     -
         const defaultItems=[{text:"Item"},{text:"Item"},{text:"Item"}]
         const currentItems=items||defaultItems
@@ -11,10 +11,11 @@ mixin select-items({id,size,items,title,hasControlButtons})
     div(class=`iqdropdown iqdropdown__select iqdropdown_${size}` id=`${id}`)
         p(class=`iqdropdown-selection iqdropdown__text ${id}-title`) #{title}
         div(class="iqdropdown-menu" id="iqdropdown-menu__select")
-            - for (let i=0;i<items.length;i++)
-                div(class="iqdropdown-menu-option" data-id=`${id+i}`)
-                    p(class="iqdropdown-item") #{items[i].text}
-            if hasControlButtons       
-                div(class="iqdropdown-menu-wrap")
-                    +button(btn_clear)       
-                    +button(btn_apply)
+            if hasMenu 
+                - for (let i=0;i<items.length;i++)
+                    div(class="iqdropdown-menu-option" data-id=`${id+i}`)
+                        p(class="iqdropdown-item") #{items[i].text}
+                if hasControlButtons       
+                    div(class="iqdropdown-menu-wrap")
+                        +button(btn_clear)       
+                        +button(btn_apply)

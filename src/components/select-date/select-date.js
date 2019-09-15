@@ -14,8 +14,50 @@ jQuery("#date_timepicker_start").datetimepicker({
   scrollMonth: false,
   closeOnWithoutClick: false,
   closeOnDateSelect: 0,
-  range: 'period'
+  range: "period"
 });
+
+const controlButtons = $(".buttons-wrap");
+const wrap = jQuery("<div/>", {
+  class: "all-wrap"
+}).appendTo(".date-wrap");
+
+$().ready(() => {
+  $('[class^="xdsoft"]').addClass("my_datetimepicker");
+  /* .addClass("test") */
+
+  /* let dateWrap = document.createElement("div");
+  $(document).append(dateWrap); */
+  $(
+    ".xdsoft_datetimepicker.xdsoft_noselect.xdsoft_.my_datetimepicker"
+  ).appendTo(wrap);
+
+  $(wrap).append(controlButtons);
+
+  /*   createDropdowns(guestID, GUEST, guestText);
+  createDropdowns(amenitiesID, AMENTIES, amenitiesText); */
+});
+debugger;
+const checkCalendarOpen = () => {
+  if (
+    $(
+      ".xdsoft_datetimepicker .xdsoft_noselect .xdsoft_ .my_datetimepicker"
+    ).css("display") == "block"
+  ) {
+    console.log("true");
+  }
+};
+
+$(document).on("click", checkCalendarOpen);
+
+//вытаскивае дисплей блок календаря
+
+$(".date_timepicker_start").on("click", controlButtons.css("display", "block"));
+$(".date_timepicker_end").on("click", controlButtons.css("display", "block"));
+$(".date_timepicker_end").on(
+  "focus",
+  $(".all-wrap").toggleClass(".all-wrap_open")
+);
 
 // jQuery("#date_timepicker_end").datetimepicker();
 // jQuery.datetimepicker.setLocale("ru");
@@ -32,8 +74,6 @@ jQuery("#date_timepicker_start").datetimepicker({
 // $(".xdsoft_label").addClass("my_datetimepicker");
 
 //всем элементам календаря дала доп класс .my_datetimepicker для быстрой стилизации
-$('[class^="xdsoft"]').addClass("my_datetimepicker");
-
 
 // $("#input").datetimepicker();
 // $("button.somebutton").on("click", function() {
