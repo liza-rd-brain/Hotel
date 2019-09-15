@@ -33,3 +33,5 @@ $(function() {
       "\u20bd"
   );
 });
+
+$(` [class^="slider-range"]`).addClass(`my_slider`);
