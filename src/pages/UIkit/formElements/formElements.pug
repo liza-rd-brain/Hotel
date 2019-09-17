@@ -16,6 +16,7 @@ include ../../../components/toggle/toggle.pug
 include ../../../components/dropdown-item/dropdown-item.pug
 include ../../../components/dropdown-list/dropdown-list.pug
 include ../../../components/like-button/like-button.pug
+include ../../../components/room-card/room-card
 
 -
     const textField_big = {size:"big",input_type:"text"}
@@ -136,3 +137,5 @@ html
                         //-     +dropdown-item(addAmenitiesTotal)  
                     div(class="formElements__item item__wrap")
                         +dropdown-list()
+                    div(class="formElements__item item__wrap")
+                        +room-card()    
