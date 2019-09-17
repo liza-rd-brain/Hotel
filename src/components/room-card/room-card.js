@@ -12,3 +12,12 @@ var glide = new Glide('.glide', {
 })
 
 glide.mount()
+
+
+/* $().ready(() => {
+  addImage()
+  });
+
+  const addImage=()=>{
+      //найти каждый элемент li и сделать ему background-image
+  } */

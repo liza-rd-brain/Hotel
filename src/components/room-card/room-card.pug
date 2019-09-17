@@ -1,20 +1,27 @@
 //- будет принимать 1)картинки-массив 2) люкс(класс номера)
 //- 3) оценку=звезды 4) количество отзывов
-mixin room-card()
-    div(class="glide")
+mixin room-card({number,lux,price,rate})
+    -
+        const amountItem=4
+
+    div(class="glide room-card__slider")
         div(data-glide-el="track" class="glide__track")
             ul(class="glide__slides slider__slides")
-                li(class="glide__slide slider__frame" style="background-color:red") 1
-                li(class="glide__slide slider__frame" style="background-color:gold") 2
-                li(class="glide__slide slider__frame" style="background-color:green") 3
-                li(class="glide__slide slider__frame" style="background-color:pink") 4
-                li(class="glide__slide slider__frame" style="background-color:blue") 5
+                - for (let i=1;i<=amountItem;i++) 
+                    li(class="glide__slide slider__frame" data-background=`img_${number}_${i}`)
+                        img( class="glide__img" src=`src/components/room-card/img/${number}/img_${number}_${i}.jpg`)
         div(class="glide__arrows" data-glide-el="controls")
-            button(class="glide__arrow glide__arrow--left" data-glide-dir="<") prev
-            button(class="glide__arrow glide__arrow--right" data-glide-dir=">") next
+            button(class="glide__arrow glide__arrow--left" data-glide-dir="<") 
+            button(class="glide__arrow glide__arrow--right" data-glide-dir=">") 
         div(class="glide__bullets" data-glide-el="controls[nav]")
-            button(class="glide__bullet" data-glide-dir="=0")
-            button(class="glide__bullet" data-glide-dir="=1")
-            button(class="glide__bullet" data-glide-dir="=2")
-            button(class="glide__bullet" data-glide-dir="=3")
-            button(class="glide__bullet" data-glide-dir="=4")
+            - for (let i=1;i<=amountItem;i++)
+                button(class="glide__bullet" data-glide-dir=`=${i}`)
+    div(class="room-card__descriprion-section")
+        div(class="descriprion-section__base")
+            span(class="descriprion-section__name")
+            span(class="descriprion-section__price")
+        div(class="descriprion-section__rating")
+            rate-button()
+            span(class="descriprion-section__review")
+                 
+        
