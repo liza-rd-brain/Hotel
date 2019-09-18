@@ -16,3 +16,5 @@ import "../../../components/dropdown-item/dropdown-item";
 import "../../../components/dropdown-list/dropdown-list"
 import "../../../components/like-button/like-button";
 import "../../../components/room-card/room-card";
+import "../../../components/rate-button/rate-button";
+

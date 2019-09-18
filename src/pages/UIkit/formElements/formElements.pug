@@ -17,6 +17,7 @@ include ../../../components/dropdown-item/dropdown-item.pug
 include ../../../components/dropdown-list/dropdown-list.pug
 include ../../../components/like-button/like-button.pug
 include ../../../components/room-card/room-card
+include ../../../components/rate-button/rate-button
 
 -
     const textField_big = {size:"big",input_type:"text"}
@@ -140,4 +141,6 @@ html
                     div(class="formElements__item item__wrap")
                         +dropdown-list()
                     div(class="formElements__item item__wrap")
-                        +room-card(roomCardFirst)    
+                        +room-card(roomCardFirst)
+                    div(class="formElements__item item__wrap")
+                        +rate-button()        

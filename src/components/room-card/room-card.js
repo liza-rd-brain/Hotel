@@ -1,5 +1,5 @@
-import "./room-card.scss"
 import Glide from "@glidejs/glide/dist/glide.min.js"
+import "./room-card.scss"
 
 
 var glide = new Glide('.glide', {
