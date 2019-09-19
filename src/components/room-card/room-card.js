@@ -8,7 +8,7 @@ var glide = new Glide('.glide', {
     perView: 1,
     animationDuration:700,
    /*  focusAt:"center" */
-   /*  rewind:false */
+    rewind:false
 })
 
 glide.mount()
