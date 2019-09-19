@@ -34,7 +34,7 @@ include ../../../components/rate-button/rate-button
     const roomAmenities={id:"amenities",
                         size:"medium",
                         items:[{text:"спальни"},{text:"кровати"},{text:"ванные комнаты"}],
-                        title:"Выберите удобства",hasMenu:true}
+                        title:"Удобства номера",hasMenu:true}
                         
     const selectDate={size:"small",type:"date"}
     //перенесу в страничку с выбором номера
@@ -57,7 +57,8 @@ include ../../../components/rate-button/rate-button
     const addAmenitiesTotal={select:selectAddAmenities,items:addAmenitiesList}    
 
     const roomCardFirst={number:888,lux:true, price: 9990,rate:5,recall:145}     
-    const roomCardSecond={number:840,lux:false, price: 9900,rate:4,recall:65}                 
+    const roomCardSecond={number:840,lux:false, price: 9900,rate:4,recall:65} 
+                 
 
 
 
@@ -134,17 +135,11 @@ html
                     div(class="formElements__item item__wrap")
                         +toggle()  
                     div(class="formElements__item item__wrap")
-                        +like-button("post_1",12) 
-                        //- div(class="formElements__item item__wrap")
-                        //-     +dropdown(addAmenitiesList)   
-                        //- div(class="formElements__item item__wrap")
-                        //-     +dropdown-item(addAmenitiesTotal)  
+                        +like-button("post_1",12)
                     div(class="formElements__item item__wrap")
-                        +dropdown-list()
+                        +dropdown-list({text:"test",type:"checkbox-list",item:addAmenitiesList})
+
                     div(class="formElements__item item__wrap")
                         +room-card(roomCardFirst)
                     div(class="formElements__item item__wrap")
-                        +room-card(roomCardSecond)    
-                    div(class="formElements__item item__wrap")
-                        +rate-button({id:"test",rate:3})  
-                        
+                        +room-card(roomCardSecond)
