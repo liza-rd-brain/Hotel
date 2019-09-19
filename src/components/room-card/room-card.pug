@@ -1,27 +1,32 @@
-//- будет принимать 1)картинки-массив 2) люкс(класс номера)
-//- 3) оценку=звезды 4) количество отзывов
-mixin room-card({number,lux,price,rate})
+include ../rate-button/rate-button
+mixin room-card({number,lux,price,recall})
     -
         const amountItem=4
-
-    div(class="glide room-card__slider")
-        div(data-glide-el="track" class="glide__track")
-            ul(class="glide__slides slider__slides")
-                - for (let i=1;i<=amountItem;i++) 
-                    li(class="glide__slide slider__frame" data-background=`img_${number}_${i}`)
-                        img( class="glide__img" src=`src/components/room-card/img/${number}/img_${number}_${i}.jpg`)
-        div(class="glide__arrows" data-glide-el="controls")
-            button(class="glide__arrow glide__arrow--left" data-glide-dir="<") 
-            button(class="glide__arrow glide__arrow--right" data-glide-dir=">") 
-        div(class="glide__bullets" data-glide-el="controls[nav]")
-            - for (let i=0;i<amountItem;i++)
-                button(class="glide__bullet" data-glide-dir=`=${i}`)
-    div(class="room-card__descriprion-section")
-        div(class="descriprion-section__base")
-            span(class="descriprion-section__name")
-            span(class="descriprion-section__price")
-        div(class="descriprion-section__rating")
-            rate-button()
-            span(class="descriprion-section__review")
-                 
-        
+    div(class="room-card")
+        div(class="glide room-card__slider")
+            div(data-glide-el="track" class="glide__track")
+                ul(class="glide__slides slider__slides")
+                    - for (let i=1;i<=amountItem;i++) 
+                        li(class="glide__slide slider__frame" data-background=`img_${number}_${i}`)
+                            img( class="glide__img" src=`src/components/room-card/img/${number}/img_${number}_${i}.jpg`)
+            div(class="glide__arrows" data-glide-el="controls")
+                button(class="glide__arrow glide__arrow--left" data-glide-dir="<") 
+                button(class="glide__arrow glide__arrow--right" data-glide-dir=">") 
+            div(class="glide__bullets" data-glide-el="controls[nav]")
+                - for (let i=0;i<amountItem;i++)
+                    button(class="glide__bullet" data-glide-dir=`=${i}`)
+        div(class="room-card__desc-section")
+            div(class="desc-section desc-section__base")
+                div(class="desc-section__column")
+                    span(class="desc-section__name desc-section__name_symbol") №
+                    span(class="desc-section__name desc-section__name_number") #{number}
+                    if lux 
+                        span(class="desc-section__lux") люкс
+                div(class="desc-section__column")  
+                    span(class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number") #{price}
+                    span(class="desc-section__qualifiers desc-section__price-text") в сутки
+            div(class="desc-section desc-section__rating")
+                +rate-button( )
+                div(class="desc-section__column desc-section__column_rate ")
+                    span(class="desc-section__qualifiers desc-section__qualifiers_number") #{recall}
+                    span(class="desc-section__qualifiers desc-section__rate-text") отзывов

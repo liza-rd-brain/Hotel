@@ -3,12 +3,13 @@
 @import "@glidejs/glide/src/assets/sass/glide.core.scss";
 @import "@glidejs/glide/src/assets/sass/glide.theme.scss";
 
-/* *{
-    outline:1px solid gray;
+/* * {
+  outline: 1px solid gray;
 } */
 
 .glide {
-  width: 270px;
+  width: 100%;
+  /* width: 270px; */
   height: 151px;
   &:hover .glide__arrows {
     display: block;
@@ -130,4 +131,63 @@
   font-size: 1em;
   font-weight: 900;
   margin: 0;
+}
+
+.room-card {
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  width: 270px;
+  &__desc-section {
+    padding: 24px 18px 19px 20px;
+    background-color: $white;
+  }
+}
+
+.desc-section {
+  display: flex;
+  justify-content: space-between;
+
+  &__rating {
+    padding-top: 8px;
+    border-top: 1px solid $dark-10;
+    margin-top: 11px;
+    margin-right: 2px;
+  }
+  &__name {
+    @include text($font-eng, 14px, 700, $dark);
+    line-height: 17px;
+    margin-right: 4px;
+    /* &-symbol {
+    } */
+    &_number {
+      font-size: 19px;
+    }
+  }
+  &__lux {
+    @include text($font, 12px, 700, $purple);
+    line-height: 15px;
+    flex-grow: 1;
+    margin-left: 1px;
+    text-transform: uppercase;
+  }
+  &__qualifiers {
+    @include text($font, 12px, 400, $dark-50);
+    line-height: 18px;
+    &_number {
+      font-size: 14px;
+      font-weight: 700;
+      margin-right: 3px;
+    }
+  }
+
+  &__rate-text {
+    font-size: 14px;
+    text-transform: capitalize;
+    display: inline-block;
+  }
+
+  &__column_rate {
+    margin-top: 4px;
+  }
 }
