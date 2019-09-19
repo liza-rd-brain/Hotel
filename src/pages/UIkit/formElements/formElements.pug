@@ -56,8 +56,8 @@ include ../../../components/rate-button/rate-button
 
     const addAmenitiesTotal={select:selectAddAmenities,items:addAmenitiesList}    
 
-    const roomCardFirst={number:888,lux:true, price: 9990,recall:145}     
-    const roomCardSecond={number:840,lux:false, price: 9900,recall:65}                 
+    const roomCardFirst={number:888,lux:true, price: 9990,rate:5,recall:145}     
+    const roomCardSecond={number:840,lux:false, price: 9900,rate:4,recall:65}                 
 
 
 
@@ -146,4 +146,5 @@ html
                     div(class="formElements__item item__wrap")
                         +room-card(roomCardSecond)    
                     div(class="formElements__item item__wrap")
-                        +rate-button()        
+                        +rate-button({id:"test",rate:3})  
+                        

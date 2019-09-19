@@ -12,8 +12,6 @@ var glide = new Glide(".glide", {
 
 glide.mount();
 
-debugger;
-
 let numbers = $(".desc-section__price_number");
 for (let i = 0; i < numbers.length; i++) {
   let testNumber =

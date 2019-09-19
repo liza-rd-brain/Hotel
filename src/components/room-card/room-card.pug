@@ -1,5 +1,5 @@
 include ../rate-button/rate-button
-mixin room-card({number,lux,price,recall})
+mixin room-card({number,lux,price,rate,recall})
     -
         const amountItem=4
     div(class="room-card")
@@ -26,7 +26,7 @@ mixin room-card({number,lux,price,recall})
                     span(class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number") #{price}
                     span(class="desc-section__qualifiers desc-section__price-text") в сутки
             div(class="desc-section desc-section__rating")
-                +rate-button( )
+                +rate-button({id:number,rate})
                 div(class="desc-section__column desc-section__column_rate ")
                     span(class="desc-section__qualifiers desc-section__qualifiers_number") #{recall}
                     span(class="desc-section__qualifiers desc-section__rate-text") отзывов
