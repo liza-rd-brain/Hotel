@@ -1,12 +1,20 @@
 @import "../../variables";
 @import "../../mixin";
 
+.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_.my_datetimepicker {
+  //пришлось исп-ть из-за инлайново прописанных стилей
+  top: 0px !important;
+  left: 0px !important;
+}
+
 /* .date-wrap {
   position: relative;
 } */
 .all-wrap {
   &_open {
   }
+  position: relative;
+  background-color: red;
   /*   display: none;
   position: absolute; */
 }
@@ -15,7 +23,10 @@
   display: none;
   position: absolute;
   left: 141px;
-  top: 828px;
+  top: 300px;
+  &_open {
+    display: block;
+  }
 }
 
 .date_timepicker_start:focus .buttons-wrap {

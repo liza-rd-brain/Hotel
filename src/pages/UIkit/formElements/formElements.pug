@@ -1,10 +1,8 @@
 include ../../../components/textField/textField.pug
 include ../../../components/logo-icon/logo-icon.pug
-
 include ../../../components/select-items/select-items.pug
-
-include ../../../components/select-date/select-date.pug
-include ../../../components/select-period/select-period.pug
+//- include ../../../components/select-date/select-date.pug
+//- include ../../../components/select-period/select-period.pug
 include ../../../components/button/button.pug
 include ../../../components/arrow/arrow.pug
 include ../../../components/test-component/test-component.pug
@@ -18,7 +16,8 @@ include ../../../components/dropdown-list/dropdown-list.pug
 include ../../../components/like-button/like-button.pug
 include ../../../components/room-card/room-card
 include ../../../components/rate-button/rate-button
-
+//- include ../../../components/datapicker/datapicker
+include ../../../components/dateRangePicker/dateRangePicker
 -
     const textField_big = {size:"big",input_type:"text"}
     const textField_medium_arrow = {size:"medium",input_type:"text",effect:"arrow"}
@@ -101,14 +100,14 @@ html
                         +textField(textField_big,"ДД.ММ.ГГГГ")
                          // h3(class="formElements__text") Dropdown
 
-                    div(class="formElements__item")
-                        div(class="date-wrap")
-                            h3(class="formElements__text") date Dropdown
-                            +select-date(selectDate)
+                    //- div(class="formElements__item")
+                    //-     div(class="date-wrap")
+                    //-         h3(class="formElements__text") date Dropdown
+                    //-         +select-date(selectDate)
 
-                    div(class="formElements__item")
-                        h3(class="formElements__text") period Dropdown
-                        +select-period()
+                    //- div(class="formElements__item")
+                    //-     h3(class="formElements__text") period Dropdown
+                    //-     +select-period()
                             
                         
                     //- div(class="formElements__item")
@@ -124,18 +123,22 @@ html
                         +button({isColored:true,size:"big",title:"перейти к отплате",isArrowButton:true})    
                     div(class="formElements__item item__wrap")   
                         +range-slider({})  
-                        //- div(class="formElements__item item__wrap")
-                        //-     +checkbox(addAmenities)
+
                     div(class="formElements__item item__wrap")
                         +checkbox({})
+
                     div(class="formElements__item item__wrap")
                         +checkbox(availability)
+
                     div(class="formElements__item item__wrap")
                         +radio-button()    
+
                     div(class="formElements__item item__wrap")
                         +toggle()  
+
                     div(class="formElements__item item__wrap")
                         +like-button("post_1",12)
+
                     div(class="formElements__item item__wrap")
                         +dropdown-list({text:"test",type:"checkbox-list",item:addAmenitiesList})
 
@@ -143,3 +146,8 @@ html
                         +room-card(roomCardFirst)
                     div(class="formElements__item item__wrap")
                         +room-card(roomCardSecond)
+
+                    //- div(class="formElements__item item__wrap")
+                    //-     +datapicker()    
+                    div(class="formElements__item item__wrap")
+                        +date-range-picker() 

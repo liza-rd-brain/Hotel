@@ -7,8 +7,9 @@ let params = {
   clearButton: true,
   todayButton: new Date()
 };
-
 $(".datepicker-here").datepicker(params);
+/* 
+
 $('[class^="datepicker"]').addClass("my_datepicker");
 $(".datepicker").addClass("my_datepicker");
 
@@ -23,6 +24,11 @@ $(".dropdown-wrap").datepicker(params);
 
 let startDate = document.querySelector(".date-dropdown_start");
 let endDate = document.querySelector(".date-dropdown_end");
+
+// startDate.on("click", function(e) {
+//   showCalendar;
+// });
+
 startDate.addEventListener("click", showCalendar);
 endDate.addEventListener("click", showCalendar);
 let currentData;
@@ -34,6 +40,7 @@ function showCalendar(event) {
   currentData = event.target;
   console.log(currentData);
   table.classList.add("datepicker-inline_active");
+  console.log("click")
 }
 
 table.addEventListener("click", getTargetDay);
@@ -68,4 +75,4 @@ function getTargetDay() {
 
   currentData.value = dateStr;
   // console.log(fisrtStrAtr);
-}
+} */
