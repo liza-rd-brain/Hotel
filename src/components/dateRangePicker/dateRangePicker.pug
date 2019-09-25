@@ -1,2 +1,10 @@
-mixin date-range-picker()
-    input(class="flatpickr-calendar") test
+include ../button/button
+
+mixin date-range-picker(btn_clear,btn_apply)
+    input(class="example" type="text")
+    input(class="example2" type="text")
+    div(class="some-wrap" data-id="strap")
+    div(class="flatpickr-action" tabindex="-1")
+    input(class="example3" type="text" data-input)
+    a(class="clear-button" title="clear" data-clear)
+            
