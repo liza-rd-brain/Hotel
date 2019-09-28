@@ -4,7 +4,6 @@ import "flatpickr/dist/flatpickr.min.css";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 import "./dateRangePicker.scss";
 
-
 const config = {
   altInput: true,
   altInputClass: "flatpickr-alt",
@@ -12,7 +11,7 @@ const config = {
   locale: Russian,
   /* position:"below", */
   monthSelectorType: "static",
-  inline: true,
+  /* inline: true, */
   onReady: function(dateObj, dateStr, instance) {
     const $clear = $(
       '<div class="flatpickr-clear"><button class="flatpickr-clear-button">Clear</button></div>'
@@ -37,10 +36,18 @@ flatpickr(".example", config);
 
 const newLeftArrow = $(".arrow__left").find("svg");
 const newRightArrow = $(".arrow__right").find("svg");
-const leftArrow = $(".flatpickr-prev-month");
-const rightArrow = $(".flatpickr-next-month");
-leftArrow.find("svg").remove();
-newLeftArrow.appendTo(leftArrow);
+const leftArrowWrap = $(".flatpickr-prev-month");
+const rightArrowWrap = $(".flatpickr-next-month");
+leftArrowWrap.find("svg").remove();
+newLeftArrow.appendTo(leftArrowWrap);
+rightArrowWrap.find("svg").remove();
+newRightArrow.appendTo(rightArrowWrap);
 
-rightArrow.find("svg").remove();
-newRightArrow.appendTo(rightArrow);
+
+/* лучше стилизовать текущие кнопки или проборсить кастомные?! */
+// const newButtonClear = $(".button_clear");
+// const newButtonAccept = $(".button_accept");
+// const buttonClearWrap = $(".flatpickr-clear");
+
+// buttonClearWrap.find("button").remove();
+// newButtonClear.appendTo(buttonClearWrap);

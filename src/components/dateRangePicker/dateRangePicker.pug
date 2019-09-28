@@ -1,17 +1,11 @@
 include ../button/button
 include ../arrow/arrow
 
--
-    const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
-    const btn_apply = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
 
 mixin date-range-picker(btn_clear,btn_apply)
-    div(class="buttons-wrap")
-            +button(btn_clear,)       
-            +button(btn_apply)
     input(class="example" type="text")
     input(class="example2" type="text")
     div(class="arrow__left")
         +arrow({isColored:true})
     div(class="arrow__right")
-        +arrow({isColored:true})              
+        +arrow({isColored:true})             
