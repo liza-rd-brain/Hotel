@@ -1,0 +1,66 @@
+@import "../../variables";
+@import "../../mixin";
+
+.flatpickr-calendar.inline {
+  display: block;
+  position: relative;
+  top: 2px;
+  width: 320px;
+  height: 369px;
+  box-shadow: 0px 10px 20px $dark-5;
+  border: 1px solid $dark-25;
+  border-radius: 4px;
+}
+.flatpickr-months .flatpickr-prev-month svg,
+.flatpickr-months .flatpickr-next-month svg {
+  width: 26px;
+  height: 26px;
+}
+.flatpickr-prev-month {
+  transform: rotate(180deg);
+}
+
+.flatpickr-current-month {
+  @include h2-text();
+  line-height: 24px;
+}
+.flatpickr-current-month input.cur-year {
+  @include h2-text();
+  line-height: 24px;
+}
+
+span.flatpickr-weekday {
+  @include text($font, 12px, 700, $purple);
+}
+
+.flatpickr-day {
+  @include text($font, 12px, 400, $dark-50);
+  &.nextMonthDay,
+  &.prevMonthDay {
+    color: $dark-25;
+  }
+  &.today,
+  &.today.inRange {
+    color: $white;
+    font-weight: 800;
+    background: linear-gradient(180deg, $green 0%, $blue-light 100%);
+    border-radius: 22px;
+    border: 0px;
+  }
+  &.inRange {
+    background: linear-gradient(180deg, $purple-25 0%, $blue-25 100%);
+    /*  opacity: 0.25; */
+    box-shadow: none;
+  }
+}
+
+.flatpickr-day.selected.startRange,
+.flatpickr-day.selected.endRange,
+.flatpickr-day.startRange.startRange,
+.flatpickr-day.endRange.endRange,
+.flatpickr-day.endRange.startRange {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border-radius: 22px;
+  box-shadow: none;
+  border: 0px;
+}

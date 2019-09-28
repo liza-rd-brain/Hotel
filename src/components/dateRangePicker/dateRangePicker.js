@@ -1,51 +1,46 @@
 import flatpickr from "flatpickr";
+import { Russian } from "flatpickr/dist/l10n/ru.js";
 import "flatpickr/dist/flatpickr.min.css";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
-// import "flatpickr/dist/themes/airbnb.css"
-/* import "./dateRangePicker.scss" */
-// flatpickr(".example");
-// $(".example").flatpickr();
+import "./dateRangePicker.scss";
 
-/* var flatpickr_opts = {
-  altInput: true,
-  altInputClass: 'flatpickr-alt',
-  altFormat: 'F j, Y',
-  onReady: function(dateObj, dateStr, instance) {
-      $('.flatpickr-calendar').each(function() {
-          var $this = $(this);
-          if ($this.find('.flatpickr-clear').length < 1) {
-              $this.append('<div class="flatpickr-clear">Clear</div>');
-              $this.find('.flatpickr-clear').on('click', function() {
-                  instance.clear();
-                  instance.close();
-              });
-          }
-      });
-  }
-}; */
 
 const config = {
   altInput: true,
   altInputClass: "flatpickr-alt",
-  altFormat: "F j, Y",
-  onReady: function ( dateObj, dateStr, instance ) {
-    const $clear = $( '<div class="flatpickr-clear"><button class="flatpickr-clear-button">Clear</button></div>' )
-      .on( 'click', () => {
+  altFormat: "d.m.Y",
+  locale: Russian,
+  /* position:"below", */
+  monthSelectorType: "static",
+  inline: true,
+  onReady: function(dateObj, dateStr, instance) {
+    const $clear = $(
+      '<div class="flatpickr-clear"><button class="flatpickr-clear-button">Clear</button></div>'
+    )
+      .on("click", () => {
         instance.clear();
         instance.close();
-      } )
-      .appendTo( $( instance.calendarContainer ) );
-    
-    const $close = $( '<div class="flatpickr-close"><button class="flatpickr-close-button">Close</button></div>' )
-      .on( 'click', () => {
+      })
+      .appendTo($(instance.calendarContainer));
+
+    const $close = $(
+      '<div class="flatpickr-close"><button class="flatpickr-close-button">Close</button></div>'
+    )
+      .on("click", () => {
         instance.close();
-      } )
-      .appendTo( $( instance.calendarContainer ) );  
+      })
+      .appendTo($(instance.calendarContainer));
   },
   plugins: [new rangePlugin({ input: ".example2" })]
 };
-let calendar = flatpickr(".example", config);
+flatpickr(".example", config);
 
-/* flatpickr(".some-wrap", {
-  wrap: true
-}); */
+const newLeftArrow = $(".arrow__left").find("svg");
+const newRightArrow = $(".arrow__right").find("svg");
+const leftArrow = $(".flatpickr-prev-month");
+const rightArrow = $(".flatpickr-next-month");
+leftArrow.find("svg").remove();
+newLeftArrow.appendTo(leftArrow);
+
+rightArrow.find("svg").remove();
+newRightArrow.appendTo(rightArrow);

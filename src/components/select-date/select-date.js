@@ -46,7 +46,7 @@ const deleteUnnecessary = () => {
 };
 
 const createCalendarWrap = () => {
-  debugger;
+
   //делаем оболочку для календаря, чтобы зафигачить кнопки
   $('[class^="xdsoft"]').addClass("my_datetimepicker");
 
@@ -58,7 +58,7 @@ const createCalendarWrap = () => {
 const bindEndPickerWithCalendar = () => {
   // $("#date_timepicker_end").remove
   //при клике по инпуту появляется тот же самый календарь
-  debugger;
+
   $("#date_timepicker_end").on("click", function(e) {
     $("#date_timepicker_start").datetimepicker("show");
     //остается фокус на втором элементе
