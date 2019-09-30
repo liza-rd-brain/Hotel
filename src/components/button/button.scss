@@ -64,7 +64,7 @@ $height-text: 15px;
         pointer-events: none;
         padding: 0;
       }
-      :hover {
+      &:hover > h3 {
         color: $dark-50;
       }
     }

@@ -2,8 +2,9 @@ import "../checkbox/checkbox";
 import "./dropdown-list.scss";
 
 $(document)
-  .find(".some-select")
+  .find(".dropdown-list__select")
   .on("click", function(e) {
     console.log("click");
-    $(".some-options").toggleClass("some-options_open");
+    $(".dropdown-list__options").toggleClass("dropdown-list__options_open");
+    $(".dropdown-list__select").toggleClass("dropdown-list__select_open");
   });

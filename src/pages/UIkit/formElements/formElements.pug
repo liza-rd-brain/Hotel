@@ -57,6 +57,8 @@ include ../../../components/dateRangePicker/dateRangePicker
 
     const roomCardFirst={number:888,lux:true, price: 9990,rate:5,recall:145}     
     const roomCardSecond={number:840,lux:false, price: 9900,rate:4,recall:65} 
+
+    const checkboxList={text:"expandable checkbox list",type:"checkbox-list",item:addAmenitiesList}
                  
 
 
@@ -140,7 +142,7 @@ html
                         +like-button("post_1",12)
 
                     div(class="formElements__item item__wrap")
-                        +dropdown-list({text:"test",type:"checkbox-list",item:addAmenitiesList})
+                        +dropdown-list(checkboxList)
 
                     div(class="formElements__item item__wrap")
                         +room-card(roomCardFirst)
