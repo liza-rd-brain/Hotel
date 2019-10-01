@@ -1,0 +1,53 @@
+include ../../../components/header/header-prod
+include ../../../components/footer/footer-prod
+include ../../../components/select-items/select-guest.pug
+include ../../../components/select-items/select-amenities.pug
+include ../../../components/select-items/select-items.pug
+include ../../../components/range-slider/range-slider
+include ../../../components/checkbox/checkbox
+include ../../../components/dropdown-list/dropdown-list
+
+-
+    //- const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
+    //- const btn_apply = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"} 
+    const selectThisGuest={id:"guest", 
+                        size:"big",
+                        items:[{text:"взрослые"},{text:"дети"},{text:"младенцы"}],
+                        title:"Гости",hasControlButtons:true,btn_clear:btn_clear,btn_apply:btn_apply,hasMenu:true}
+
+    const availability={items:[{caption:"Широкий коридор",desc:"Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см."},
+                                {caption:"Помощник для инвалидов",desc:"На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера."}],
+                                key:"availability",
+                                isRich:true}                             
+
+    //- const addAmenitiesTotal={select:selectAddAmenities,items:addAmenitiesList}   
+
+    //- const addAmenitiesList={items:[{caption:"завтрак"},{caption:"письменный стол"}],
+    //-                         key:"amenitiesList"} 
+    //- const checkboxList={text:"expandable checkbox list",type:"checkbox-list",item:addAmenitiesList}                                              
+
+
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        title
+            search-room
+    body 
+    .search-room
+        +header-prod()
+        .search-room__wrap
+            .column-left
+                //- +select-items(selectThisGuest)
+                +select-guest()
+                .wrap
+                    +range-slider({text:"диапазон цены"})
+                    span Стоимость за сутки пребывания в номере
+                +checkbox({})
+                +checkbox(availability)
+                +select-amenities()
+                    //- +dropdown-list(checkboxList)
+            .column-right   
+                span Номера, которые мы для вас подобрали
+        +footer-prod()

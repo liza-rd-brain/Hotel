@@ -9,7 +9,7 @@ import "../../../components/select-date/select-date";
 import "../../../components/select-period/select-period";
 import "../../../components/test-component/test-component";
 import "../../../components/range-slider/range-slider";
-import "../../../components/checkbox/checkbox";
+/* import "../../../components/checkbox/checkbox"; */
 import "../../../components/radio-button/radio-button";
 import "../../../components/toggle/toggle";
 import "../../../components/dropdown-item/dropdown-item";

@@ -1,12 +1,12 @@
 @import "../../variables";
 @import "../../mixin";
 
-#some-id {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; /* remove default arrow */
-  /*  background-image: url(...);  */ /* add custom arrow */
-}
+// #dropdown-list {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none; /* remove default arrow */
+//   /*  background-image: url(...);  */ /* add custom arrow */
+// }
 
 .dropdown-list {
   position: relative;
@@ -22,6 +22,7 @@
   line-height: 15px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  cursor: pointer;
   &::after {
     content: "";
     border: 4px solid rgba(31, 32, 65, 0.5);

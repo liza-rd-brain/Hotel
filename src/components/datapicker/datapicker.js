@@ -73,7 +73,7 @@ $(function() {
 });
 
 $.datepicker._gotoToday = function(id) {
-  debugger;
+/*   debugger; */
   $(id).val("");
   if (id === "#from") {
     $("#to").datepicker("option", {

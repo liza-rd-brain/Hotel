@@ -1,5 +1,11 @@
 @import "../../variables";
 @import "../../mixin";
+
+.checkbox__title {
+  text-transform: uppercase;
+  @include h3-text();
+  line-height: 15px;
+}
 .checkbox-list {
   display: flex;
   flex-direction: column;

@@ -4,8 +4,6 @@ const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
 
-
-
 const PATHS = {
   source: path.join(__dirname, "src"),
   build: path.join(__dirname, "docs")
@@ -13,13 +11,16 @@ const PATHS = {
 
 const common = merge([
   {
-    entry: { 
+    entry: {
       index: PATHS.source + "/index.js",
       landing: PATHS.source + "/pages/website_pages/landing/landing.js",
+      searchRoom:
+        PATHS.source + "/pages/website_pages/search-room/search-room.js",
       cards: PATHS.source + "/pages/uikit/cards/cards.js",
       colorsType: PATHS.source + "/pages/uikit/colorsType/colorsType.js",
       formElements: PATHS.source + "/pages/uikit/formElements/formElements.js",
-      headersAndFooters: PATHS.source + "/pages/uikit/headersAndFooters/headersAndFooters.js"
+      headersAndFooters:
+        PATHS.source + "/pages/uikit/headersAndFooters/headersAndFooters.js"
     },
     output: {
       path: PATHS.build,
@@ -35,6 +36,11 @@ const common = merge([
         template: PATHS.source + "/pages/website_pages/landing/landing.pug"
       }),
       new HtmlWebpackPlugin({
+        filename: "search-room/index.html",
+        template:
+          PATHS.source + "/pages/website_pages/search-room/search-room.pug"
+      }),
+      new HtmlWebpackPlugin({
         filename: "cards/index.html",
         template: PATHS.source + "/pages/uikit/cards/cards.pug"
       }),
@@ -48,7 +54,8 @@ const common = merge([
       }),
       new HtmlWebpackPlugin({
         filename: "headersAndFooters/index.html",
-        template: PATHS.source + "/pages/uikit/headersAndFooters/headersAndFooters.pug"
+        template:
+          PATHS.source + "/pages/uikit/headersAndFooters/headersAndFooters.pug"
       }),
       new webpack.ProvidePlugin({
         $: "jquery",

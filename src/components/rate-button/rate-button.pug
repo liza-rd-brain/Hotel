@@ -1,4 +1,4 @@
 mixin rate-button({id,rate})
-    select(id=`${id}` class="example" data-rate=`${rate}` )
+    select(id=`${id}` class="rate-select" data-rate=`${rate}` )
         - for (let i=1;i<=5;i++) 
             option(value=`${i}`) #{i}

@@ -1,0 +1,11 @@
+include ./select-items.pug
+
+-
+    const roomAmenities={id:"amenities",
+                        size:"medium",
+                        items:[{text:"спальни"},{text:"кровати"},{text:"ванные комнаты"}],
+                        title:"Удобства номера",hasMenu:true}
+                   
+
+mixin select-amenities()
+    +select-items(roomAmenities)

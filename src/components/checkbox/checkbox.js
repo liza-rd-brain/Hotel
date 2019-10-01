@@ -1,15 +1,10 @@
 import "../../libraries/jquery-ui/jquery-ui";
 import "../../libraries/jquery-ui/jquery-ui.css";
 import "../../libraries/jquery-ui/jquery-ui.theme.min.css";
-
-/* import "../jquery-ui/jquery-ui.theme.min.css"; */
 import "./checkbox.scss";
 
-$(function() {
+$(document).ready(() => {
   $(".checkbox").checkboxradio({});
-});
-
-$().ready(() => {
   $(".checkbox-label")
     .addClass("my_checkbox")
     .find('[class|="ui-checkboxradio"]')

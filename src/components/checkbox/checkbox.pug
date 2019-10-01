@@ -1,8 +1,8 @@
 //-- пересмотриеть деструктуризацию параметров
 //--добавить состояние checked
-mixin checkbox({items, key,isRich})
+mixin checkbox({items,key,isRich})
     -
-        const CB_ITEMS ={ items:[{caption:"Можно курить"}, {caption:"Можно с питомцами"},{caption:"Можно пригласить гостей (до&nbsp;10&nbsp;человек)"}],key:"checkbox"}
+        const CB_ITEMS ={ items:[{caption:"Можно курить"}, {caption:"Можно с питомцами"},{caption:"Можно пригласить гостей (до&nbsp;10&nbsp;человек)"}],key:"checkbox-default"}
         items = items || CB_ITEMS.items
         key = key || CB_ITEMS.key
         const captionClassName= isRich? "checkbox-caption_bold": "checkbox-caption"
@@ -14,4 +14,4 @@ mixin checkbox({items, key,isRich})
                 p(class="checkbox-text")
                     span(class=captionClassName) !{items[i].caption}
                     span(class="checkbox-desc") !{items[i].desc} 
-            input(type="checkbox" class="checkbox" name=`checkbox-${i}` id=`${key}-${i}`)  
+            input(type="checkbox" class=`checkbox checkbox-${key}` name=`checkbox-${i}` id=`${key}-${i}`)  

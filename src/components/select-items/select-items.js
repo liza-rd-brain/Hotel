@@ -42,12 +42,7 @@ const AMENTIES = {
 
 const guestID = "guest";
 const amenitiesID = "amenities";
-
-const guestText = $("#guest .iqdropdown__text").text();
-const amenitiesText = $("#amenities .iqdropdown__text").text();
-
-const defaultGuestText = guestText;
-const defaultAmenitiesText = amenitiesText;
+/* debugger; */
 
 //отдельные счетчики для гостей и удобств
 const guestCounter = [
@@ -63,6 +58,11 @@ const amenitiesCounter = [
 ];
 
 $().ready(() => {
+  const guestText = $("#guest  .iqdropdown__text").text();
+  const amenitiesText = $("#amenities .iqdropdown__text").text();
+  const defaultGuestText = guestText;
+  const defaultAmenitiesText = amenitiesText;
+ /*  debugger; */
   createDropdowns(guestID, GUEST, guestText);
   createDropdowns(amenitiesID, AMENTIES, amenitiesText);
 });
@@ -325,5 +325,3 @@ const clearSelect = e => {
 
   showButtonClear(id);
 };
-
-

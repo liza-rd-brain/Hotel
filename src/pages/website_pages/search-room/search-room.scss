@@ -1,0 +1,15 @@
+@import "../../../components/range-slider/range-slider.scss";
+.search-room {
+  width: 1440px;
+  margin: 0 auto;
+}
+.search-room__wrap {
+  margin: 30px 140px 70px 140px;
+}
+.column-left {
+  width: 266px;
+  & > * {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}

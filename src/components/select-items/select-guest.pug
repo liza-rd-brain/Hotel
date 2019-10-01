@@ -1,0 +1,13 @@
+include ./select-items.pug
+
+-
+    const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
+    const btn_apply = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"} 
+    const selectGuest={id:"guest", 
+                        size:"big",
+                        items:[{text:"взрослые"},{text:"дети"},{text:"младенцы"}],
+                        title:"Гости",hasControlButtons:true,btn_clear:btn_clear,btn_apply:btn_apply,hasMenu:true}
+                   
+
+mixin select-guest()
+    +select-items(selectGuest)
