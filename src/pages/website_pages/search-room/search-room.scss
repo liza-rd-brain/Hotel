@@ -1,11 +1,21 @@
-@import "../../../components/range-slider/range-slider.scss";
+/* @import "../../../components/range-slider/range-slider.scss"; */
+@import "../../../variables";
+@import "../../../mixin";
 .search-room {
   width: 1440px;
   margin: 0 auto;
+  &__column-left {
+    margin-right: 60px;
+  }
+  &__wrap {
+    margin: 30px 140px 70px 140px;
+    display: flex;
+  }
+  &__title {
+    @include h1-text();
+  }
 }
-.search-room__wrap {
-  margin: 30px 140px 70px 140px;
-}
+
 .column-left {
   width: 266px;
   & > * {

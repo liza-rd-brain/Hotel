@@ -3,7 +3,7 @@ mixin room-card({number,lux,price,rate,recall})
     -
         const amountItem=4
     div(class="room-card")
-        div(class="glide room-card__slider")
+        div(class="glide room-card__slider" id=`glide-${number}`)
             div(data-glide-el="track" class="glide__track")
                 ul(class="glide__slides slider__slides")
                     - for (let i=1;i<=amountItem;i++) 

@@ -2,21 +2,47 @@ import Glide from "@glidejs/glide/dist/glide.min.js";
 import "../rate-button/rate-button";
 import "./room-card.scss";
 
-var glide = new Glide(".glide", {
-  type: "slider",
-  startAt: 0,
-  perView: 1,
-  animationDuration: 700,
-  rewind: false
+$().ready(() => {
+  var sliders = document.querySelectorAll(".glide");
+  console.log(sliders)
+  for (var i = 0; i < sliders.length; i++) {
+    var glide = new Glide(sliders[i], {
+      type: "slider",
+      startAt: 0,
+      perView: 1,
+      animationDuration: 700,
+      rewind: false
+    });
+
+    glide.mount();
+  }
+
+  let numbers = $(".desc-section__price_number");
+  for (let i = 0; i < numbers.length; i++) {
+    let testNumber =
+      numbers[i].innerText
+        .toString()
+        .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ") + "\u20bd";
+    $(".desc-section__price_number")[i].innerText = testNumber;
+  }
 });
 
-glide.mount();
+/* $().ready(() => {
+  var glide = new Glide("[id^='glide-']", {
+    type: "slider",
+    startAt: 0,
+    perView: 1,
+    animationDuration: 700,
+    rewind: false
+  });
+  glide.mount();
 
-let numbers = $(".desc-section__price_number");
-for (let i = 0; i < numbers.length; i++) {
-  let testNumber =
-    numbers[i].innerText
-      .toString()
-      .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ") + "\u20bd";
-  $(".desc-section__price_number")[i].innerText = testNumber;
-}
+  let numbers = $(".desc-section__price_number");
+  for (let i = 0; i < numbers.length; i++) {
+    let testNumber =
+      numbers[i].innerText
+        .toString()
+        .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ") + "\u20bd";
+    $(".desc-section__price_number")[i].innerText = testNumber;
+  }
+}); */
