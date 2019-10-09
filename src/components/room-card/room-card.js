@@ -4,7 +4,6 @@ import "./room-card.scss";
 
 $().ready(() => {
   var sliders = document.querySelectorAll(".glide");
-  console.log(sliders)
   for (var i = 0; i < sliders.length; i++) {
     var glide = new Glide(sliders[i], {
       type: "slider",

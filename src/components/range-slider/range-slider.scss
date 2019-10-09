@@ -1,21 +1,19 @@
 @import "../../variables";
 @import "../../mixin";
 
-.slider-range.my_slider {
+.slider__range.range-slider__range {
   width: 266px;
 }
 
 .slider {
-  &-text {
+  &__text {
     max-width: 266px;
     display: flex;
     justify-content: space-between;
     margin: 0 0 22px 0;
   }
-  &-amount {
+  &__amount {
     border: 0;
-    color: #f31f;
-    font-weight: bold;
     text-align: right;
     width: 50%;
     @include text($font, 12px, 400, $dark-50);
@@ -25,35 +23,42 @@
     }
     margin-top: -3px;
   }
-  &-caption {
+  &__caption {
     text-transform: uppercase;
     @include h3-text();
     line-height: 15px;
   }
+
+  &__description {
+    @include text($font, 12px, 400, $dark-50);
+    line-height: 14px;
+  }
 }
 
-.my_slider.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content {
+.range-slider__range.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content {
   border: 1px solid $dark-25;
   border-radius: 3px;
   height: 6px;
+  margin-bottom: 14.56px;
 }
-.my_slider .ui-corner-all{
+.range-slider__range .ui-corner-all {
   border: none;
   /*  border: 1px solid $dark-25; */
 }
 
-.my_slider .ui-slider-handle.ui-corner-all {
+.range-slider__range .ui-slider-handle.ui-corner-all {
   background: linear-gradient(180deg, $green 0%, $blue-light 100%);
   border: 2px solid $white;
-  border-radius: 10px;
+  border-radius: 12px;
+  width: 16px;
+  height: 16px;
   top: -5px;
   &:focus {
     outline: none;
   }
 }
 
-
-.my_slider .ui-slider-range.ui-corner-all.ui-widget-header {
+.range-slider__range .ui-slider-range.ui-corner-all.ui-widget-header {
   background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   border: white;
   /*  opacity: 2; */

@@ -10,14 +10,16 @@
 
 .dropdown-list {
   position: relative;
+  width: 266px;
 }
 
 #some-id {
   /* border: none; */
   position: relative;
 }
-
 .dropdown-list__select {
+}
+.dropdown-list__title {
   @include h3-text();
   line-height: 15px;
   text-transform: uppercase;
@@ -28,7 +30,7 @@
     border: 4px solid rgba(31, 32, 65, 0.5);
     position: absolute;
     top: 1px;
-    right: 72px;
+    right: 18px;
     pointer-events: none;
     transform: rotate(45deg);
   }
@@ -37,7 +39,7 @@
     border: 4px solid white;
     position: absolute;
     top: -2px;
-    right: 72px;
+    right: 18px;
     pointer-events: none;
     transform: rotate(45deg);
     z-index: 2;

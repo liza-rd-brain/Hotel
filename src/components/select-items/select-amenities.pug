@@ -1,11 +1,13 @@
 include ./select-items.pug
 
--
-    const roomAmenities={id:"amenities",
-                        size:"medium",
-                        items:[{text:"спальни"},{text:"кровати"},{text:"ванные комнаты"}],
-                        title:"Удобства номера",hasMenu:true}
+
                    
 
-mixin select-amenities()
+mixin select-amenities({text="Select Amenities",size="medium"})
+    -
+        const roomAmenities={id:"amenities",
+                            text:`${text}`,
+                            size:`${size}`,
+                            items:[{text:"спальни"},{text:"кровати"},{text:"ванные комнаты"}],
+                            title:"Удобства номера",hasMenu:true}
     +select-items(roomAmenities)

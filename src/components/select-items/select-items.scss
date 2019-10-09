@@ -1,6 +1,12 @@
 @import "../../variables";
 @import "../../mixin";
 
+.select-items__title {
+  @include h3-text();
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
 //сначала не сообразила передать доп класс!!! поэтому делала через селектор
 .iqdropdown {
   &.iqdropdown__select {

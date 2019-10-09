@@ -1,6 +1,7 @@
-mixin range-slider({ text="Range Slider" })
-
-    p(class="slider-text")
-        label(for="amount" class="slider-caption") #{text}
-        input(type="text" id="amount" readonly class="slider-amount")
-    div(class="slider-range my_slider")
+mixin range-slider({ title="Range Slider",text="" })
+    div(class="range-slider")
+        p(class="slider__text")
+            label(for="amount" class="slider__caption") #{title}
+            input(type="text" id="amount" readonly class="slider__amount")
+        div(class="slider__range range-slider__range")
+        span(class="slider__description") #{text}

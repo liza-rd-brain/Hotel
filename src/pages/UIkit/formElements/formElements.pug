@@ -26,12 +26,14 @@ include ../../../components/dateRangePicker/dateRangePicker
     const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
     const btn_apply = {title:text_apply||"применить",isTextButton:true,isTextColored:true,className:"button_accept"}
 
-    const selectGuest={id:"guest", 
+    const selectGuest={id:"guest",
+                        text:"dropdown",    
                         size:"big",
                         items:[{text:"взрослые",mincount:"1"},{text:"дети"},{text:"младенцы"}],
                         title:"Сколько гостей",hasControlButtons:true,btn_clear:btn_clear,btn_apply:btn_apply,hasMenu:true}
 
     const roomAmenities={id:"amenities",
+                        text:"dropdown",  
                         size:"medium",
                         items:[{text:"спальни"},{text:"кровати"},{text:"ванные комнаты"}],
                         title:"Удобства номера",hasMenu:true}
@@ -89,11 +91,11 @@ html
                         +textField(textField_big,"Email")
 
                     div(class="formElements__item")
-                        h3(class="formElements__text") Select Guest
+                        //- h3(class="formElements__text") Select Guest
                         +select-items(selectGuest)
 
                     div(class="formElements__item")
-                        h3(class="formElements__text") Select Amenities
+                        //- h3(class="formElements__text") Select Amenities
                         +select-items(roomAmenities)    
                    
                     div(class="formElements__item")
