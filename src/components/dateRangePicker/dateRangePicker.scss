@@ -2,7 +2,7 @@
 @import "../../mixin";
 
 .flatpickr-calendar.inline {
-  display: block;
+  /* display: block; */
   position: relative;
   top: 2px;
   width: 320px;
@@ -10,23 +10,74 @@
   box-shadow: 0px 10px 20px $dark-5;
   border: 1px solid $dark-25;
   border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.flatpickr-months {
+  /*  outline: 1px solid #000; */
+  position: relative;
+  height: 24px;
+  margin-bottom: 30px;
 }
 .flatpickr-months .flatpickr-prev-month svg,
 .flatpickr-months .flatpickr-next-month svg {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
 }
-.flatpickr-prev-month {
-  transform: rotate(180deg);
+
+.flatpickr-months {
+  & .flatpickr-month {
+    height: 24px;
+  }
+  & .flatpickr-prev-month {
+    padding: 0;
+    height: 24px;
+    width: 24px;
+
+    & svg {
+      transform: rotate(180deg);
+      top: -5px;
+    }
+  }
+  & .flatpickr-next-month {
+    padding: 0;
+    height: 24px;
+    width: 24px;
+
+    & svg {
+      top: 3px;
+    }
+  }
 }
 
 .flatpickr-current-month {
   @include h2-text();
   line-height: 24px;
+  padding: 0;
+  height: 24px;
+
+  & span.cur-month:hover {
+    background: none;
+  }
+}
+.numInputWrapper input,
+.numInputWrapper span {
+  display: none;
+}
+.flatpickr-current-month input.cur-year {
+  cursor: default;
+}
+
+.numInputWrapper:hover {
+  background: none;
 }
 .flatpickr-current-month input.cur-year {
   @include h2-text();
   line-height: 24px;
+}
+.flatpickr-current-month span.cur-month {
+  margin-left: 24px;
 }
 
 span.flatpickr-weekday {
@@ -45,12 +96,14 @@ span.flatpickr-weekday {
     font-weight: 800;
     background: linear-gradient(180deg, $green 0%, $blue-light 100%);
     border-radius: 22px;
-    border: 0px;
   }
   &.inRange {
     background: linear-gradient(180deg, $purple-25 0%, $blue-25 100%);
-    /*  opacity: 0.25; */
     box-shadow: none;
+
+    &.nextMonthDay {
+      background: linear-gradient(180deg, $purple-25 0%, $blue-25 100%);
+    }
   }
 }
 
@@ -62,5 +115,122 @@ span.flatpickr-weekday {
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   border-radius: 22px;
   box-shadow: none;
-  border: 0px;
+}
+
+.flatpickr-day {
+  max-width: unset;
+  /*  box-shadow: -1px 0 0 #e6e6e6, 1px 0 0 #e6e6e6; */
+  /*   box-shadow: -1px 0 0 #bc9cff, 1px 0 0 #8ba4f9;
+  box-shadow: inset #ff0000 -150px 0 100px -100px; */
+}
+
+.flatpickr-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.rangeMode .flatpickr-day {
+  margin-top: 0px;
+}
+
+.arrow-icon {
+  padding: 0;
+  right: 0px;
+}
+
+.flatpickr-calendar:before,
+.flatpickr-calendar:after {
+  content: none;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: $dark-50;
+}
+
+.flatpickr-rContainer {
+  width: 100%;
+}
+.flatpickr-weekdays {
+  width: 100%;
+}
+.flatpickr-days {
+  width: 100%;
+}
+.flatpickr-day {
+  margin: 0;
+  border: none;
+}
+
+.flatpickr-weekdays {
+  height: 40px;
+}
+
+.dayContainer {
+  width: 100%;
+  max-width: 277px;
+  min-width: 250px;
+}
+
+.flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
+.flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.flatpickr-day.startRange.startRange:not(:hover):after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 39px solid;
+  border-right: 22px solid;
+  border-image: linear-gradient(
+    180deg,
+    rgba(188, 156, 255, 0.25) 0%,
+    rgba(139, 164, 249, 0.25) 100%
+  );
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -1;
+}
+
+.flatpickr-day.endRange.endRange:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 39px solid;
+  border-right: 22px solid;
+  border-image: linear-gradient(
+    180deg,
+    rgba(188, 156, 255, 0.25) 0%,
+    rgba(139, 164, 249, 0.25) 100%
+  );
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+.flatpickr-day.today.inRange {
+  &:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 10px;
+    border-top: 39px solid;
+    border-right: 40px solid;
+    border-image: linear-gradient(
+      180deg,
+      rgba(188, 156, 255, 0.25) 0%,
+      rgba(139, 164, 249, 0.25) 100%
+    );
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: -1;
+  }
 }

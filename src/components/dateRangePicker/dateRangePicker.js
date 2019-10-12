@@ -8,27 +8,27 @@ const config = {
   altInput: true,
   altInputClass: "flatpickr-alt",
   altFormat: "d.m.Y",
+  inline: true,
   locale: Russian,
   /* position:"below", */
   monthSelectorType: "static",
   /* inline: true, */
   onReady: function(dateObj, dateStr, instance) {
-    const $clear = $(
-      '<div class="flatpickr-clear"><button class="flatpickr-clear-button">Clear</button></div>'
-    )
+    const buttonWrap = $('<div class="flatpickr-wrap"></div>').appendTo(
+      $(instance.calendarContainer)
+    );
+    const $clear = $('<button class="flatpickr-clear-button">Clear</button>')
       .on("click", () => {
         instance.clear();
         instance.close();
       })
-      .appendTo($(instance.calendarContainer));
+      .appendTo($(".flatpickr-wrap"));
 
-    const $close = $(
-      '<div class="flatpickr-close"><button class="flatpickr-close-button">Close</button></div>'
-    )
+    const $close = $('<button class="flatpickr-close-button">Close</button>')
       .on("click", () => {
         instance.close();
       })
-      .appendTo($(instance.calendarContainer));
+      .appendTo($(".flatpickr-wrap"));
   },
   plugins: [new rangePlugin({ input: ".example2" })]
 };
@@ -43,6 +43,9 @@ newLeftArrow.appendTo(leftArrowWrap);
 rightArrowWrap.find("svg").remove();
 newRightArrow.appendTo(rightArrowWrap);
 
+$(".numInputWrapper")
+  .find(".cur-year")
+  .attr("readonly", "readonly");
 
 /* лучше стилизовать текущие кнопки или проборсить кастомные?! */
 // const newButtonClear = $(".button_clear");
