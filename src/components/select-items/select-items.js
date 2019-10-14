@@ -25,7 +25,7 @@ const GUEST = {
 
 const AMENTIES = {
   maxItems: 10,
-  minItems: 1,
+  /*   minItems: 1, */
   selectionText: "item",
   textPlural: "items",
   controls: {
@@ -42,7 +42,6 @@ const AMENTIES = {
 
 const guestID = "guest";
 const amenitiesID = "amenities";
-/* debugger; */
 
 //отдельные счетчики для гостей и удобств
 const guestCounter = [
@@ -58,14 +57,15 @@ const amenitiesCounter = [
 ];
 
 $().ready(() => {
-  const guestText = $("#guest  .iqdropdown__text").text();
-  const amenitiesText = $("#amenities .iqdropdown__text").text();
-  const defaultGuestText = guestText;
-  const defaultAmenitiesText = amenitiesText;
- /*  debugger; */
+  const guestText = $("#guest > .iqdropdown__text").text();
+  const amenitiesText = $("#amenities > .iqdropdown__text").text();
+  /*  const defaultGuestText = guestText;
+  const defaultAmenitiesText = amenitiesText; */
   createDropdowns(guestID, GUEST, guestText);
   createDropdowns(amenitiesID, AMENTIES, amenitiesText);
 });
+
+const createTitle = () => {};
 
 const addCountersAttr = (id, title) => {
   for (let i = 0; i < 3; i++) {
@@ -82,7 +82,7 @@ const addCountersHandlers = (id, title, itemCounter) => {
     changeCounter(id, e);
     checkButtons(id);
     showButtonClear(id, title);
-    changeText(id, title, e);
+    changeText(id, title /* , e */);
   });
 };
 
@@ -130,18 +130,18 @@ const showButtonClear = id => {
   }
 };
 
-const changeText = id => {
+const changeText = (id, title) => {
   switch (id) {
     case "guest":
-      changeTitleGuest(id);
+      changeTitleGuest(id, title);
       break;
     case "amenities":
-      changeTitleAmenities(id);
+      changeTitleAmenities(id, title);
       break;
   }
 };
 
-const changeTitleGuest = id => {
+const changeTitleGuest = (id, title) => {
   const currAmountGuests =
     guestCounter.find(item => item.id == "guest0").amount +
     guestCounter.find(item => item.id == "guest1").amount;
@@ -160,14 +160,14 @@ const changeTitleGuest = id => {
   const finalText =
     currAmountGuests || currAmountBabyes
       ? `${currGuestString} ${needСomma} ${currBabyesString}`
-      : defaultGuestText;
+      : title;
 
   $(`#${id}`)
     .find("p.iqdropdown__text")
     .text(finalText);
 };
 
-const changeTitleAmenities = id => {
+const changeTitleAmenities = (id, title) => {
   const currAmountBedrooms = amenitiesCounter.find(
     item => item.id == "amenities0"
   ).amount;
@@ -208,7 +208,7 @@ const changeTitleAmenities = id => {
       ? `${currBedsString} `
       : currAmountBath
       ? `${currBathString}  `
-      : defaultAmenitiesText;
+      : title;
 
   $(`#${id}`)
     .find("p.iqdropdown__text")
