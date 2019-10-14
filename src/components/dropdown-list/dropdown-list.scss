@@ -18,6 +18,16 @@
   position: relative;
 }
 .dropdown-list__select {
+  &_open > .dropdown-list__title {
+    &::after {
+      top: 6px;
+      right: 18px;
+    }
+    &::before {
+      top: 9px;
+      right: 18px;
+    }
+  }
 }
 .dropdown-list__title {
   @include h3-text();
