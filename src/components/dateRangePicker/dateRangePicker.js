@@ -7,7 +7,9 @@ import "flatpickr/dist/flatpickr.min.css";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 import "./dateRangePicker.scss";
 
-const config = {
+Russian.rangeSeparator = " - ";
+
+const configRange = {
   altInput: true,
   altInputClass: "flatpickr-alt",
   altFormat: "d.m.Y",
@@ -17,7 +19,7 @@ const config = {
   monthSelectorType: "static",
   static: true,
   onReady: function(dateObj, dateStr, instance) {
-    const buttonWrap = $('<div class="flatpickr-wrap"></div>').appendTo(
+    const buttonWrap = $('<div class="flatpickr-wrap__range"></div>').appendTo(
       $(instance.calendarContainer)
     );
     const $clear = $(
@@ -27,7 +29,7 @@ const config = {
         instance.clear();
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap"));
+      .appendTo($(".flatpickr-wrap__range"));
 
     const $close = $(
       '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
@@ -35,36 +37,135 @@ const config = {
       .on("click", () => {
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap"));
+      .appendTo($(".flatpickr-wrap__range"));
   },
   plugins: [new rangePlugin({ input: ".departure-range" })]
 };
-flatpickr(".entry-range", config);
+flatpickr(".entry-range", configRange);
 
-const newLeftArrow = $(".arrow__left").find("svg");
-const newRightArrow = $(".arrow__right").find("svg");
-const leftArrowWrap = $(".flatpickr-prev-month");
-const rightArrowWrap = $(".flatpickr-next-month");
-leftArrowWrap.find("svg").remove();
-newLeftArrow.appendTo(leftArrowWrap);
-rightArrowWrap.find("svg").remove();
-newRightArrow.appendTo(rightArrowWrap);
+const configStatic = {
+  altInput: true,
+  altInputClass: "flatpickr-alt",
+  altFormat: "d.m.Y",
+  inline: true,
+  locale: Russian,
+  mode: "range",
+  monthSelectorType: "static",
 
-$(".numInputWrapper")
-  .find(".cur-year")
-  .attr("readonly", "readonly");
+  onReady: function(dateObj, dateStr, instance) {
+    const buttonWrap = $('<div class="flatpickr-wrap__static"></div>').appendTo(
+      $(instance.calendarContainer)
+    );
+    const $clear = $(
+      '<button class="flatpickr-clear-button flatpickr-button">Очистить</button>'
+    )
+      .on("click", () => {
+        instance.clear();
+        instance.close();
+      })
+      .appendTo($(".flatpickr-wrap__static"));
 
-/* лучше стилизовать текущие кнопки или проборсить кастомные?! */
-// const newButtonClear = $(".button_clear");
-// const newButtonAccept = $(".button_accept");
-// const buttonClearWrap = $(".flatpickr-clear");
+    const $close = $(
+      '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
+    )
+      .on("click", () => {
+        instance.close();
+      })
+      .appendTo($(".flatpickr-wrap__static"));
+  }
+};
+flatpickr(".calendar_static", configStatic);
 
-// buttonClearWrap.find("button").remove();
-// newButtonClear.appendTo(buttonClearWrap);
+const today = new Date();
+const defaultFiterDateStart = `${today.getFullYear()}-${today.getMonth() +
+  1}-${today.getDate()}`;
+const defaultFiterDateEnd = `${today.getFullYear()}-${today.getMonth() +
+  1}-${today.getDate() + 5}`;
 
-/* $(`<h3 class="entry-caption">Прибытие</h3>`).insertBefore($(".entry-range"));
+const configFilter = {
+  altInput: true,
+  altInputClass: "flatpickr-alt",
+  altFormat: "j M",
+  defaultDate: [
+    defaultFiterDateStart.toLowerCase(),
+    defaultFiterDateEnd.toLowerCase()
+  ],
+  locale: Russian,
+  mode: "range",
+  rangeSeparator: ":",
+  monthSelectorType: "static",
+  static: true,
 
-$(`<h3 class="departure-caption" ">Выезд</h3>`).insertBefore(
-  $(".departure-range")
-);
- */
+  onReady: function(dateObj, dateStr, instance) {
+    const buttonWrap = $('<div class="flatpickr-wrap__filter"></div>').appendTo(
+      $(instance.calendarContainer)
+    );
+    const $clear = $(
+      '<button class="flatpickr-clear-button flatpickr-button">Очистить</button>'
+    )
+      .on("click", () => {
+        instance.clear();
+        instance.close();
+      })
+      .appendTo($(".flatpickr-wrap__filter"));
+
+    const $close = $(
+      '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
+    )
+      .on("click", () => {
+        instance.close();
+      })
+      .appendTo($(".flatpickr-wrap__filter"));
+  }
+};
+flatpickr(".filter-range", configFilter);
+
+const configMasked = {
+  altInput: true,
+  altInputClass: "flatpickr-alt",
+  altFormat: "d.m.Y",
+  monthSelectorType: "static",
+  static: true,
+
+  onReady: function(dateObj, dateStr, instance) {
+    const buttonWrap = $('<div class="flatpickr-wrap__filter"></div>').appendTo(
+      $(instance.calendarContainer)
+    );
+    const $clear = $(
+      '<button class="flatpickr-clear-button flatpickr-button">Очистить</button>'
+    )
+      .on("click", () => {
+        instance.clear();
+        instance.close();
+      })
+      .appendTo($(".flatpickr-wrap__filter"));
+
+    const $close = $(
+      '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
+    )
+      .on("click", () => {
+        instance.close();
+      })
+      .appendTo($(".flatpickr-wrap__filter"));
+  }
+};
+flatpickr(".calendar__input", configMasked);
+
+$().ready(() => {
+  var calendars = document.querySelectorAll(".flatpickr-calendar");
+  for (var i = 0; i < calendars.length; i++) {
+    const newLeftArrow = $(".arrow__left")
+      .find("svg")
+      .first();
+    const newRightArrow = $(".arrow__right")
+      .find("svg")
+      .first();
+    const leftArrowWrap = $(calendars[i]).find(" .flatpickr-prev-month");
+    const rightArrowWrap = $(calendars[i]).find(" .flatpickr-next-month");
+    leftArrowWrap.find("svg").remove();
+    newLeftArrow.appendTo(leftArrowWrap);
+    rightArrowWrap.find("svg").remove();
+    newRightArrow.appendTo(rightArrowWrap);
+  }
+ 
+});

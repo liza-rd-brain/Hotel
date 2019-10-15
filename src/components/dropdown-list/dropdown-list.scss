@@ -20,11 +20,11 @@
 .dropdown-list__select {
   &_open > .dropdown-list__title {
     &::after {
-      top: 6px;
+      top: 4px;
       right: 18px;
     }
     &::before {
-      top: 9px;
+      top: 7px;
       right: 18px;
     }
   }

@@ -1,13 +1,19 @@
 @import "../../variables";
 @import "../../mixin";
 
-.calender__wrap {
+.calender_range {
   display: flex;
+}
+.calendar__caption {
+  margin: 0 0 5px 0;
+  @include h3-text();
+  text-transform: uppercase;
 }
 
 .flatpickr-alt,
 .departure-range {
-  width: 150px;
+  /*   width: 150px; */
+  width: 100%;
   height: 44px;
   border: 1px solid $dark-25;
   box-sizing: border-box;
@@ -16,13 +22,15 @@
   @include body-text();
   line-height: 18px;
   outline: none;
+  cursor: pointer;
+  text-transform: lowercase;
 
   &::placeholder {
     text-transform: uppercase;
     color: $dark-75;
   }
 }
-.entry-range {
+.range {
   &__wrap {
     position: relative;
     &:first-child {
@@ -50,18 +58,24 @@
       transform: rotate(45deg);
       z-index: 2;
     }
-  }
-
-  &__caption {
-    margin: 0 0 5px 0;
-    @include h3-text();
-    text-transform: uppercase;
+    &_filter.range__wrap {
+      width: 266px;
+      margin-right: 0;
+      /*   &::after {
+        top: 16px;
+        right: 19px;
+      }
+      &::before {
+        content: "";
+        top: 13px;
+        right: 19px;
+      } */
+    }
   }
 }
 
-.flatpickr-calendar.static {
+.flatpickr-calendar {
   display: block;
-  top: 50px;
   width: 320px;
   height: 369px;
   box-shadow: 0px 10px 20px $dark-5;
@@ -72,6 +86,11 @@
   padding-right: 19px;
   display: flex;
   flex-direction: column;
+  &.static {
+    top: 50px;
+  }
+  /* &.inline {
+  } */
 }
 
 .flatpickr-months {
@@ -301,10 +320,14 @@ span.flatpickr-weekday {
 }
 
 .flatpickr-wrap {
-  display: flex;
-  justify-content: space-between;
-  height: 32px;
-  align-items: flex-end;
+  &__range,
+  &__static,
+  &__filter {
+    display: flex;
+    justify-content: space-between;
+    height: 32px;
+    align-items: flex-end;
+  }
 }
 .flatpickr-button {
   @include h3-text();
@@ -319,4 +342,16 @@ span.flatpickr-weekday {
   &:hover {
     color: $dark-50;
   }
+}
+
+.calendar_static ~ .flatpickr-alt {
+  display: none;
+}
+
+.calendar_filter ~ .flatpickr-alt {
+  width: 266px;
+}
+
+.flatpickr-wrapper {
+  width: 100%;
 }
