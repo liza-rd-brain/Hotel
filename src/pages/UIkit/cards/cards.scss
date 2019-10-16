@@ -1,12 +1,17 @@
 @import "../../../variables";
 
 .cards {
+  width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $gray;
+  position: relative;
   &__wrap {
-    padding: 140px 150px 150px 150px;
-    width: 1440px;
-    display: flex;
-    justify-content: space-between;
-    background-color: $gray;
+    padding: 150px 150px 150px 140px;
+  }
+  & > .logo-icon {
+    top: 30px;
+    left: 30px;
   }
 
   &__item {

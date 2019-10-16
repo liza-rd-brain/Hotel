@@ -5,7 +5,7 @@ import flatpickr from "flatpickr";
 import { Russian } from "flatpickr/dist/l10n/ru.js";
 import "flatpickr/dist/flatpickr.min.css";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
-import "./dateRangePicker.scss";
+import "./calendar.scss";
 
 Russian.rangeSeparator = " - ";
 
@@ -74,7 +74,7 @@ const configStatic = {
       .appendTo($(".flatpickr-wrap__static"));
   }
 };
-flatpickr(".calendar_static", configStatic);
+flatpickr(".calendar_type_static", configStatic);
 
 const today = new Date();
 const defaultFiterDateStart = `${today.getFullYear()}-${today.getMonth() +
@@ -126,9 +126,10 @@ const configMasked = {
   altFormat: "d.m.Y",
   monthSelectorType: "static",
   static: true,
+  locale: Russian,
 
   onReady: function(dateObj, dateStr, instance) {
-    const buttonWrap = $('<div class="flatpickr-wrap__filter"></div>').appendTo(
+    const buttonWrap = $('<div class="flatpickr-wrap__masked"></div>').appendTo(
       $(instance.calendarContainer)
     );
     const $clear = $(
@@ -138,7 +139,7 @@ const configMasked = {
         instance.clear();
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__filter"));
+      .appendTo($(".flatpickr-wrap__masked"));
 
     const $close = $(
       '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
@@ -146,7 +147,7 @@ const configMasked = {
       .on("click", () => {
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__filter"));
+      .appendTo($(".flatpickr-wrap__masked"));
   }
 };
 flatpickr(".calendar__input", configMasked);
@@ -154,11 +155,11 @@ flatpickr(".calendar__input", configMasked);
 $().ready(() => {
   var calendars = document.querySelectorAll(".flatpickr-calendar");
   for (var i = 0; i < calendars.length; i++) {
-    const newLeftArrow = $(".arrow__left")
-      .find("svg")
+    const newLeftArrow = $(".arrow-group__wrap")
+      .find(".calendar__arrow_left")
       .first();
-    const newRightArrow = $(".arrow__right")
-      .find("svg")
+    const newRightArrow = $(".arrow-group__wrap")
+      .find(".calendar__arrow_right")
       .first();
     const leftArrowWrap = $(calendars[i]).find(" .flatpickr-prev-month");
     const rightArrowWrap = $(calendars[i]).find(" .flatpickr-next-month");
@@ -167,5 +168,5 @@ $().ready(() => {
     rightArrowWrap.find("svg").remove();
     newRightArrow.appendTo(rightArrowWrap);
   }
- 
+  $(".arrow-group__wrap").remove();
 });

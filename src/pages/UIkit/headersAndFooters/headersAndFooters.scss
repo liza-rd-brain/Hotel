@@ -1,15 +1,22 @@
 .headersAndFooters {
   background-color: #f4f4f6;
   width: 1440px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
   &__wrap {
     padding: 150px 0 130px 0;
   }
-  & > header,footer {
+  & > header,
+  footer {
     margin-bottom: 40px;
   }
   & > :last-child {
     margin-bottom: 0px;
+  }
+  & > .logo-icon {
+    top: 30px;
+    left: 30px;
   }
 }

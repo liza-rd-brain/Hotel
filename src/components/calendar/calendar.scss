@@ -1,7 +1,7 @@
 @import "../../variables";
 @import "../../mixin";
 
-.calender_range {
+.calendar_type_range {
   display: flex;
 }
 .calendar__caption {
@@ -322,7 +322,8 @@ span.flatpickr-weekday {
 .flatpickr-wrap {
   &__range,
   &__static,
-  &__filter {
+  &__filter,
+  &__masked {
     display: flex;
     justify-content: space-between;
     height: 32px;
@@ -344,11 +345,11 @@ span.flatpickr-weekday {
   }
 }
 
-.calendar_static ~ .flatpickr-alt {
+.calendar_type_static ~ .flatpickr-alt {
   display: none;
 }
 
-.calendar_filter ~ .flatpickr-alt {
+.calendar_type_filter ~ .flatpickr-alt {
   width: 266px;
 }
 

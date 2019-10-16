@@ -19,9 +19,10 @@ html
         title
             headersAndFooters
     body 
+        
+        div(class="headersAndFooters headersAndFooters__wrap")
             +logo-icon({isColored:false})
-            div(class="headersAndFooters headersAndFooters__wrap")
-                +header(header_unLogged) 
-                +header(header_logged)        
-                +footer(footer_regular)
-                +footer(footer_creative)
+            +header(header_unLogged) 
+            +header(header_logged)        
+            +footer(footer_regular)
+            +footer(footer_creative)

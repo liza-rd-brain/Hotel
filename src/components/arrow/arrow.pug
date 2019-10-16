@@ -5,7 +5,7 @@ mixin arrow({isColored,isShaded})
     // здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
         var gClassName 
         gClassName= isShaded ? "" : "arrow-icon_noShaded"
-    svg(width="26" height="26" class=arrowClassName viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg")
+    svg(width="26" height="26" class=arrowClassName class!=attributes.class viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg")
         g(class=gClassName filter="url(#filter0_d)")
         path(d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z")
         defs

@@ -1,0 +1,28 @@
+include ../button/button
+include ../arrow/arrow
+
+
+
+mixin calendar({type,titleGroup:[title_1,title_2]=[],title=""})
+    div(class="arrow-group__wrap")
+        +arrow({isColored:true})(class="calendar__arrow_left")
+        +arrow({isColored:true})(class="calendar__arrow_right")   
+    if type==="group-range"       
+        div(class="calendar_type_range")
+            div(class="range__wrap")
+                h3(class="calendar__caption") #{title_1}
+                input(class="entry-range" type="text" placeholder="дд.мм.гггг" )
+            div(class="range__wrap")    
+                h3(class="calendar__caption" ) #{title_2}
+                input(class="departure-range" type="text" placeholder="дд.мм.гггг") 
+    else if type==="static-range"  
+        div(class="calendar_type_static")   
+    else if type==="filter-range"
+        div(class="calendar_type_filter")
+            div(class="range__wrap range__wrap_filter")  
+                h3(class="calendar__caption") #{title}
+                input(class="filter-range" )
+    else if type==="masked"
+        div(class="calendar_type_masked")  
+                h3(class="calendar__caption") #{title}
+                input(class="calendar__input" placeholder="дд.мм.гггг")                       
