@@ -108,8 +108,10 @@ $height-text: 15px;
     margin: 2px;
     border-radius: 28px;
     padding: 12px 0 13px 0;
-    letter-spacing: -0.3px;
-    text-indent: -7px;
+    /*     letter-spacing: -0.3px;
+    text-indent: -7px; */
+    letter-spacing: 0px;
+    text-indent: 0px;
     &_colored {
       color: $purple;
       background-color: white;

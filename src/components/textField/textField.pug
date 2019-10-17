@@ -6,7 +6,7 @@ mixin textField({size,input_type,effect},placeholder)
 
     div(class="textField__wrap")
         if !effect
-            input(class=textFieldClassName type=`${input_type}` placeholder=`${placeholder}`)
+            input(class=textFieldClassName type=`${input_type}` placeholder=`${placeholder} `)
         else  
             input(class=textFieldClassName type=`${input_type}` placeholder=`${placeholder}`)
             a(class="textField__link" href="#")

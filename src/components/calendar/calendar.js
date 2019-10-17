@@ -9,6 +9,12 @@ import "./calendar.scss";
 
 Russian.rangeSeparator = " - ";
 
+const today = new Date();
+const defaultFiterDateStart = `${today.getFullYear()}-${today.getMonth() +
+  1}-${today.getDate() + 11}`;
+const defaultFiterDateEnd = `${today.getFullYear()}-${today.getMonth() +
+  1}-${today.getDate() + 16}`;
+
 const configRange = {
   altInput: true,
   altInputClass: "flatpickr-alt",
@@ -47,6 +53,10 @@ const configStatic = {
   altInput: true,
   altInputClass: "flatpickr-alt",
   altFormat: "d.m.Y",
+  defaultDate: [
+    defaultFiterDateStart.toLowerCase(),
+    defaultFiterDateEnd.toLowerCase()
+  ],
   inline: true,
   locale: Russian,
   mode: "range",
@@ -74,13 +84,7 @@ const configStatic = {
       .appendTo($(".flatpickr-wrap__static"));
   }
 };
-flatpickr(".calendar_type_static", configStatic);
-
-const today = new Date();
-const defaultFiterDateStart = `${today.getFullYear()}-${today.getMonth() +
-  1}-${today.getDate()}`;
-const defaultFiterDateEnd = `${today.getFullYear()}-${today.getMonth() +
-  1}-${today.getDate() + 5}`;
+flatpickr(".static-range", configStatic);
 
 const configFilter = {
   altInput: true,

@@ -6,9 +6,20 @@
   justify-content: space-between;
   background-color: $gray;
   position: relative;
+  flex-direction: row;
   &__wrap {
     padding: 150px 150px 150px 140px;
   }
+
+  &__column {
+    & > * {
+      margin-bottom: 40px;
+    }
+    & > *:nth-last-child(1) {
+      margin-bottom: 0px;
+    }
+  }
+
   & > .logo-icon {
     top: 30px;
     left: 30px;

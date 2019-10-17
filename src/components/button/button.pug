@@ -22,9 +22,9 @@ mixin button({isColored,isBordered,isTextButton,isArrowButton,isHeaderButton,siz
         //- const button_register_title="register"
 
     if !isArrowButton 
-        button(class=`${buttonClassName}`)
+        button(class=`${buttonClassName}` class!=attributes.class type="button")
             h3(class=buttonTextClassName) #{title}
     else  
-        button(class=`${buttonClassName}`)
+        button(class=`${buttonClassName}` class!=attributes.class type="button")
             h3(class=buttonTextClassName) #{title} 
             +arrow({isShaded:true})    

@@ -1,3 +1,6 @@
+@import "./variables";
+@import "./mixin";
+
 /* @font-face {
   font-family: MyriadPro-Regular;
   src: url(./fons/MyriadPro-Regular.svg) format("svg"),
@@ -24,7 +27,6 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: Quicksand;
   src: url(./fons/Quicksand-Regular.svg) format("svg"),
@@ -43,7 +45,6 @@
   font-style: normal;
 }
 
-
 .title {
   display: block;
   color: rgb(197, 15, 15);
@@ -51,6 +52,8 @@
   font-family: "MyriadPro-Regular", "Arial", sans-serif;
   font-size: 50px;
 }
+
+
 
 /* body {
   padding: 150px 140px;

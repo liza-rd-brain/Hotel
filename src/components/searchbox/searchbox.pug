@@ -1,6 +1,6 @@
 include ../calendar/calendar
-include ../select-items/select-guest.pug
-include ../button/button.pug
+include ../select-items/select-guest
+include ../button/button
 
 //- -
 //-     const selectGuest={size:"big",type:"guest",items:[{text:"взрослые",mincount:"1"},{text:"дети"},{text:"малыши"}],title:""}
@@ -11,7 +11,3 @@ mixin searchbox()
             +calendar({type:"group-range",titleGroup:["прибытие","выезд"]})
             +select-guest({})
             +button({isColored:true,size:"big",title:"подобрать номер",isArrowButton:true})
-
-
-      
-        

@@ -9,14 +9,14 @@
   @include body-text();
   line-height: 18px;
 
-  &__wrap{
+  &__wrap {
     /* max-width: 266px; */
     width: 100%;
     display: flex;
-   /*  position: relative; */
+    /*  position: relative; */
   }
 
-  &_size{
+  &_size {
     &-big {
       width: 320px;
     }
@@ -27,19 +27,15 @@
     &-small {
       width: 150px;
     }
-  
   }
 
-  &_type-arrow{
-    
-  }
-  &__link{
+  &__link {
     position: relative;
     display: flex;
     align-items: center;
     text-decoration: none;
   }
-  
+
   &::placeholder {
     color: $dark-25;
   }

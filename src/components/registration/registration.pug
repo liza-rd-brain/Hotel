@@ -1,0 +1,37 @@
+include ../textField/textField
+include ../radio-button/radio-button
+include ../calendar/calendar
+include ../toggle/toggle
+
+
+mixin registration({isLogged})
+    div(class="registration registration__wrap")
+        if !isLogged
+            h1(class="registration__title") Регистрация аккаунта
+            form(class="registration__form")
+                +textField({size:"big",input_type:"text"},"Имя")
+                +textField({size:"big",input_type:"text"},"Фамилия")
+                div(class="radio-button__wrap")
+                    +radio-button() 
+                +calendar({type:"masked",title:"дата рождения"})  
+                div(class="authorization-data__wrap")
+                    h3 данные для входа в сервис
+                    +textField({size:"big",input_type:"text"},"Email")
+                    +textField({size:"big",input_type:"text"},"Пароль")
+                +toggle()
+                +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})
+                div(class="toggle-acces")
+                    span(class="body-text") Уже есть аккаунт на Toxin
+                    +button({isBordered:true,size:"small",title:"войти",isTextColored:true})(class="toggle-acces__button")
+        else
+            h1(class="registration__title") Войти
+            form(class="registration__form registration__form_type_authorization")
+                div(class="authorization-data__wrap")
+                    +textField({size:"big",input_type:"text"},"Email")
+                    +textField({size:"big",input_type:"text"},"Пароль")
+                +button({isColored:true,size:"big",title:"Войти",isArrowButton:true})    
+                div(class="toggle-acces")
+                        span(class="body-text") Нет аккаунта на Toxin?
+                        +button({isBordered:true,size:"small",title:"создать",isTextColored:true})(class="toggle-acces__button")
+
+

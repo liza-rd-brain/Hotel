@@ -185,7 +185,7 @@ span.flatpickr-weekday {
     }
   }
 }
-
+.flatpickr-day.selected,
 .flatpickr-day.selected.startRange,
 .flatpickr-day.selected.endRange,
 .flatpickr-day.startRange.startRange,
@@ -345,7 +345,7 @@ span.flatpickr-weekday {
   }
 }
 
-.calendar_type_static ~ .flatpickr-alt {
+.calendar_type_static > .flatpickr-alt {
   display: none;
 }
 
@@ -355,4 +355,11 @@ span.flatpickr-weekday {
 
 .flatpickr-wrapper {
   width: 100%;
+}
+
+.calendar_type_masked {
+  width: 100%;
+  & .flatpickr-alt::placeholder {
+    color: $dark-25;
+  }
 }

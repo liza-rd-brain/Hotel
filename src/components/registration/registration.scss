@@ -1,0 +1,64 @@
+@import "../../variables";
+@import "../../mixin";
+
+.registration {
+  width: 380px;
+  display: flex;
+  background-color: $white;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__wrap {
+    padding: 40px 30px 30px 30px;
+  }
+  &__title {
+    margin: 0 0 20px 0;
+    @include text($font-eng, 24px, 700, $dark);
+    line-height: 30px;
+    letter-spacing: 1.2px;
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    & .textField__wrap {
+      margin-bottom: 10px;
+    }
+    & .radio-button__wrap {
+      margin-bottom: 22.56px;
+    }
+    & .calendar_type_masked {
+      margin-bottom: 22px;
+    }
+    & .authorization-data__wrap {
+      margin-bottom: 7px;
+      & > :nth-last-child(1) {
+        margin-bottom: 0;
+      }
+    }
+    & .toggle-label {
+      margin-bottom: 22px;
+    }
+    .button_type-arrow {
+      margin-bottom: 30px;
+      & .button__text {
+        text-indent: 0px;
+        letter-spacing: 0.2px;
+      }
+    }
+    .toggle-acces {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &_type_authorization {
+      & .authorization-data__wrap {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

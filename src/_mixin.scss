@@ -31,7 +31,15 @@
 @mixin block-hoverFocus {
   border: 1px solid $dark-50;
   outline: none;
-  &::placeholder {
-    color: $dark-75;
-  }
+}
+
+//вынести общие переменные?!
+h3 {
+  @include h3-text();
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+span.body-text {
+  @include body-text();
 }
