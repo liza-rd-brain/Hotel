@@ -8,8 +8,12 @@ $(function() {
 });
 
 $().ready(() => {
-  $(".radio-label").addClass("my_radio")
-    .find('[class|="ui-checkboxradio"]')
-    .addClass("my_radio");
-
+  let radioGroup = document.querySelectorAll(".radio-label");
+ 
+  for (let i = 0; i < radioGroup.length; i++) {
+    $(radioGroup[i])
+      .addClass("my_radio")
+      .find('[class|="ui-checkboxradio"]')
+      .addClass("my_radio");
+  }
 });

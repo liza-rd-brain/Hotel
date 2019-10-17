@@ -4,9 +4,17 @@ include ../calendar/calendar
 include ../toggle/toggle
 
 
-mixin registration({isLogged})
+mixin registration({isLogged,id})
+    -
+        signUpClassName=isLogged?
+        "registration__signUp hidden"
+        :"registration__signUp"
+         signInClassName=isLogged?
+        "registration__signIn"
+        :"registration__signIn hidden"
+
     div(class="registration registration__wrap")
-        if !isLogged
+        div(class=signUpClassName)
             h1(class="registration__title") Регистрация аккаунта
             form(class="registration__form")
                 +textField({size:"big",input_type:"text"},"Имя")
@@ -22,8 +30,8 @@ mixin registration({isLogged})
                 +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})
                 div(class="toggle-acces")
                     span(class="body-text") Уже есть аккаунт на Toxin
-                    +button({isBordered:true,size:"small",title:"войти",isTextColored:true})(class="toggle-acces__button")
-        else
+                    +button({isBordered:true,size:"small",title:"войти",isTextColored:true})(class="signIn__button")
+        div(class=signInClassName)            
             h1(class="registration__title") Войти
             form(class="registration__form registration__form_type_authorization")
                 div(class="authorization-data__wrap")
@@ -32,6 +40,6 @@ mixin registration({isLogged})
                 +button({isColored:true,size:"big",title:"Войти",isArrowButton:true})    
                 div(class="toggle-acces")
                         span(class="body-text") Нет аккаунта на Toxin?
-                        +button({isBordered:true,size:"small",title:"создать",isTextColored:true})(class="toggle-acces__button")
+                        +button({isBordered:true,size:"small",title:"создать",isTextColored:true})(class="signUp__button")
 
 

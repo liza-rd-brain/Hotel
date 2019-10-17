@@ -1,6 +1,9 @@
 @import "../../variables";
 @import "../../mixin";
 
+.hidden {
+  display: none;
+}
 .registration {
   width: 380px;
   display: flex;
@@ -10,6 +13,12 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  &__signUp,
+  &__signIn {
+    &_hidden {
+      display: none;
+    }
+  }
   &__wrap {
     padding: 40px 30px 30px 30px;
   }
