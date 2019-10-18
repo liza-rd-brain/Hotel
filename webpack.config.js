@@ -15,7 +15,7 @@ const common = merge([
       index: PATHS.source + "/index.js",
       landing: PATHS.source + "/pages/website_pages/landing/landing.js",
       searchRoom:
-        PATHS.source + "/pages/website_pages/search-room/search-room.js",
+        PATHS.source + "/pages/website_pages/searchRoom/searchRoom.js",
       cards: PATHS.source + "/pages/uikit/cards/cards.js",
       colorsType: PATHS.source + "/pages/uikit/colorsType/colorsType.js",
       formElements: PATHS.source + "/pages/uikit/formElements/formElements.js",
@@ -29,31 +29,38 @@ const common = merge([
     plugins: [
       new HtmlWebpackPlugin({
         filename: "index.html",
+        chunks: ["index"],
         template: PATHS.source + "/index.pug"
       }),
       new HtmlWebpackPlugin({
         filename: "landing/index.html",
+        chunks: ["landing"],
         template: PATHS.source + "/pages/website_pages/landing/landing.pug"
       }),
       new HtmlWebpackPlugin({
-        filename: "search-room/index.html",
+        filename: "searchRoom/index.html",
+        chunks: ["searchRoom"],
         template:
-          PATHS.source + "/pages/website_pages/search-room/search-room.pug"
+          PATHS.source + "/pages/website_pages/searchRoom/searchRoom.pug"
       }),
       new HtmlWebpackPlugin({
         filename: "cards/index.html",
+        chunks: ["cards"],
         template: PATHS.source + "/pages/uikit/cards/cards.pug"
       }),
       new HtmlWebpackPlugin({
         filename: "colorsType/index.html",
+        chunks: ["colorsType"],
         template: PATHS.source + "/pages/uikit/colorsType/colorsType.pug"
       }),
       new HtmlWebpackPlugin({
         filename: "formElements/index.html",
+        chunks: ["formElements"],
         template: PATHS.source + "/pages/uikit/formElements/formElements.pug"
       }),
       new HtmlWebpackPlugin({
         filename: "headersAndFooters/index.html",
+        chunks: ["headersAndFooters"],
         template:
           PATHS.source + "/pages/uikit/headersAndFooters/headersAndFooters.pug"
       }),

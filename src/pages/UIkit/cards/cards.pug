@@ -1,6 +1,7 @@
 include ../../../components/logo-icon/logo-icon
 include ../../../components/searchbox/searchbox
-include ../../../components/registration/registration
+include ../../../components/acces/acces
+include ../../../components/booking/booking
 
 doctype html
 html
@@ -13,9 +14,10 @@ html
         div(class="cards cards__wrap")
             +logo-icon({isColored:false})
             .cards__column
-                +searchbox({})
-                +registration({isLogged:false,id:1})
+                //- +searchbox({})
+                //- +searchbox({})
+                +acces({isLogged:false})
             .cards__column    
-                +registration({isLogged:true,id:2})
+                +acces({isLogged:true})
             .cards__column  
                 +calendar({type:"static-range"})      

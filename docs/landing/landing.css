@@ -9,6 +9,25 @@
   background-repeat: no-repeat;
   background-size: auto auto; }
 
+/* @function color-shade($color, $n) {
+  @return rgba($color, $n);
+} */
+h3 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 15px; */
+  margin: 0 0 5px 0;
+  text-transform: uppercase; }
+
+span.body-text {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.75);
+  /* line-height: 24px; */ }
+
 /* @font-face {
   font-family: MyriadPro-Regular;
   src: url(./fons/MyriadPro-Regular.svg) format("svg"),
@@ -59,6 +78,22 @@
 /* @function color-shade($color, $n) {
   @return rgba($color, $n);
 } */
+h3 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 15px; */
+  margin: 0 0 5px 0;
+  text-transform: uppercase; }
+
+span.body-text {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.75);
+  /* line-height: 24px; */ }
+
 .header {
   width: 100%;
   background-color: #fff;
@@ -97,6 +132,22 @@
 /* @function color-shade($color, $n) {
   @return rgba($color, $n);
 } */
+h3 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 15px; */
+  margin: 0 0 5px 0;
+  text-transform: uppercase; }
+
+span.body-text {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.75);
+  /* line-height: 24px; */ }
+
 .nav {
   font-family: Montserrat, Arial, sans-serif;
   font-size: 14px;
@@ -170,6 +221,22 @@
 /* @function color-shade($color, $n) {
   @return rgba($color, $n);
 } */
+h3 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 15px; */
+  margin: 0 0 5px 0;
+  text-transform: uppercase; }
+
+span.body-text {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.75);
+  /* line-height: 24px; */ }
+
 /* *{
 outline: 1px solid gold;
 }
@@ -206,7 +273,7 @@ outline: 1px solid gold;
     .button_type-text > h3 {
       pointer-events: none;
       padding: 0; }
-    .button_type-text :hover {
+    .button_type-text:hover > h3 {
       color: rgba(31, 32, 65, 0.5); }
   .button_type-header {
     height: 34px; }
@@ -242,7 +309,10 @@ outline: 1px solid gold;
     margin: 2px;
     border-radius: 28px;
     padding: 12px 0 13px 0;
-    letter-spacing: -0.3px; }
+    /*     letter-spacing: -0.3px;
+    text-indent: -7px; */
+    letter-spacing: 0px;
+    text-indent: 0px; }
     .button__text_colored {
       color: #bc9cff;
       background-color: white; }
@@ -294,6 +364,22 @@ outline: 1px solid gold;
 /* @function color-shade($color, $n) {
   @return rgba($color, $n);
 } */
+h3 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 15px; */
+  margin: 0 0 5px 0;
+  text-transform: uppercase; }
+
+span.body-text {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.75);
+  /* line-height: 24px; */ }
+
 .footer {
   width: 100%;
   background-color: #fff;

@@ -348,6 +348,25 @@ template {
   display: none;
 }
 
+/* @function color-shade($color, $n) {
+  @return rgba($color, $n);
+} */
+h3 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f2041;
+  /* line-height: 15px; */
+  margin: 0 0 5px 0;
+  text-transform: uppercase; }
+
+span.body-text {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.75);
+  /* line-height: 24px; */ }
+
 /* @font-face {
   font-family: MyriadPro-Regular;
   src: url(./fons/MyriadPro-Regular.svg) format("svg"),

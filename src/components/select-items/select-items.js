@@ -57,15 +57,27 @@ const amenitiesCounter = [
 ];
 
 $().ready(() => {
-  const guestText = $("#guest > .iqdropdown__text").text();
-  const amenitiesText = $("#amenities > .iqdropdown__text").text();
-  /*  const defaultGuestText = guestText;
-  const defaultAmenitiesText = amenitiesText; */
+  let guestText = $("#guest > .iqdropdown__text").text();
   createDropdowns(guestID, GUEST, guestText);
+  const amenitiesText = $("#amenities > .iqdropdown__text").text();
   createDropdowns(amenitiesID, AMENTIES, amenitiesText);
-});
 
-const createTitle = () => {};
+  /* $().ready(() => {
+  let guestList = document.querySelectorAll("#guest");
+
+  console.log(guestList);
+
+  for (let i = 0; i < guestList.length; i++) {
+    let guestText = $(guestList[i])
+      .find(".iqdropdown__text")
+      .text();
+    createDropdowns(`${guestID} - ${i}`, GUEST, guestText);
+    console.log(guestText);
+  } */
+
+  /*   const amenitiesText = $("#amenities > .iqdropdown__text").text();
+  createDropdowns(amenitiesID, AMENTIES, amenitiesText); */
+});
 
 const addCountersAttr = (id, title) => {
   for (let i = 0; i < 3; i++) {
@@ -87,6 +99,7 @@ const addCountersHandlers = (id, title, itemCounter) => {
 };
 
 const createDropdowns = (id, config, title) => {
+ /*  debugger; */
   $(`#${id}`).iqDropdown(config);
   $(`#${id} p.iqdropdown__text`).text(title);
   /*  checkText(id, title); */

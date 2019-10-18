@@ -6,7 +6,7 @@
     <title> 
       <FormElements></FormElements>
     </title>
-  <link href="../index/index.css" rel="stylesheet"><link href="../landing/landing.css" rel="stylesheet"><link href="../cards/cards.css" rel="stylesheet"><link href="../colorsType/colorsType.css" rel="stylesheet"><link href="../formElements/formElements.css" rel="stylesheet"><link href="../headersAndFooters/headersAndFooters.css" rel="stylesheet"></head>
+  <link href="../formElements/formElements.css" rel="stylesheet"></head>
   <body>
     <div class="container">
       <svg class="logo-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,47 +33,51 @@
           <div class="formElements__item">
             <h3 class="formElements__text">Text Field</h3>
             <div class="textField__wrap">
-              <input class="textField  textField_size-big" type="text" placeholder="Email">
+              <input class="textField  textField_size-big" type="text" placeholder="Email ">
             </div>
           </div>
           <div class="formElements__item">
-            <h3 class="formElements__text">Select Guest</h3>
-            <div class="iqdropdown iqdropdown__select iqdropdown_big" id="guest">
-              <p class="iqdropdown-selection iqdropdown__text guest-title">Сколько гостей</p>
-              <div class="iqdropdown-menu" id="iqdropdown-menu__select">
-                <div class="iqdropdown-menu-option" data-id="guest0">
-                  <p class="iqdropdown-item">взрослые</p>
-                </div>
-                <div class="iqdropdown-menu-option" data-id="guest1">
-                  <p class="iqdropdown-item">дети</p>
-                </div>
-                <div class="iqdropdown-menu-option" data-id="guest2">
-                  <p class="iqdropdown-item">младенцы</p>
-                </div>
-                <div class="iqdropdown-menu-wrap">
-                  <button class="button button_type-text button_clear">
-                    <h3 class="button__text button__text_colored button__text_header">очистить</h3>
-                  </button>
-                  <button class="button button_type-text button_accept">
-                    <h3 class="button__text button__text_colored button__text_header">применить</h3>
-                  </button>
+            <div class="select-items">   
+              <h3 class="select-items__title">dropdown</h3>
+              <div class="iqdropdown iqdropdown__select iqdropdown_big" id="guest">
+                <p class="iqdropdown-selection iqdropdown__text guest-title">Сколько гостей</p>
+                <div class="iqdropdown-menu" id="iqdropdown-menu__select">
+                  <div class="iqdropdown-menu-option" data-id="guest0">
+                    <p class="iqdropdown-item">взрослые</p>
+                  </div>
+                  <div class="iqdropdown-menu-option" data-id="guest1">
+                    <p class="iqdropdown-item">дети</p>
+                  </div>
+                  <div class="iqdropdown-menu-option" data-id="guest2">
+                    <p class="iqdropdown-item">младенцы</p>
+                  </div>
+                  <div class="iqdropdown-menu-wrap">
+                    <button class="button button_type-text button_clear" type="button">
+                      <h3 class="button__text button__text_colored button__text_header">очистить</h3>
+                    </button>
+                    <button class="button button_type-text button_accept" type="button">
+                      <h3 class="button__text button__text_colored button__text_header">применить</h3>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="formElements__item">
-            <h3 class="formElements__text">Select Amenities</h3>
-            <div class="iqdropdown iqdropdown__select iqdropdown_medium" id="amenities">
-              <p class="iqdropdown-selection iqdropdown__text amenities-title">Выберите удобства</p>
-              <div class="iqdropdown-menu" id="iqdropdown-menu__select">
-                <div class="iqdropdown-menu-option" data-id="amenities0">
-                  <p class="iqdropdown-item">спальни</p>
-                </div>
-                <div class="iqdropdown-menu-option" data-id="amenities1">
-                  <p class="iqdropdown-item">кровати</p>
-                </div>
-                <div class="iqdropdown-menu-option" data-id="amenities2">
-                  <p class="iqdropdown-item">ванные комнаты</p>
+            <div class="select-items">   
+              <h3 class="select-items__title">dropdown</h3>
+              <div class="iqdropdown iqdropdown__select iqdropdown_medium" id="amenities">
+                <p class="iqdropdown-selection iqdropdown__text amenities-title">Удобства номера</p>
+                <div class="iqdropdown-menu" id="iqdropdown-menu__select">
+                  <div class="iqdropdown-menu-option" data-id="amenities0">
+                    <p class="iqdropdown-item">спальни</p>
+                  </div>
+                  <div class="iqdropdown-menu-option" data-id="amenities1">
+                    <p class="iqdropdown-item">кровати</p>
+                  </div>
+                  <div class="iqdropdown-menu-option" data-id="amenities2">
+                    <p class="iqdropdown-item">ванные комнаты</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -83,32 +87,7 @@
             <!-- с поведением выпадания календаря -?!-->
             <h3 class="formElements__text">masked text field</h3>
             <div class="textField__wrap">
-              <input class="textField  textField_size-big" type="text" placeholder="ДД.ММ.ГГГГ">
-            </div>
-          </div>
-          <div class="formElements__item">
-            <div class="date-wrap">
-              <h3 class="formElements__text">date Dropdown</h3>
-              <input id="date_timepicker_start" type="text">
-              <input id="date_timepicker_end" type="text">
-              <div class="buttons-wrap">
-                <button class="button button_type-text button_clear">
-                  <h3 class="button__text button__text_colored button__text_header">очистить</h3>
-                </button>
-                <button class="button button_type-text button_accept">
-                  <h3 class="button__text button__text_colored button__text_header">применить</h3>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="formElements__item">
-            <h3 class="formElements__text">period Dropdown</h3>
-            <input class="datepicker-here" type="text" data-range="true" data-multiple-dates-separator="  ">
-            <div class="dropdown-wrap" data-range="true">
-              <p class="dropdown-text">Start dropdown</p>
-              <input class="date-dropdown date-dropdown_start" type="text">
-              <p class="dropdown-text">End dropdown</p>
-              <input class="date-dropdown date-dropdown_end" type="text">
+              <input class="textField  textField_size-big" type="text" placeholder="ДД.ММ.ГГГГ ">
             </div>
           </div>
           <div class="formElements__item">
@@ -140,17 +119,17 @@
             </div>
           </div>
           <div class="formElements__item">
-            <button class="button button_colored button_size-small">
+            <button class="button button_colored button_size-small" type="button">
               <h3 class="button__text">click me</h3>
             </button>
-            <button class="button button_bordered button_size-small">
+            <button class="button button_bordered button_size-small" type="button">
               <h3 class="button__text button__text_colored">click me</h3>
             </button>
-            <button class="button button_type-text button_size-small">
+            <button class="button button_type-text button_size-small" type="button">
               <h3 class="button__text button__text_colored">click me</h3>
             </button>
-            <button class="button button_colored button_type-arrow button_size-big">
-              <h3 class="button__text">перейти к отплате </h3>
+            <button class="button button_colored button_type-arrow button_size-big" type="button">
+              <h3 class="button__text">перейти к оплате </h3>
               <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
               var gClassName 
               gClassName= isShaded ? "" : "arrow-icon_noShaded"
@@ -176,64 +155,54 @@
             </button>
           </div>
           <div class="formElements__item item__wrap">  
-            <p class="slider-text">
-              <label class="slider-caption" for="amount">Range Slider</label>
-              <input class="slider-amount" type="text" id="amount" readonly>
-            </p>
-            <div class="slider-range"></div>
-          </div>
-          <div class="formElements__item item__wrap">
-            <div class="checkbox-wrap">
-              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
-              <label class="checkbox-label" for="amenities-0">
-                <p class="checkbox-text"><span class="checkbox-caption">завтрак</span><span class="checkbox-desc"> </span></p>
-              </label>
-              <input class="checkbox" type="checkbox" name="checkbox-0" id="amenities-0">
-              <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
-              <label class="checkbox-label" for="amenities-1">
-                <p class="checkbox-text"><span class="checkbox-caption">письменный стол</span><span class="checkbox-desc"> </span></p>
-              </label>
-              <input class="checkbox" type="checkbox" name="checkbox-1" id="amenities-1">
+            <div class="range-slider">
+              <p class="slider__text">
+                <label class="slider__caption" for="amount">Range Slider</label>
+                <input class="slider__amount" type="text" id="amount" readonly>
+              </p>
+              <div class="slider__range range-slider__range"></div><span class="slider__description"></span>
             </div>
           </div>
           <div class="formElements__item item__wrap">
-            <div class="checkbox-wrap">
+            <div class="checkbox-list">
               <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
-              <label class="checkbox-label" for="checkbox-0">
+              <label class="checkbox-label" for="checkbox-default-0">
                 <p class="checkbox-text"><span class="checkbox-caption">Можно курить</span><span class="checkbox-desc"> </span></p>
               </label>
-              <input class="checkbox" type="checkbox" name="checkbox-0" id="checkbox-0">
+              <input class="checkbox checkbox-checkbox-default" type="checkbox" name="checkbox-0" id="checkbox-default-0">
               <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
-              <label class="checkbox-label" for="checkbox-1">
+              <label class="checkbox-label" for="checkbox-default-1">
                 <p class="checkbox-text"><span class="checkbox-caption">Можно с питомцами</span><span class="checkbox-desc"> </span></p>
               </label>
-              <input class="checkbox" type="checkbox" name="checkbox-1" id="checkbox-1">
+              <input class="checkbox checkbox-checkbox-default" type="checkbox" name="checkbox-1" id="checkbox-default-1">
               <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
-              <label class="checkbox-label" for="checkbox-2">
+              <label class="checkbox-label" for="checkbox-default-2">
                 <p class="checkbox-text"><span class="checkbox-caption">Можно пригласить гостей (до&nbsp;10&nbsp;человек)</span><span class="checkbox-desc"> </span></p>
               </label>
-              <input class="checkbox" type="checkbox" name="checkbox-2" id="checkbox-2">
+              <input class="checkbox checkbox-checkbox-default" type="checkbox" name="checkbox-2" id="checkbox-default-2">
             </div>
           </div>
           <div class="formElements__item item__wrap">
-            <div class="checkbox-wrap">
+            <div class="checkbox-list">
               <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
               <label class="checkbox-label" for="availability-0">
                 <p class="checkbox-text"><span class="checkbox-caption_bold">Широкий коридор</span><span class="checkbox-desc">Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см. </span></p>
               </label>
-              <input class="checkbox" type="checkbox" name="checkbox-0" id="availability-0">
+              <input class="checkbox checkbox-availability" type="checkbox" name="checkbox-0" id="availability-0">
               <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
               <label class="checkbox-label" for="availability-1">
                 <p class="checkbox-text"><span class="checkbox-caption_bold">Помощник для инвалидов</span><span class="checkbox-desc">На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера. </span></p>
               </label>
-              <input class="checkbox" type="checkbox" name="checkbox-1" id="availability-1">
+              <input class="checkbox checkbox-availability" type="checkbox" name="checkbox-1" id="availability-1">
             </div>
           </div>
           <div class="formElements__item item__wrap">
-            <label class="radio-label" for="radio-1"><span class="radio-text">Mужчина</span></label>
-            <input class="radio" type="radio" name="radio-1" id="radio-1">
-            <label class="radio-label" for="radio-2"> <span class="radio-text">Женщина</span></label>
-            <input class="radio" type="radio" name="radio-1" id="radio-2">
+            <label class="radio-label"><span class="radio-text">Mужчина</span>
+              <input class="radio" type="radio" name="radio-1">
+            </label>
+            <label class="radio-label"> <span class="radio-text">Женщина</span>
+              <input class="radio" type="radio" name="radio-1">
+            </label>
           </div>
           <div class="formElements__item item__wrap">
             <label class="toggle-label" for="toggle">
@@ -241,8 +210,336 @@
               <div class="toggle-text">Получать спецпредложения</div>
             </label>
           </div>
+          <div class="formElements__item item__wrap">
+            <label class="like-label" for="like">
+              <input class="like" type="checkbox" name="like" id="like">
+              <div class="like-button__wrap" id="post_1">
+                <div class="like-button">
+                  <div class="like-button__img"></div><span class="like-button__amount">12 </span>
+                </div>
+              </div>
+            </label>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="dropdown-list" for="dropdown-list" id="label">
+              <div class="dropdown-list__select" id="dropdown-list">
+                <h3 class="dropdown-list__title">expandable checkbox list</h3>
+              </div>
+              <div class="dropdown-list__options">
+                <div class="checkbox-list">
+                  <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+                  <label class="checkbox-label" for="amenitiesList-0">
+                    <p class="checkbox-text"><span class="checkbox-caption">завтрак</span><span class="checkbox-desc"> </span></p>
+                  </label>
+                  <input class="checkbox checkbox-amenitiesList" type="checkbox" name="checkbox-0" id="amenitiesList-0">
+                  <!--будем принимать массив строк для чекбоксов и перебирать в цикле фор-->
+                  <label class="checkbox-label" for="amenitiesList-1">
+                    <p class="checkbox-text"><span class="checkbox-caption">письменный стол</span><span class="checkbox-desc"> </span></p>
+                  </label>
+                  <input class="checkbox checkbox-amenitiesList" type="checkbox" name="checkbox-1" id="amenitiesList-1">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="room-card">
+              <div class="glide room-card__slider" id="glide-888">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides slider__slides">
+                    <li class="glide__slide slider__frame" data-background="img_888_1"><img class="glide__img" src="src/components/room-card/img/888/img_888_1.jpg"></li>
+                    <li class="glide__slide slider__frame" data-background="img_888_2"><img class="glide__img" src="src/components/room-card/img/888/img_888_2.jpg"></li>
+                    <li class="glide__slide slider__frame" data-background="img_888_3"><img class="glide__img" src="src/components/room-card/img/888/img_888_3.jpg"></li>
+                    <li class="glide__slide slider__frame" data-background="img_888_4"><img class="glide__img" src="src/components/room-card/img/888/img_888_4.jpg"></li>
+                  </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                  <button class="glide__arrow glide__arrow--left" data-glide-dir="&lt;"> </button>
+                  <button class="glide__arrow glide__arrow--right" data-glide-dir="&gt;"> </button>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                  <button class="glide__bullet" data-glide-dir="=0"></button>
+                  <button class="glide__bullet" data-glide-dir="=1"></button>
+                  <button class="glide__bullet" data-glide-dir="=2"></button>
+                  <button class="glide__bullet" data-glide-dir="=3"></button>
+                </div>
+              </div>
+              <div class="room-card__desc-section">
+                <div class="desc-section desc-section__base">
+                  <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">888</span><span class="desc-section__lux">люкс</span>
+                  </div>
+                  <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">9990</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                </div>
+                <div class="desc-section desc-section__rating">
+                  <select class="rate-select" id="888" data-rate="5">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  <div class="desc-section__column desc-section__column_rate "><span class="desc-section__qualifiers desc-section__qualifiers_number">145</span><span class="desc-section__qualifiers desc-section__rate-text">отзывов</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="room-card">
+              <div class="glide room-card__slider" id="glide-840">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides slider__slides">
+                    <li class="glide__slide slider__frame" data-background="img_840_1"><img class="glide__img" src="src/components/room-card/img/840/img_840_1.jpg"></li>
+                    <li class="glide__slide slider__frame" data-background="img_840_2"><img class="glide__img" src="src/components/room-card/img/840/img_840_2.jpg"></li>
+                    <li class="glide__slide slider__frame" data-background="img_840_3"><img class="glide__img" src="src/components/room-card/img/840/img_840_3.jpg"></li>
+                    <li class="glide__slide slider__frame" data-background="img_840_4"><img class="glide__img" src="src/components/room-card/img/840/img_840_4.jpg"></li>
+                  </ul>
+                </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                  <button class="glide__arrow glide__arrow--left" data-glide-dir="&lt;"> </button>
+                  <button class="glide__arrow glide__arrow--right" data-glide-dir="&gt;"> </button>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                  <button class="glide__bullet" data-glide-dir="=0"></button>
+                  <button class="glide__bullet" data-glide-dir="=1"></button>
+                  <button class="glide__bullet" data-glide-dir="=2"></button>
+                  <button class="glide__bullet" data-glide-dir="=3"></button>
+                </div>
+              </div>
+              <div class="room-card__desc-section">
+                <div class="desc-section desc-section__base">
+                  <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">840</span>
+                  </div>
+                  <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">9900</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                </div>
+                <div class="desc-section desc-section__rating">
+                  <select class="rate-select" id="840" data-rate="4">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  <div class="desc-section__column desc-section__column_rate "><span class="desc-section__qualifiers desc-section__qualifiers_number">65</span><span class="desc-section__qualifiers desc-section__rate-text">отзывов</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="arrow-group__wrap">
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon arrow-icon_colored calendar__arrow_left" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon arrow-icon_colored calendar__arrow_right" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+            </div>
+            <div class="calendar_type_range">
+              <div class="range__wrap">
+                <h3 class="calendar__caption">date Dropdown</h3>
+                <input class="entry-range" type="text" placeholder="дд.мм.гггг">
+              </div>
+              <div class="range__wrap">   
+                <h3 class="calendar__caption">date Dropdown</h3>
+                <input class="departure-range" type="text" placeholder="дд.мм.гггг">
+              </div>
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="arrow-group__wrap">
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon arrow-icon_colored calendar__arrow_left" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon arrow-icon_colored calendar__arrow_right" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+            </div>
+            <div class="calendar_type_static">
+              <input class="static-range">
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="arrow-group__wrap">
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon arrow-icon_colored calendar__arrow_left" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon arrow-icon_colored calendar__arrow_right" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+            </div>
+            <div class="calendar_type_filter">
+              <div class="range__wrap range__wrap_filter"> 
+                <h3 class="calendar__caption">filter date dropdown</h3>
+                <input class="filter-range">
+              </div>
+            </div>
+          </div>
+          <div class="formElements__item item__wrap">
+            <div class="arrow-group__wrap">
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon arrow-icon_colored calendar__arrow_left" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+              <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+              var gClassName 
+              gClassName= isShaded ? "" : "arrow-icon_noShaded"
+              -->
+              <svg class="arrow-icon arrow-icon_colored calendar__arrow_right" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d)"></g>
+                <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+                <defs></defs>
+                <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#BC9CFF"></stop>
+                  <stop offset="1" stop-color="#8BA4F9"></stop>
+                </linearGradient>
+                <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                  <feOffset dy="4"></feOffset>
+                  <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                </filter>
+              </svg>
+            </div>
+            <div class="calendar_type_masked"> 
+              <h3 class="calendar__caption">masked text field</h3>
+              <input class="calendar__input" placeholder="дд.мм.гггг">
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  <script type="text/javascript" src="../index/index.js"></script><script type="text/javascript" src="../landing/landing.js"></script><script type="text/javascript" src="../cards/cards.js"></script><script type="text/javascript" src="../colorsType/colorsType.js"></script><script type="text/javascript" src="../formElements/formElements.js"></script><script type="text/javascript" src="../headersAndFooters/headersAndFooters.js"></script></body>
+  <script type="text/javascript" src="../formElements/formElements.js"></script></body>
 </html>

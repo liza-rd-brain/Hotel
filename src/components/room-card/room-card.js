@@ -3,6 +3,7 @@ import "../rate-button/rate-button";
 import "./room-card.scss";
 
 $().ready(() => {
+  console.log("test");
   var sliders = document.querySelectorAll(".glide");
   for (var i = 0; i < sliders.length; i++) {
     var glide = new Glide(sliders[i], {
