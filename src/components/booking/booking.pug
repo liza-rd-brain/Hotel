@@ -2,4 +2,12 @@ include ../calendar/calendar
 //- include ../select-items/select-guest
 include ../button/button
 
+mixin booking()
+    div(class="booking booking__wrap")
+        h1(class="booking__title") BOOKING
+        form(class="booking__form")
+            +calendar({type:"group-range_default",titleGroup:["прибытие","выезд"]})
+            +select-guest({})
+            +button({isColored:true,size:"big",title:"Забронировать",isArrowButton:true})
+
 

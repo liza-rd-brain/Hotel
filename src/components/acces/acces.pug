@@ -16,7 +16,7 @@ mixin acces({isLogged})
     div(class="acces acces__wrap")
         div(class=signUpClassName)
             h1(class="acces__title") Регистрация аккаунта
-            form(action="#" method="POST" class="acces__form")
+            form(class="acces__form")
                 +textField({size:"big",input_type:"text"},"Имя")
                 +textField({size:"big",input_type:"text"},"Фамилия")
                 div(class="radio-button__wrap")

@@ -7,7 +7,7 @@ include ../button/button
 mixin searchbox()
     div(class="searchbox searchbox__wrap")
         h1(class="searchbox__title") Найдём номера под ваши пожелания
-        form(action="#" method="POST" class="searchbox__form")
+        form(class="searchbox__form")
             +calendar({type:"group-range",titleGroup:["прибытие","выезд"]})
             +select-guest({})
             +button({isColored:true,size:"big",title:"подобрать номер",isArrowButton:true})

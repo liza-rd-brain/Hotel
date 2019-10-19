@@ -15,9 +15,7 @@ const GUEST = {
     controlsCls: "iqdropdown-item-controls",
     counterCls: "counter"
   },
-  items: {
-    /* test:"test" */
-  },
+  items: {},
   onChange: (id, count, totalItems) => {},
   beforeDecrement: () => true,
   beforeIncrement: () => true
@@ -45,67 +43,82 @@ const amenitiesID = "amenities";
 
 //отдельные счетчики для гостей и удобств
 const guestCounter = [
-  { id: "guest0", amount: 0 },
-  { id: "guest1", amount: 0 },
-  { id: "guest2", amount: 0 }
+  { id: "guest-0", amount: 0 },
+  { id: "guest-1", amount: 0 },
+  { id: "guest-2", amount: 0 }
 ];
 
 const amenitiesCounter = [
-  { id: "amenities0", amount: 0 },
-  { id: "amenities1", amount: 0 },
-  { id: "amenities2", amount: 0 }
+  { id: "amenities-0", amount: 0 },
+  { id: "amenities-1", amount: 0 },
+  { id: "amenities-2", amount: 0 }
 ];
 
 $().ready(() => {
-  let guestText = $("#guest > .iqdropdown__text").text();
-  createDropdowns(guestID, GUEST, guestText);
-  const amenitiesText = $("#amenities > .iqdropdown__text").text();
-  createDropdowns(amenitiesID, AMENTIES, amenitiesText);
-
-  /* $().ready(() => {
+  /* debugger; */
   let guestList = document.querySelectorAll("#guest");
 
-  console.log(guestList);
-
   for (let i = 0; i < guestList.length; i++) {
+    let currGuestID = `${guestID}-${i}`;
+    $(guestList[i]).attr("id", currGuestID);
     let guestText = $(guestList[i])
       .find(".iqdropdown__text")
       .text();
-    createDropdowns(`${guestID} - ${i}`, GUEST, guestText);
-    console.log(guestText);
-  } */
+    createDropdowns(currGuestID, GUEST, guestText);
+  }
 
-  /*   const amenitiesText = $("#amenities > .iqdropdown__text").text();
-  createDropdowns(amenitiesID, AMENTIES, amenitiesText); */
+  let amenitiesList = document.querySelectorAll("#amenities");
+
+  for (let i = 0; i < amenitiesList.length; i++) {
+    let currAmenitiesID = `${amenitiesID}-${i}`;
+    $(amenitiesList[i]).attr("id", currAmenitiesID);
+    let amenitiesText = $(amenitiesList[i])
+      .find(".iqdropdown__text")
+      .text();
+    createDropdowns(currAmenitiesID, AMENTIES, amenitiesText);
+  }
 });
 
 const addCountersAttr = (id, title) => {
-  for (let i = 0; i < 3; i++) {
-    let itemCounter = $(`div[data-id='${id + i}']`);
-    itemCounter.find(".counter").attr("data-id", `${id + i}`);
-    itemCounter.find(".iqdropdown-item").attr("data-id", `${id + i}`);
-    itemCounter.find("button").attr("data-id", `${id + i}`);
+  debugger;
+  let itemCounterList = document
+    .getElementById(id)
+    .querySelectorAll(".iqdropdown-menu-option");
+
+  for (let i = 0; i < itemCounterList.length; i++) {
+    let itemCounter = $(itemCounterList[i]);
+    itemCounter.attr("data-id", `${id}${i}`);
+    itemCounter.find("button").attr("data-id", `${id}${i}`);
+    itemCounter.find(".counter").attr("data-id", `${id}${i}`);
     addCountersHandlers(id, title, itemCounter);
   }
 };
 
 const addCountersHandlers = (id, title, itemCounter) => {
-  itemCounter.find("button").on("click", function(e) {
-    changeCounter(id, e);
-    checkButtons(id);
-    showButtonClear(id, title);
-    changeText(id, title /* , e */);
-  });
+  let currButtonGroup = $(itemCounter).find("button");
+  for (let i = 0; i < currButtonGroup.length; i++) {
+    let testButton = currButtonGroup[i];
+    $(testButton).on("click", function(e) {
+      debugger;
+      changeCounter(id, e);
+      checkButtons(id);
+      showButtonClear(id, title);
+      changeText(id, title /* , e */);
+    });
+  }
 };
 
 const createDropdowns = (id, config, title) => {
- /*  debugger; */
+  /* должен работать корректно
+  debugger; */
   $(`#${id}`).iqDropdown(config);
   $(`#${id} p.iqdropdown__text`).text(title);
   /*  checkText(id, title); */
   checkButtons(id);
   $(`#${id}`).addClass(`my_iqdropdown ${id}_iqdropdown`);
-  $(` [class^="iqdropdown"]`).addClass(`my_iqdropdown`);
+  $(`#${id}`)
+    .find(` [class^="iqdropdown"]`)
+    .addClass(`my_iqdropdown`);
 
   addCountersAttr(id, title);
   addClearButtonHandlers(id, config, title);
@@ -119,19 +132,31 @@ const addClearButtonHandlers = (id, config, title) => {
 };
 
 const changeCounter = (id, e) => {
+  /* debugger; */
   let elem = e.target.getAttribute("data-id");
   let elemClass = e.target.getAttribute("class");
+  let currentArrayCount = id.match(/guest/) ? guestCounter : amenitiesCounter;
 
-  let currentArrayCount = id === "guest" ? guestCounter : amenitiesCounter;
-  let currElem = currentArrayCount.find(item => item.id == elem);
+  let currElem = currentArrayCount.find(
+    item => item.id.substr(-1) === elem.substr(-1)
+    /*  return item; */
+  );
+
   if (elemClass.includes("button-increment")) {
     currElem.amount++;
   } else {
     currElem.amount--;
   }
+
+  let currCounter = $(`[data-id=${elem}]`).find(".counter");
+  currCounter.html(currElem.amount);
+  console.log(guestCounter);
+  console.log(amenitiesCounter);
 };
 
 const showButtonClear = id => {
+  /*работает корректно, кнопка очистить появляется*/
+  debugger;
   if (
     $(`#${id}`)
       .find(".counter")
@@ -144,22 +169,20 @@ const showButtonClear = id => {
 };
 
 const changeText = (id, title) => {
-  switch (id) {
-    case "guest":
-      changeTitleGuest(id, title);
-      break;
-    case "amenities":
-      changeTitleAmenities(id, title);
-      break;
+  debugger;
+  if (id.match(/guest/)) {
+    changeTitleGuest(id, title);
+  } else if (id.match(/amenities/)) {
+    changeTitleAmenities(id, title);
   }
 };
 
 const changeTitleGuest = (id, title) => {
   const currAmountGuests =
-    guestCounter.find(item => item.id == "guest0").amount +
-    guestCounter.find(item => item.id == "guest1").amount;
+    guestCounter.find(item => item.id == "guest-0").amount +
+    guestCounter.find(item => item.id == "guest-1").amount;
 
-  const currAmountBabyes = guestCounter.find(item => item.id == "guest2")
+  const currAmountBabyes = guestCounter.find(item => item.id == "guest-2")
     .amount;
   const guestText = changeTextItem("guest", currAmountGuests);
   const babyText = changeTextItem("baby", currAmountBabyes);
@@ -182,11 +205,11 @@ const changeTitleGuest = (id, title) => {
 
 const changeTitleAmenities = (id, title) => {
   const currAmountBedrooms = amenitiesCounter.find(
-    item => item.id == "amenities0"
+    item => item.id == "amenities-0"
   ).amount;
-  const currAmountBeds = amenitiesCounter.find(item => item.id == "amenities1")
+  const currAmountBeds = amenitiesCounter.find(item => item.id == "amenities-1")
     .amount;
-  const currAmountBath = amenitiesCounter.find(item => item.id == "amenities2")
+  const currAmountBath = amenitiesCounter.find(item => item.id == "amenities-2")
     .amount;
 
   const bedroomsText = changeTextItem("bedrooms", currAmountBedrooms);
@@ -293,6 +316,8 @@ const changeTextItem = (name, amount) => {
 };
 
 const checkButtons = id => {
+  /*   проверка кнопок на видимимость */
+  /*  debugger; */
   for (let i = 0; i < 4; i++) {
     let counter = $(`div[data-id='${id + i}']  .counter`).text();
     $(`div[data-id='${id + i}'] .button-increment`).addClass("btn_visible");

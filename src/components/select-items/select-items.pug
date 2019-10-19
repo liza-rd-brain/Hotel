@@ -11,7 +11,7 @@ mixin select-items({id,text,size,items,title,hasControlButtons,btn_clear,btn_app
             div(class="iqdropdown-menu" id="iqdropdown-menu__select")
                 if hasMenu 
                     - for (let i=0;i<items.length;i++)
-                        div(class="iqdropdown-menu-option" data-id=`${id+i}`)
+                        div(class="iqdropdown-menu-option" )
                             p(class="iqdropdown-item") #{items[i].text}
                     if hasControlButtons       
                         div(class="iqdropdown-menu-wrap")

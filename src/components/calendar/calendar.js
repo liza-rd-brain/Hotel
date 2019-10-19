@@ -25,6 +25,7 @@ const configRange = {
   monthSelectorType: "static",
   static: true,
   onReady: function(dateObj, dateStr, instance) {
+    /* debugger; */
     const buttonWrap = $('<div class="flatpickr-wrap__range"></div>').appendTo(
       $(instance.calendarContainer)
     );
@@ -35,7 +36,7 @@ const configRange = {
         instance.clear();
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__range"));
+      .appendTo(buttonWrap);
 
     const $close = $(
       '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
@@ -43,11 +44,55 @@ const configRange = {
       .on("click", () => {
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__range"));
+      .appendTo(buttonWrap);
   },
   plugins: [new rangePlugin({ input: ".departure-range" })]
 };
 flatpickr(".entry-range", configRange);
+/* let calendarRange = document.querySelectorAll(".entry-range");
+for (let i = 0; i < calendarRange.length; i++) {
+  flatpickr(calendarRange[i], configRange);
+}
+console.log(calendarRange); */
+
+const configRangeDefault = {
+  altInput: true,
+  altInputClass: "flatpickr-alt",
+  altFormat: "d.m.Y",
+  /* inline: true, */
+  locale: Russian,
+  defaultDate: [
+    defaultFiterDateStart.toLowerCase(),
+    defaultFiterDateEnd.toLowerCase()
+  ],
+  position: "below",
+  monthSelectorType: "static",
+  static: true,
+  onReady: function(dateObj, dateStr, instance) {
+   /*  debugger; */
+    const buttonWrap = $('<div class="flatpickr-wrap__range"></div>').appendTo(
+      $(instance.calendarContainer)
+    );
+    const $clear = $(
+      '<button class="flatpickr-clear-button flatpickr-button">Очистить</button>'
+    )
+      .on("click", () => {
+        instance.clear();
+        instance.close();
+      })
+      .appendTo(buttonWrap);
+
+    const $close = $(
+      '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
+    )
+      .on("click", () => {
+        instance.close();
+      })
+      .appendTo(buttonWrap);
+  },
+  plugins: [new rangePlugin({ input: ".departure-range_default" })]
+};
+flatpickr(".entry-range_default", configRangeDefault);
 
 const configStatic = {
   altInput: true,
@@ -73,7 +118,7 @@ const configStatic = {
         instance.clear();
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__static"));
+      .appendTo(buttonWrap);
 
     const $close = $(
       '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
@@ -81,7 +126,7 @@ const configStatic = {
       .on("click", () => {
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__static"));
+      .appendTo(buttonWrap);
   }
 };
 flatpickr(".static-range", configStatic);
@@ -111,7 +156,7 @@ const configFilter = {
         instance.clear();
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__filter"));
+      .appendTo(buttonWrap);
 
     const $close = $(
       '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
@@ -119,7 +164,7 @@ const configFilter = {
       .on("click", () => {
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__filter"));
+      .appendTo(buttonWrap);
   }
 };
 flatpickr(".filter-range", configFilter);
@@ -136,27 +181,31 @@ const configMasked = {
     const buttonWrap = $('<div class="flatpickr-wrap__masked"></div>').appendTo(
       $(instance.calendarContainer)
     );
+
     const $clear = $(
-      '<button class="flatpickr-clear-button flatpickr-button">Очистить</button>'
+      '<button class="flatpickr-clear-button flatpickr-button" type="button">Очистить</button>'
     )
       .on("click", () => {
         instance.clear();
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__masked"));
+      .appendTo(buttonWrap)
+      .replaceAll();
 
     const $close = $(
-      '<button class="flatpickr-close-button flatpickr-button">Применить</button>'
+      '<button class="flatpickr-close-button flatpickr-button" type="button">Применить</button>'
     )
       .on("click", () => {
         instance.close();
       })
-      .appendTo($(".flatpickr-wrap__masked"));
+      .appendTo(buttonWrap);
   }
 };
+
 flatpickr(".calendar__input", configMasked);
 
 $().ready(() => {
+  /* debugger; */
   var calendars = document.querySelectorAll(".flatpickr-calendar");
   for (var i = 0; i < calendars.length; i++) {
     const newLeftArrow = $(".arrow-group__wrap")
@@ -173,4 +222,5 @@ $().ready(() => {
     newRightArrow.appendTo(rightArrowWrap);
   }
   $(".arrow-group__wrap").remove();
+  console.log("make arrow");
 });

@@ -14,7 +14,15 @@ mixin calendar({type,titleGroup:[title_1,title_2]=[],title=""})
                 input(class="entry-range" type="text" placeholder="дд.мм.гггг" )
             div(class="range__wrap")    
                 h3(class="calendar__caption" ) #{title_2}
-                input(class="departure-range" type="text" placeholder="дд.мм.гггг") 
+                input(class="departure-range" type="text" placeholder="дд.мм.гггг")
+    else if type==="group-range_default"       
+        div(class="calendar_type_range")
+            div(class="range__wrap")
+                h3(class="calendar__caption") #{title_1}
+                input(class="entry-range_default " type="text" placeholder="дд.мм.гггг" )
+            div(class="range__wrap")    
+                h3(class="calendar__caption" ) #{title_2}
+                input(class="departure-range_default" type="text" placeholder="дд.мм.гггг")              
     else if type==="static-range"  
         div(class="calendar_type_static")
             input(class="static-range" )
