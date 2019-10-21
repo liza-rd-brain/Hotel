@@ -10,26 +10,141 @@
   //вынести в переменную
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  & > *:nth-child(1) {
+    margin-bottom: 23px;
+  }
 
   &__wrap {
     padding: 40px 30px 30px 30px;
   }
-  &__title {
-    /*   width: 80%; */
-    margin: 0 0 20px 0;
-    @include text($font-eng, 24px, 700, $dark);
-    line-height: 30px;
-    letter-spacing: 1.2px;
+
+  /*   &__title {
+    &::first-letter {
+      font-size: 14px;
+      line-height: 17px;
+      letter-spacing: 4px;
+    }
+    
   }
+
+  &__text {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #bc9cff;
+    line-height: 15px;
+    flex-grow: 1;
+    margin-left: 1px;
+    text-transform: uppercase;
+  } */
+
   &__form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     & .calendar_type_range {
-      margin-bottom: 23px;
+      margin-bottom: 20px;
     }
     & .select-items {
-      margin-bottom: 32.44px;
+      margin-bottom: 17px;
     }
   }
+}
+
+.calculation {
+  width: 100%;
+  &__wrap {
+    margin-bottom: 30px;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 11px;
+    &:last-of-type {
+      margin-bottom: 0px;
+      & .calculation__desc {
+        line-height: 18px;
+      }
+    }
+  }
+  &__text {
+    @include body-text();
+    line-height: 24px;
+  }
+  &__desc {
+    width: 214px;
+  }
+  &__info {
+    position: absolute;
+    color: $dark-25;
+    font-weight: 700;
+    line-height: 21px;
+
+    /* cursor: pointer; */
+
+    /*  &:hover {
+      color: $purple;
+      &::after {
+        border-color: $purple;
+      }
+    } */
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      border: 1px solid $dark-25;
+      border-radius: 20px;
+      left: -8px;
+    }
+  }
+  &__tooltip {
+    position: relative;
+    margin-right: auto;
+    margin-left: 13px;
+    text-align: right;
+    height: 20px;
+    cursor: help;
+
+    &::after {
+      content: attr(data-tooltip);
+      visibility: hidden;
+      width: 75px;
+      opacity: 0;
+      position: absolute;
+      font-size: 10px;
+      line-height: 15px;
+      font-weight: 400;
+      color: #fff;
+      transition: 1s;
+      pointer-events: none;
+      left: 21px;
+      background-color: rgba(31, 32, 65, 0.75);
+      padding: 5px 5px 5px 5px;
+      border-radius: 5px;
+      text-align: left;
+
+      /*  background-color:(1,1,1,0) ; */
+    }
+    &::before {
+      content: "";
+      visibility: hidden;
+      opacity: 0;
+      border: 4px solid transparent;
+      border-right: 7px solid rgba(31, 32, 65, 0.75);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      transition: 1s;
+    }
+
+    &:hover::after,
+    &:hover::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+[data-tooltip]::first-letter {
+  text-transform: capitalize;
 }

@@ -22,6 +22,7 @@ const GUEST = {
 };
 
 const AMENTIES = {
+  /*не работает!!*/
   maxItems: 10,
   /*   minItems: 1, */
   selectionText: "item",
@@ -55,8 +56,8 @@ const amenitiesCounter = [
 ];
 
 $().ready(() => {
-  /* debugger; */
   let guestList = document.querySelectorAll("#guest");
+
 
   for (let i = 0; i < guestList.length; i++) {
     let currGuestID = `${guestID}-${i}`;
@@ -65,6 +66,8 @@ $().ready(() => {
       .find(".iqdropdown__text")
       .text();
     createDropdowns(currGuestID, GUEST, guestText);
+
+    closedDropdown(guestList[i]);
   }
 
   let amenitiesList = document.querySelectorAll("#amenities");
@@ -76,11 +79,26 @@ $().ready(() => {
       .find(".iqdropdown__text")
       .text();
     createDropdowns(currAmenitiesID, AMENTIES, amenitiesText);
+
+    closedDropdown(amenitiesList[i]);
   }
 });
 
+const closedDropdown = elem => {
+/*   debugger; */
+  $(document).mouseup(function(e) {
+    // событие клика по веб-документу
+    if ( 
+      !$(elem).is(e.target) && // если клик был не по нашему блоку
+      $(elem).has(e.target).length === 0
+    ) {
+      // и не по его дочерним элементам
+      $(elem).removeClass("menu-open"); // скрываем его
+    }
+  });
+};
+
 const addCountersAttr = (id, title) => {
-  debugger;
   let itemCounterList = document
     .getElementById(id)
     .querySelectorAll(".iqdropdown-menu-option");
@@ -99,7 +117,6 @@ const addCountersHandlers = (id, title, itemCounter) => {
   for (let i = 0; i < currButtonGroup.length; i++) {
     let testButton = currButtonGroup[i];
     $(testButton).on("click", function(e) {
-      debugger;
       changeCounter(id, e);
       checkButtons(id);
       showButtonClear(id, title);
@@ -109,8 +126,6 @@ const addCountersHandlers = (id, title, itemCounter) => {
 };
 
 const createDropdowns = (id, config, title) => {
-  /* должен работать корректно
-  debugger; */
   $(`#${id}`).iqDropdown(config);
   $(`#${id} p.iqdropdown__text`).text(title);
   /*  checkText(id, title); */
@@ -132,7 +147,6 @@ const addClearButtonHandlers = (id, config, title) => {
 };
 
 const changeCounter = (id, e) => {
-  /* debugger; */
   let elem = e.target.getAttribute("data-id");
   let elemClass = e.target.getAttribute("class");
   let currentArrayCount = id.match(/guest/) ? guestCounter : amenitiesCounter;
@@ -155,8 +169,6 @@ const changeCounter = (id, e) => {
 };
 
 const showButtonClear = id => {
-  /*работает корректно, кнопка очистить появляется*/
-  debugger;
   if (
     $(`#${id}`)
       .find(".counter")
@@ -169,7 +181,6 @@ const showButtonClear = id => {
 };
 
 const changeText = (id, title) => {
-  debugger;
   if (id.match(/guest/)) {
     changeTitleGuest(id, title);
   } else if (id.match(/amenities/)) {
@@ -316,8 +327,6 @@ const changeTextItem = (name, amount) => {
 };
 
 const checkButtons = id => {
-  /*   проверка кнопок на видимимость */
-  /*  debugger; */
   for (let i = 0; i < 4; i++) {
     let counter = $(`div[data-id='${id + i}']  .counter`).text();
     $(`div[data-id='${id + i}'] .button-increment`).addClass("btn_visible");

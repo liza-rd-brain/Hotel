@@ -13,6 +13,7 @@
   }
   &__title {
     @include h1-text();
+    letter-spacing: 0.7px;
   }
   &__items {
     display: flex;
@@ -20,7 +21,7 @@
     margin-top: 20.5px;
     & > * {
       margin-right: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
     & > *:nth-child(3n) {
       margin-right: 0px;

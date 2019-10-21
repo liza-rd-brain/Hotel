@@ -1,13 +1,28 @@
 include ../calendar/calendar
 //- include ../select-items/select-guest
 include ../button/button
+include ../room-title/room-title
 
-mixin booking()
+
+-
+    const CALC=[{text:"9990 х 4 суток",amount:"39960"},
+                {text:"Сбор за услуги: скидка 2179",amount:"0",tooltip:"Первая подсказка"},
+                {text:"Сбор за дополнительные услуги",amount:"300",tooltip:"Вторая подсказка"}]
+
+mixin booking({number,lux})
     div(class="booking booking__wrap")
-        h1(class="booking__title") BOOKING
+        +room-title({isTitle:true,number:888,isLux:true,price:9990})
         form(class="booking__form")
             +calendar({type:"group-range_default",titleGroup:["прибытие","выезд"]})
             +select-guest({})
+            div(class="calculation calculation__wrap")
+                -  for (var i=0;i<CALC.length;i++)
+                    div(class="calculation__row")
+                        span(class="calculation__desc calculation__text") #{CALC[i].text}
+                        if CALC[i].tooltip
+                            div(class="calculation__text calculation__tooltip" data-tooltip=`${CALC[i].tooltip}`)
+                                span(class="calculation__text calculation__info" ) i
+                        span(class="calculation__price calculation__text") #{CALC[i].amount}
+                    
+
             +button({isColored:true,size:"big",title:"Забронировать",isArrowButton:true})
-
-

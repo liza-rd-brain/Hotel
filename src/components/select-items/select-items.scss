@@ -28,7 +28,7 @@
     display: block;
     @include text($font, 14px, 400, $dark-75);
     letter-spacing: -0.3px;
-    /* pointer-events: none; */
+    pointer-events: none;
     &::after {
       background-image: none;
       content: "";
@@ -36,7 +36,7 @@
       position: absolute;
       top: 2px;
       right: 2px;
-      /* pointer-events: none; */
+      pointer-events: none;
       transform: rotate(45deg);
       width: 0;
       height: 0;
@@ -47,7 +47,7 @@
       position: absolute;
       top: -1px;
       right: 2px;
-      /* pointer-events: none; */
+      pointer-events: none;
       transform: rotate(45deg);
       z-index: 2;
     }

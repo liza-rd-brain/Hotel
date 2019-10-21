@@ -43,3 +43,10 @@ h3 {
 span.body-text {
   @include body-text();
 }
+
+h1 {
+  margin: 0;
+  @include text($font-eng, 24px, 700, $dark);
+  line-height: 30px;
+  letter-spacing: 1.2px;
+}

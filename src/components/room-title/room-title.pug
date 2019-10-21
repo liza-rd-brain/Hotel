@@ -1,0 +1,13 @@
+mixin room-title({isTitle,number,isLux,price})
+    div(class="room-title")    
+        div(class="room-title__column")
+            span(class="room-title__symbol room-title__name") №
+            if isTitle 
+                h1(class="room-title__room-number") #{number || 888}
+            else
+                span(class="room-title__room-number_size_small room-title__name") #{number || 888}   
+            if isLux 
+                span(class="room-title__lux") люкс
+        div(class="room-title__column")    
+            span(class="room-title__qualifiers room-title__price-number ") #{price}
+            span(class="room-title__qualifiers room-title__price-text") в сутки    

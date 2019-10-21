@@ -1,5 +1,6 @@
 import Glide from "@glidejs/glide/dist/glide.min.js";
 import "../rate-button/rate-button";
+import "../room-title/room-title"
 import "./room-card.scss";
 
 $().ready(() => {

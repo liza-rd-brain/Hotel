@@ -1,0 +1,49 @@
+@import "../../variables";
+@import "../../mixin";
+
+.room-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  &__column {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__rating {
+    padding-top: 8px;
+    border-top: 1px solid $dark-10;
+    margin-top: 11px;
+    margin-right: 2px;
+  }
+  &__name {
+    @include text($font-eng, 14px, 700, $dark);
+    line-height: 17px;
+    margin-right: 4px;
+  }
+  &__room-number {
+    letter-spacing: 0;
+    margin-right: 4px;
+    line-height: 26px;
+    &_size_small {
+      font-size: 19px;
+    }
+  }
+
+  &__lux {
+    @include text($font, 12px, 700, $purple);
+    line-height: 15px;
+    flex-grow: 1;
+    margin-left: 1px;
+    text-transform: uppercase;
+  }
+  &__qualifiers {
+    @include text($font, 12px, 400, $dark-50);
+    line-height: 18px;
+  }
+  &__price-number {
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 3px;
+  }
+}
