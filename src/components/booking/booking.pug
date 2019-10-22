@@ -17,12 +17,14 @@ mixin booking({number,lux})
             +select-guest({})
             div(class="calculation calculation__wrap")
                 -  for (var i=0;i<CALC.length;i++)
-                    div(class="calculation__row")
+                    div(class="calculation__row calculation__group")
                         span(class="calculation__desc calculation__text") #{CALC[i].text}
                         if CALC[i].tooltip
                             div(class="calculation__text calculation__tooltip" data-tooltip=`${CALC[i].tooltip}`)
                                 span(class="calculation__text calculation__info" ) i
                         span(class="calculation__price calculation__text") #{CALC[i].amount}
-                    
+            div(class="calculation__row calculation__row_type_total")
+                span(class="calculation__desc calculation__text_type_total") Итого
+                span(class="calculation__price calculation__text_type_total") 38081
 
             +button({isColored:true,size:"big",title:"Забронировать",isArrowButton:true})
