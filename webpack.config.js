@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ASSET_PATH = process.env.ASSET_PATH || "/";
 
 const PATHS = {
   source: path.join(__dirname, "src"),
-  build: path.join(__dirname, "docs")
+  build: path.resolve(__dirname, "docs")
 };
 
 const common = merge([
@@ -16,6 +18,8 @@ const common = merge([
       landing: PATHS.source + "/pages/website_pages/landing/landing.js",
       searchRoom:
         PATHS.source + "/pages/website_pages/searchRoom/searchRoom.js",
+      registration:
+        PATHS.source + "/pages/website_pages/registration/registration.js",
       cards: PATHS.source + "/pages/uikit/cards/cards.js",
       colorsType: PATHS.source + "/pages/uikit/colorsType/colorsType.js",
       formElements: PATHS.source + "/pages/uikit/formElements/formElements.js",
@@ -29,7 +33,7 @@ const common = merge([
     plugins: [
       new HtmlWebpackPlugin({
         filename: "index.html",
-        chunks: ["index"],
+       /*  chunks: ["index"], */
         template: PATHS.source + "/index.pug"
       }),
       new HtmlWebpackPlugin({
@@ -42,6 +46,12 @@ const common = merge([
         chunks: ["searchRoom"],
         template:
           PATHS.source + "/pages/website_pages/searchRoom/searchRoom.pug"
+      }),
+      new HtmlWebpackPlugin({
+        filename: "registration/index.html",
+        chunks: ["registration"],
+        template:
+          PATHS.source + "/pages/website_pages/registration/registration.pug"
       }),
       new HtmlWebpackPlugin({
         filename: "cards/index.html",
@@ -68,7 +78,13 @@ const common = merge([
         $: "jquery",
         jQuery: "jquery",
         "window.jQuery": "jquery"
-      })
+      }),
+      new CopyWebpackPlugin([
+        {
+          from: PATHS.source + "/assets",
+          to: PATHS.build + "/assets"
+        }
+      ])
     ],
     module: {
       rules: [
@@ -84,11 +100,11 @@ const common = merge([
           loader: "file-loader",
           exclude: /fonts/,
           options: {
-            name: "images/[name].[ext]"
+            name: "[name].[ext]"
           }
         },
         {
-          test: /\.(woff|ttf)$/,
+          test: /\.(woff|ttf|svg)$/,
           loader: "file-loader",
           options: {
             name: "fonts/[name].[ext]"

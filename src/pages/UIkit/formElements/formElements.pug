@@ -15,6 +15,8 @@ include ../../../components/like-button/like-button
 include ../../../components/room-card/room-card
 include ../../../components/rate-button/rate-button
 include ../../../components/calendar/calendar
+include ../../../components/button_new/button_new
+
 -
     const textField_big = {size:"big",input_type:"text"}
     const textField_medium_arrow = {size:"medium",input_type:"text",effect:"arrow"}
@@ -54,8 +56,7 @@ include ../../../components/calendar/calendar
 
     const addAmenitiesTotal={select:selectAddAmenities,items:addAmenitiesList}    
 
-    const roomCardFirst={number:888,lux:true, price: 9990,rate:5,recall:145}     
-    const roomCardSecond={number:840,lux:false, price: 9900,rate:4,recall:65} 
+   
 
     const checkboxList={text:"expandable checkbox list",type:"checkbox-list",item:addAmenitiesList}
                  
@@ -107,8 +108,9 @@ html
                     div(class="formElements__item")
                         +button({isColored:true,size:"small",title:"click me",})  
                         +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 
-                        +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
-                        +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})    
+                        +button_new({isBordered:true,size:"small",title:"click me",isTextColored:true})               
+                        //- +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
+                        //- +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})    
                     div(class="formElements__item item__wrap")   
                         +range-slider({})  
 
@@ -130,10 +132,7 @@ html
                     div(class="formElements__item item__wrap")
                         +dropdown-list(checkboxList)
 
-                    div(class="formElements__item item__wrap")
-                        +room-card(roomCardFirst)
-                    div(class="formElements__item item__wrap")
-                        +room-card(roomCardSecond) 
+                   
 
                     div(class="formElements__item item__wrap")
                         +calendar({type:"group-range",titleGroup:["date Dropdown","date Dropdown"]}) 
@@ -141,5 +140,7 @@ html
                         +calendar({type:"static-range"})
                     div(class="formElements__item item__wrap")
                         +calendar({type:"filter-range",title:"filter date dropdown"})
+                        
                     div(class="formElements__item item__wrap")
-                        +calendar({type:"masked",title:"masked text field"})            
+                        +calendar({type:"masked",title:"masked text field"}) 
+                    

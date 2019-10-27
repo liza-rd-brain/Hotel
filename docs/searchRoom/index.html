@@ -56,18 +56,70 @@
     </header>
     <div class="search-room__wrap">
       <div class="column-left search-room__column-left">
+        <div class="arrow-group__wrap">
+          <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+          var gClassName 
+          gClassName= isShaded ? "" : "arrow-icon_noShaded"
+          -->
+          <svg class="arrow-icon arrow-icon_colored calendar__arrow_left" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)"></g>
+            <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+            <defs></defs>
+            <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#BC9CFF"></stop>
+              <stop offset="1" stop-color="#8BA4F9"></stop>
+            </linearGradient>
+            <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+              <feOffset dy="4"></feOffset>
+              <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+            </filter>
+          </svg>
+          <!-- здесь по умолчанию задается класс без тени и если только isShaded передать встанет filter c id тени
+          var gClassName 
+          gClassName= isShaded ? "" : "arrow-icon_noShaded"
+          -->
+          <svg class="arrow-icon arrow-icon_colored calendar__arrow_right" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)"></g>
+            <path d="M13 0.984375L21.0156 9L13 17.0156L11.5938 15.6094L17.1719 9.98438H4.98438V8.01562H17.1719L11.5938 2.39062L13 0.984375Z"></path>
+            <defs></defs>
+            <linearGradient id="paint0_linear" x1="9" y1="-13" x2="9" y2="31" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#BC9CFF"></stop>
+              <stop offset="1" stop-color="#8BA4F9"></stop>
+            </linearGradient>
+            <filter id="filter0_d" x="0.984375" y="0.984375" width="24.0312" height="24.0312" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+              <feOffset dy="4"></feOffset>
+              <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+            </filter>
+          </svg>
+        </div>
+        <div class="calendar_type_filter">
+          <div class="range__wrap range__wrap_filter"> 
+            <h3 class="calendar__caption">filter date dropdown</h3>
+            <input class="filter-range">
+          </div>
+        </div>
         <div class="select-items">   
           <h3 class="select-items__title">гости</h3>
           <div class="iqdropdown iqdropdown__select iqdropdown_medium" id="guest">
             <p class="iqdropdown-selection iqdropdown__text guest-title">Сколько гостей</p>
             <div class="iqdropdown-menu" id="iqdropdown-menu__select">
-              <div class="iqdropdown-menu-option" data-id="guest0">
+              <div class="iqdropdown-menu-option">
                 <p class="iqdropdown-item">взрослые</p>
               </div>
-              <div class="iqdropdown-menu-option" data-id="guest1">
+              <div class="iqdropdown-menu-option">
                 <p class="iqdropdown-item">дети</p>
               </div>
-              <div class="iqdropdown-menu-option" data-id="guest2">
+              <div class="iqdropdown-menu-option">
                 <p class="iqdropdown-item">младенцы</p>
               </div>
               <div class="iqdropdown-menu-wrap">
@@ -122,13 +174,13 @@
           <div class="iqdropdown iqdropdown__select iqdropdown_medium" id="amenities">
             <p class="iqdropdown-selection iqdropdown__text amenities-title">Удобства номера</p>
             <div class="iqdropdown-menu" id="iqdropdown-menu__select">
-              <div class="iqdropdown-menu-option" data-id="amenities0">
+              <div class="iqdropdown-menu-option">
                 <p class="iqdropdown-item">спальни</p>
               </div>
-              <div class="iqdropdown-menu-option" data-id="amenities1">
+              <div class="iqdropdown-menu-option">
                 <p class="iqdropdown-item">кровати</p>
               </div>
-              <div class="iqdropdown-menu-option" data-id="amenities2">
+              <div class="iqdropdown-menu-option">
                 <p class="iqdropdown-item">ванные комнаты</p>
               </div>
             </div>
@@ -185,10 +237,10 @@
             <div class="glide room-card__slider" id="glide-888">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_888_1"><img class="glide__img" src="src/components/room-card/img/888/img_888_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_888_2"><img class="glide__img" src="src/components/room-card/img/888/img_888_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_888_3"><img class="glide__img" src="src/components/room-card/img/888/img_888_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_888_4"><img class="glide__img" src="src/components/room-card/img/888/img_888_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_888_1"><img class="glide__img" src="/assets/img/room-card/888/img_888_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_888_2"><img class="glide__img" src="/assets/img/room-card/888/img_888_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_888_3"><img class="glide__img" src="/assets/img/room-card/888/img_888_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_888_4"><img class="glide__img" src="/assets/img/room-card/888/img_888_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -203,10 +255,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">888</span><span class="desc-section__lux">люкс</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">888   </span><span class="room-title__lux">люкс</span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">9990</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">9990</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="888" data-rate="5">
@@ -224,10 +276,10 @@
             <div class="glide room-card__slider" id="glide-840">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_840_1"><img class="glide__img" src="src/components/room-card/img/840/img_840_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_840_2"><img class="glide__img" src="src/components/room-card/img/840/img_840_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_840_3"><img class="glide__img" src="src/components/room-card/img/840/img_840_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_840_4"><img class="glide__img" src="src/components/room-card/img/840/img_840_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_840_1"><img class="glide__img" src="/assets/img/room-card/840/img_840_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_840_2"><img class="glide__img" src="/assets/img/room-card/840/img_840_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_840_3"><img class="glide__img" src="/assets/img/room-card/840/img_840_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_840_4"><img class="glide__img" src="/assets/img/room-card/840/img_840_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -242,10 +294,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">840</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">840   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">9900</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">9900</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="840" data-rate="4">
@@ -263,10 +315,10 @@
             <div class="glide room-card__slider" id="glide-980">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_980_1"><img class="glide__img" src="src/components/room-card/img/980/img_980_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_980_2"><img class="glide__img" src="src/components/room-card/img/980/img_980_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_980_3"><img class="glide__img" src="src/components/room-card/img/980/img_980_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_980_4"><img class="glide__img" src="src/components/room-card/img/980/img_980_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_980_1"><img class="glide__img" src="/assets/img/room-card/980/img_980_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_980_2"><img class="glide__img" src="/assets/img/room-card/980/img_980_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_980_3"><img class="glide__img" src="/assets/img/room-card/980/img_980_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_980_4"><img class="glide__img" src="/assets/img/room-card/980/img_980_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -281,10 +333,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">980</span><span class="desc-section__lux">люкс</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">980   </span><span class="room-title__lux">люкс</span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">8500</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">8500</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="980" data-rate="3">
@@ -302,10 +354,10 @@
             <div class="glide room-card__slider" id="glide-856">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_856_1"><img class="glide__img" src="src/components/room-card/img/856/img_856_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_856_2"><img class="glide__img" src="src/components/room-card/img/856/img_856_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_856_3"><img class="glide__img" src="src/components/room-card/img/856/img_856_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_856_4"><img class="glide__img" src="src/components/room-card/img/856/img_856_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_856_1"><img class="glide__img" src="/assets/img/room-card/856/img_856_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_856_2"><img class="glide__img" src="/assets/img/room-card/856/img_856_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_856_3"><img class="glide__img" src="/assets/img/room-card/856/img_856_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_856_4"><img class="glide__img" src="/assets/img/room-card/856/img_856_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -320,10 +372,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">856</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">856   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">7300</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">7300</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="856" data-rate="5">
@@ -341,10 +393,10 @@
             <div class="glide room-card__slider" id="glide-740">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_740_1"><img class="glide__img" src="src/components/room-card/img/740/img_740_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_740_2"><img class="glide__img" src="src/components/room-card/img/740/img_740_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_740_3"><img class="glide__img" src="src/components/room-card/img/740/img_740_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_740_4"><img class="glide__img" src="src/components/room-card/img/740/img_740_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_740_1"><img class="glide__img" src="/assets/img/room-card/740/img_740_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_740_2"><img class="glide__img" src="/assets/img/room-card/740/img_740_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_740_3"><img class="glide__img" src="/assets/img/room-card/740/img_740_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_740_4"><img class="glide__img" src="/assets/img/room-card/740/img_740_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -359,10 +411,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">740</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">740   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">6000</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">6000</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="740" data-rate="4">
@@ -380,10 +432,10 @@
             <div class="glide room-card__slider" id="glide-982">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_982_1"><img class="glide__img" src="src/components/room-card/img/982/img_982_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_982_2"><img class="glide__img" src="src/components/room-card/img/982/img_982_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_982_3"><img class="glide__img" src="src/components/room-card/img/982/img_982_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_982_4"><img class="glide__img" src="src/components/room-card/img/982/img_982_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_982_1"><img class="glide__img" src="/assets/img/room-card/982/img_982_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_982_2"><img class="glide__img" src="/assets/img/room-card/982/img_982_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_982_3"><img class="glide__img" src="/assets/img/room-card/982/img_982_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_982_4"><img class="glide__img" src="/assets/img/room-card/982/img_982_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -398,10 +450,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">982</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">982   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">5800</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">5800</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="982" data-rate="3">
@@ -419,10 +471,10 @@
             <div class="glide room-card__slider" id="glide-678">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_678_1"><img class="glide__img" src="src/components/room-card/img/678/img_678_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_678_2"><img class="glide__img" src="src/components/room-card/img/678/img_678_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_678_3"><img class="glide__img" src="src/components/room-card/img/678/img_678_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_678_4"><img class="glide__img" src="src/components/room-card/img/678/img_678_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_678_1"><img class="glide__img" src="/assets/img/room-card/678/img_678_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_678_2"><img class="glide__img" src="/assets/img/room-card/678/img_678_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_678_3"><img class="glide__img" src="/assets/img/room-card/678/img_678_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_678_4"><img class="glide__img" src="/assets/img/room-card/678/img_678_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -437,10 +489,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">678</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">678   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">5500</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">5500</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="678" data-rate="5">
@@ -458,10 +510,10 @@
             <div class="glide room-card__slider" id="glide-450">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_450_1"><img class="glide__img" src="src/components/room-card/img/450/img_450_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_450_2"><img class="glide__img" src="src/components/room-card/img/450/img_450_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_450_3"><img class="glide__img" src="src/components/room-card/img/450/img_450_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_450_4"><img class="glide__img" src="src/components/room-card/img/450/img_450_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_450_1"><img class="glide__img" src="/assets/img/room-card/450/img_450_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_450_2"><img class="glide__img" src="/assets/img/room-card/450/img_450_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_450_3"><img class="glide__img" src="/assets/img/room-card/450/img_450_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_450_4"><img class="glide__img" src="/assets/img/room-card/450/img_450_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -476,10 +528,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">450</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">450   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">5300</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">5300</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="450" data-rate="4">
@@ -497,10 +549,10 @@
             <div class="glide room-card__slider" id="glide-350">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_350_1"><img class="glide__img" src="src/components/room-card/img/350/img_350_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_350_2"><img class="glide__img" src="src/components/room-card/img/350/img_350_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_350_3"><img class="glide__img" src="src/components/room-card/img/350/img_350_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_350_4"><img class="glide__img" src="src/components/room-card/img/350/img_350_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_350_1"><img class="glide__img" src="/assets/img/room-card/350/img_350_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_350_2"><img class="glide__img" src="/assets/img/room-card/350/img_350_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_350_3"><img class="glide__img" src="/assets/img/room-card/350/img_350_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_350_4"><img class="glide__img" src="/assets/img/room-card/350/img_350_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -515,10 +567,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">350</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">350   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">5000</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">5000</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="350" data-rate="3">
@@ -536,10 +588,10 @@
             <div class="glide room-card__slider" id="glide-666">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_666_1"><img class="glide__img" src="src/components/room-card/img/666/img_666_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_666_2"><img class="glide__img" src="src/components/room-card/img/666/img_666_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_666_3"><img class="glide__img" src="src/components/room-card/img/666/img_666_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_666_4"><img class="glide__img" src="src/components/room-card/img/666/img_666_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_666_1"><img class="glide__img" src="/assets/img/room-card/666/img_666_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_666_2"><img class="glide__img" src="/assets/img/room-card/666/img_666_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_666_3"><img class="glide__img" src="/assets/img/room-card/666/img_666_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_666_4"><img class="glide__img" src="/assets/img/room-card/666/img_666_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -554,10 +606,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">666</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">666   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">5000</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">5000</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="666" data-rate="5">
@@ -575,10 +627,10 @@
             <div class="glide room-card__slider" id="glide-444">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_444_1"><img class="glide__img" src="src/components/room-card/img/444/img_444_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_444_2"><img class="glide__img" src="src/components/room-card/img/444/img_444_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_444_3"><img class="glide__img" src="src/components/room-card/img/444/img_444_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_444_4"><img class="glide__img" src="src/components/room-card/img/444/img_444_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_444_1"><img class="glide__img" src="/assets/img/room-card/444/img_444_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_444_2"><img class="glide__img" src="/assets/img/room-card/444/img_444_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_444_3"><img class="glide__img" src="/assets/img/room-card/444/img_444_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_444_4"><img class="glide__img" src="/assets/img/room-card/444/img_444_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -593,10 +645,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">444</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">444   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">5000</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">5000</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="444" data-rate="3">
@@ -614,10 +666,10 @@
             <div class="glide room-card__slider" id="glide-352">
               <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides slider__slides">
-                  <li class="glide__slide slider__frame" data-background="img_352_1"><img class="glide__img" src="src/components/room-card/img/352/img_352_1.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_352_2"><img class="glide__img" src="src/components/room-card/img/352/img_352_2.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_352_3"><img class="glide__img" src="src/components/room-card/img/352/img_352_3.jpg"></li>
-                  <li class="glide__slide slider__frame" data-background="img_352_4"><img class="glide__img" src="src/components/room-card/img/352/img_352_4.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_352_1"><img class="glide__img" src="/assets/img/room-card/352/img_352_1.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_352_2"><img class="glide__img" src="/assets/img/room-card/352/img_352_2.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_352_3"><img class="glide__img" src="/assets/img/room-card/352/img_352_3.jpg"></li>
+                  <li class="glide__slide slider__frame" data-background="img_352_4"><img class="glide__img" src="/assets/img/room-card/352/img_352_4.jpg"></li>
                 </ul>
               </div>
               <div class="glide__arrows" data-glide-el="controls">
@@ -632,10 +684,10 @@
               </div>
             </div>
             <div class="room-card__desc-section">
-              <div class="desc-section desc-section__base">
-                <div class="desc-section__column"><span class="desc-section__name desc-section__name_symbol">№</span><span class="desc-section__name desc-section__name_number">352</span>
+              <div class="room-title">   
+                <div class="room-title__column"><span class="room-title__symbol room-title__name">№</span><span class="room-title__room-number_size_small room-title__name">352   </span>
                 </div>
-                <div class="desc-section__column"> <span class="desc-section__qualifiers desc-section__qualifiers_number desc-section__price_number">5000</span><span class="desc-section__qualifiers desc-section__price-text">в сутки</span></div>
+                <div class="room-title__column">   <span class="room-title__qualifiers room-title__price-number ">5000</span><span class="room-title__qualifiers room-title__price-text">в сутки    </span></div>
               </div>
               <div class="desc-section desc-section__rating">
                 <select class="rate-select" id="352" data-rate="3">

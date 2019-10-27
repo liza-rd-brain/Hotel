@@ -367,45 +367,54 @@ span.body-text {
   color: rgba(31, 32, 65, 0.75);
   /* line-height: 24px; */ }
 
+h1 {
+  margin: 0;
+  font-family: Quicksand, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2041;
+  line-height: 30px;
+  letter-spacing: 1.2px; }
+
 /* @font-face {
   font-family: MyriadPro-Regular;
-  src: url(./fons/MyriadPro-Regular.svg) format("svg"),
-    url(./fons/MyriadPro-Regular.ttf) format("ttf"),
-    url(./fons/MyriadPro-Regular.woff) format("woff");
+  src: url(./fonts/MyriadPro-Regular.svg) format("svg"),
+    url(./fonts/MyriadPro-Regular.ttf) format("ttf"),
+    url(./fonts/MyriadPro-Regular.woff) format("woff");
   font-weight: normal;
   font-style: normal;
 } */
 @font-face {
   font-family: Montserrat;
-  src: url(images/Montserrat-Regular.svg) format("svg"), url(fonts/Montserrat-Regular.ttf) format("ttf"), url(fonts/Montserrat-Regular.woff) format("woff");
+  src: url(fonts/Montserrat-Regular.svg) format("svg"), url(fonts/Montserrat-Regular.ttf) format("ttf"), url(fonts/Montserrat-Regular.woff) format("woff");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: Montserrat;
-  src: url(images/Montserrat-Bold.svg) format("svg"), url(fonts/Montserrat-Bold.ttf) format("ttf"), url(fonts/Montserrat-Bold.woff) format("woff");
+  src: url(fonts/Montserrat-Bold.svg) format("svg"), url(fonts/Montserrat-Bold.ttf) format("ttf"), url(fonts/Montserrat-Bold.woff) format("woff");
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: Quicksand;
-  src: url(images/Quicksand-Regular.svg) format("svg"), url(fonts/Quicksand-Regular.ttf) format("ttf"), url(fonts/Quicksand-Regular.woff) format("woff");
+  src: url(fonts/Quicksand-Regular.svg) format("svg"), url(fonts/Quicksand-Regular.ttf) format("ttf"), url(fonts/Quicksand-Regular.woff) format("woff");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: Quicksand;
-  src: url(images/Quicksand-Bold.svg) format("svg"), url(fonts/Quicksand-Bold.ttf) format("ttf"), url(fonts/Quicksand-Bold.woff) format("woff");
+  src: url(fonts/Quicksand-Bold.svg) format("svg"), url(fonts/Quicksand-Bold.ttf) format("ttf"), url(fonts/Quicksand-Bold.woff) format("woff");
   font-weight: 700;
   font-style: normal; }
 
-.title {
+/* .title {
   display: block;
-  color: #c50f0f;
+  color: rgb(197, 15, 15);
   padding: 50px;
   font-family: "MyriadPro-Regular", "Arial", sans-serif;
-  font-size: 50px; }
-
+  font-size: 50px;
+} */
 /* body {
   padding: 150px 140px;
 }

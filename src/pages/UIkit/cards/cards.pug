@@ -3,6 +3,11 @@ include ../../../components/searchbox/searchbox
 include ../../../components/acces/acces
 include ../../../components/booking/booking
 include ../../../components/calendar/calendar
+include ../../../components/room-card/room-card
+
+-
+    const roomCardFirst={number:888,lux:true, price: 9990,rate:5,recall:145}     
+    const roomCardSecond={number:840,lux:false, price: 9900,rate:4,recall:65} 
 
 doctype html
 html
@@ -20,6 +25,10 @@ html
             .cards__column
                 +booking({})    
                 +acces({isLogged:true})
-
             .cards__column  
-                +calendar({type:"static-range"})      
+                +calendar({type:"static-range"})    
+                div(class="formElements__item item__wrap")
+                    +room-card(roomCardFirst)
+                div(class="formElements__item item__wrap")
+                    +room-card(roomCardSecond)
+                    

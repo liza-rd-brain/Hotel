@@ -1,0 +1,154 @@
+@import "../../variables";
+@import "../../mixin";
+
+/* *{
+outline: 1px solid gold;
+}
+ */
+$purple-50: rgba($purple, 0.5);
+$blue-50: rgba($blue, 0.5);
+$gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
+$gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
+$height-medium: 44px;
+$height-small: ($height-medium - 10px);
+$height-text: 15px;
+
+//можно вынести переменные размеров
+
+//кнопку потом вынести отдельно
+.button {
+  /*  text-decoration: none;
+  border-radius: 22px;
+  padding: 0px;
+
+  outline: none;
+  border: 2px;
+  cursor: pointer;
+  background-color: $white;
+  height: $height-medium; */
+  &_size {
+    &-xSmall {
+      width: 87px;
+    }
+    &-small {
+      width: 99px;
+    }
+    &-medium {
+      width: 196px;
+    }
+    &-big {
+      width: 320px;
+    }
+  }
+
+  &_colored {
+    border: 1px;
+    background: $gradient;
+    &:hover/* ,&:focus */ {
+      background: $gradient-50;
+    }
+  }
+  &_bordered_new {
+    width: 99px;
+    border-radius: 28px;
+    /* padding: 1rem; */
+    /*  font-family: "Avenir Next"; */
+    font-family: Montserrat, Arial, sans-serif;
+    color: #bc9cff;
+    font-size: 1rem;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /*  padding: 0.5rem 3rem; */
+    /*  color: black; */
+    box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+    border: solid 2px transparent;
+    /*     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #78e4ff, #ff48fa); */
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      $gradient-50;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px #fff inset;
+    background-color: transparent;
+    /*   box-shadow: none; */
+    /*  background: $gradient; */
+    &:hover {
+      /*  background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        $gradient-50; */
+      box-shadow: none;
+    }
+  }
+
+  &_type {
+    &-text {
+      height: $height-text;
+      //убираем пока только здась из-за комплексности белой кнопки с обводкой
+      & > h3 {
+        //убрала возможность выбирать/кликать текст в кнопке
+        pointer-events: none;
+        padding: 0;
+      }
+      &:hover > h3 {
+        color: $dark-50;
+      }
+    }
+    &-header {
+      height: $height-small;
+    }
+    &-arrow {
+      width: 320px;
+      position: relative;
+      &::after {
+        content: "";
+        /*    background: url("./images/arrow_forward.svg") no-repeat; */
+        /*   background-image: url("./images/arrow.png"); */
+        position: absolute;
+        top: 16px;
+        right: 18px;
+        &_big {
+          width: 320px;
+        }
+        &_medium {
+          width: 266px;
+        }
+        &_small {
+          width: 150px;
+        }
+
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__text {
+    @include text($font, 12px, 700, $white);
+    margin: 0px;
+    color: white;
+    text-transform: uppercase;
+    line-height: 15px;
+    background-color: inherit;
+    margin: 2px;
+    border-radius: 28px;
+    padding: 12px 0 13px 0;
+    /*     letter-spacing: -0.3px;
+    text-indent: -7px; */
+    letter-spacing: 0px;
+    /*  text-indent: -5px; */
+    &_colored {
+      color: $purple;
+      background-color: white;
+    }
+    &_header {
+      padding: 8px 18px 7px 18px;
+    }
+  }
+  color: rgba(255, 2500, 255, 0);
+}

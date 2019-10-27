@@ -17,19 +17,31 @@
   &__title {
     /*   width: 80%; */
     margin: 0 0 20px 0;
+    /*   padding-left: 2px; */
     @include text($font-eng, 24px, 700, $dark);
     line-height: 30px;
-    letter-spacing: 1.2px;
+    word-spacing: 1px;
+    /*  text-indent: 3px; */
+    letter-spacing: 1.4px;
+    &::first-line {
+      word-spacing: 0px;
+      /* text-indent: 1px; */
+      letter-spacing: 1.1px;
+    }
   }
   &__form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     & .calendar_type_range {
-      margin-bottom: 23px;
+      margin-bottom: 21px;
     }
     & .select-items {
-      margin-bottom: 32.44px;
+      margin-bottom: 30px;
     }
+  }
+
+  & .button__text {
+    text-indent: -5px;
   }
 }

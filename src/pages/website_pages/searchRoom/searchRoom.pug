@@ -1,12 +1,14 @@
 include ../../../components/header/header-prod
 include ../../../components/footer/footer-prod
-include ../../../components/select-items/select-guest.pug
-include ../../../components/select-items/select-amenities.pug
-include ../../../components/select-items/select-items.pug
+include ../../../components/select-items/select-guest
+include ../../../components/select-items/select-amenities
+include ../../../components/select-items/select-items
 include ../../../components/range-slider/range-slider
 include ../../../components/checkbox/checkbox
 include ../../../components/dropdown-list/dropdown-list
 include ../../../components/room-card/room-card
+include ../../../components/calendar/calendar
+
 
 -
     //- const btn_clear = {title:text_clear||"очистить",isTextButton:true,isTextColored:true,className:"button_clear" }
@@ -58,13 +60,14 @@ html
         +header-prod()
         .search-room__wrap
             div(class="column-left search-room__column-left")
-                //- +select-items(selectThisGuest)
+                +calendar({type:"filter-range", title:"filter date dropdown"})
                 +select-guest(selectGuest)
                 +range-slider({title:"диапазон цены",text:"Стоимость за сутки пребывания в номере"})
                 +checkbox({})
                 +checkbox(availability)
                 +select-amenities(selectAmenities)
                 +dropdown-list(checkboxList)
+                
             .column-right   
                 span(class="search-room__title") Номера, которые мы для вас подобрали
                 div(class="search-room__items ")

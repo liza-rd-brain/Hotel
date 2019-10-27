@@ -27,14 +27,15 @@
   &__text {
     display: block;
     @include text($font, 14px, 400, $dark-75);
-    letter-spacing: -0.3px;
+    text-indent: -2px;
+    padding-bottom: 2px;
     pointer-events: none;
     &::after {
       background-image: none;
       content: "";
       border: 4px solid $dark-50;
       position: absolute;
-      top: 2px;
+      top: 4px;
       right: 2px;
       pointer-events: none;
       transform: rotate(45deg);
@@ -45,7 +46,7 @@
       content: "";
       border: 4px solid white;
       position: absolute;
-      top: -1px;
+      top: 1px;
       right: 2px;
       pointer-events: none;
       transform: rotate(45deg);
@@ -159,7 +160,7 @@
       width: 30px;
       height: 30px;
       padding: 0;
-     /*  pointer-events: none; */
+      /*  pointer-events: none; */
 
       &:hover {
         background-color: inherit;

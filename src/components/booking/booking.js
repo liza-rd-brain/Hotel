@@ -1,5 +1,4 @@
 import "./booking.scss";
-// import "../select-items/select-items";
 import "../button/button";
 import "../calendar/calendar";
 import "../room-title/room-title";
