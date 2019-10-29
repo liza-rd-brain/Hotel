@@ -1,6 +1,7 @@
 import "./acces.scss";
 import "../textField/textField";
 import "../radio-button/radio-button";
+import "../calendar/calendar";
 import "../toggle/toggle";
 
 let signInList = document.querySelectorAll(".acces");

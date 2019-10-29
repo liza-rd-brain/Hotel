@@ -1,6 +1,7 @@
 include ../../../components/header/header-prod.pug
 include ../../../components/footer/footer-prod.pug
 include ../../../components/checkbox/checkbox
+include ../../../components/searchbox/searchbox
 
 
 doctype html
@@ -8,11 +9,13 @@ html
     head
         meta(charset = 'utf-8')
         meta(name='viewport', content="initial-scale=1.0, width=device-width")
-        title
-            landing
-    body 
-    .landing-wrap
-        +header-prod()
-          //- пока для примерного представления
-        div(class="image" height="830" width="1440")
-        +footer-prod() 
+        title landing
+    body
+        div(class="landing landing__wrap")
+            +header-prod()
+          
+            section(class="landing__main main__image-3")
+                +searchbox({})
+                p(class="landing__text") Лучшие номера для вашей работы, &nbsp;отдыха и просто вдохновения
+                //- div(class="image" height="830" width="1440")
+            +footer-prod() 

@@ -25,13 +25,12 @@ mixin calendar({type,titleGroup:[title_1,title_2]=[],title=""})
                 input(class="departure-range_default" type="text" placeholder="дд.мм.гггг")              
     else if type==="static-range"  
         div(class="calendar_type_static")
-            input(class="static-range" )
-
+            input(class="static-range")
     else if type==="filter-range"
         div(class="calendar_type_filter")
             div(class="range__wrap range__wrap_filter")  
                 h3(class="calendar__caption") #{title}
-                input(class="filter-range" )
+                input(class="filter-range")
     else if type==="masked"
         div(class="calendar_type_masked")  
                 h3(class="calendar__caption") #{title}

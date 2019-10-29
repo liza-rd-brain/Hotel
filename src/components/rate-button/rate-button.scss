@@ -12,14 +12,14 @@
 .br-widget a:after {
   content: "";
   padding: 0px 0px 6px 20px;
-  background-image: url(./images/star_transparent.svg);
+  background-image: url(../../assets/img/rate-button/star_transparent.svg);
   background-repeat: no-repeat;
 }
 .br-widget a.br-active:after {
-  background-image: url(./images/star_colored.svg);
+  background-image: url(../../assets/img/rate-button/star_colored.svg);
 }
 .br-widget a.br-selected:after {
-  background-image: url(./images/star_colored.svg);
+  background-image: url(../../assets/img/rate-button/star_colored.svg);
 }
 .br-widget .br-current-rating {
   display: none;

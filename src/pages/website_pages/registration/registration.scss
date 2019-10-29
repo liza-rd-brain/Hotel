@@ -1,0 +1,35 @@
+@import "../../../variables";
+@import "../../../mixin";
+
+.registration {
+  width: 1440px;
+  &__wrap {
+    margin: 0 auto;
+  }
+  &__main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*     padding: 30px 0; */
+    background-repeat: no-repeat;
+    background-position: 0px -70px;
+    background-size: auto auto;
+    background-color: rgba(17, 17, 17, 0.7);
+    background-image: url(../../../assets/img/registration/registration_background.png);
+    min-height: 720px;
+    & > .acces__wrap {
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    @include body-text();
+    line-height: 23px;
+    text-align: right;
+    width: 24%;
+    margin: 0px 135px 21px 0;
+    align-self: flex-end;
+    text-indent: 7px;
+  }
+}

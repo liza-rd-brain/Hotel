@@ -3,44 +3,44 @@
 
 /* @font-face {
   font-family: MyriadPro-Regular;
-  src: url(./fons/MyriadPro-Regular.svg) format("svg"),
-    url(./fons/MyriadPro-Regular.ttf) format("ttf"),
-    url(./fons/MyriadPro-Regular.woff) format("woff");
+  src: url(../assets/fonts/MyriadPro-Regular.svg) format("svg"),
+    url(../assets/fonts/MyriadPro-Regular.ttf) format("ttf"),
+    url(../assets/fonts/MyriadPro-Regular.woff) format("woff");
   font-weight: normal;
   font-style: normal;
 } */
 @font-face {
   font-family: Montserrat;
-  src: url(./fons/Montserrat-Regular.svg) format("svg"),
-    url(./fons/Montserrat-Regular.ttf) format("ttf"),
-    url(./fons/Montserrat-Regular.woff) format("woff");
+  src: url(./assets/fonts/Montserrat-Regular.svg) format("svg"),
+    url(./assets/fonts/Montserrat-Regular.ttf) format("ttf"),
+    url(./assets/fonts/Montserrat-Regular.woff) format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
-  src: url(./fons/Montserrat-Bold.svg) format("svg"),
-    url(./fons/Montserrat-Bold.ttf) format("ttf"),
-    url(./fons/Montserrat-Bold.woff) format("woff");
+  src: url(./assets/fonts/Montserrat-Bold.svg) format("svg"),
+    url(./assets/fonts/Montserrat-Bold.ttf) format("ttf"),
+    url(./assets/fonts/Montserrat-Bold.woff) format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Quicksand;
-  src: url(./fons/Quicksand-Regular.svg) format("svg"),
-    url(./fons/Quicksand-Regular.ttf) format("ttf"),
-    url(./fons/Quicksand-Regular.woff) format("woff");
+  src: url(./assets/fonts/Quicksand-Regular.svg) format("svg"),
+    url(./assets/fonts/Quicksand-Regular.ttf) format("ttf"),
+    url(./assets/fonts/Quicksand-Regular.woff) format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: Quicksand;
-  src: url(./fons/Quicksand-Bold.svg) format("svg"),
-    url(./fons/Quicksand-Bold.ttf) format("ttf"),
-    url(./fons/Quicksand-Bold.woff) format("woff");
+  src: url(./assets/fonts/Quicksand-Bold.svg) format("svg"),
+    url(./assets/fonts/Quicksand-Bold.ttf) format("ttf"),
+    url(./assets/fonts/Quicksand-Bold.woff) format("woff");
   font-weight: 700;
   font-style: normal;
 }

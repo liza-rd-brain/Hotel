@@ -5,7 +5,7 @@
   display: flex;
 }
 .calendar__caption {
-  margin: 0 0 5px 0;
+  margin: 0 0 6px 0;
   @include h3-text();
   text-transform: uppercase;
 }
@@ -19,18 +19,20 @@
   border: 1px solid $dark-25;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 15px;
+  padding-left: 13px;
   @include body-text();
   line-height: 18px;
   outline: none;
   cursor: pointer;
   text-transform: lowercase;
+  padding-bottom: 5px;
 
   &::placeholder {
     text-transform: uppercase;
     color: $dark-75;
   }
 }
+
 .range {
   &__wrap {
     position: relative;
@@ -42,8 +44,8 @@
       content: "";
       border: 4px solid rgba(31, 32, 65, 0.5);
       position: absolute;
-      top: 35px;
-      right: 19px;
+      top: 37px;
+      right: 18px;
       pointer-events: none;
       transform: rotate(45deg);
       width: 0;
@@ -53,8 +55,8 @@
       content: "";
       border: 4px solid white;
       position: absolute;
-      top: 32px;
-      right: 19px;
+      top: 34px;
+      right: 18px;
       pointer-events: none;
       transform: rotate(45deg);
       z-index: 2;
