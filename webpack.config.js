@@ -90,7 +90,8 @@ const common = {
         loader: "file-loader",
         exclude: /fonts/,
         options: {
-          name: "assets/img/[name].[ext]"
+          emitFile: false,
+          name: "assets/img/[folder]/[name].[ext]"
         }
       },
       {
@@ -98,6 +99,7 @@ const common = {
         loader: "file-loader",
         exclude: /img/,
         options: {
+          emitFile: false,
           name: "assets/fonts/[name].[ext]"
         }
       }
