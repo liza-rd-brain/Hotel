@@ -96,6 +96,7 @@ const common = {
       {
         test: /\.(woff|ttf|svg)$/,
         loader: "file-loader",
+        exclude: /img/,
         options: {
           name: "assets/fonts/[name].[ext]"
         }
