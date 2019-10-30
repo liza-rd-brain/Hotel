@@ -3,7 +3,6 @@
 mixin like-button(item,amount)
     label(for="like" class="like-label")
             input(type="checkbox" name="like" id="like" class="like")
-            div(class="like-button__wrap" id=`${item}`)
-                div(class="like-button")
-                    div(class="like-button__img")
-                    span(class="like-button__amount") #{amount} 
+            div(class="like-button")
+                div(class="like-button__img")
+                span(class="like-button__amount") #{amount} 

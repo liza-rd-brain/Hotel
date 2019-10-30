@@ -7,31 +7,25 @@ $gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
 $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
 
 .like-button {
-  margin: 0px;
-  background-color: white;
-  text-transform: uppercase;
-  line-height: 15px;
-  border-radius: 10px;
+  display: flex;
   padding: 1px 7px 2px 1px;
   letter-spacing: -0.3px;
-  display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 18px;
+  border: solid 1px transparent;
+  box-shadow: 2px 1000px 1px #fff inset;
+  background: $dark-25;
+  //text
+  color: $purple;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 10px;
+  height: 20px;
+  width: 40px;
+  color: $dark-25;
+  align-items: center;
 
-  &__wrap {
-    text-decoration: none;
-    padding: 0px;
-    cursor: pointer;
-    outline: none;
-    border-radius: 10px;
-    border: 1px;
-    height: 20px;
-    background: $dark-25;
-    width: 40px;
-    padding: 1px;
-    color: $dark-25;
-  }
   &__amount {
     @include text($font, 10px, 400, inherit);
     line-height: 12px;
@@ -39,18 +33,15 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
   }
   &__img {
     height: 100%;
-    background-size:100% 100%;
+    background-size: 100% 100%;
     -o-background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
-    background-size:cover;
- 
-    width:10px;
-    height:10px;
+    background-size: cover;
+    width: 10px;
+    height: 10px;
     pointer-events: none;
     background-image: url(../../assets/img/like-button/like-button_transparent.svg);
-    
     background-size: 10px 10px;
-    // background-image: url("./images/favorite_border.jpg");
   }
 }
 
@@ -60,13 +51,13 @@ $gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
   opacity: 0;
   margin: 10px 0 0 20px;
   &:checked {
-    & ~ .like-button__wrap {
-      color: $purple;
+    & ~ .like-button {
       background: $gradient;
+      background-origin: border-box;
+      color: $purple;
     }
-    & ~ .like-button__wrap .like-button__img {
-      background-image:  url(../../assets/img/like-button/like-button_colored.svg);
+    & ~ .like-button .like-button__img {
+      background-image: url(../../assets/img/like-button/like-button_colored.svg);
     }
   }
 }
-
