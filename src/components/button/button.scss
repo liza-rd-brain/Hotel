@@ -13,19 +13,23 @@ $height-medium: 44px;
 $height-small: ($height-medium - 10px);
 $height-text: 15px;
 
-//можно вынести переменные размеров
-
-//кнопку потом вынести отдельно
 .button {
   text-decoration: none;
   border-radius: 22px;
   padding: 0px;
-  /* padding: 14px 0 15px 0; */
   outline: none;
   border: 2px;
   cursor: pointer;
   background-color: $white;
   height: $height-medium;
+  //text
+  @include text($font, 12px, 700, $white);
+  margin: 0px;
+  text-transform: uppercase;
+  line-height: 15px;
+  letter-spacing: -0.3px;
+  text-indent: -3px;
+
   &_size {
     &-xSmall {
       width: 87px;
@@ -41,43 +45,56 @@ $height-text: 15px;
     }
   }
 
-  &_colored {
-    border: 1px;
-    background: $gradient;
-    &:hover/* ,&:focus */ {
-      background: $gradient-50;
-    }
-  }
-  &_bordered {
-    background: $gradient;
-    &:hover {
-      background: $gradient-50;
-    }
-  }
-
   &_type {
-    &-text {
-      height: $height-text;
-      //убираем пока только здась из-за комплексности белой кнопки с обводкой
-      & > h3 {
-        //убрала возможность выбирать/кликать текст в кнопке
-        pointer-events: none;
-        padding: 0;
+    &_colored {
+      border: 1px;
+      background: $gradient;
+      &:hover {
+        background: $gradient-50;
       }
-      &:hover > h3 {
+    }
+    &_bordered {
+      box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+      border: solid 2px transparent;
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        $gradient;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      box-shadow: 2px 1000px 1px #fff inset;
+      background-color: transparent;
+      //text
+      color: $purple;
+      &:hover {
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)
+          ),
+          $gradient-50;
+      }
+    }
+    &_text {
+      height: $height-text;
+      color: $purple;
+      &:hover {
         color: $dark-50;
       }
     }
-    &-header {
+    //не нравится!
+    //скорее это проще задать в лендинге
+    &_header {
       height: $height-small;
+      padding: 8px 18px 7px 18px;
     }
-    &-arrow {
+    &_arrow {
       width: 320px;
       position: relative;
+      letter-spacing: 0px;
+      text-indent: 0px;
       &::after {
         content: "";
-        /*    background: url("./images/arrow_forward.svg") no-repeat; */
-        /*   background-image: url("./images/arrow.png"); */
         position: absolute;
         top: 16px;
         right: 18px;
@@ -95,29 +112,6 @@ $height-text: 15px;
         height: 24px;
         pointer-events: none;
       }
-    }
-  }
-
-  &__text {
-    @include text($font, 12px, 700, $white);
-    margin: 0px;
-    color: white;
-    text-transform: uppercase;
-    line-height: 15px;
-    background-color: inherit;
-    margin: 2px;
-    border-radius: 28px;
-    padding: 12px 0 13px 0;
-    /*     letter-spacing: -0.3px;
-    text-indent: -7px; */
-    letter-spacing: 0px;
-   /*  text-indent: -5px; */
-    &_colored {
-      color: $purple;
-      background-color: white;
-    }
-    &_header {
-      padding: 8px 18px 7px 18px;
     }
   }
 }

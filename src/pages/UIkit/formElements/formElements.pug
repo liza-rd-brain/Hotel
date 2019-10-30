@@ -15,7 +15,7 @@ include ../../../components/like-button/like-button
 include ../../../components/room-card/room-card
 include ../../../components/rate-button/rate-button
 include ../../../components/calendar/calendar
-include ../../../components/button_new/button_new
+
 
 -
     const textField_big = {size:"big",input_type:"text"}
@@ -107,10 +107,10 @@ html
                         +textField(textField_medium_arrow,"Email")
                     div(class="formElements__item")
                         +button({isColored:true,size:"small",title:"click me",})  
-                        +button({isBordered:true,size:"small",title:"click me",isTextColored:true}) 
-                        +button_new({isBordered:true,size:"small",title:"click me",isTextColored:true})               
-                        //- +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
-                        //- +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})    
+                        +button({isBordered:true,size:"small",title:"click me",isTextColored:true})         
+                        +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
+                        +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})    
+    
                     div(class="formElements__item item__wrap")   
                         +range-slider({})  
 

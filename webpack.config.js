@@ -23,10 +23,7 @@ const common = {
     headersAndFooters:
       PATHS.source + "/pages/uikit/headersAndFooters/headersAndFooters.js"
   },
-  /*   output: {
-    path: PATHS.build,
-    filename: "[name]/[name].js"
-  }, */
+
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",

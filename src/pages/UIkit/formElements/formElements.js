@@ -20,4 +20,4 @@ import "../../../components/room-card/room-card";
 import "../../../components/rate-button/rate-button";
 import "../../../components/calendar/calendar";
 
-import "../../../components/button_new/button_new";
+
