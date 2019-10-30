@@ -11,7 +11,7 @@ mixin header({isLogged,text_login,text_register,nav})
         const button_login={isBordered:true,title:text_login ||"login",isTextColored:true,isHeaderButton:true}
         const button_register={isColored:true,title:text_register||"register",isHeaderButton:true}
         
-    header(class="header")
+    header(class="header" class!=attributes.class)
         +logo()
         div(class = menuClassName)
             +nav(nav)

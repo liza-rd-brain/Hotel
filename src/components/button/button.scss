@@ -19,6 +19,7 @@ $height-text: 15px;
   padding: 0px;
   outline: none;
   border: 2px;
+  border: none;
   cursor: pointer;
   background-color: $white;
   height: $height-medium;
@@ -27,9 +28,9 @@ $height-text: 15px;
   margin: 0px;
   text-transform: uppercase;
   line-height: 15px;
-  letter-spacing: -0.3px;
+  /*   letter-spacing: -0.3px;
   text-indent: -3px;
-
+ */
   &_size {
     &-xSmall {
       width: 87px;
@@ -71,12 +72,6 @@ $height-text: 15px;
       &:hover {
         color: $dark-50;
       }
-    }
-    //не нравится!
-    //скорее это проще задать в лендинге
-    &_header {
-      height: $height-small;
-      padding: 8px 18px 7px 18px;
     }
     &_arrow {
       width: 320px;

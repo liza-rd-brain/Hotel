@@ -9,7 +9,6 @@ mixin button({isColored,isBordered,isTextButton,isArrowButton,isHeaderButton,siz
             isBordered ? "button_type_bordered": null,
             isTextButton ? "button_type_text": null,
             isArrowButton ? "button_type_arrow": null,
-            isHeaderButton ? "button_type_header": null,
             size ? `button_size-${size}`: null,
             className ? `${className}`: null,
         ].filter(className => className !== null).join(" ");

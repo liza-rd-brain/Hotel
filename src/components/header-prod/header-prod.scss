@@ -1,0 +1,26 @@
+@import "../../variables";
+@import "../../mixin";
+
+.header_prod {
+  & .menu {
+    & .nav {
+      margin-right: 20px;
+      text-indent: -1px;
+      letter-spacing: unset;
+    }
+    & .nav__item {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+    & .button_type {
+      &_colored {
+        min-width: 196px;
+      }
+      &_bordered {
+        min-width: 87px;
+      }
+    }
+  }
+}

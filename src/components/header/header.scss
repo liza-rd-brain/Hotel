@@ -1,6 +1,6 @@
 @import "../../variables";
 @import "../../mixin";
-
+$height-small: 34px;
 .header {
   width: 100%;
   background-color: $white;
@@ -9,19 +9,30 @@
   justify-content: space-between;
   box-sizing: border-box;
   box-shadow: 0px 10px 20px $dark-5;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  & > button,nav {
-    margin-right: 20px;
+  & .menu {
+    display: flex;
+    align-items: center;
+    & > button {
+      height: $height-small;
+      padding: 8px 16px 7px 16px;
+      margin-right: 20px;
+    }
+    & > .nav {
+      margin-right: 30px;
+    }
+    //выбрали третьего потомка menu
+    & > :nth-child(3) {
+      margin-right: 0;
+    }
+    & > .button_type {
+      &_colored {
+        min-width: 101px;
+      }
+      &_bordered {
+        min-width: 79px;
+      }
+    }
   }
-  //выбрали третьего потомка menu
-  & > :nth-child(3){
-    margin-right: 0;
-  }
-
 }
 
 .user-name {
@@ -35,7 +46,7 @@
   &:before {
     content: "";
     border-right: 1px solid $dark-50;
-    margin: 0 30px 0 10px;
+    margin: 0 30px 0 0;
     height: 30px;
   }
 }

@@ -1,11 +1,24 @@
+
 -
+    const EXP_ITEM_LIST = [{name:"services_1",href:"#"},
+                            {name:"services_2",href:"#"},
+                            {name:"services_3",href:"#"},
+                            {name:"services_4",href:"#"},
+                            {name:"services_5",href:"#"},
+                            {name:"services_6",href:"#"}]  
+
+    //- const EXP_LIST={text:"services",type:"nav-list",item:EXP_ITEM_LIST}                                   
+
     const NAV_ITEM = [{name:"home",href:"#"},
                       {name:"about us",href:"#"},
-                      {name:"services",expanded:true,href:"#"},
+                      {name:"services",expanded_items:EXP_ITEM_LIST,href:"#"},
                       {name:"careers",href:"#"},
                       {name:"news",href:"#"},
                       {name:"documentation",href:"#"}] 
 
+  
+
+   
 mixin nav(options)
     -
         const currArray = options || NAV_ITEM
@@ -14,10 +27,19 @@ mixin nav(options)
 
     nav(class="nav")
         - for (let i = 0; i < currArray.length; i++)
-            if !currArray[i].expanded
+            if !currArray[i].expanded_items
                 div(class=navItemClassName)
-                a(class="nav__link" title=`${currArray[i].name}` href=`${currArray[i].href}`) #{currArray[i].name}
-            else 
-                div(class=navItemClassName + " nav__item_expanded")
-                a(class="nav__link" title=`${currArray[i].name}` href=`${currArray[i].href}`) #{currArray[i].name}
-                div(class="nav__expanded")    
+                    a(class="nav__link" title=`${currArray[i].name}` href=`${currArray[i].href}`) #{currArray[i].name}
+            else
+                    
+                div(class= navItemClassName + " nav__item_expanded") 
+                    div(class="nav__expandable-select")
+                        a(class="nav__link" title=`${currArray[i].name}` href=`${currArray[i].href}`) #{currArray[i].name}
+                    //- div(class="nav__expanded")
+                    ul(class="nav__expandable-options")    
+                        -
+                            const expanded_el = currArray[i].expanded_items
+
+                        - for (let j=0;j<expanded_el.length;j++)
+                            li(class="expandable-options__item") 
+                                a(class="expandable-options__link" href=expanded_el[j].href) #{expanded_el[j].name}

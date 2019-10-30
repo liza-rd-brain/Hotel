@@ -1,9 +1,9 @@
 include ../checkbox/checkbox.pug
 
 mixin dropdown-list({text,type,item})
-    div(for="dropdown-list" class="dropdown-list" id="label")
+    div(for="dropdown-list" class="dropdown-list")
         div(class="dropdown-list__select" id="dropdown-list")
             h3(class="dropdown-list__title") #{text}
         div(class="dropdown-list__options")
             if type==="checkbox-list"
-                +checkbox(item)
+                +checkbox(item)          

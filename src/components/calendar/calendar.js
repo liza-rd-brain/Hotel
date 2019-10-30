@@ -165,7 +165,7 @@ $().ready(() => {
   };
   flatpickr(".filter-range", configFilter);
 
-  console.log(document.querySelectorAll(".filter-range"));
+/*   console.log(document.querySelectorAll(".filter-range")); */
 
   const configMasked = {
     altInput: true,
