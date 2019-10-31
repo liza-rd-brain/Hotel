@@ -5,12 +5,13 @@ mixin checkbox({items,key,isRich})
         const CB_ITEMS ={ items:[{caption:"Можно курить"}, {caption:"Можно с питомцами"},{caption:"Можно пригласить гостей (до&nbsp;10&nbsp;человек)"}],key:"checkbox-default"}
         items = items || CB_ITEMS.items
         key = key || CB_ITEMS.key
-        const captionClassName= isRich? "checkbox-caption_bold": "checkbox-caption"
-        
+        const captionClassName= isRich? "checkbox-caption checkbox-caption_bold": "checkbox-caption"
+        const labelClassName= isRich? "checkbox-label checkbox-label_rich": "checkbox-label"
+
     .checkbox-list
         - for (let i=0;i<items.length;i++)  
             //будем принимать массив строк для чекбоксов и перебирать в цикле фор
-            label(for=`${key}-${i}` class="checkbox-label")
+            label(for=`${key}-${i}` class=labelClassName)
                 p(class="checkbox-text")
                     span(class=captionClassName) !{items[i].caption}
                     span(class="checkbox-desc") !{items[i].desc} 

@@ -35,6 +35,13 @@
     }
     &_link {
       line-height: 19px;
+      color: $dark-50;
+      &:hover {
+        color: $dark-75;
+      }
+      &:active {
+        color: $dark-25;
+      }
     }
   }
   &__social {

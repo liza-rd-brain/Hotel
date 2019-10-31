@@ -39,10 +39,15 @@
   border: 1px solid $dark-25;
   border-radius: 3px;
   height: 6px;
-  margin-bottom: 14.56px;
+  margin-bottom: 12.56px;
 }
+//по другому не перестилизовать, если только с js мудрить
 .range-slider__range .ui-corner-all {
   border: none;
+  left: 32% !important;
+  &:nth-last-child(1) {
+    left: 64% !important;
+  }
   /*  border: 1px solid $dark-25; */
 }
 
@@ -52,7 +57,7 @@
   border-radius: 12px;
   width: 16px;
   height: 16px;
-  top: -5px;
+  top: -6px;
   &:focus {
     outline: none;
   }
@@ -64,4 +69,7 @@
   /*  opacity: 2; */
   height: 6px;
   top: -1px;
+}
+
+.ui-slider-range .ui-corner-all .ui-widget-header {
 }

@@ -5,8 +5,9 @@ import "./select-items.scss";
 
 // максимум - 10 гостей
 const GUEST = {
+  //пока не привязалась к минимуму/максимуму гостей
   maxItems: 10,
-  /*  minItems: 1, */
+  minItems: 1,
   selectionText: "гость",
   textPlural: "гостя",
   controls: {
@@ -22,9 +23,8 @@ const GUEST = {
 };
 
 const AMENTIES = {
-  /*не работает!!*/
   maxItems: 10,
-  /*   minItems: 1, */
+  minItems: 1,
   selectionText: "item",
   textPlural: "items",
   controls: {
@@ -58,7 +58,6 @@ const amenitiesCounter = [
 $().ready(() => {
   let guestList = document.querySelectorAll("#guest");
 
-
   for (let i = 0; i < guestList.length; i++) {
     let currGuestID = `${guestID}-${i}`;
     $(guestList[i]).attr("id", currGuestID);
@@ -82,13 +81,17 @@ $().ready(() => {
 
     closedDropdown(amenitiesList[i]);
   }
+
+  let incButtonList = document.querySelectorAll(".button-increment");
+  for (let i = 0; i < incButtonList.length; i++) {
+    $(incButtonList[i]).addClass("btn_visible");
+  }
 });
 
 const closedDropdown = elem => {
-/*   debugger; */
   $(document).mouseup(function(e) {
     // событие клика по веб-документу
-    if ( 
+    if (
       !$(elem).is(e.target) && // если клик был не по нашему блоку
       $(elem).has(e.target).length === 0
     ) {
@@ -156,16 +159,14 @@ const changeCounter = (id, e) => {
     /*  return item; */
   );
 
-  if (elemClass.includes("button-increment")) {
+  if (elemClass.includes("button-increment") && currElem.amount < 10) {
     currElem.amount++;
-  } else {
+  } else if (elemClass.includes("button-decrement") && currElem.amount > 0) {
     currElem.amount--;
   }
 
   let currCounter = $(`[data-id=${elem}]`).find(".counter");
   currCounter.html(currElem.amount);
-  console.log(guestCounter);
-  console.log(amenitiesCounter);
 };
 
 const showButtonClear = id => {

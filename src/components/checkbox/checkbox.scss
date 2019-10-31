@@ -40,8 +40,14 @@
     color: $dark;
   }
 }
-.ui-button.my_checkbox {
-  padding: 0 0 13px 0;
+.ui-button.my_checkbox.checkbox-label {
+  padding: 0 0 15px 0;
+  &_rich {
+    padding: 0 0 13px 0;
+  }
+  &:last-of-type {
+    padding: 0;
+  }
 }
 .ui-checkboxradio-label.my_checkbox .ui-icon-background {
   width: 20px;
@@ -112,15 +118,17 @@
   &_bold {
     font-weight: 700;
     color: $dark-75;
+    line-height: 17px;
+    margin-bottom: 6px;
   }
 }
 
 .checkbox-desc {
   display: block;
-  width: 85%;
-  margin: -1px 0 0 0;
+  /*   width: 85%; */
+  max-width: 236px;
+  margin: 0;
   @include text($font, 12px, 400, $dark-50);
   line-height: 14px;
   text-align: left;
-  margin-top: 2px;
 }
