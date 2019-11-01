@@ -15,6 +15,7 @@ include ../../../components/like-button/like-button
 include ../../../components/room-card/room-card
 include ../../../components/rate-button/rate-button
 include ../../../components/calendar/calendar
+include ../../../components/pagination/pagination
 
 
 -
@@ -142,4 +143,7 @@ html
                         
                     div(class="formElements__item item__wrap")
                         +calendar({type:"masked",title:"masked text field"}) 
+                    div(class="formElements__item item__wrap")
+                        +pagination()    
+
                     

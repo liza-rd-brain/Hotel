@@ -40,6 +40,8 @@
     "lightslider": "^1.1.6",
     "lodash": "^4.17.14",
     "normalize.css": "^8.0.1",
+    "paginationjs": "^2.1.4",
+    "simple-pagination.js": "^1.6.0",
     "svg-url-loader": "^3.0.2"
   }
 }

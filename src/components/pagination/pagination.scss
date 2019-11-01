@@ -1,0 +1,88 @@
+@import "../../variables";
+@import "../../mixin";
+
+$green-50: rgba($green, 0.5);
+$blue-light-50: rgba($blue-light, 0.5);
+$gradient-green: linear-gradient(180deg, $green 0%, $blue-light 100%);
+$gradient-green-invert: linear-gradient(180deg, $blue-light 0%, $green 100%);
+$gradient-green-50: linear-gradient(180deg, $green-50 0%, $blue-light-50 100%);
+$gradient-green-50-invert: linear-gradient(
+  180deg,
+  $blue-light-50 0%,
+  $green-50 100%
+);
+
+$purple-50: rgba($purple, 0.5);
+$blue-50: rgba($blue, 0.5);
+$gradient-purple: linear-gradient(180deg, $purple 0%, $blue 100%);
+$gradient-purple-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
+
+.pagination {
+}
+
+.simple-pagination ul .disabled .current.prev,
+.current.next {
+  visibility: hidden;
+  padding: 9px 0;
+}
+
+.page-link {
+  &.prev,
+  &.next {
+    /*  height: 30px; */
+    background-repeat: no-repeat;
+    background-image: url("../../assets/img/arrow/arrow.svg"), $gradient-green;
+    background-position: center center;
+    &:hover {
+      background: initial;
+      background-image: url("../../assets/img/arrow/arrow.svg"),
+        $gradient-green-50;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  &.prev {
+    transform: rotate(180deg);
+    background-image: url("../../assets/img/arrow/arrow.svg"),
+      $gradient-green-invert;
+    background-position: center center;
+    &:hover {
+      background-image: url("../../assets/img/arrow/arrow.svg"),
+        $gradient-green-50-invert;
+    }
+  }
+}
+
+.light-theme {
+  & a,
+  span {
+    box-shadow: none;
+    border: none;
+    background: none;
+    text-decoration: none;
+    border-radius: 22px;
+    width: 40px;
+    height: 40px;
+    padding: 9px 0;
+    @include text($font, 12px, 400, $dark);
+    text-indent: -3px;
+    margin: 0;
+
+    &:hover {
+      background: $gradient-purple-50;
+    }
+  }
+  & span.ellipse {
+    @include text($font, 12px, 400, $dark-50);
+    &:hover {
+      background: unset;
+    }
+  }
+  & .current {
+    background: $gradient-purple;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+  }
+}
