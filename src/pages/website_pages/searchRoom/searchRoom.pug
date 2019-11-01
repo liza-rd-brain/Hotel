@@ -8,6 +8,7 @@ include ../../../components/checkbox/checkbox
 include ../../../components/dropdown-list/dropdown-list
 include ../../../components/room-card/room-card
 include ../../../components/calendar/calendar
+include ../../../components/pagination/pagination
 
 
 -
@@ -70,8 +71,9 @@ html
                 +dropdown-list(checkboxList)
                 
             .column-right   
-                span(class="search-room__title") Номера, которые мы для вас подобрали
-                div(class="search-room__items ")
+                h1(class="search-room__title") Номера, которые мы для вас подобрали
+                div(class="search-room__items")
                     each val in roomCardList
                         +room-card(val)
+                +pagination()        
         +footer-prod()

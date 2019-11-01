@@ -13,7 +13,7 @@ $().ready(() => {
     .first();
 
   $(function() {
-    $(".pagination").pagination({
+    $(".pagination__item").pagination({
       items: 20,
       itemsOnPage: 10,
       pages: 15,

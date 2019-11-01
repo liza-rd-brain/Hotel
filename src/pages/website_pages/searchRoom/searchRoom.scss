@@ -12,13 +12,14 @@
   }
   &__title {
     display: block;
-    @include h1-text();
+    /*  @include h1-text(); */
     letter-spacing: 0.7px;
+    margin-bottom: 20.5px;
   }
   &__items {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20.5px;
+    margin-bottom: 40.5px;
     & > * {
       margin-right: 12px;
       margin-bottom: 22px;
@@ -45,10 +46,16 @@
 
   & .column-right {
     width: 834px;
+    display: flex;
+    flex-direction: column;
+    & > :nth-child(3) {
+      margin-right: 15px;
+      align-self: center;
+    }
   }
 
   .checkbox__title {
-    margin-bottom: 18px;
+    margin-bottom: 22px;
     line-height: 14px;
   }
 
