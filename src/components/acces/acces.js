@@ -20,10 +20,23 @@ for (let i = 0; i < signInList.length; i++) {
 }
 
 function toggleHidden(i) {
+  console.log(signInList[i]);
+  debugger;
   $(signInList[i])
     .find(".acces__signIn")
     .toggleClass("hidden");
   $(signInList[i])
     .find(".acces__signUp")
     .toggleClass("hidden");
+
+  if ($(signInList[i]).hasClass("acces_type_signUp")) {
+    debugger;
+    $(signInList[i])
+      .removeClass("acces_type_signUp")
+      .addClass("acces_type_signIn");
+  } else {
+    $(signInList[i])
+      .removeClass("acces_type_signIn")
+      .addClass("acces_type_signUp");
+  }
 }

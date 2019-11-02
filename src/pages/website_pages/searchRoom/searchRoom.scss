@@ -7,8 +7,9 @@
     margin-right: 60px;
   }
   &__wrap {
-    margin: 30px 140px 70px 140px;
+    padding: 30px 140px 70px 140px;
     display: flex;
+    border-bottom: 1px solid $dark-25;
   }
   &__title {
     display: block;

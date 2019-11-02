@@ -12,8 +12,11 @@ mixin acces({isLogged})
         const signInClassName=isLogged?
         "acces__signIn"
         :"acces__signIn hidden"
+         const accesClassName=isLogged?
+        "acces acces_type_signIn"
+        :"acces acces_type_signUp"
 
-    div(class="acces acces__wrap")
+    div(class=accesClassName)
         div(class=signUpClassName)
             h1(class="acces__title") Регистрация аккаунта
             form(class="acces__form")

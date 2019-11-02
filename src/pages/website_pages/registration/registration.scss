@@ -11,15 +11,23 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    /*     padding: 30px 0; */
     background-repeat: no-repeat;
     background-position: 0px -70px;
     background-size: auto auto;
     background-color: rgba(17, 17, 17, 0.7);
     background-image: url(../../../assets/img/registration/registration_background.png);
-    min-height: 720px;
-    & > .acces__wrap {
+    & > .acces {
       margin: 0 auto;
+      &_type {
+        &_signIn {
+          margin-top: 173px;
+          margin-bottom: 173px;
+        }
+        &_signUp {
+          margin-top: 28px;
+          margin-bottom: 27px;
+        }
+      }
     }
   }
 
