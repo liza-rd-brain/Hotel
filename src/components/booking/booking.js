@@ -23,3 +23,7 @@ $().ready(() => {
     $(".calculation__desc")[i].innerText = testNumber;
   }
 });
+
+$("form").submit(function(e) {
+  e.preventDefault();
+});

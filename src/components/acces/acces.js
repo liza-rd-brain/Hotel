@@ -40,3 +40,8 @@ function toggleHidden(i) {
       .addClass("acces_type_signUp");
   }
 }
+
+
+$("form").submit(function(e) {
+  e.preventDefault();
+});

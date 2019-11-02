@@ -11,3 +11,9 @@ import "../../../components/checkbox/checkbox";
 import "../../../components/dropdown-list/dropdown-list";
 import "../../../components/calendar/calendar";
 import "../../../components/pagination/pagination";
+
+$().ready(() => {
+  $(".search-room__form").submit(function(e) {
+    e.preventDefault();
+  });
+});
