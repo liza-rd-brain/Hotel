@@ -2,6 +2,7 @@ import "./booking.scss";
 import "../button/button";
 import "../calendar/calendar";
 import "../room-title/room-title";
+import "../select-items/select-items";
 
 $().ready(() => {
   let numbers = $(".calculation__price");
@@ -21,6 +22,4 @@ $().ready(() => {
       .replace(/\d{3,}/g, match => match + "\u20bd");
     $(".calculation__desc")[i].innerText = testNumber;
   }
-
-
 });

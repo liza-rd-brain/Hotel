@@ -1,0 +1,28 @@
+include ../../../components/header-prod/header-prod.pug
+include ../../../components/footer/footer-prod.pug
+include ../../../components/booking/booking
+include ../../../components/icon-list/icon-list
+
+-
+    const ROOM_TEXT_LIST=[
+        {type:"comfort",title:"Комфорт", desc:"Шумопоглощающие стены"},
+        {type:"convenience",title:"Удобство", desc:"Окно в каждой из спален"},
+        {type:"cosiness",title:"Уют", desc:"Номер оснащён камином"}]
+
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        title
+            roomDetails
+    body 
+        div(class="roomDetails roomDetails__wrap")
+            +header-prod()
+            main(class="roomDetails__main")
+                div(class="roomDetails__column roomDetails__column_left")
+                    h2(class="roomDetails__title") Сведения о номере
+                    +icon-list(ROOM_TEXT_LIST)
+                div(class="roomDetails__column roomDetails__column_right")
+                    +booking({})
+            +footer-prod() 

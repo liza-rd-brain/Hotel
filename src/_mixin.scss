@@ -5,8 +5,6 @@
   color: $color;
 }
 
-//может line-height тоже включить в миксин?!
-
 @mixin h1-text {
   @include text($font-eng, 24px, 700, $dark);
   /* line-height: 30px; */
@@ -35,11 +33,15 @@
 
 h1 {
   margin: 0;
-  @include text($font-eng, 24px, 700, $dark);
+  @include h1-text();
   line-height: 30px;
   letter-spacing: 1.2px;
 }
 
+h2 {
+  @include h2-text();
+  margin: 0;
+}
 
 h3 {
   @include h3-text();

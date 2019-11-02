@@ -37,16 +37,7 @@ include ../../../components/pagination/pagination
   
     //- const addAmenitiesTotal={select:selectAddAmenities,items:addAmenitiesList}   
 
-    const addAmenitiesList={items:[{caption:"завтрак"},
-                            {caption:"письменный стол"},
-                            {caption:"стул для кормления"},
-                            {caption:"кроватка"},
-                            {caption:"телевизор"},
-                            {caption:"шампунь"},
-                            {caption:"телевизор"},
-                            ],
-                            key:"addAmenitiesList"} 
-    const checkboxList={text:"дополнительные удобства",type:"checkbox-list",item:addAmenitiesList}                                              
+    
 
 
 doctype html
@@ -68,9 +59,9 @@ html
                 h3(class="checkbox-list__title") доступность
                 +checkbox(availability)
                 +select-amenities(selectAmenities)
-                +dropdown-list(checkboxList)
+                +dropdown-list({})
                 
-            .column-right   
+            div(class="column-right")
                 h1(class="search-room__title") Номера, которые мы для вас подобрали
                 div(class="search-room__items")
                     each val in roomCardList

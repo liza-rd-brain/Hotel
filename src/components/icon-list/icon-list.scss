@@ -1,0 +1,35 @@
+@import "../../variables";
+@import "../../mixin";
+.icon-list {
+  width: 280px;
+  &__item {
+    display: flex;
+    padding-bottom: 22px;
+    padding-top: 23px;
+    border-bottom: 1px solid $dark-10;
+    padding-left: 5px;
+    &:nth-child(3) {
+      border-bottom: none;
+    }
+    &:nth-child(1) {
+      padding-top: 0px;
+      & .icon-list__icon{
+        margin-right: 14px;
+      }
+    }
+
+  }
+  &__icon {
+    margin-right: 18px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    @include body-text();
+  }
+  &__title {
+    font-weight: 800;
+    margin-bottom: 7px;
+  }
+}

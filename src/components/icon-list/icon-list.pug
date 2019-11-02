@@ -1,0 +1,15 @@
+
+mixin icon-list(list)
+    -
+        const TEXT_LIST=[
+            {type:"comfort",title:"Комфорт", desc:"Шумопоглощающие стены"},
+            {type:"convenience",title:"Удобство", desc:"Окно в каждой из спален"}]
+        const textList = list || TEXT_LIST
+
+    div(class="icon-list")    
+        - for(let i=0;i<textList.length;i++)
+            div(class="icon-list__item") 
+                img(class="icon-list__icon" src=`../assets/img/icon-list/${textList[i].type}.svg`)
+                p(class="icon-list__text")
+                    span(class="icon-list__title") #{textList[i].title}
+                    span(class="icon-list__desc") #{textList[i].desc} 

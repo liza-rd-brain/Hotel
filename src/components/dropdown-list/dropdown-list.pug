@@ -1,9 +1,22 @@
 include ../checkbox/checkbox.pug
+-
+    const addAmenitiesList={items:[{caption:"завтрак"},
+                        {caption:"письменный стол"},
+                        {caption:"стул для кормления"},
+                        {caption:"кроватка"},
+                        {caption:"телевизор"},
+                        {caption:"шампунь"},
+                        {caption:"телевизор"},
+                        ],
+                        key:"addAmenitiesList"} 
+    const checkboxList={text:"дополнительные удобства",item:addAmenitiesList}                                              
 
-mixin dropdown-list({text,type,item})
+mixin dropdown-list({text,itemList})
+    -
+        text=text||checkboxList.text
+        itemList=itemList||checkboxList.item
     div(for="dropdown-list" class="dropdown-list")
         div(class="dropdown-list__select" id="dropdown-list")
             h3(class="dropdown-list__title") #{text}
         div(class="dropdown-list__options")
-            if type==="checkbox-list"
-                +checkbox(item)          
+            +checkbox(itemList)        

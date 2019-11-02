@@ -4,6 +4,7 @@
 .formElements {
   width: 1440px;
   display: flex;
+  justify-content: space-around;
   /*   pointer-events: none; */
 
   &__wrap {
@@ -37,14 +38,10 @@
 .test {
   min-height: 50px;
   background-color: gold;
-  position: relative
-    /* flex-direction: column; */;
+  position: relative /* flex-direction: column; */;
 }
 
 //c целью убрать флексбокс
 .item__wrap {
   display: block;
 }
-
-
-

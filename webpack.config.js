@@ -17,7 +17,10 @@ const common = {
     index: PATHS.source + "/index.js",
     landing: PATHS.source + "/pages/website_pages/landing/landing.js",
     searchRoom: PATHS.source + "/pages/website_pages/searchRoom/searchRoom.js",
-    registration:PATHS.source + "/pages/website_pages/registration/registration.js",
+    registration:
+      PATHS.source + "/pages/website_pages/registration/registration.js",
+    roomDetails:
+      PATHS.source + "/pages/website_pages/roomDetails/roomDetails.js",
     cards: PATHS.source + "/pages/uikit/cards/cards.js",
     colorsType: PATHS.source + "/pages/uikit/colorsType/colorsType.js",
     formElements: PATHS.source + "/pages/uikit/formElements/formElements.js",
@@ -44,7 +47,14 @@ const common = {
     new HtmlWebpackPlugin({
       filename: "registration/index.html",
       chunks: ["registration"],
-      template: PATHS.source + "/pages/website_pages/registration/registration.pug"
+      template:
+        PATHS.source + "/pages/website_pages/registration/registration.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "roomDetails/index.html",
+      chunks: ["roomDetails"],
+      template:
+        PATHS.source + "/pages/website_pages/roomDetails/roomDetails.pug"
     }),
     new HtmlWebpackPlugin({
       filename: "cards/index.html",

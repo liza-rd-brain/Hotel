@@ -16,6 +16,7 @@ include ../../../components/room-card/room-card
 include ../../../components/rate-button/rate-button
 include ../../../components/calendar/calendar
 include ../../../components/pagination/pagination
+include ../../../components/icon-list/icon-list
 
 
 -
@@ -47,19 +48,17 @@ include ../../../components/pagination/pagination
                                 key:"availability",
                                 isRich:true}
 
-    const addAmenitiesList={items:[{caption:"завтрак"},{caption:"письменный стол"}],
-                               key:"amenitiesList"}
+    //- const addAmenitiesList={items:[{caption:"завтрак"},{caption:"письменный стол"}],
+    //-                            key:"amenitiesList"}
 
-    const selectAddAmenities={id:"additional", 
-                        size:"medium",
-                        items:false,
-                        title:"Дополнительные удобства",hasControlButtons:false,hasMenu:false}
+    //- const selectAddAmenities={id:"additional", 
+    //-                     size:"medium",
+    //-                     items:false,
+    //-                     title:"Дополнительные удобства",hasControlButtons:false,hasMenu:false}
 
-    const addAmenitiesTotal={select:selectAddAmenities,items:addAmenitiesList}    
+    //- const addAmenitiesTotal={select:selectAddAmenities,items:addAmenitiesList}    
 
-   
-
-    const checkboxList={text:"expandable checkbox list",type:"checkbox-list",item:addAmenitiesList}
+    //- const checkboxList={text:"expandable checkbox list",type:"checkbox-list",item:addAmenitiesList}
                  
 
 
@@ -87,63 +86,51 @@ html
                     div(class="formElements__item")
                         h3(class="formElements__text") Text Field
                         +textField(textField_big,"Email")
-
                     div(class="formElements__item")
-                        //- h3(class="formElements__text") Select Guest
                         +select-items(selectGuest)
-
-                    div(class="formElements__item")
-                        //- h3(class="formElements__text") Select Amenities
-                        +select-items(roomAmenities)    
-                   
-                    div(class="formElements__item")
-                        // на самом деле тут будет select-item_masked
-                        // с поведением выпадания календаря -?!
-                        h3(class="formElements__text") masked text field
-                        +textField(textField_big,"ДД.ММ.ГГГГ")
-                         // h3(class="formElements__text") Dropdown
-
+                    div(class="formElements__item item__wrap")
+                        +calendar({type:"masked",title:"masked text field"})     
+                    div(class="formElements__item item__wrap")
+                        +calendar({type:"group-range",titleGroup:["date Dropdown","date Dropdown"]}) 
+                    div(class="formElements__item item__wrap")
+                        +calendar({type:"filter-range",title:"filter date dropdown"})  
                     div(class="formElements__item")
                         h3(class="formElements__text") subscription text field
                         +textField(textField_medium_arrow,"Email")
                     div(class="formElements__item")
-                        +button({isColored:true,size:"small",title:"click me",})  
-                        +button({isBordered:true,size:"small",title:"click me",isTextColored:true})         
-                        +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
-                        +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})    
-    
-                    div(class="formElements__item item__wrap")   
-                        +range-slider({})  
-
+                        +select-items(roomAmenities)
                     div(class="formElements__item item__wrap")
-                        +checkbox({})    
+                        +dropdown-list({}) 
+                    div(class="formElements__item item__wrap")
+                        +icon-list()           
+
+                        
+                   
+                div(class="formElements__column")
+                    div(class="formElements__item item__wrap")
+                        +checkbox({})  
+                    div(class="formElements__item item__wrap")
+                        +radio-button()
+                    div(class="formElements__item item__wrap")
+                        +toggle() 
+                    div(class="formElements__item item__wrap")
+                        +like-button("post_1",12)                 
 
                     div(class="formElements__item item__wrap")
                         +checkbox(availability)
+                    //- div(class="formElements__item item__wrap")
+                    //-     +calendar({type:"static-range"}) 
 
-                    div(class="formElements__item item__wrap")
-                        +radio-button()    
-
-                    div(class="formElements__item item__wrap")
-                        +toggle()  
-
-                    div(class="formElements__item item__wrap")
-                        +like-button("post_1",12)
-
-                    div(class="formElements__item item__wrap")
-                        +dropdown-list(checkboxList)
-                        
                    
-                    div(class="formElements__item item__wrap")
-                        +calendar({type:"group-range",titleGroup:["date Dropdown","date Dropdown"]}) 
-                    div(class="formElements__item item__wrap")
-                        +calendar({type:"static-range"})
-                    div(class="formElements__item item__wrap")
-                        +calendar({type:"filter-range",title:"filter date dropdown"})
-                        
-                    div(class="formElements__item item__wrap")
-                        +calendar({type:"masked",title:"masked text field"}) 
-                    div(class="formElements__item item__wrap")
-                        +pagination()    
-
                     
+
+                div(class="formElements__column") 
+                    div(class="formElements__item item__wrap")   
+                        +range-slider({})  
+                    div(class="formElements__item")
+                        +button({isColored:true,size:"small",title:"click me",})  
+                        +button({isBordered:true,size:"small",title:"click me",isTextColored:true})         
+                        +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
+                        +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})  
+                    div(class="formElements__item item__wrap")
+                        +pagination()                       
