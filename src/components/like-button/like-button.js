@@ -1,25 +1,37 @@
 import "./like-button.scss";
 /* 
 $(".like-button").on("click", console.log("клик")); */
-let button = $(".like-button");
+/* let button = $(".like-button"); */
 let counterEl = $(".like-button__amount");
 let counterText = $(counterEl).html();
 
-$(document)
-  .find(button)
-  .on("click", function(e) {
-    $(counterEl).toggleClass("amount-inc");
-    changeAmount();
-  });
+var buttons = document.querySelectorAll(".like-button");
 
-//можно продумать также ситуацию, если нет ни одного лайка = сердце по середине
-// и анимация с появлением как вк
-const changeAmount = () => {
-  if ($(counterEl).hasClass("amount-inc")) {
+for (let i = 0; i < buttons.length; i++) {
+  debugger;
+  $(buttons[i]).on("click", function(e) {
+    $(buttons[i])
+      .find(counterEl)
+      .toggleClass("amount-inc");
+    changeAmount(i);
+  });
+}
+
+const changeAmount = i => {
+  if (
+    $(buttons[i])
+      .find(counterEl)
+      .hasClass("amount-inc")
+  ) {
     counterText++;
-    $(counterEl).html(counterText);
+
+    $(buttons[i])
+      .find(counterEl)
+      .html(counterText);
   } else {
     counterText--;
-    $(counterEl).html(counterText);
+    $(buttons[i])
+      .find(counterEl)
+      .html(counterText);
   }
 };

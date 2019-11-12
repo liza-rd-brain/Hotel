@@ -17,6 +17,8 @@ include ../../../components/rate-button/rate-button
 include ../../../components/calendar/calendar
 include ../../../components/pagination/pagination
 include ../../../components/icon-list/icon-list
+include ../../../components/pie-chart/pie-chart
+include ../../../components/review/review
 
 
 -
@@ -114,7 +116,9 @@ html
                     div(class="formElements__item item__wrap")
                         +toggle() 
                     div(class="formElements__item item__wrap")
-                        +like-button("post_1",12)                 
+                        +like-button("post_1",12) 
+                        +like-button("post_2",12) 
+                                    
 
                     div(class="formElements__item item__wrap")
                         +checkbox(availability)
@@ -133,4 +137,8 @@ html
                         +button({size:"small",title:"click me",isTextButton:true,isTextColored:true}) 
                         +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})  
                     div(class="formElements__item item__wrap")
-                        +pagination()                       
+                        +pagination()  
+                    div(class="formElements__item item__wrap")
+                        +pie-chart()   
+                    div(class="formElements__item item__wrap")
+                        //- +review()                        

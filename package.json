@@ -29,6 +29,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.4.1",
     "air-datepicker": "^2.2.3",
+    "chart.js": "^2.9.2",
     "easydropdown": "^4.1.1",
     "flatpickr": "^4.6.2",
     "ion-rangeslider": "^2.3.0",

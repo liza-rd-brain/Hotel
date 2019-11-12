@@ -1,7 +1,3 @@
-import "./formElements.scss";
-import "../../../index.scss";
-import "normalize.css";
-
 import "../../../components/textField/textField";
 import "../../../components/logo-icon/logo-icon";
 import "../../../components/arrow/arrow";
@@ -19,3 +15,9 @@ import "../../../components/rate-button/rate-button";
 import "../../../components/calendar/calendar";
 import "../../../components/pagination/pagination";
 import "../../../components/icon-list/icon-list";
+import "../../../components/pie-chart/pie-chart";
+import "../../../components/review/review";
+
+import "./formElements.scss";
+import "../../../index.scss";
+import "normalize.css";
