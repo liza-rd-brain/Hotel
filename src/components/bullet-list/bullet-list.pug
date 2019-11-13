@@ -1,0 +1,10 @@
+mixin bullet-list(list)
+    -
+        const BULL_LIST=["Нельзя с питомцами","Без вечеринок и мероприятий",
+        "Время прибытия — после 13:00,&nbsp; а выезд до 12:00"
+        ]
+        const bulletList=list||BULL_LIST
+
+    div(class="bullet-list")
+        -for(let i=0;i<bulletList.length;i++)
+            span(class="bullet-list__item") !{bulletList[i]}

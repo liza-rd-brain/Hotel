@@ -19,6 +19,7 @@ include ../../../components/pagination/pagination
 include ../../../components/icon-list/icon-list
 include ../../../components/pie-chart/pie-chart
 include ../../../components/review-list/review-list
+include ../../../components/bullet-list/bullet-list
 
 
 -
@@ -139,4 +140,7 @@ html
                     div(class="formElements__item item__wrap")
                         +pie-chart()   
                     div(class="formElements__item item__wrap")
-                        +review-list()                        
+                        +review-list()
+                    div(class="formElements__item item__wrap")
+                        h3(class="formElements__text text__bullet-list") bullet list
+                        +bullet-list()                                                   

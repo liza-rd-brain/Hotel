@@ -1,0 +1,24 @@
+@import "../../variables";
+@import "../../mixin";
+
+.bullet-list {
+  display: flex;
+  flex-direction: column;
+  @include body-text();
+  line-height: 24px;
+  width: 271px;
+  margin-left: 21px;
+  &__item {
+    margin-bottom: 10px;
+    position: relative;
+    width: 87%;
+    &::before {
+      content: "";
+      position: absolute;
+      border: 5px solid $dark-25;
+      border-radius: 10px;
+      top: 6px;
+      left: -20px;
+    }
+  }
+}

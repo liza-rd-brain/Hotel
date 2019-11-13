@@ -26,6 +26,7 @@
     @include h3-text();
     margin: 0 0 5px 0;
     text-transform: uppercase;
+    
 
     &_desc {
       margin-left: auto;
@@ -44,4 +45,10 @@
 //c целью убрать флексбокс
 .item__wrap {
   display: block;
+}
+
+.text{
+  &__bullet-list{
+    margin-bottom: 16px;
+  }
 }
