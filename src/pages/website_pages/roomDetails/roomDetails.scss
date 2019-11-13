@@ -18,6 +18,13 @@
     background-size: auto auto;
   }
 
+  &__counter {
+    @include text($font, 14px, 400, $dark-50);
+    line-height: 14px;
+    margin-top: 9px;
+    letter-spacing: 0.3px;
+  }
+
   &__column {
     margin-top: 70px;
     &_left {
@@ -26,9 +33,18 @@
     &_right {
     }
   }
-  &__title{
+  &__title {
     margin-bottom: 20px;
     line-height: 27px;
     letter-spacing: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    &:nth-of-type(2){
+      margin-bottom: 18px;
+      letter-spacing: 0.7px;
+    }
+  }
+  & .icon-list {
+    margin-bottom: 34px;
   }
 }

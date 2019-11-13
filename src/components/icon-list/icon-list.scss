@@ -10,14 +10,14 @@
     padding-left: 5px;
     &:nth-child(3) {
       border-bottom: none;
+      padding-bottom: 0px;
     }
     &:nth-child(1) {
       padding-top: 0px;
-      & .icon-list__icon{
+      & .icon-list__icon {
         margin-right: 14px;
       }
     }
-
   }
   &__icon {
     margin-right: 18px;

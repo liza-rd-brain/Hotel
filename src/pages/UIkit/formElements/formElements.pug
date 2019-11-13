@@ -18,7 +18,7 @@ include ../../../components/calendar/calendar
 include ../../../components/pagination/pagination
 include ../../../components/icon-list/icon-list
 include ../../../components/pie-chart/pie-chart
-include ../../../components/review/review
+include ../../../components/review-list/review-list
 
 
 -
@@ -116,14 +116,12 @@ html
                     div(class="formElements__item item__wrap")
                         +toggle() 
                     div(class="formElements__item item__wrap")
-                        +like-button("post_1",12) 
-                        +like-button("post_2",12) 
-                                    
-
+                        +like-button({item:"post_1",amount:12}) 
+                        +like-button({item:"post_2",amount:12,isChecked:true}) 
                     div(class="formElements__item item__wrap")
                         +checkbox(availability)
-                    //- div(class="formElements__item item__wrap")
-                    //-     +calendar({type:"static-range"}) 
+                            //- div(class="formElements__item item__wrap")
+                            //-     +calendar({type:"static-range"}) 
 
                    
                     
@@ -141,4 +139,4 @@ html
                     div(class="formElements__item item__wrap")
                         +pie-chart()   
                     div(class="formElements__item item__wrap")
-                        //- +review()                        
+                        +review-list()                        

@@ -16,7 +16,7 @@ import "../../../components/calendar/calendar";
 import "../../../components/pagination/pagination";
 import "../../../components/icon-list/icon-list";
 import "../../../components/pie-chart/pie-chart";
-import "../../../components/review/review";
+import "../../../components/review-list/review-list";
 
 import "./formElements.scss";
 import "../../../index.scss";

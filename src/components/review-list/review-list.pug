@@ -1,0 +1,20 @@
+include ../like-button/like-button
+
+mixin review-list(list)
+    -
+        const REV_LIST=[
+            {id:"murad",name:"Мурад Сарафанов",date:"5 дней назад",isChecked:true, desc:"Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+            likeButton:{item:"murad",amount:12,isChecked:true}}]
+        const reviewList = list || REV_LIST
+    
+    div(class="review-list")
+        - for(let i=0;i<reviewList.length;i++)
+            div(class="review-list__review-item")
+                div(class="review-header")
+                    img(class="review-header__img" src=`../assets/img/photo/${reviewList[i].id}.png` width=48 height=48)
+                    p(class="review-header__text")
+                        span(class="review-header__name") #{reviewList[i].name}
+                        span(class="review-header__date") #{reviewList[i].date}
+                div(class="review-body")
+                    +like-button(reviewList[i].likeButton)
+                    p(class="review-body__desc") #{reviewList[i].desc}

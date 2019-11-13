@@ -1,8 +1,15 @@
 //-- может принимать текущее количество item-ов, лайков
 //-- и что конкретно лайкает
-mixin like-button(item,amount)
-    label(for=`like__${item}` class="like-label")
-            input(type="checkbox" name="like" id=`like__${item}` class="like")
-            div(class="like-button")
-                div(class="like-button__img")
-                span(class="like-button__amount") #{amount} 
+mixin like-button({item,amount,isChecked})
+
+	-
+		const defaultChecked = isChecked ? true:false
+		let buttonAmount="like-button__amount"
+		buttonAmount = isChecked ? buttonAmount +" amount-inc":buttonAmount
+				
+
+	label(for=`like__${item}` class="like-label")
+			input(type="checkbox" name="like" id=`like__${item}` class="like" checked=defaultChecked )    
+			div(class="like-button")
+					div(class="like-button__img")
+					span(class=`${buttonAmount}`) #{amount}        

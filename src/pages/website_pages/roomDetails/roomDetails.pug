@@ -2,12 +2,18 @@ include ../../../components/header-prod/header-prod.pug
 include ../../../components/footer/footer-prod.pug
 include ../../../components/booking/booking
 include ../../../components/icon-list/icon-list
+include ../../../components/review-list/review-list
 
 -
     const ROOM_TEXT_LIST=[
         {type:"comfort",title:"Комфорт", desc:"Шумопоглощающие стены"},
         {type:"convenience",title:"Удобство", desc:"Окно в каждой из спален"},
         {type:"cosiness",title:"Уют", desc:"Номер оснащён камином"}]
+
+    const ROOM_REV_LIST=[
+            {id:"murad",name:"Мурад Сарафанов",date:"5 дней назад", desc:"Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",likeButton:{item:"murad",amount:12,isChecked:true}},
+            {id:"patricia",name:"Патрисия Стёклышкова",date:"Неделю назад",desc:"Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",likeButton:{item:"patricia",amount:2,isChecked:false}}]
+
 
 doctype html
 html
@@ -23,6 +29,10 @@ html
                 div(class="roomDetails__column roomDetails__column_left")
                     h2(class="roomDetails__title") Сведения о номере
                     +icon-list(ROOM_TEXT_LIST)
+                    div(class="roomDetails__title")
+                        h2(class="roomDetails__caption") Отзывы посетителей номера
+                        span(class="roomDetails__counter") #{ROOM_REV_LIST.length} отзыва
+                    +review-list(ROOM_REV_LIST)
                 div(class="roomDetails__column roomDetails__column_right")
                     +booking({})
             +footer-prod() 
