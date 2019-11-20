@@ -1,31 +1,41 @@
 import "./pie-chart.scss";
-import Chart from "chart.js";
+import Charts from "chart.js";
 /* var myChart = new Chart(ctx, {...}); */
 
-var ctx = document.getElementById("myChart");
+var canvas = document.getElementById("myCharts");
+var ctx = canvas.getContext("2d");
 var innerText = "привет";
-var myChart = new Chart(ctx, {
+
+var gradient = ctx.createLinearGradient(0, 0, 0, 360);
+gradient.addColorStop(0, "#FFE39C");
+gradient.addColorStop(1, "#ffba9c");
+var gradient_2 = ctx.createLinearGradient(0, 360, 0, 0);
+gradient_2.addColorStop(0, "#6FCF97");
+gradient_2.addColorStop(1, "#66D2EA");
+var gradient_3 = ctx.createLinearGradient(0, 0, 0, 360);
+gradient_3.addColorStop(0, "#BC9CFF");
+gradient_3.addColorStop(1, "#8BA4F9");
+
+//сэмулировать с самого начала наведение на элемент удовлетворительно
+//убрать unhover c элементов
+//посмотреть плагин, который центрирует надпись
+var myCharts = new Charts(canvas, {
   type: "doughnut",
   data: {
-    labels: ["Red", "Blue", "Yellow"],
+    labels: ["Хорошо", "Удовлетворительно", "Великолепно", "Разочарован"],
     datasets: [
       {
         /* label: "# of Votes", */
-        data: [25, 25, 50],
-        hoverBorderWidth: 30,
-        borderWidth: "20px",
-        radius: 1,
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)"
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)"
-        ],
-        borderWidth: 1
+        data: [25, 25, 50, 0],
+        /* borderWidth: 20, */
+       /*  radius: 1, */
+        //black поменять на градиент
+        backgroundColor: [gradient_3, gradient_2, gradient, "black"],
+        // hoverBorderColor: [gradient_3, gradient_2, gradient],
+        hoverBorderWidth: [50,50,50],
+        borderWidth:[1,1,1],
+        //не получается добиться нужно ширины
+        borderAlign: "inner"
       }
     ]
   },
@@ -33,7 +43,7 @@ var myChart = new Chart(ctx, {
     animation: {
       animateRotate: true
     },
-    events: ["click"],
+    /* events: ["click"], */
     layout: {
       padding: {
         left: 0,
@@ -43,26 +53,38 @@ var myChart = new Chart(ctx, {
       }
     },
     legend: {
-      display: false
+      display: true,
+      position: "right",
+      align: "center",
+      labels: {
+        padding: 14,
+        /*  fontColor: "rgb(255, 99, 132)" */
+        boxWidth: 12,
+        usePointStyle: true
+        /*    style: "point" */
+      },
+     /*  generateLabels: {
+        pointStyle: "circle"
+      } */
     },
-    title: {
-      display: true
-    },
+
     tooltips: {
+      enabled: false,
       mode: "index"
     },
     elements: {
       customCutout: true
     },
     cutoutPercentage: 92
+
     /*   */
   },
   plugins: [
     {
       id: "my-plugin",
       afterDraw: function(chart, option) {
-        var innerText = myChart.active
-          ? myChart.active[0]._model.label
+        var innerText = myCharts.active
+          ? myCharts.active[0]._model.label
           : "test";
 
         chart.ctx.fillStyle = "black";
@@ -71,8 +93,8 @@ var myChart = new Chart(ctx, {
         chart.ctx.font = "17px Arial";
         chart.ctx.fillText(
           innerText,
-          /* myChart.tooltip._lastActive, */
-          /*  myChart.active[0]._model.label || "test", */
+          /*  myChart.tooltip._lastActive,
+          myChart.active[0]._model.label || "test", */
           chart.canvas.width / 2,
           chart.canvas.height / 2
         );
@@ -81,28 +103,6 @@ var myChart = new Chart(ctx, {
   ]
 });
 
-document.getElementById("myChart").onclick = function(evt) {
-  debugger;
-/*   myChart.options.rotation = myChart.options.rotation + Math.PI / 2; */
-
-  /*  var activePoints = myChart.getElementsAtEvent(evt);
-  var firstPoint = activePoints[0];
-  var label = myChart.data.labels[firstPoint._index];
-  var value =
-    myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
-  alert(label + ": " + value); */
-};
-
-/* myChart.pluginServce.register({
-  // Change thickness of line for the data section of the
-  // doughnut chart that displays the amount that is left to be raised. Accessing data[1] gets us the
-  // correct data section of the doughnut we want to manipulate.
-  beforeDraw: function(chart) {
-    if (chart.config.options.elements.customCutout !== undefined) {
-      chart.getDatasetMeta(0).data[1]._view.innerRadius = 94;
-      chart.getDatasetMeta(0).data[1]._view.outerRadius = 98;
-      chart.update();
-    }
-  }
-});
+/* document.getElementById("chartjsLegend").innerHTML = myCharts.generateLegend();
  */
+/* document.getElementById(".myCharts").onclick = function(evt) {}; */
