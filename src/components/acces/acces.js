@@ -30,7 +30,7 @@ function toggleHidden(i) {
     .toggleClass("hidden");
 
   if ($(signInList[i]).hasClass("acces_type_signUp")) {
-    debugger;
+ /*    debugger; */
     $(signInList[i])
       .removeClass("acces_type_signUp")
       .addClass("acces_type_signIn");

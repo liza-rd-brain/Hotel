@@ -1,20 +1,24 @@
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
+let canvas = document.getElementById("canvas");
+let ctx = canvas.getContext("2d");
 
 ctx.fillStyle = "green";
 ctx.beginPath();
 ctx.arc(50, 50, 20, 0, Math.PI, false);
 ctx.stroke();
 
-var gradient_1 = ctx.createLinearGradient(0, 0, 0, 180);
+let gradient_1 = ctx.createLinearGradient(0, 0, 0, 180);
 gradient_1.addColorStop(0, "#FFE39C");
 gradient_1.addColorStop(1, "#ffba9c");
-var gradient_2 = ctx.createLinearGradient(0, 180, 0, 0);
+let gradient_2 = ctx.createLinearGradient(0, 180, 0, 0);
 gradient_2.addColorStop(0, "#6FCF97");
 gradient_2.addColorStop(1, "#66D2EA");
-var gradient_3 = ctx.createLinearGradient(0, 0, 0, 180);
+let gradient_3 = ctx.createLinearGradient(0, 0, 0, 180);
 gradient_3.addColorStop(0, "#BC9CFF");
 gradient_3.addColorStop(1, "#8BA4F9");
+
+let color_1 = "#FFE39C";
+let color_3 = "#BC9CFF";
+let color_2 = "#6FCF97";
 
 class Doughnut {
   constructor(options) {
@@ -24,6 +28,10 @@ class Doughnut {
     this.colors = options.colors;
     this.drawPieSlice = this.drawPieSlice.bind(this);
     this.drawLegendLabel = this.drawLegendLabel.bind(this);
+    /*  this.handlerClick = this.handlerClick.bind(this); */
+    this.checkClick = this.checkClick.bind(this);
+    this.findSector = this.findSector.bind(this);
+    this.handlerClick = this.handlerClick.bind(this);
   }
 
   drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
@@ -44,111 +52,258 @@ class Doughnut {
     ctx.fill();
   }
 
-  drawInnerText() {}
+  drawBorder(ctx, x, y, width, height, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, width, height);
+  }
 
-  drawBorder() {}
+  drawInnerText(ctx, x, y, text, color) {
+    ctx.font = "24px serif";
+    ctx.textAlign = "center";
+    ctx.fillStyle = color;
+    ctx.fillText(text, x, y);
+  }
+  handlerClick(ev) {
+    var canvasPosition = {
+      x: canvas.offsetLeft,
+      y: canvas.offsetTop
+    };
+
+    let mouse = {
+      x: ev.pageX - canvasPosition.x,
+      y: ev.pageY - canvasPosition.y
+    };
+    /*  console.log(mouse); */
+    let { x, y } = mouse;
+    //смотрим, попал ли клик по окружности
+    // если да, то по какой окружности попал!!!
+    let intersection = this.checkClick({ x, y });
+    if (intersection) {
+      this.findSector(intersection);
+    }
+  }
+
+  checkClick({ x, y }) {
+    let radiusMax = 60;
+    //выводим центр системы координат в центр окружности
+    let centerX = x - radiusMax;
+    let centerY = y - radiusMax;
+    let currMouse = {
+      x: centerX,
+      y: centerY
+    };
+    let radiusClick = Math.sqrt(centerX ** 2 + centerY ** 2);
+    if (radiusClick > radiusMax - 10) {
+      /*  console.log("true"); */
+      //словила клик по краю окружности
+      //передаю кооординаты от центра окружности
+      console.log(currMouse);
+      return currMouse;
+    }
+  }
+
+  findSector(coord) {
+    let total_value = 0;
+    this.options.data.map(item => {
+      let val = item.val;
+      total_value += val;
+    });
+
+    let touchАngle;
+    if (coord.y > 0) {
+      touchАngle = Math.acos(coord.x / 60);
+    } else {
+      touchАngle = -Math.acos(coord.x / 60);
+    }
+
+    console.log(touchАngle);
+    /*    this.options.data.map(item => {}); */
+
+    //рисуем типа точку касания
+    this.drawPieSlice(
+      this.ctx,
+      60,
+      60,
+      80,
+      touchАngle,
+      touchАngle + 0.001,
+      "red"
+    );
+    let start_angle = 1.57;
+    this.options.data.map(item => {
+      let val = item.val;
+      let slice_angle = (2 * Math.PI * val) / total_value;
+      //cдвиг на 1,57
+      if (touchАngle < 1.57) {
+        touchАngle = 6.28 + touchАngle;
+      }
+
+      if (touchАngle > start_angle && touchАngle < start_angle + slice_angle) {
+        //нахожу по какому сектору клик
+        item.checked = true;
+        console.log(item.val);
+      } else {
+        item.checked = false;
+      }
+      console.log(item.checked);
+      start_angle += slice_angle;
+      //очистила канвас
+    });
+    /*  debugger; */
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    this.draw();
+  }
 
   draw() {
     let total_value = 0;
-    let color_index = 0;
+
     //вычисляем общее значание value
     //переписать редьюсом
-    for (var item in this.options.data) {
-      var val = this.options.data[item];
+
+    this.options.data.map(item => {
+      let val = item.val;
       total_value += val;
-    }
+    });
+
+    /*    debugger; */
+
+    //при клике в консоли видим координаты кликов
+    canvas.onclick = ev => {
+      this.handlerClick(ev);
+    };
+
     //вычисляем угол среза
     //параметризовать по радианам
-    var start_angle = 4.71;
-    /*  var start_angle = 2 * Math.PI * val; */
-    for (var item in this.options.data) {
-      val = this.options.data[item];
-      var slice_angle = (2 * Math.PI * val) / total_value;
+    //0.05-на бордер
+    let start_angle = 1.57;
+    let centerX = 60;
+    let centerY = 60;
+    let radiusMax = 60;
+    let radiusMin = 55;
+
+    this.options.data.map(item => {
+      let val = item.val;
+      let slice_angle = (2 * Math.PI * val) / total_value;
+
+      let radiusHole = item.checked ? radiusMin - 4 : radiusMax - 4;
 
       //параметрирозвать ширина и вырезанный круг
       this.drawPieSlice(
         this.ctx,
-        60,
-        60,
-        60,
+        centerX,
+        centerY,
+        radiusMax,
         start_angle,
         start_angle + slice_angle,
-        this.colors[color_index]
+        item.gradient
       );
 
-      start_angle += slice_angle;
-      color_index++;
-    }
+      /*   currArc.onClick(this.handlerClick); */
 
-    if (this.options.doughnutHoleSize) {
-      this.drawPieSlice(this.ctx, 60, 60, 56, 0, 2 * Math.PI, "white");
-    }
-
-    //легенда
-    //проблема-не возьмет градиент от канвы, поэтому нужно будет переделать легенду на канву, а не HTML
-    if (this.options.legend) {
-      let color_index = 0;
-      let y = 40;
-      for (let item in this.options.data) {
-        this.drawLegendLabel(
+      if (this.options.doughnutHoleSize) {
+        this.drawPieSlice(
           this.ctx,
-          130,
-          y,
-          10,
-
-          this.colors[color_index]
+          centerX,
+          centerY,
+          radiusHole,
+          start_angle,
+          start_angle + slice_angle,
+          "white"
         );
-        color_index++;
+      }
+      start_angle += slice_angle;
+      /*   color_index++; */
+    });
+
+    //придумать, как параметризировать бордеры
+    this.drawBorder(this.ctx, 59, 0, 2, 120, "white");
+    this.drawBorder(this.ctx, 59, 59, 80, 2, "white");
+
+    if (this.options.legend) {
+      let y = 40;
+      debugger;
+
+      this.options.labels.map(item => {
+        this.drawLegendLabel(this.ctx, 154, y, 5, item.gradient);
+
         /* y+=20 */
         //нарисовали текст-вынести в функцию
         ctx.font = "12px serif";
         ctx.fillStyle = "black";
-        ctx.fillText(item, 150, y, 320);
-        y += 20;
-
-        /*  legendHTML +=
-          "<div><span style='display:inline-block;width:20px;background-color:" +
-          this.colors[color_index++] +
-          ";'>&nbsp;</span> " +
-          item +
-          "</div>"; */
-      }
-      /*  this.options.legend.innerHTML = legendHTML; */
+        ctx.textAlign = "left";
+        ctx.fillStyle = this.color;
+        ctx.fillText(item.text, 170, y);
+        y += 24;
+      });
     }
+
+    let checkedElem = this.options.data.find(item => item.checked);
+
+    this.drawInnerText(this.ctx, 60, 60, checkedElem.text, checkedElem.color);
+    this.drawInnerText(
+      this.ctx,
+      65,
+      80,
+      checkedElem.textDesc,
+      checkedElem.color
+    );
+    /*     debugger; */
   }
 }
 
-/* var myLegend = document.getElementById("myLegend"); */
-var myDougnutChart = new Doughnut({
+let myDougnutChart = new Doughnut({
   canvas: canvas,
-  data: {
-    Хорошо: 25,
-    Удовлетворительно: 25,
-    Великолепно: 50,
-    Разочарован: 0
-  },
-  colors: [gradient_3, gradient_2, gradient_1],
+  labels: [
+    {
+      val: 50,
+      text: "Великолепно",
+      gradient: gradient_1
+    },
+    {
+      val: 25,
+      text: "Хорошо",
+      gradient: gradient_2
+    },
+    {
+      val: 25,
+      text: "Удовлетворительно",
+      gradient: gradient_3
+    },
+    {
+      val: 0,
+      text: "Разочарован",
+      gradient: "black"
+    }
+  ],
+
+  data: [
+    {
+      val: 50,
+      text: "520",
+      textDesc: "голосов",
+      gradient: gradient_1,
+      color: color_1
+    },
+
+    {
+      val: 25,
+      text: "260",
+      textDesc: "голосов",
+      gradient: gradient_3,
+      checked: true,
+      color: color_3
+    },
+    {
+      val: 25,
+      text: "260",
+      textDesc: "голосов",
+      gradient: gradient_2,
+      color: color_2
+    }
+  ],
+
   doughnutHoleSize: 0.8,
   legend: true
 });
-myDougnutChart.draw();
 
-/* var myDoughnut = new Doughnut(canvas, {
-  data: {
-    labels: ["Хорошо", "Удовлетворительно", "Великолепно", "Разочарован"],
-    datasets: [
-      {
-        data: [25, 25, 50, 0],
-        backgroundColor: [gradient_3, gradient_2, gradient, "black"],
-        hoverBorderColor: [gradient_3, gradient_2, gradient],
-        hoverBorderWidth: [10, 10, 10],
-        hoverRadius: 10,
-        borderWidth: [1, 1, 1],
-        borderAlign: "inner",
-        shadowOffsetX: 3,
-        shadowOffsetY: 3,
-        shadowBlur: 10
-      }
-    ]
-  }
-}); */
+myDougnutChart.draw();
