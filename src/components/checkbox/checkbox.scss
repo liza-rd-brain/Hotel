@@ -1,6 +1,7 @@
 @import "../../variables";
 @import "../../mixin";
 
+
 .checkbox__title {
   text-transform: uppercase;
   @include h3-text();

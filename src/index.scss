@@ -53,7 +53,22 @@
   font-size: 50px;
 }
 
+//компромис для canvas
+@font-face {
+  font-family: Montserrat-bold;
+  src: url(./assets/fonts/Montserrat-Bold.svg) format("svg"),
+    url(./assets/fonts/Montserrat-Bold.ttf) format("ttf"),
+    url(./assets/fonts/Montserrat-Bold.woff) format("woff");
+  font-style: normal;
+}
 
+@font-face {
+  font-family: Quicksand-bold;
+  src: url(./assets/fonts/Quicksand-Bold.svg) format("svg"),
+    url(./assets/fonts/Quicksand-Bold.ttf) format("ttf"),
+    url(./assets/fonts/Quicksand-Bold.woff) format("woff");
+  font-style: normal;
+}
 
 /* body {
   padding: 150px 140px;

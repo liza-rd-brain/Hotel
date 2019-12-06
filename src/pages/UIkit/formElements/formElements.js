@@ -18,8 +18,9 @@ import "../../../components/icon-list/icon-list";
 import "../../../components/pie-chart/pie-chart";
 import "../../../components/review-list/review-list";
 import "../../../components/bullet-list/bullet-list";
-import "../../../components/doughnut-chart/doughnut-chart";
-
+//попробовать настроить в вебпак!
+//динамический импорт для того, чтобы канвас принял шрифты
+import("../../../components/doughnut-chart/doughnut-chart");
 import "./formElements.scss";
 import "../../../index.scss";
 import "normalize.css";
