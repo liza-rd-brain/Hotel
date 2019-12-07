@@ -17,7 +17,6 @@ include ../../../components/rate-button/rate-button
 include ../../../components/calendar/calendar
 include ../../../components/pagination/pagination
 include ../../../components/icon-list/icon-list
-include ../../../components/pie-chart/pie-chart
 include ../../../components/review-list/review-list
 include ../../../components/bullet-list/bullet-list
 include ../../../components/doughnut-chart/doughnut-chart
@@ -138,8 +137,7 @@ html
                         +button({isColored:true,size:"big",title:"перейти к оплате",isArrowButton:true})  
                     div(class="formElements__item item__wrap")
                         +pagination()  
-                    div(class="formElements__item item__wrap")
-                        +pie-chart()
+                    div(class="formElements__item item__wrap") 
                         +doughnut-chart()   
                     div(class="formElements__item item__wrap")
                         +review-list()

@@ -24,6 +24,12 @@
     margin-top: 9px;
     letter-spacing: 0.3px;
   }
+  &__vizualization {
+    display: flex;
+    & .vizualization__column:first-child {
+      margin-right: 80px;
+    }
+  }
 
   &__column {
     margin-top: 70px;

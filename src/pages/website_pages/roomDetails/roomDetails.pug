@@ -4,6 +4,7 @@ include ../../../components/booking/booking
 include ../../../components/icon-list/icon-list
 include ../../../components/review-list/review-list
 include ../../../components/bullet-list/bullet-list
+include ../../../components/doughnut-chart/doughnut-chart
 
 -
     const ROOM_TEXT_LIST=[
@@ -28,8 +29,13 @@ html
             +header-prod()
             main(class="roomDetails__main")
                 div(class="roomDetails__column roomDetails__column_left")
-                    h2(class="roomDetails__title") Сведения о номере
-                    +icon-list(ROOM_TEXT_LIST)
+                    div(class="roomDetails__vizualization")
+                        div(class="vizualization__column")    
+                            h2(class="roomDetails__title") Сведения о номере
+                            +icon-list(ROOM_TEXT_LIST)
+                        div(class="vizualization__column")    
+                            h2(class="roomDetails__title") Впечатления от номера
+                            +doughnut-chart()   
                     div(class="roomDetails__title")
                         h2(class="roomDetails__caption") Отзывы посетителей номера
                         span(class="roomDetails__counter") #{ROOM_REV_LIST.length} отзыва

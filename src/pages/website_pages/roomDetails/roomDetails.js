@@ -4,5 +4,6 @@ import "../../../components/booking/booking";
 import "../../../components/icon-list/icon-list";
 import "../../../components/review-list/review-list";
 import "../../../components/bullet-list/bullet-list";
+import ("../../../components/doughnut-chart/doughnut-chart");
 import "./roomDetails.scss";
 import "../../../index.scss";

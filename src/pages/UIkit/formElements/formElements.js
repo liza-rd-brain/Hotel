@@ -15,7 +15,6 @@ import "../../../components/rate-button/rate-button";
 import "../../../components/calendar/calendar";
 import "../../../components/pagination/pagination";
 import "../../../components/icon-list/icon-list";
-import "../../../components/pie-chart/pie-chart";
 import "../../../components/review-list/review-list";
 import "../../../components/bullet-list/bullet-list";
 //попробовать настроить в вебпак!
