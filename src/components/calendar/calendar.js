@@ -30,7 +30,7 @@ $().ready(() => {
         '<button class="flatpickr-clear-button flatpickr-button">Очистить</button>'
       )
         .on("click", () => {
-         /*  debugger; */
+         /*  ; */
           instance.clear();
           instance.close();
         })
@@ -142,7 +142,7 @@ $().ready(() => {
     monthSelectorType: "static",
     static: true,
     onReady: function(dateObj, dateStr, instance) {
-      /*    debugger; */
+      /*    ; */
       const buttonWrap = $(
         '<div class="flatpickr-wrap__filter"></div>'
       ).appendTo($(instance.calendarContainer));
@@ -150,7 +150,7 @@ $().ready(() => {
         '<button class="flatpickr-clear-button flatpickr-button">Очистить</button>'
       )
         .on("click", () => {
-          /* debugger; */
+          /* ; */
           instance.clear();
           instance.close();
         })

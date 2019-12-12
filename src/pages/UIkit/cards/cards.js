@@ -5,6 +5,7 @@ import "../../../components/acces/acces";
 import "../../../components/booking/booking";
 import "../../../components/calendar/calendar";
 import "../../../components/room-card/room-card";
+import "normalize.css";
 import "../../../index.scss";
 import "./cards.scss";
 

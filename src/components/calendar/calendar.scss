@@ -19,13 +19,14 @@
   border: 1px solid $dark-25;
   box-sizing: border-box;
   border-radius: 4px;
-  padding-left: 13px;
+
   @include body-text();
   line-height: 18px;
   outline: none;
   cursor: pointer;
   text-transform: lowercase;
-  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-bottom: 3px;
 
   &::placeholder {
     text-transform: uppercase;

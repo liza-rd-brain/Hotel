@@ -20,7 +20,7 @@
   }
   &__widget {
     padding-top: 100px;
-    padding-bottom: 99px;
+    padding-bottom: 95px;
   }
   &__copyright {
     padding-top: 23px;
@@ -51,7 +51,7 @@
     }
   }
   &_creative {
-    padding: 100px 440px 110px 440px;
+    padding: 100px 440px 105px 440px;
   }
 }
 
@@ -59,43 +59,65 @@
   & > :last-child {
     margin: 0;
   }
+  & .logo-link {
+    margin-bottom: 18px;
+  }
 
-  & a,
-  span,
   &__desc {
-    margin-bottom: 20px;
+    word-spacing: -1px;
   }
 
   &__logo,
   &__subscribe {
     width: 260px;
     flex-shrink: 0;
+    & .widget__title {
+      word-spacing: -2px;
+      margin-bottom: 20px;
+    }
+    & .widget__desc {
+      margin-bottom: 23px;
+      margin-top: 0;
+    }
   }
 
   &__logo {
     margin-right: 40px;
   }
-  &__desc {
-    margin-top: 0;
-  }
+
   &__title {
     @include h3-text();
     margin-top: 4px;
     text-transform: uppercase;
     display: block;
-    letter-spacing: -0.3px;
   }
 
   &__wrap {
     display: flex;
     width: 100%;
+    & > :nth-child(1),
+    & > :nth-child(3) {
+      text-transform: capitalize;
+    }
+    & > :nth-child(2) {
+      word-spacing: -1px;
+    }
   }
   &__group {
     display: flex;
     flex-direction: column;
     width: 200px;
+    & > a {
+      margin-bottom: 20px;
+    }
+    & > :nth-child(1) {
+      margin-bottom: 22px;
+    }
+    & > :nth-child(2) {
+      margin-bottom: 19px;
+    }
 
-    &_type-standart {
+    /*   &_type-standart {
       &:nth-child(1) {
         flex-grow: 1;
       }
@@ -105,7 +127,7 @@
       &:nth-child(3) {
         flex-grow: 0.3;
       }
-    }
+    } */
   }
   &__link {
     text-decoration: none;
@@ -134,9 +156,9 @@
     text-align: center;
   }
   & > :nth-child(1) {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   & > :nth-child(2) {
-    margin-bottom: 25px;
+    margin-bottom: 29px;
   }
 }

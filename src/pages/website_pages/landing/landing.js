@@ -1,14 +1,13 @@
-
-import "./landing.scss";
-import "../../../index.scss";
 import "../../../components/header-prod/header-prod";
 import "../../../components/logo/logo";
-import "../../../components/footer/footer";
+import "../../../components/footer-prod/footer-prod";
 import "../../../components/social/social";
 import "../../../components/searchbox/searchbox";
+import "normalize.css";
+import "../../../index.scss";
+import "./landing.scss";
 
-
-/* $().ready(() => {
+/* $().ready(() => {footer-prod
   //можно менять класс по количеству узлов
   setInterval(() => checkItem(), 5000);
 }); */

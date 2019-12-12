@@ -5,13 +5,13 @@ include ../button/button
 
 mixin header({isLogged,text_login,text_register,nav})
     -
-        var headerClassName = ""
+        var headerClassName=isLogged?"header header_logged":"header"
         var menuClassName = "menu"
         const USER_NAME="cosmin negotia"
         const button_login={isBordered:true,title:text_login ||"login",isTextColored:true,isHeaderButton:true}
         const button_register={isColored:true,title:text_register||"register",isHeaderButton:true}
         
-    header(class="header" class!=attributes.class)
+    header(class=headerClassName class!=attributes.class)
         +logo()
         div(class = menuClassName)
             +nav(nav)

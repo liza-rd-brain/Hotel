@@ -2,19 +2,51 @@
 @import "../../../mixin";
 
 .registration {
+  /*    @media (max-width: 1919.98px) and(min-width: 1441px) {
+    width: 100%;
+  } */
   width: 1440px;
+
+  /* @media (max-width: 1439.98px) {
+    width: 100%;
+  } */
+  /* 
+
+  @media (max-width: 1023.98px) {
+  }
+
+  @media (max-width: 767.98px) {
+  }
+
+  @media (max-width: 424.98px) {
+  }
+
+  @media (max-width: 374.98px) {
+  }
+
+  @media (max-width: 319.98px) {
+  } */
+  /*  width: 1440px; */
   &__wrap {
     margin: 0 auto;
   }
   &__main {
+    /* width: 100%; */
+    /* @media (max-width: 1439.98px) {
+   
+      width: 100%;
+    } */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     background-image: url(../../../assets/img/registration/registration_background.png);
     background-repeat: no-repeat;
-    background-position: 0px -70px;
-    background-size: auto auto;
+    /* background-position: center center; */
+    /* background-attachment: fixed; */
+    background-position: center 100%;
+    background-size: cover;
+    /*     background-size: auto; */
     background-color: rgba(17, 17, 17, 0.7);
 
     & > .acces {
@@ -25,7 +57,7 @@
           margin-bottom: 173px;
         }
         &_signUp {
-          margin-top: 28px;
+          margin-top: 30px;
           margin-bottom: 27px;
         }
       }

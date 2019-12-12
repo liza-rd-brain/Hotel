@@ -20,6 +20,6 @@ import "../../../components/bullet-list/bullet-list";
 //попробовать настроить в вебпак!
 //динамический импорт для того, чтобы канвас принял шрифты
 import("../../../components/doughnut-chart/doughnut-chart");
-import "./formElements.scss";
-import "../../../index.scss";
 import "normalize.css";
+import "../../../index.scss";
+import "./formElements.scss";

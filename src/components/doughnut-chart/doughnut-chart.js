@@ -190,7 +190,7 @@ class Doughnut {
   }
 
   findSector(coord) {
-    debugger;
+    ;
     /*  let totalValue = 0; */
 
     /* this.options.data.map(item => {
@@ -235,7 +235,7 @@ class Doughnut {
       startAngle += this.sliceAngle[index];
       //очистила канвас
     });
-    /*debugger; */
+    /*; */
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.draw();
   }
@@ -303,9 +303,9 @@ class Doughnut {
       let labelRadius = this.options.legend.labelRadius;
       let textX = this.options.legend.textX;
       let marginY = this.options.legend.marginY;
-      debugger;
+      ;
 
-      debugger;
+      ;
       this.options.labels.map(item => {
         this.drawLegendLabel(
           this.ctx,

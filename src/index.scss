@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./mixin";
+/* @import "normalize.css"; */
 
 /* @font-face {
   font-family: MyriadPro-Regular;
@@ -70,10 +71,44 @@
   font-style: normal;
 }
 
-/* body {
-  padding: 150px 140px;
+html {
+  font-size: 12px;
+  /* @media (max-width: 1959.98px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 1439.98px) {
+    font-size: 7px;
+  }
+
+  @media (max-width: 1199.98px) {
+    font-size: 12px;
+  }
+  @media (max-width: 1023.98px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 767.98px) {
+    font-size: 6.5px;
+  }
+
+  @media (max-width: 424.98px) {
+    font-size: 5px;
+  }
+
+  @media (max-width: 374.98px) {
+    font-size: 4px;
+  }
+
+  @media (max-width: 319.98px) {
+    font-size: 3px;
+  } */
 }
- */
+
+/* body {
+  margin: 0;
+} */
+
 /* * {
   outline: 1px solid gold;
 } */

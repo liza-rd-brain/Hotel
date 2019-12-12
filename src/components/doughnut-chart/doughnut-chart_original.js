@@ -149,7 +149,7 @@ class Doughnut {
       start_angle += slice_angle;
       //очистила канвас
     });
-    /*debugger; */
+    /*; */
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     this.draw();
   }
@@ -164,7 +164,7 @@ class Doughnut {
       total_value += val;
     });
 
-    /*debugger; */
+    /*; */
 
     //при клике в консоли видим координаты кликов
     canvas.onclick = ev => {
@@ -220,7 +220,7 @@ class Doughnut {
 
     if (this.options.legend) {
       let y = 40;
-      /*debugger; */
+      /*; */
 
       this.options.labels.map(item => {
         this.drawLegendLabel(this.ctx, 154, y, 5, item.gradient);
@@ -246,7 +246,7 @@ class Doughnut {
       checkedElem.textDesc,
       checkedElem.color
     );
-    /*debugger; */
+    /*; */
   }
 }
 

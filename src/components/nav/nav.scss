@@ -2,27 +2,31 @@
 @import "../../mixin";
 
 .nav {
+  width: 530px;
   @include body-text();
   display: flex;
   align-items: center;
   line-height: 17px;
   color: $dark-50;
   text-transform: capitalize;
-  letter-spacing: -0.4px;
+  justify-content: center;
+  flex-shrink: 0;
+  /*  letter-spacing: -0.4px; */
 
   &__item {
     text-align: center;
-    margin-right: 30px;
+    margin-right: 27px;
     display: flex;
     align-items: center;
     cursor: pointer;
+    flex-shrink: 0;
 
     &_default {
       margin-right: 26px;
     }
     //пока костыльное решение для дефолтной репрезентации
     &_expanded {
-      margin-right: 20px;
+      margin-right: 17px;
       display: flex;
       flex-direction: column;
       position: relative;

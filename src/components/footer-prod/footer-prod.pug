@@ -1,4 +1,4 @@
-include ./footer.pug
+include ../footer/footer.pug
 
 -
      const widget_desc = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
@@ -24,5 +24,5 @@ include ./footer.pug
                          text:" 2018 Toxin отель. Все права зачищены."} 
 
 mixin footer-prod()
-    +footer({isCreative:false,widget_desc,widget_items,subscribe,copyright})                         
+    +footer({isCreative:false,widget_desc,widget_items,subscribe,copyright})(class="footer_prod")                      
                               

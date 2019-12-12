@@ -40,7 +40,7 @@ mixin footer({isCreative,widget_desc,widget_items,subscribe=WI_SUBSCRIBE,copyrig
         
 
     if !isCreative
-        footer(class="footer")
+        footer(class="footer" class!=attributes.class)
             section(class="footer__item footer__widget")
                 div(class="widget__logo widget")
                     +logo()

@@ -1,0 +1,32 @@
+@import "../../variables";
+@import "../../mixin";
+
+.footer {
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0px 10px 20px $dark-5;
+  &__widget {
+    padding-bottom: 97px;
+  }
+}
+.widget {
+  & .logo-link {
+    margin-bottom: 16px;
+  }
+  &__desc {
+    word-spacing: 0;
+  }
+
+  &__link {
+    text-transform: none;
+  }
+  &__group {
+    text-transform: none;
+    & > :nth-child(4) {
+      margin-bottom: 18px;
+    }
+  }
+  &__subscribe &__desc {
+    margin-bottom: 21px;
+  }
+}

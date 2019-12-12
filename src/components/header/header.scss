@@ -18,11 +18,12 @@ $height-small: 34px;
       margin-right: 20px;
     }
     & > .nav {
-      margin-right: 30px;
+      margin-right: 27px;
     }
+
     //выбрали третьего потомка menu
     & > :nth-child(3) {
-      margin-right: 0;
+      margin-right: 1px;
     }
     & > .button_type {
       &_colored {
@@ -31,6 +32,11 @@ $height-small: 34px;
       &_bordered {
         min-width: 79px;
       }
+    }
+  }
+  &_logged {
+    & .menu > .nav {
+      margin-right: 29px;
     }
   }
 }
@@ -42,7 +48,8 @@ $height-small: 34px;
   text-transform: capitalize;
   display: flex;
   justify-self: center;
-  margin: auto 0;
+  margin: auto;
+  margin-right: 2px;
   &:before {
     content: "";
     border-right: 1px solid $dark-50;

@@ -4,9 +4,11 @@
 .header_prod {
   & .menu {
     & .nav {
-      margin-right: 20px;
+      width: 466px;
+      margin-right: 10px;
       text-indent: -1px;
       letter-spacing: unset;
+
     }
     & .nav__item {
       margin-right: 20px;
